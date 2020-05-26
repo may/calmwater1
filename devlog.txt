@@ -1,0 +1,78 @@
+## Devlog
+
+Decisions made to date. Add new at top.
+
+2020-05-14:
+user must define the people / tags for agendas, system will not parse it b/c simple and faster this way. less error-prone and easier to code, and forces the user to think about it.
+
+
+## todo parse agenda tasks for list of predefined names? 
+    or better, find agendas for people who aren't even in the system.
+      like if 'paul' shows up twice then that's a preson, of course upgrade isn't a person, so probably predefined lists is better. simple, no AI needed..
+
+
+2020-05-14:
+non unique keywords are not allowed
+
+was thinking... when adding a projcet what if we let non-uniques through for now, in the interets of speed?
+but that leads to being sloppy and not having one right way to do everything
+
+
+when adding a project or modifying a keyword, ensure that keyword is unique, else reject?
+  or let it work for now?
+    could shared keywords be adhoc grouping?
+     if you had upgrade1 and upgrade2
+      couldn't that be a handy way of grouping w/o bothering w/ tags?
+       something like lp upgrade
+         which gives us disambugation of 
+       but why not lp #upgrade ?
+
+
+2020-05-14: 
+ extbrain will not support subprojects, at least not to start.
+ additionally, extbrain will not 
+
+;;; WHY we don't have subtasks or subprojects or upcoming lists embedded in projects.
+
+;; project upgrade
+;;  deliverables
+;;   nova notes reviewed
+;;   build completed
+;;   powerpoints done and to alison by sept 1 or whatever.
+;;   custom code removed after upgrade
+;;  tasks
+;;   review a nova note #hcis
+;;   check with paul on  #agenda
+;;   
+       
+;;;;; Or are these really projects, that should be tagged together.
+
+;; nova notes reviewed #upgrade
+;; build completed #upgrade
+;; powerpoints done and to alison by aug 1 #upgrade
+;; custom code removed after fall 2020 upgrade #upgrade
+
+;;;;;; And because these are really projects, easily grouped by tag, we can have a task(s) for each:
+
+;; nova notes reviewed #upgrade
+;;; launch nova.epic.com and read all the notes #hcis [context implied?] [do we tell the system that #upgrade exists only within hcis? would save a lot of time in the long run, but most progjets aren't always ongoing like this]
+;; build completed #upgrade
+;;   review nova notes #waiting [consider tag #w?]
+;; powerpoints done and to alison by aug 1 #upgrade
+;;   review nova notes #waiting [consider tag #w?]
+;; custom code removed after fall 2020 upgrade #upgrade
+;;   waiting until post-/upgrade, so oct 13 #waiting
+
+
+2020-05-13
+While this would be cool, I could just see myself skipping any project that's green instead of giving it proper attention during my weekly review.
+
+
+;;;;; IT WOULD BE REALLY COOL, if the system could say:
+;;;; all of the tasks on this project are waiting, SO
+;;;; therefore the project is waiting
+;;;; therefore display a status of waiting on the project/color code green.
+;;;; or if there are several tasks, say 50% waiting, 20% agenda, 30% action needed [assume action needed if not waiting, ageanda, etc.] [green, blue, red]
+;;; that would be parsable. surely.
+
+
