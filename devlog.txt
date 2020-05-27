@@ -2,6 +2,10 @@
 
 Decisions made to date. Add new at top.
 
+2020-05-26
+Using Scheme, aiming for R7RS + SRFI, ok to use R6RS or Guile-specific if needed.
+
+
 2020-05-14:
 user must define the people / tags for agendas, system will not parse it b/c simple and faster this way. less error-prone and easier to code, and forces the user to think about it.
 
