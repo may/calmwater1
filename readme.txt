@@ -1,12 +1,14 @@
 ;; Created: 2020-05-13
-;; Revised: 2020-05-18
+;; Revised: 2020-05-28
 ;; Copyright: Nicholas E. May. All rights reserved.
 ;;
+;; invoke with: guile --no-auto-compile
+
 
 # NOW
 
-mocking up data structure w/ assoc lists
-working out how to pass by reference with quoted symbols w/o local symbol capture
+mocking up data structure w/ lists of records
+;;working out how to pass by reference with quoted symbols w/o local symbol capture
 
 MAYBE.finishing design goals in blog post before writing software?
 MAYBE.process all the subtasks in rtm for this project to see if any other features needed to be accounted for in data sturcture
