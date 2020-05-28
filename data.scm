@@ -1,5 +1,6 @@
 ;; Created: 2020-05-26 
 ;; Revised: 2020-05-28 
+
 ;; guile:
 (import (srfi srfi-9))
 
@@ -23,7 +24,7 @@
   (notes project-notes set-project-notes!))
 
 ;; test case
-;(define test-project (make-project "Ensure extbrain has a comprehensive test suite with SRFI-64" "extbrain-test" "personal"))
+;;(define test-project (make-project "Ensure extbrain has a comprehensive test suite with SRFI-64" "extbrain-test" "personal"))
 
 
 (define (create-project! title keyword life-context)
@@ -55,16 +56,6 @@
     (load-data))
 
 (display projects-and-tasks)
-
-;; (define projects-and-tasks '())
-;; (set! projects-and-tasks (list 1 2 3))
-;; ;;(write projects-and-tasks (open-output-file savefile-filename))
-;; (define out (open-output-file savefile-filename))
-;; (write projects-and-tasks out)
-;; (close-port out)
-;; ;; todo first
-;; ;; check if savefile exists, if so load.
-;; ;; else define projects-and-tasks and set to empty list
 
 
 ;; chicken 5

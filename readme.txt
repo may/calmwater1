@@ -2,7 +2,7 @@
 ;; Revised: 2020-05-28
 ;; Copyright: Nicholas E. May. All rights reserved.
 ;;
-;; invoke with: guile --no-auto-compile
+;; invoke with: guile --no-auto-compile -s 
 
 
 # NOW
