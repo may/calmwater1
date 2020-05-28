@@ -65,6 +65,10 @@
 (define (save-data)
   (define out (open-output-file savefile-filename))
   (display projects-and-tasks)
+  (map projects-and-tasks
+       print title: etc.
+       
+  
   (write projects-and-tasks out)
   (close-port out)) ;; guile
 
