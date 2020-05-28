@@ -15,11 +15,6 @@
 
 
 
-;; todo once you have tasks working in projcets, probablly update this to mention return list of tasks
-;; works with all properties, and returns a list if notes.
-(define (view-property uid property-param)
-  (lookup property-param (assoc uid projects-and-tasks)))
-
 ;; todo once you have tasks working in projcets, probablly update this to not update notes
 ;; Updates the property specified by property-param, except notes.
 ;; Do not use with notes.
@@ -72,24 +67,6 @@
   ;; Push to the database.
   (push task projects-and-tasks))
 
-
-;; todo work on this next, after you finish create-task!
-(define (create-project! title-param keyword-param life-context-param tags-list-param)
-  ;; required: title-param and keyword-param
-  ;; optional: life-context-param tags-list-param
-  ;; Creates a project with the given title-param.
-  ;; Also adds the project to the data structure.
-  (setq project (create-task-or-project title-param))
-  ;; Add project-specific metadata.
-  (push (list 'keyword keyword-param) project 2)
-  (if (not life-context-param)
-      (setq life-context-param "personal"))
-  (push (list 'life-context life-context-param) project 3)
-  (push (list 'tags tags-list-param) project 4)
-  (push (list 'tasks (list nil)) project 5)
-  (push (list 'project-support-material-text nil) project -1)
-  ;; Push to the database.
-  (push project projects-and-tasks))
 
 (define (create-task-or-project title-param)
   ;; required: title-param

@@ -26,6 +26,11 @@
 ;; test case
 ;;(define test-project (make-project "Ensure extbrain has a comprehensive test suite with SRFI-64" "extbrain-test" "personal"))
 
+(define-record-type task
+  (make-task title action-context)
+  task?
+  (title title set-title!)
+  (action-context action-context set-action-context!))
 
 (define (create-project! title keyword life-context)
   ;; Creates the project, adds it to the data structure.
