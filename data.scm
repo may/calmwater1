@@ -4,24 +4,23 @@
 ;; guile:
 (import (srfi srfi-9))
 
-
-(define savefile-filename "savefile-dev.scm")
+(define projects-and-tasks (list))
 
 (define-record-type project
   (make-project title keyword life-context)
   project?
-  (title project-title set-project-title!)
-  (keyword project-keyword set-project-keyword!)
-  (life-context project-life-context set-project-life-context!) 
-  (tags project-tags set-project-tags!)
-  (tasks project-tasks set-project-tasks!)
-  (project-support-material  set-project-support-material-text!)
-  (creation project-creation set-project-creation!)
-  (modified project-modified set-project-modified!)
-  (last-reviewed project-last-reviewed set-project-last-reviewed!)
-  (completed project-completed set-project-completed!)
-  (deleted project-deleted set-project-deleted!)
-  (notes project-notes set-project-notes!))
+  (title title set-title!)
+  (keyword keyword set-keyword!)
+  (life-context life-context set-life-context!) 
+  (tags tags set-tags!)
+  (tasks tasks set-tasks!)
+  (psm psm set-psm-text!) ; project support material
+  (creation creation set-creation!)
+  (modified modified set-modified!)
+  (last-reviewed last-reviewed set-last-reviewed!)
+  (completed completed set-completed!)
+  (deleted deleted set-deleted!)
+  (notes notes set-notes!))
 
 ;; test case
 ;;(define test-project (make-project "Ensure extbrain has a comprehensive test suite with SRFI-64" "extbrain-test" "personal"))
@@ -34,8 +33,12 @@
 
 (define (create-project! title keyword life-context)
   ;; Creates the project, adds it to the data structure.
-  (display (list title keyword life-context))
-  (append! projects-and-tasks (list (make-project title keyword life-context))))
+  (define new-project)
+  (set! new-project
+	(list (make-project title keyword life-context)))
+  (if (null? projects-and-tasks)
+      (set! projects-and-tasks new-project)
+      (append! projects-and-tasks new-project))) ;; appending to end to make savefile chronological readable.
 
 
 
@@ -51,17 +54,19 @@
 
 
 
-(define projects-and-tasks)
+
+
+
 (define (load-data)
   (define in (open-input-file savefile-filename))
   (set! projects-and-tasks (read in))
   (close-port in)) ;; guile
 
-(if (file-exists? savefile-filename)
-    (load-data))
-
-(display projects-and-tasks)
-
+(define (save-data)
+  (define out (open-output-file savefile-filename))
+  (display projects-and-tasks)
+  (write projects-and-tasks out)
+  (close-port out)) ;; guile
 
 ;; chicken 5
 ;;(import srfi-9)
