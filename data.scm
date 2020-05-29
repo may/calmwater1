@@ -7,11 +7,11 @@
 (define projects-and-tasks (list))
 
 (define-record-type project
-  (make-project title keyword life-context)
-  project?
-  (title title set-title!)
-  (keyword keyword set-keyword!)
-  (life-context life-context set-life-context!) 
+x  (make-project title keyword life-context)
+x  project?
+x  (title title set-title!)
+x  (keyword keyword set-keyword!)
+x  (life-context life-context set-life-context!) 
   (tags tags set-tags!)
   (tasks tasks set-tasks!)
   (psm psm set-psm-text!) ; project support material

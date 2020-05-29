@@ -15,21 +15,37 @@ is like this
 # potiental issue of syncing keyword in object w/ stored keyword in hash? Or simply don't duplicate?
 
 class Project
+  attr_accessor :title, :keyword
+  attr_reader :notes
   def initialize(title, keyword, life_context)
     @title = title
     @keyword = keyword
     @life_context = life_context
+    @notes = Array.new
   end
 
+  def notes
+    @notes.to_s  #maybe?
+  end
 
+  def notes=
+      #todo allow this? and it will add
+      # or def add_note
+  end
+  
   
   def to_s
     "hello I'm a project"
   end
 end
 
-test = Project.new("test project","tp","personal")
-puts test
+
+test2 = Project.new("test project","tp","personal")
+if test2.title == "test project"
+  puts "ok"
+else
+  "not ok"
+end 
 
 class Task
 end
