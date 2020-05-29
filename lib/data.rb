@@ -26,14 +26,13 @@ class Project
     @keyword = keyword
     @life_context = life_context
     @notes = Array.new
-    @notes.unshift("Created: #{now.strftime(@@time_formatting_string)}")
+    @notes.unshift([now,"Created: #{title}"])
     @created = now
   end
 
   def add_note(note_text)
     # Add notes to front of array, so that they are stored in reverse chronological order.
-    note_and_timestamp = note_text + "[#{Time.now.strftime(@@time_formatting_string)}]"
-    @notes.unshift(note_and_timestamp)
+    @notes.unshift([Time.now,note_text])
   end
 
   def to_s
