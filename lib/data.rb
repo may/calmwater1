@@ -35,8 +35,8 @@ class Project
  # TODO test /do implementaiton @completed
  # TODO test /do implementaiton @deleted
  
- attr_accessor :modified, :last_reviewed
- attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm, :completed, :deleted
+ attr_accessor :modified, 
+ attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm, :completed, :deleted, :last_reviewed
  attr_reader :notes, :created
  
  def initialize(title, keyword, life_context)
