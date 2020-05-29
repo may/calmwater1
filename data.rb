@@ -5,6 +5,12 @@ require 'yaml'
 
 ## TODO $projects_and_tasks
 
+=begin
+multiline comment
+is like this
+=end
+
+
 # store in arrays by keyword so maybe hash tables?
 # potiental issue of syncing keyword in object w/ stored keyword in hash? Or simply don't duplicate?
 
@@ -13,6 +19,12 @@ class Project
     @title = title
     @keyword = keyword
     @life_context = life_context
+  end
+
+
+  
+  def to_s
+    "hello I'm a project"
   end
 end
 
