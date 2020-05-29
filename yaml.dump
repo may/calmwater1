@@ -1,1 +1,10 @@
---- false
+--- !ruby/object:Project
+title: test project
+keyword: tp
+life_context: personal
+notes:
+- called john3
+- called john2
+- called john
+- 'Created: 2020-05-29 16:31, Friday.'
+created: 2020-05-29 16:31:26.378665946 -05:00

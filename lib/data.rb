@@ -3,6 +3,9 @@
 
 require 'yaml'
 
+@@time_formatting_string = "%Y-%m-%d %H:%M, %A."
+
+
 ## TODO $projects_and_tasks
 
 =begin
@@ -15,33 +18,37 @@ is like this
 # potiental issue of syncing keyword in object w/ stored keyword in hash? Or simply don't duplicate?
 
 class Project
-  attr_accessor :title, :keyword
-  attr_reader :notes
+  attr_accessor :title, :keyword, :modified, :last_reviewed
+  attr_reader :notes, :created
   def initialize(title, keyword, life_context)
+    now = Time.now
     @title = title
     @keyword = keyword
     @life_context = life_context
     @notes = Array.new
+    @notes.unshift("Created: #{now.strftime(@@time_formatting_string)}")
+    @created = now
   end
 
-  def notes
-    @notes.to_s  #maybe?
+  def add_note(note_text)
+    # Add notes to front of array, so that they are stored in reverse chronological order.
+    note_and_timestamp = note_text + "[#{Time.now.strftime(@@time_formatting_string)}]"
+    @notes.unshift(note_and_timestamp)
   end
 
-  def notes=
-      #todo allow this? and it will add
-      # or def add_note
-  end
-  
-  
   def to_s
     "hello I'm a project"
   end
 end
 
-
-test2 = Project.new("test project","tp","personal")
-if test2.title == "test project"
+## manual testing
+test = Project.new("test project","tp","personal")
+test.add_note("called john")
+test.add_note("called john2")
+test.add_note("called john3")
+puts test.notes
+p test.notes
+if test.title == "test project"
   puts "ok"
 else
   "not ok"
@@ -53,12 +60,12 @@ end
 #class generic-project-task
 #end
 
-m = YAML.load(File.read('yaml.dump'))
+#m = YAML.load(File.read('yaml.dump'))
 # m = File.open('/marshal.dump', 'wb') { |f| f.write(Marshal.dump(m)) }
 
-m = [1, 2, 3, 4, "Ruby"]
+#m = [1, 2, 3, 4, "Ruby"]
 
 #sleep 0.9
 
-#File.open('yaml.dump', 'w') { |f| f.write(YAML.dump(m)) }
+#File.open('yaml.dump', 'w') { |f| f.write(YAML.dump(test)) }
 #File.open('marshal.dump', 'wb') { |f| f.write(Marshal.dump(m)) }
