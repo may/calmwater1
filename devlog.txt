@@ -2,6 +2,34 @@
 
 Decisions made to date. Add new at top.
 
+2020-05-29:
+NOT using Scheme.
+NOT using Common Lisp.
+USING Ruby.
+If it's too slow (it isn't), use crystal or mruby.
+3-4x+ speedup attained with:
+time ruby --disable-gems data.rb 
+
+The reason for not using Scheme or Common Lisp is:
+- scheme has no serialize/deserilizie libraries
+- common lisp does, but it wasn't clear to me, reading the documentation, how to
+get that done with a simple struct, let alone with objects
+- I know Ruby will work, and the problem I am trying to solve here
+is the problem of a solid, fast GTD app, not "writing libraries to save data".
+If Ruby turns out to be too slow later, I can handle that.
+If it turns out I need an executable for Windows, I can handle that.
+But most likely I'll make it web-based if I do anything other than command line,
+and Ruby handles that great.
+
+So Ruby.
+
+The goal is not to write in The Best Programming Language Possible.
+The goal is to solve my immediate problem.
+And it's taken a few weeks already to get this far.
+And I want this solved.
+So ruby.
+See you on the flipside.
+
 2020-05-26
 Using Scheme, aiming for R7RS + SRFI, ok to use R6RS or Guile-specific if needed.
 
