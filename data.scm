@@ -12,15 +12,15 @@ x  project?
 x  (title title set-title!)
 x  (keyword keyword set-keyword!)
 x  (life-context life-context set-life-context!) 
-  (tags tags set-tags!)
-  (tasks tasks set-tasks!)
-  (psm psm set-psm-text!) ; project support material
-  (creation creation set-creation!)
-  (modified modified set-modified!)
-  (last-reviewed last-reviewed set-last-reviewed!)
-  (completed completed set-completed!)
-  (deleted deleted set-deleted!)
-  (notes notes set-notes!))
+x  (tags tags set-tags!)
+X  (tasks tasks set-tasks!)
+x  (psm psm set-psm-text!) ; project support material
+x  (creation creation set-creation!)
+x  (modified modified set-modified!)
+x  (last-reviewed last-reviewed set-last-reviewed!)
+x  (completed completed set-completed!)
+x  (deleted deleted set-deleted!)
+x  (notes notes set-notes!))
 
 ;; test case
 ;;(define test-project (make-project "Ensure extbrain has a comprehensive test suite with SRFI-64" "extbrain-test" "personal"))

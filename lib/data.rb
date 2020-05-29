@@ -3,7 +3,7 @@
 
 require 'yaml'
 
-@@time_formatting_string = "%Y-%m-%d %H:%M, %A."
+$time_formatting_string = "%Y-%m-%d %H:%M, %A."
 
 
 ## TODO $projects_and_tasks
@@ -18,9 +18,28 @@ is like this
 # potiental issue of syncing keyword in object w/ stored keyword in hash? Or simply don't duplicate?
 
 class Project
-  attr_accessor :title, :keyword, :modified, :last_reviewed
-  attr_reader :notes, :created
-  def initialize(title, keyword, life_context)
+ def Project.attr_accessor_with_logging(*names)
+    attr_reader *names
+    names.each do |name|
+      define_method :"#{name}=" do |v|
+        current_instance_variable = instance_variable_get(:"@#{name}")
+        add_note("Updated #{name}:\n old: #{current_instance_variable}\n new: #{v}")
+        instance_variable_set(:"@#{name}", v)
+      end
+    end
+ end 
+
+ # TODO test tags/do implementaiton @tags
+ # TODO test tasks/do implementaiton @tasks
+ # TODO test/do implementaiton @psm
+ # TODO test /do implementaiton @completed
+ # TODO test /do implementaiton @deleted
+ 
+ attr_accessor :modified, :last_reviewed
+ attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm, :completed, :deleted
+ attr_reader :notes, :created
+ 
+ def initialize(title, keyword, life_context)
     now = Time.now
     @title = title
     @keyword = keyword
@@ -35,6 +54,7 @@ class Project
     @notes.unshift([Time.now,note_text])
   end
 
+  
   def to_s
     "hello I'm a project"
   end
@@ -45,13 +65,17 @@ test = Project.new("test project","tp","personal")
 test.add_note("called john")
 test.add_note("called john2")
 test.add_note("called john3")
-puts test.notes
+#puts test.notes
 p test.notes
 if test.title == "test project"
   puts "ok"
 else
   "not ok"
 end 
+test.title = "new title"
+puts test.title
+
+
 
 class Task
 end
