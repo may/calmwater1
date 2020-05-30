@@ -51,7 +51,12 @@ class ProjectTaskCommon
     @last_reviewed = nil
   end
 
-    def complete
+  def add_note(note_text)
+    # Add notes to front of array, so that they are stored in reverse chronological order.
+    @notes.unshift([Time.now,note_text])
+  end
+
+  def complete
     @completed = Time.now
     add_note("#{self.class.name} completed.")
   end
@@ -88,11 +93,6 @@ class Project < ProjectTaskCommon
     @life_context = life_context.to_sym
     @tags = Array.new
     @psm = ""
-  end
-
-  def add_note(note_text)
-    # Add notes to front of array, so that they are stored in reverse chronological order.
-    @notes.unshift([Time.now,note_text])
   end
 
   def add_task
