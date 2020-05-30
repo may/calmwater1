@@ -92,14 +92,18 @@ class Project < ProjectTaskCommon
     @psm = ""
   end
 
+  # Expects tags to be an array
+  # TODO make a test or figure out how to enforce in ruby w/o throwing an exception?
   def tags=(tags)
-    # Expects tags to be an array
-    # TODO make a test or figure out how to enforce in ruby w/o throwing an exception?
-    print "tags all: "
-    puts tags.all? { |tag| tag.is_a? Symbol }
-    # if all tags are symblos then set
-    # else convet to sym
-    # else log error
+    if tags.is_a? Symbol
+      tags = [tags]
+    elsif tags.is_a? Array
+      tags = tags.map { |tag| tag.to_sym }
+    elsif tags.is_a? String
+      tags = [tags.to_sym]
+    else
+      puts "Hey! Your tags weren't a symbol, array or string, so no promises things will work. Data saved though.."
+    end
     add_note("Updated tags:\n old: #{@tags}\n new: #{tags}")
     @tags = tags
   end

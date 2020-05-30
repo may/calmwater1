@@ -36,13 +36,42 @@ class ProjectAndTaskTest < Minitest::Test
     p2 = Project.new("some title", "some keyword but no life context you notice")
     assert_equal(:personal,p2.life_context)
   end
-
+  
+  def test_project_is_array
+    assert_equal([],@test_project.tags)
+  end
+  
   def test_project_tags
     assert_empty(@test_project.tags)
     # %i is shortcut for symbols
-    # @test.tags = %i{ one two three }
+    @test_project.tags = %i{ house yard }
+    assert_equal(%i{ house yard },@test_project.tags)
   end
-    
+
+  def test_project_tags_single_string
+    assert_empty(@test_project.tags)
+    @test_project.tags = "single-string"
+    assert_equal([:"single-string"], @test_project.tags)  
+  end
+
+  def test_project_tags_several_strings
+    assert_empty(@test_project.tags)
+    # %i is shortcut for symbols
+    @test_project.tags = %w{ one two three }
+    assert_equal(%i{ one two three }, @test_project.tags)
+  end
+
+  def test_project_tags_single_symbol_tag
+    assert_empty(@test_project.tags)
+    @test_project.tags = :tag_test 
+    assert_equal([:tag_test], @test_project.tags)
+  end
+
+  def test_project_tags_wrong
+    assert_output("Hey! Your tags weren't a symbol, array or string, so no promises things will work. Data saved though..\n") { @test_project.tags = 1234 }
+
+
+  end
 =begin  
   # Test passes, but not sure I need modified. 2020-05-30.
   def test_modified
@@ -62,11 +91,6 @@ class ProjectAndTaskTest < Minitest::Test
 
   # s/m test_created. would have to find a better way to set @now haha.
 
-  def test_tags
-    assert_equal([],@test_project.tags)
-    @test_project.tags = %w{ house yard }
-    assert_equal(%w{ house yard },@test_project.tags)
-  end
   
   def test_tasks
   end
