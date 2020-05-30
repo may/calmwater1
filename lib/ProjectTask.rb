@@ -5,9 +5,19 @@ require 'yaml'
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 
-## TODO $projects_and_tasks  decided 2020-05-30 this is a hash not an array, writing code to make sure kyword stays in sync btween task and this hash
-# but wait tasks don't have keywords so scrap
+## TODO $projects_and_tasks = Array.new
 
+## TODO put all this in a separate file called ProjectsAndTasks.rb, and rename this file to ProjectTask.rb
+## I imagine there might be a lot of common accesor methods for this data structure,
+## probably enough to warrent a class: ProjectsAndTasks, and save me writing same codeslightly  wrong each time
+## .find_task
+## .update_task(replaced task object)
+## .delete_task(sets deleted flag on that task object)
+## .archive_deleted( saves all with deleted flag set to YYYY-MM-DD-trash.ymal with a timestamp)
+##  ^ separate code that checks on exit and handles if month # has changed
+## .archive_completed( saves all with completed?=true AND date > 1yr? to YYYY-MM-DD-completed.ymal
+##  ^ separate code that checks on exit and handles if month # has changed
+## .find_project
 
 class ProjectTaskCommon
   def ProjectTaskCommon.attr_accessor_with_logging(*names)
