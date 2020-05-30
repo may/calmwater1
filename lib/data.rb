@@ -17,8 +17,8 @@ is like this
 # store in arrays by keyword so maybe hash tables?
 # potiental issue of syncing keyword in object w/ stored keyword in hash? Or simply don't duplicate?
 
-class Project
-  def Project.attr_accessor_with_logging(*names)
+class ProjectTaskCommon
+  def ProjectTaskCommon.attr_accessor_with_logging(*names)
     attr_reader(*names)
     names.each do |name|
       define_method :"#{name}=" do |v|
@@ -27,33 +27,44 @@ class Project
         instance_variable_set(:"@#{name}", v)
       end
     end
-  end 
-
- # TODO test tasks/do implementaiton @tasks
-
+  end
 
   # Not sure need modified, since have explict reviewed date. 2020-05-30 
   # IF we do have modified, need to make sure it gets updated whenever ANYTHING
   # on the Project is touched, which requires more coding/custom assessor and readers.
   #  attr_accessor :modified
-  attr_accessor_with_logging :title, :keyword, :tags, :psm, :life_context
-  attr_reader :notes, :tasks, :created, :completed, :deleted, :last_reviewed
   
-  def initialize(title, keyword, life_context)
+  attr_accessor_with_logging :title
+  attr_reader :notes, :created, :completed, :deleted, :last_reviewed
+
+  def initialize(title) # ProjectTaskCommon
     now = Time.now
     @title = title
-    @keyword = keyword
-    @life_context = life_context.to_sym
-    @created = now
     @notes = Array.new
-    @notes.unshift([now,"Created: #{title}"])
-
+    #    @notes.unshift([now,"Created: #{title}"])
+    add_note("Created: #{title}")
+    @created = now
 #    @modified = now
-    @last_reviewed = nil
-    @tags = Array.new
-    @psm = ""
     @completed = nil
     @deleted = nil
+    # Explicitly set this to nil, because it isn't technically reviewed
+    # upon creation; it's just created - possibly with little thought! :-D
+    # But that's OK; dump it in here, review it later.
+    @last_reviewed = nil
+  end 
+end
+ # TODO test tasks/do implementaiton @tasks
+
+class Project < ProjectTaskCommon
+  attr_accessor_with_logging :keyword, :tags, :psm, :life_context
+  attr_reader :tasks
+
+  def initialize(title, keyword, life_context)  # Project
+    super(title)
+    @keyword = keyword
+    @life_context = life_context.to_sym
+    @tags = Array.new
+    @psm = ""
   end
 
   def add_note(note_text)
@@ -65,6 +76,7 @@ class Project
   end
 
   def complete_task
+    # should this exisst on project? no
   end
 
   def delete_task
