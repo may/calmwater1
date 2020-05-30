@@ -121,7 +121,7 @@ end
   class Task
   end
 
-  #class generic-project-task
+  #class project-task-common
   #end
 
   #m = YAML.load(File.read('yaml.dump'))
