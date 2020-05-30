@@ -1,16 +1,17 @@
 ;; Created: 2020-05-13
-;; Revised: 2020-05-28
+;; Revised: 2020-05-30
 ;; Copyright: Nicholas E. May. All rights reserved.
-;;
-;; invoke with: guile --no-auto-compile -s 
+
 
 
 # NOW
 
-mocking up data structure w/ lists of records
-;;working out how to pass by reference with quoted symbols w/o local symbol capture
+finishing project implementaiton in ruby
+implementing tasks in ruby
 
-MAYBE.finishing design goals in blog post before writing software?
+MAYBE
+
+.finishing design goals in blog post before writing software?
 MAYBE.process all the subtasks in rtm for this project to see if any other features needed to be accounted for in data sturcture
 
 todo - document that if you don't specify a life context it will default to personal.
@@ -54,7 +55,7 @@ also build a function where you can toggle between waiting and next action. idea
 
 add a note to the documentation/blog that users should save the savefile in a cloud-backed-up directory like dropbox or have a regular backup of their computer.
 
-
+p
 load data on startup.
  on save:
   0. check if lockfile exists, if so wait 1 sec, try again, repeat for 65 seconds, then fail.
