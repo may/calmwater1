@@ -38,20 +38,43 @@ class ProjectTaskCommon
   attr_reader :notes, :created, :completed, :deleted, :last_reviewed
 
   def initialize(title) # ProjectTaskCommon
-    now = Time.now
     @title = title
     @notes = Array.new
-    #    @notes.unshift([now,"Created: #{title}"])
     add_note("Created: #{title}")
-    @created = now
-#    @modified = now
+    @created = Time.now
+#    @modified = Time.now
     @completed = nil
     @deleted = nil
     # Explicitly set this to nil, because it isn't technically reviewed
     # upon creation; it's just created - possibly with little thought! :-D
     # But that's OK; dump it in here, review it later.
     @last_reviewed = nil
-  end 
+  end
+
+    def complete
+    @completed = Time.now
+    add_note("#{self.class.name} completed.")
+  end
+
+  def completed?
+    # !! is not not, to force boolean
+    !!@completed
+  end
+
+  def delete
+    @deleted = Time.now
+    add_note("#{self.class.name} deleted.")
+  end
+
+  def deleted?
+    !!@deleted
+  end
+
+  def reviewed
+    @last_reviewed = Time.now
+    add_note("#{self.class.name} reviewed.")
+  end
+
 end
  # TODO test tasks/do implementaiton @tasks
 
@@ -83,29 +106,6 @@ class Project < ProjectTaskCommon
   end
 
   # TODO factor these out into shared class
-  def complete
-    @completed = Time.now
-    add_note("#{self.class.name} completed.")
-  end
-
-  def completed?
-    # !! is not not, to force boolean
-    !!@completed
-  end
-
-  def delete
-    @deleted = Time.now
-    add_note("#{self.class.name} deleted.")
-  end
-
-  def deleted?
-    !!@deleted
-  end
-
-  def reviewed
-    @last_reviewed = Time.now
-    add_note("#{self.class.name} reviewed.")
-  end
   
   def to_s
     "hello I'm a project TODO"
