@@ -36,8 +36,8 @@ class Project
   # IF we do have modified, need to make sure it gets updated whenever ANYTHING
   # on the Project is touched.
 #  attr_accessor :modified
-  attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm
-  attr_reader :notes, :created, :completed, :deleted, :last_reviewed
+  attr_accessor_with_logging :title, :keyword, :tags, :psm
+  attr_reader :notes, :tasks, :created, :completed, :deleted, :last_reviewed
   
   def initialize(title, keyword, life_context)
     now = Time.now
@@ -61,9 +61,19 @@ class Project
     @notes.unshift([Time.now,note_text])
   end
 
+  def add_task
+  end
+
+  def complete_task
+  end
+
+  def delete_task
+  end
+
+  # TODO factor these out into shared class
   def complete
     @completed = Time.now
-    add_note("Task completed.")
+    add_note("#{self.class.name} completed.")
   end
 
   def completed?
@@ -73,7 +83,7 @@ class Project
 
   def delete
     @deleted = Time.now
-    add_note("Task deleted.")
+    add_note("#{self.class.name} deleted.")
   end
 
   def deleted?
@@ -82,7 +92,7 @@ class Project
 
   def reviewed
     @last_reviewed = Time.now
-    add_note("Task reviewed.")
+    add_note("#{self.class.name} reviewed.")
   end
   
   def to_s

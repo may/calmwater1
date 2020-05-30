@@ -41,12 +41,12 @@ class ProjectTest < Minitest::Test
   end 
 =end
   
-  def test_reviewed
+  def test_project_reviewed
     assert_nil(@test.last_reviewed)
     now = Time.now
     @test.reviewed
     assert_equal(now.to_i,@test.last_reviewed.to_i)
-    assert_equal("Task reviewed.",@test.notes.first.last)
+    assert_equal("Project reviewed.",@test.notes.first.last)
   end     
 
   # s/m test_created. would have to find a better way to set @now haha.
@@ -67,22 +67,22 @@ class ProjectTest < Minitest::Test
     assert_equal("Updated psm:\n old: test project support material\n new: new, better, shorter psm",@test.notes.first.last)
   end
 
-  def test_completed
+  def test_project_completed
     assert_nil(@test.completed)
     refute(@test.completed?) # refute is what we say when we want assert_false
     @test.complete
     assert(@test.completed?)
     assert_equal(Time.now.to_i,@test.completed.to_i)
-    assert_equal("Task completed.",@test.notes.first.last)
+    assert_equal("Project completed.",@test.notes.first.last)
   end
   
-  def test_deleted
+  def test_project_deleted
     assert_nil(@test.deleted)
     refute(@test.deleted?)
     @test.delete
     assert(@test.deleted?)
     assert_equal(Time.now.to_i,@test.deleted.to_i)
-    assert_equal("Task deleted.",@test.notes.first.last)
+    assert_equal("Project deleted.",@test.notes.first.last)
   end
 
   # todo respond to project-object.deleted? 
