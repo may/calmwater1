@@ -31,7 +31,6 @@ class ProjectTest < Minitest::Test
       assert_equal(Time.new(2020, 05, 29, 17, 9).to_i,@test.modified.to_i)
   end 
 
-  #todo last reviewed should log notes too
   def test_reviewed
     assert_equal(@now.to_i,@test.reviewed.to_i)
     fixed_time = Time.new(2020, 05, 30, 11, 12)
