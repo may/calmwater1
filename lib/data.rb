@@ -5,11 +5,9 @@ require 'yaml'
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 
-## TODO $projects_and_tasks
+## TODO $projects_and_tasks  decided 2020-05-30 this is a hash not an array, writing code to make sure kyword stays in sync btween task and this hash
+# but wait tasks don't have keywords so scrap
 
-
-# store in arrays by keyword so maybe hash tables?
-# potiental issue of syncing keyword in object w/ stored keyword in hash? Or simply don't duplicate?
 
 class ProjectTaskCommon
   def ProjectTaskCommon.attr_accessor_with_logging(*names)
@@ -106,17 +104,20 @@ class Project < ProjectTaskCommon
     add_note("Updated tags:\n old: #{@tags}\n new: #{tags}")
     @tags = tags
   end
-  def add_task
+
+  def add_task(task)
   end
 
-  def complete_task
-    # should this exisst on project? no
+  def delete_task(task)
   end
 
-  def delete_task
+  # def remove_task(task) ? If you need to move a task from project A to project B..
+  # what about an explicit move command instead? Let the data layer handle the mucking about.
+  
+  def complete_task(task)
+  
   end
-
-  # TODO factor these out into shared class
+  
   
   def to_s
     "hello I'm a project TODO"

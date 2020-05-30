@@ -38,7 +38,7 @@ x   completion timestamp ;; active means no completed timestamp, no deletion tim
 x   deletion timestamp ;; deleted means deleted time stamp is present
 x   last-reviewed timestamp
 x    notes, each with a timestamp
-     title changes = new note pushed
+x     title changes = new note pushed
 at minimum, each project and task has a history of changes ('log')
   and each project and task has a history of notes, with the most recent one always displayed for quick status check
 although ideally a glance through the color-coded tasks on a project gives you the status, but if you want more you can delve in.
