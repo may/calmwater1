@@ -50,10 +50,10 @@ class ProjectTest < Minitest::Test
 
 
   def test_keyword
-    assert_equal(@test.keyword,"tp")
-    @test.keyword = "toilet-paper"
-    assert_equal(@test.keyword,"toilet-paper")
-    assert_equal("Updated keyword:\n old: tp\n new: toilet-paper",@test.notes.first.last)
+    assert_equal("tp",@test.keyword)
+    @test.keyword = "toiletpaper"
+    assert_equal("toiletpaper",@test.keyword)
+    assert_equal("Updated keyword:\n old: tp\n new: toiletpaper",@test.notes.first.last)
   end
 
 
