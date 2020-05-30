@@ -65,8 +65,20 @@ class ProjectTest < Minitest::Test
   end
 
   def test_completed
+    assert_nil(@test.completed)
+    assert_nil(@test.completed?)
+    @test.complete
+    assert_true(@test.completed?)
+    assert_equal(Time.now.to_i,@test.completed.to_i)
   end
+  
   def test_deleted
+    assert_nil(@test.deleted)
+    assert_nil(@test.deleted?)
+    @test.delete
+    assert_true(@test.deleted?)
+    assert_equal(Time.now.to_i,@test.deleted.to_i)
+
   end
 
   # todo respond to project-object.deleted? 
