@@ -1,17 +1,11 @@
 # Created: 2020-05-28
-# Revised: 2020-05-29
+# Revised: 2020-05-30
 
 require 'yaml'
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 
-
 ## TODO $projects_and_tasks
-
-=begin
-multiline comment
-is like this
-=end
 
 
 # store in arrays by keyword so maybe hash tables?
@@ -52,7 +46,10 @@ class ProjectTaskCommon
   end
 
   def add_note(note_text)
-    # Add notes to front of array, so that they are stored in reverse chronological order.
+    # Add notes to front of array, so that they are stored in reverse
+    # chronological order. This will make it easy later to always display
+    # the latest note; notes[].
+    # Of course I could write an accessor for that... .latest_note meh.. s/m.
     @notes.unshift([Time.now,note_text])
   end
 
