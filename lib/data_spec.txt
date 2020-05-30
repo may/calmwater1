@@ -1,0 +1,55 @@
+
+AWESOME SPEC HERE. READ THIS.
+so to recap.
+projects contain tasks.
+  projects cannot contain further projects (no subprojects)
+    if you need to group a set of projects together, tag them.
+tasks cannot contain other tasks (no subtasks)
+  note to self, if you think they should, then try creating more projects
+     else break it down more & CLARIFY your thinking
+tasks can exist independent of projects
+  if you have a single action that isn't tied to a multi-step desired outcome ('project')
+projects must have at least one task/next action defined.
+  if not the system will remind you
+projects can have more than one task/next action defined.
+
+projects have this metadata, in addition to containing tasks:
+x projects must have a single--unique--keyword, for rapid access
+x    This is used to uniquely address the project rapidly from the command line.
+x  projects are grouped by area of life (work, personal, home/family, business)
+   "life contexts", for separation of work/personal life.
+    I don't want to see my work tasks after 5p, or my coworkers to see that smutty romance I'm writing after work.
+x   projects are also grouped by tags
+    form is #tag or #anothertag or #another-tag
+x       tasks do NOT have tags, only action context (not to be confused w/ life context).
+x   projects have a project support material section.
+    when viewing a task you see title, date metadata, action context, and most recent note. and has a history of note/title/reviewed changes.
+    when viewing a project you see everything a task has,
+    including most recent note,
+    AND you see a static few lines of project support material (psm)
+      that can be edited at any time.
+      [this is to solve the 'project info at bottom of notes list in RTM' problem]
+
+projects AND tasks have this metadata:
+x   task or project title (the actual name of the project or what the task actually is haha)
+x   creation timestamp 
+x   completion timestamp ;; active means no completed timestamp, no deletion timestamp. completed means completed timestamp and not deleted timestamp.
+x   deletion timestamp ;; deleted means deleted time stamp is present
+x   last-reviewed timestamp
+x    notes, each with a timestamp
+     title changes = new note pushed
+at minimum, each project and task has a history of changes ('log')
+  and each project and task has a history of notes, with the most recent one always displayed for quick status check
+although ideally a glance through the color-coded tasks on a project gives you the status, but if you want more you can delve in.
+
+
+in addition projects track this metadata in the log
+  added/removed/completed/deleted task = new note pushed
+
+in addition, tasks only track this metadata
+x   <action context> what do I need to do this? my work computer? my personal computer? errands/car/bike? home w/ mower etc.
+
+
+
+
+

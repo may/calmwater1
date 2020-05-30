@@ -56,10 +56,19 @@ class ProjectTest < Minitest::Test
   
   def test_tasks
   end
+  
   def test_psm
     @test.psm = "test project support material"
     assert_equal("test project support material",@test.psm)
     @test.psm = "new, better, shorter psm"
     assert_equal("Updated psm:\n old: test project support material\n new: new, better, shorter psm",@test.notes.first.last)
   end
+
+  def test_completed
+  end
+  def test_deleted
+  end
+
+  # todo respond to project-object.deleted? 
+  
 end 
