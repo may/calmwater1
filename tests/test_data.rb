@@ -7,14 +7,21 @@ class ProjectTest < Minitest::Test
     @test = Project.new("test project","tp","personal")
     @now = @test.created
   end
-  
-  # Time stuff first b/c miliseconds matter and I'm too lazy to do it right
-# https://stackoverflow.com/questions/35804038/how-can-i-make-this-time-assertion-match-perfectly-with-either-time-date-or-da  
 
-  # TODO TODO TODO
-  # make it assert_equal EXPECTED actual
-  # so like STRING then CHECK VARIBLE VALUE
-  
+  def test_title
+    assert_equal("test project",@test.title)
+    @test.title = "new title"  
+    assert_equal("new title",@test.title)
+    assert_equal("Updated title:\n old: test project\n new: new title",@test.notes.first.last)
+  end 
+
+  def test_keyword
+    assert_equal("tp",@test.keyword)
+    @test.keyword = "toiletpaper"
+    assert_equal("toiletpaper",@test.keyword)
+    assert_equal("Updated keyword:\n old: tp\n new: toiletpaper",@test.notes.first.last)
+  end
+
   def test_add_note
     @test.add_note("called fence company")
     assert_equal("called fence company",@test.notes.first.last)
@@ -39,22 +46,9 @@ class ProjectTest < Minitest::Test
     assert_equal("Updated reviewed:\n old: #{@now}\n new: #{fixed_time}",@test.notes.first.last)
   end     
 
-  # End time stuff
+  # s/m test_created. would have to find a better way to set @now haha.
 
-  def test_title
-    assert_equal("test project",@test.title)
-    @test.title = "new title"  
-    assert_equal("new title",@test.title)
-    assert_equal("Updated title:\n old: test project\n new: new title",@test.notes.first.last)
-  end 
-
-
-  def test_keyword
-    assert_equal("tp",@test.keyword)
-    @test.keyword = "toiletpaper"
-    assert_equal("toiletpaper",@test.keyword)
-    assert_equal("Updated keyword:\n old: tp\n new: toiletpaper",@test.notes.first.last)
-  end
+  
 
 
   
