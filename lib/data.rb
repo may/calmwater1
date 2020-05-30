@@ -34,16 +34,16 @@ class Project
 
   # Not sure need modified, since have explict reviewed date. 2020-05-30 
   # IF we do have modified, need to make sure it gets updated whenever ANYTHING
-  # on the Project is touched.
-#  attr_accessor :modified
-  attr_accessor_with_logging :title, :keyword, :tags, :psm
+  # on the Project is touched, which requires more coding/custom assessor and readers.
+  #  attr_accessor :modified
+  attr_accessor_with_logging :title, :keyword, :tags, :psm, :life_context
   attr_reader :notes, :tasks, :created, :completed, :deleted, :last_reviewed
   
   def initialize(title, keyword, life_context)
     now = Time.now
     @title = title
     @keyword = keyword
-    @life_context = life_context
+    @life_context = life_context.to_sym
     @created = now
     @notes = Array.new
     @notes.unshift([now,"Created: #{title}"])
