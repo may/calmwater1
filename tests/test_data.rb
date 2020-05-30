@@ -17,12 +17,12 @@ class ProjectTest < Minitest::Test
   
   def test_add_note
     @test.add_note("called fence company")
-    assert_equal(@test.notes.first.last,"called fence company")
+    assert_equal("called fence company",@test.notes.first.last)
     @test.add_note("called Internet company re: faster Internet")
-    assert_equal(@test.notes.first.last,"called Internet company re: faster Internet")
-    assert_equal(@test.notes[1].last,"called fence company")
-    assert_equal(@test.notes.last.last,"Created: test project")
-    assert_equal(@test.notes.last.first.to_i,@now.to_i)
+    assert_equal("called Internet company re: faster Internet",@test.notes.first.last)
+    assert_equal("called fence company",@test.notes[1].last)
+    assert_equal("Created: test project",@test.notes.last.last)
+    assert_equal(@now.to_i,@test.notes.last.first.to_i)
   end
 
   def test_modified

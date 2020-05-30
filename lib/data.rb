@@ -62,6 +62,7 @@ class Project
   end
 end
 
+=begin
 ## manual testing
 test = Project.new("test project","tp","personal")
 test.add_note("called john")
@@ -76,7 +77,7 @@ else
 end 
 test.title = "new title"
 puts test.title
-
+=end
 
 
 class Task
