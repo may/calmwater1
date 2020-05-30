@@ -1,4 +1,11 @@
-require_relative '../lib/data'
+# Created: 2020-05-29
+# Revised: 2020-05-30
+
+
+require_relative '../lib/common_project_task'
+require_relative '../lib/project'
+require_relative '../lib/task'
+
 require 'minitest/autorun'
 require 'minitest/pride'
 
