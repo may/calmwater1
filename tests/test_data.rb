@@ -28,7 +28,7 @@ class ProjectTest < Minitest::Test
   def test_modified
       @test.modified = @now
       @test.modified = Time.new(2020, 05, 29, 17, 9)
-      assert_equal(@test.modified.to_i,Time.new(2020, 05, 29, 17, 9).to_i)
+      assert_equal(Time.new(2020, 05, 29, 17, 9).to_i,@test.modified.to_i)
   end 
 
   #todo last reviewed should log notes too
