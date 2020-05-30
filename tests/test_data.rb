@@ -5,7 +5,7 @@ require 'minitest/pride'
 class ProjectTest < Minitest::Test
   def setup
     @test = Project.new("test project","tp","personal")
-    @now = Time.now
+    @now = @test.created
   end
   
   # Time stuff first b/c miliseconds matter and I'm too lazy to do it right
@@ -31,6 +31,15 @@ class ProjectTest < Minitest::Test
       assert_equal(@test.modified.to_i,Time.new(2020, 05, 29, 17, 9).to_i)
   end 
 
+  #todo last reviewed should log notes too
+  def test_reviewed
+    assert_equal(@now.to_i,@test.reviewed.to_i)
+    fixed_time = Time.new(2020, 05, 30, 11, 12)
+    @test.reviewed = fixed_time
+    assert_equal(fixed_time.to_i,@test.reviewed.to_i)
+    assert_equal("Updated reviewed:\n old: #{@now}\n new: #{fixed_time}",@test.notes.first.last)
+  end     
+
   # End time stuff
 
   def test_title
@@ -48,6 +57,8 @@ class ProjectTest < Minitest::Test
     assert_equal("Updated keyword:\n old: tp\n new: toilet-paper",@test.notes.first.last)
   end
 
+
+  
   def test_tags
   end 
   def test_tasks

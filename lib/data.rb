@@ -19,7 +19,7 @@ is like this
 
 class Project
  def Project.attr_accessor_with_logging(*names)
-    attr_reader *names
+    attr_reader(*names)
     names.each do |name|
       define_method :"#{name}=" do |v|
         current_instance_variable = instance_variable_get(:"@#{name}")
@@ -35,19 +35,21 @@ class Project
  # TODO test /do implementaiton @completed
  # TODO test /do implementaiton @deleted
  
- attr_accessor :modified, 
- attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm, :completed, :deleted, :last_reviewed
+ attr_accessor :modified
+ attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm, :completed, :deleted, :reviewed
  attr_reader :notes, :created
  
  def initialize(title, keyword, life_context)
-    now = Time.now
-    @title = title
-    @keyword = keyword
-    @life_context = life_context
-    @notes = Array.new
-    @notes.unshift([now,"Created: #{title}"])
-    @created = now
-  end
+   now = Time.now
+   @title = title
+   @keyword = keyword
+   @life_context = life_context
+   @notes = Array.new
+   @notes.unshift([now,"Created: #{title}"])
+   @created = now
+   @modified = now
+   @reviewed = now 
+ end
 
   def add_note(note_text)
     # Add notes to front of array, so that they are stored in reverse chronological order.
