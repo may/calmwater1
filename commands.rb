@@ -6,6 +6,8 @@
 # For example: lp work
 # For example: exit
 # Add new task: some task
+
+=begin
 (define (dispatch-command user-input)
   (case user-input
     ("exit" (setq exit-extbrain true))
@@ -16,3 +18,4 @@
   (until exit-extbrain
     (print "> ")
     (dispatch-command (read-line))))
+=end
