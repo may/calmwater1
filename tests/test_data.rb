@@ -48,18 +48,18 @@ class ProjectTest < Minitest::Test
 
   # s/m test_created. would have to find a better way to set @now haha.
 
-  
-
-
-  
   def test_tags
-  end 
+    assert_equal([],@test.tags)
+    @test.tags = %w{ house yard }
+    assert_equal(%w{ house yard },@test.tags)
+  end
+  
   def test_tasks
   end
   def test_psm
-#    @test.psm = "test project support material"
-#    assert_equal(@test.psm,"test project support material")
-#    @test.psm = "new, better, shorter psm"
-  #    assert_equal(@test.notes.first.last, "Updated psm:\n old: test project support material\n new: new, better, shorter psm")
+    @test.psm = "test project support material"
+    assert_equal("test project support material",@test.psm)
+    @test.psm = "new, better, shorter psm"
+    assert_equal("Updated psm:\n old: test project support material\n new: new, better, shorter psm",@test.notes.first.last)
   end
 end 

@@ -48,7 +48,9 @@ class Project
    @notes.unshift([now,"Created: #{title}"])
    @created = now
    @modified = now
-   @reviewed = now 
+   @reviewed = now
+   @tags = Array.new
+   @psm = ""
  end
 
   def add_note(note_text)
