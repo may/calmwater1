@@ -92,8 +92,7 @@ class Project < ProjectTaskCommon
     @psm = ""
   end
 
-  # Expects tags to be an array
-  # TODO make a test or figure out how to enforce in ruby w/o throwing an exception?
+  # Expects tags to be an array of symbols, but a single symbol is ok too.
   def tags=(tags)
     if tags.is_a? Symbol
       tags = [tags]
