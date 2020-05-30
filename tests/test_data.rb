@@ -42,9 +42,9 @@ class ProjectTest < Minitest::Test
   # End time stuff
 
   def test_title
-    assert_equal(@test.title, "test project")
+    assert_equal("test project",@test.title)
     @test.title = "new title"  
-    assert_equal(@test.title, "new title")
+    assert_equal("new title",@test.title)
     assert_equal("Updated title:\n old: test project\n new: new title",@test.notes.first.last)
   end 
 
