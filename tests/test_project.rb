@@ -9,27 +9,27 @@ require_relative '../lib/task'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-class ProjectAndTaskTest < Minitest::Test
+class ProjectTest < Minitest::Test
   def setup
     @test_project = Project.new("test project","tp","family")
     @now = @test_project.created
   end
 
-  def test_title
+  def test_project_title
     assert_equal("test project",@test_project.title)
     @test_project.title = "new title"  
     assert_equal("new title",@test_project.title)
     assert_equal("Updated title:\n old: test project\n new: new title",@test_project.notes.first.last)
   end 
 
-  def test_keyword
+  def test_project_keyword
     assert_equal("tp",@test_project.keyword)
     @test_project.keyword = "toiletpaper"
     assert_equal("toiletpaper",@test_project.keyword)
     assert_equal("Updated keyword:\n old: tp\n new: toiletpaper",@test_project.notes.first.last)
   end
 
-  def test_add_note
+  def test_project_add_note
     @test_project.add_note("called fence company")
     assert_equal("called fence company",@test_project.notes.first.last)
     @test_project.add_note("called Internet company re: faster Internet")
@@ -87,9 +87,8 @@ class ProjectAndTaskTest < Minitest::Test
 
   def test_project_tags_wrong
     assert_output("Hey! Your tags weren't a symbol, array or string, so no promises things will work. Data saved though..\n") { @test_project.tags = 1234 }
-
-
   end
+
 =begin  
   # Test passes, but not sure I need modified. 2020-05-30.
   def test_modified
@@ -108,9 +107,9 @@ class ProjectAndTaskTest < Minitest::Test
   end     
 
   # s/m test_created. would have to find a better way to set @now haha.
-
   
   def test_tasks
+    # TODO
   end
   
   def test_project_psm
