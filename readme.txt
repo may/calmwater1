@@ -11,6 +11,12 @@ implementing tasks in ruby
 
 MAYBE
 
+!! is writing mode
+just keeps acecpt ing text line by line
+until !!
+and saves it to idsk each time inc ase of ctrl-c if caught writing at work
+
+
 .finishing design goals in blog post before writing software?
 MAYBE.process all the subtasks in rtm for this project to see if any other features needed to be accounted for in data sturcture
 

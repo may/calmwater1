@@ -32,6 +32,17 @@ class ProjectAndTaskTest < Minitest::Test
     assert_equal(@now.to_i,@test_project.notes.last.first.to_i)
   end
 
+  def test_project_without_life_context
+    p2 = Project.new("some title", "some keyword but no life context you notice")
+    assert_equal(:personal,p2.life_context)
+  end
+
+  def test_project_tags
+    assert_empty(@test_project.tags)
+    # %i is shortcut for symbols
+    # @test.tags = %i{ one two three }
+  end
+    
 =begin  
   # Test passes, but not sure I need modified. 2020-05-30.
   def test_modified

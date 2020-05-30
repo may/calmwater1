@@ -81,17 +81,28 @@ end
  # TODO test tasks/do implementaiton @tasks
 
 class Project < ProjectTaskCommon
-  attr_accessor_with_logging :keyword, :tags, :psm, :life_context
-  attr_reader :tasks
+  attr_accessor_with_logging :keyword, :life_context, :psm
+  attr_reader :tasks, :tags
 
-  def initialize(title, keyword, life_context)  # Project
+  def initialize(title, keyword, life_context = :personal)  # Project
     super(title)
-    @keyword = keyword
+    @keyword = keyword # s/m make a symbol?
     @life_context = life_context.to_sym
     @tags = Array.new
     @psm = ""
   end
 
+  def tags=(tags)
+    # Expects tags to be an array
+    # TODO make a test or figure out how to enforce in ruby w/o throwing an exception?
+    print "tags all: "
+    puts tags.all? { |tag| tag.is_a? Symbol }
+    # if all tags are symblos then set
+    # else convet to sym
+    # else log error
+    add_note("Updated tags:\n old: #{@tags}\n new: #{tags}")
+    @tags = tags
+  end
   def add_task
   end
 
