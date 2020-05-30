@@ -2,7 +2,7 @@ require_relative '../lib/data'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-class ProjectTest < Minitest::Test
+class ProjectAndTaskTest < Minitest::Test
   def setup
     @test_project = Project.new("test project","tp","personal")
     @now = @test_project.created
