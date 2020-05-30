@@ -29,26 +29,27 @@ class Project
     end
   end 
 
- # TODO test tags/do implementaiton @tags
  # TODO test tasks/do implementaiton @tasks
- # TODO test/do implementaiton @psm
- # TODO test /do implementaiton @completed
- # TODO test /do implementaiton @deleted
-  
-  attr_accessor :modified
-  attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm, :completed, :deleted, :reviewed
-  attr_reader :notes, :created
+
+
+  # Not sure need modified, since have explict reviewed date. 2020-05-30 
+  # IF we do have modified, need to make sure it gets updated whenever ANYTHING
+  # on the Project is touched.
+#  attr_accessor :modified
+  attr_accessor_with_logging :title, :keyword, :tags, :tasks, :psm
+  attr_reader :notes, :created, :completed, :deleted, :last_reviewed
   
   def initialize(title, keyword, life_context)
     now = Time.now
     @title = title
     @keyword = keyword
     @life_context = life_context
+    @created = now
     @notes = Array.new
     @notes.unshift([now,"Created: #{title}"])
-    @created = now
-    @modified = now
-    @reviewed = now
+
+#    @modified = now
+    @last_reviewed = nil
     @tags = Array.new
     @psm = ""
     @completed = nil
@@ -66,18 +67,30 @@ class Project
   end
 
   def completed?
+    # !! is not not, to force boolean
     !!@completed
   end
-  
-  def  
-    
-    
-    def to_s
-      "hello I'm a project"
-    end
+
+  def delete
+    @deleted = Time.now
+    add_note("Task deleted.")
   end
 
-  =begin
+  def deleted?
+    !!@deleted
+  end
+
+  def reviewed
+    @last_reviewed = Time.now
+    add_note("Task reviewed.")
+  end
+  
+  def to_s
+    "hello I'm a project TODO"
+  end
+end
+
+=begin
      ## manual testing
      test = Project.new("test project","tp","personal")
      test.add_note("called john")
@@ -92,7 +105,7 @@ class Project
      end 
      test.title = "new title"
      puts test.title
-     =end
+=end
 
 
   class Task

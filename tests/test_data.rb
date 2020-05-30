@@ -32,18 +32,21 @@ class ProjectTest < Minitest::Test
     assert_equal(@now.to_i,@test.notes.last.first.to_i)
   end
 
+=begin  
+  # Test passes, but not sure I need modified. 2020-05-30.
   def test_modified
       @test.modified = @now
       @test.modified = Time.new(2020, 05, 29, 17, 9)
       assert_equal(Time.new(2020, 05, 29, 17, 9).to_i,@test.modified.to_i)
   end 
-
+=end
+  
   def test_reviewed
-    assert_equal(@now.to_i,@test.reviewed.to_i)
-    fixed_time = Time.new(2020, 05, 30, 11, 12)
-    @test.reviewed = fixed_time
-    assert_equal(fixed_time.to_i,@test.reviewed.to_i)
-    assert_equal("Updated reviewed:\n old: #{@now}\n new: #{fixed_time}",@test.notes.first.last)
+    assert_nil(@test.last_reviewed)
+    now = Time.now
+    @test.reviewed
+    assert_equal(now.to_i,@test.last_reviewed.to_i)
+    assert_equal("Task reviewed.",@test.notes.first.last)
   end     
 
   # s/m test_created. would have to find a better way to set @now haha.
@@ -66,19 +69,20 @@ class ProjectTest < Minitest::Test
 
   def test_completed
     assert_nil(@test.completed)
-    assert_nil(@test.completed?)
+    refute(@test.completed?) # refute is what we say when we want assert_false
     @test.complete
-    assert_true(@test.completed?)
+    assert(@test.completed?)
     assert_equal(Time.now.to_i,@test.completed.to_i)
+    assert_equal("Task completed.",@test.notes.first.last)
   end
   
   def test_deleted
     assert_nil(@test.deleted)
-    assert_nil(@test.deleted?)
+    refute(@test.deleted?)
     @test.delete
-    assert_true(@test.deleted?)
+    assert(@test.deleted?)
     assert_equal(Time.now.to_i,@test.deleted.to_i)
-
+    assert_equal("Task deleted.",@test.notes.first.last)
   end
 
   # todo respond to project-object.deleted? 
