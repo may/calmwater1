@@ -4,16 +4,21 @@
 require_relative 'extbrain_data.rb'
 require 'tty-reader'
 
+# TODO - escape to cancel or exit?
+# trying exit for now, with ctl-c 2020-05-30 
 def command_loop
   reader = TTY::Reader.new
-  reader.on(:keyctrl_x, :keyescape) do
-  puts "Exiting..."
-  exit
-end
+  reader.on(:keyctrl_c, :keyescape) do
+    puts "Exiting..."
+    exit
+  end
+  loop do
+    puts reader.read_line('=> ')
+  end
 end 
 
 
-# TODO - escape to cancel or exit?
+
 
 
 def hello
