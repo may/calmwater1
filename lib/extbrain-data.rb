@@ -3,6 +3,9 @@
 
 require 'yaml'
 
+#TODO come up with a better name extbrain-datasabes..
+
+
 ## TODO put all this in a separate file called ProjectsAndTasks.rb, and rename this file to ProjectTask.rb
 ## I imagine there might be a lot of common accesor methods for this data structure,
 ## probably enough to warrent a class: ProjectsAndTasks, and save me writing same codeslightly  wrong each time
@@ -19,13 +22,11 @@ require 'yaml'
 
 
 
-#m = YAML.load(File.read('yaml.dump'))
-# m = File.open('/marshal.dump', 'wb') { |f| f.write(Marshal.dump(m)) }
+#m = YAML.load(File.read('extbrain.yaml'))
+
 
 #m = [1, 2, 3, 4, "Ruby"]
 
 #sleep 0.9
 
-#File.open('yaml.dump', 'w') { |f| f.write(YAML.dump(test)) }
-#File.open('marshal.dump', 'wb') { |f| f.write(Marshal.dump(m)) }
-
+#File.open('extbrain.yaml', 'w') { |f| f.write(YAML.dump(test)) }
