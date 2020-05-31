@@ -2,11 +2,13 @@
 # Revised: 2020-05-31
 
 require_relative 'extbrain_data.rb'
+$writing_mode = false
 
 # #psudocode #TODO
 def command_loop
+
 #   unless user_wants_to_exit # assuming can't use reserved word as var
-#     writing_mode ? print "wm> " : print "> "
+  $writing_mode ? print("wm> ") : print("> ")
 #     input = gets
 #     dispatch_user_input(input)
 #   else
@@ -39,9 +41,13 @@ end
 def hello
 # Once development finished, update this to 0.2 "testing", with a fixed date
   puts "Welcome to extbrain, version 0.1 (\"prototype\"), #{Time.now.strftime('%Y-%m-%d')}"
+  print "Loading file..."
+  puts "loaded. TODO"
 end
                                                                        
 def goodbye
+  print "Saving file..."
+  puts "saved! TODO"
   "Thank you for using extbrain. Have a good day!"
 end 
 
