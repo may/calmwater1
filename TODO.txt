@@ -9,6 +9,12 @@
 finishing project implementaiton in ruby
 implementing tasks in ruby
 
+important: when a project displays, also display (along with psm, and most recent
+note and last reviewed timestamp), also display other projects with this same tag
+because there migght be 5-10 things that need to be done 'for upgrade' and seeing them together
+is exteremyl helpful
+esp since maybe you can only have one next action on a project? and not multipule tasks???tbd
+
 MAYBE
 
 !! is writing mode
