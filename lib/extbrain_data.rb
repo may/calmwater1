@@ -2,6 +2,8 @@
 # Revised: 2020-05-30
 
 require 'yaml'
+require_relative 'project.rb'
+require_relative 'task.rb'
 
 #TODO come up with a better name extbrain-datasabes..
 
