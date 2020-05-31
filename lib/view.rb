@@ -2,8 +2,18 @@
 # Revised: 2020-05-30
 
 require_relative 'extbrain_data.rb'
-#require 'tty-reader'
+require 'tty-reader'
 
+def command_loop
+  reader = TTY::Reader.new
+  reader.on(:keyctrl_x, :keyescape) do
+  puts "Exiting..."
+  exit
+end
+end 
+
+
+# TODO - escape to cancel or exit?
 
 
 def hello
@@ -15,8 +25,3 @@ def goodbye
 end 
 
 
-
-
-hello
-#command_loop
-goodbye
