@@ -15,12 +15,57 @@ because there migght be 5-10 things that need to be done 'for upgrade' and seein
 is exteremyl helpful
 esp since maybe you can only have one next action on a project? and not multipule tasks???tbd
 
+
+a to launch agendas
+where you then select by person 1-15 of preselected (sarah ed paul nata etc.)
+or a ed to serach trough keys (symbols) of people, and grab them
+question: how are agendas handled?
+ must be through string searching
+ sinc I can't tag stuff
+ but that's better
+ nata - do this
+ ed - waiting on this
+ or I am waiting on paul for this other thing
+ or sarah is going to run a marathon etc.
+let the system parsle them
+
+this is key: during weekly review you are prompted with s/m
+ if there are <200 s/m, you are prompetd with one per w/r
+ if >200 s/m you are prompetded with 2 per w/r
+ if >400 s/m ... 3
+
+
+this is also key:
+global variabl of last weekly review completed fully
+if >7 days, prompt the user
+if >10 days, strongly prompt the user (unless put into vacation mode)
+(prompting means a banner on startup:
+  blue: 8(or9 or 10) days since last weekly review
+if >10
+  red: 8(or9 or 10) days since last weekly review
+  and prompt changes to wrneeded>
+  this way if a friday gets overwhleemed and you gotta wait until monday that's ok
+
+
+
 MAYBE
 
 !! is writing mode
 just keeps acecpt ing text line by line
 until !!
 and saves it to idsk each time inc ase of ctrl-c if caught writing at work
+
+!!a or !!b jumps you into a specific document
+you can even edit with e
+where it will give you a paragraph at a time to edit
+you can organizse the document by numbers 1-100+; one per paragraph or section for moving text around?
+also when you type 'exit' out of writing mode
+it outputs 100 newlines
+to clear the screen
+and then outputs 'today' for your current context
+(presumably work)
+or if today is less than 3,
+outputs your project list for that context
 
 
 .finishing design goals in blog post before writing software?
@@ -610,10 +655,24 @@ so do we:
 I'm thinking #2 + #3/4; conditionally load database if it's changed (not by us).
 
 
+
+
 ==================
 
 
+
 csv command to dump everything to a csv? I did complain about lack of this with RTM before writing this software, so it's only fair... (of course if software is private then whatever)
+
+
+
+2020-05-31-tldr have s/m, no subtasks.
+debating between an ideas list (as in just a list of ideas, not even to someday/maybe really)
+such as things to maybe blog about someday
+yeah should probably go on s/m list
+golly it would be nice tohave a s/m list with subtasks
+so you could have 'blog ideas' and a bunch under there
+but you can just do 'idea about blogging #bi" for blog ideas and that'll do it
+
 
 
 # MAYBE NOT/HELL NO.

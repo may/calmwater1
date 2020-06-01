@@ -36,17 +36,26 @@ def dispatch_user_input(input_string)
   print "got some input: "
   p input_string
   puts
-  
-   if $writing_mode
-#     unless input_string.strip == '!!' # (to terminate writing mode)
+  print 'input w/ lstrip'
+  p input_string.lstrip
+  puts
+  print 'does this input == exit? '
+  puts input_string == 'exit'
+  if $writing_mode
+    ## TODO don't strip until after this check in case r whitespace signiifacnt? esp since writing lines to file?
+    # todo make 'exit' leane writing mode too
+    unless 'exit' == input_string.lstrip! or '!!' == input_string.lstrip!
+      puts 'writing mode magic here'
 #       append input string to file writing_mode.txt
-#     else
-#       writing_mode = false
-#     end
-   else 
-     case input_string # todo .strip? should be safe b/c not strip! (preserves originial) and writing mode already handled
-     when '!!'
-#       writing_mode = true
+    else
+      puts 'Disabling writing mode..'
+      $writing_mode = false
+    end
+  else 
+    case input_string # todo .strip? should be safe b/c not strip! (preserves originial) and writing mode already handled
+    when '!!' || 'wm' # todo test that wm works too
+      puts 'Enabling writing mode..'
+      $writing_mode = true
 #       open file writing_mode.txt
 #       append newline
 #       append "-- #{Today.now} --"
