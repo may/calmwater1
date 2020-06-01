@@ -29,11 +29,61 @@ question: how are agendas handled?
  or sarah is going to run a marathon etc.
 let the system parsle them
 
+add s/m by: foo bar #sm or #smcode as defined below
+query with: sm or lsm
+
+
 this is key: during weekly review you are prompted with s/m
- if there are <200 s/m, you are prompetd with one per w/r
+ if there are <200 s/m use schedule outlined below (1x for some categories etc.)
  if >200 s/m you are prompetded with 2 per w/r
  if >400 s/m ... 3
 
+this is key:
+ during weekly review surface certian things:
+  projects and tasks without a last reviewed
+   (upto 10)
+  s/m, by category:
+  1x/week work future projcets ('upcoming') vs ('future)? (at least future, not sure if upcoming needed)
+  1x/week personal future personal projects
+  1x/week writing projects
+  1x/week blogging projects
+  1x/2week books to read (if day = odd)
+  pick 1x/week, oldest last-reviewed 
+   house projects
+   sarah
+   sarah gifts
+   other gifts
+   writing ideas
+   travel/trips/dates
+   food
+   music
+   movies
+
+IMPORTANT: you can subcategorize your s/m list
+TODO decide if these are the categories I want
+and how to add to them? #sm #hcis or #sm #work
+or #smhcis #smwork
+#smp #smproj #smprojects
+#smbooks #smb 
+#smw #smwriting
+#smbi [blog ideas, else steal smb from books? else no shortcode] #smblog
+
+1x/week work future projcets ('upcoming') vs ('future)? (at least future, not sure if upcoming needed)
+1x/week personal future personal projects
+1x/week writing projects
+1x/week blogging projects
+1x/month books to read
+pick 1x/week, oldest last-reviewed (or nil?)
+ house projects
+ sarah
+ sarah gifts
+ other gifts
+ writing ideas
+ travel/trips/dates
+ food
+ music
+ movies
+ 
 
 this is also key:
 global variabl of last weekly review completed fully
@@ -674,11 +724,16 @@ so you could have 'blog ideas' and a bunch under there
 but you can just do 'idea about blogging #bi" for blog ideas and that'll do it
 
 
+feature: duplicate checking: consider, when adding a task, if a similar phrase already exists, surfacing that to the user after the task is created.
+so that I don't have two tasks with a similar name.
+
 
 # MAYBE NOT/HELL NO.
 See devlog.txt for details. Add new at top.
 
-
+- no: 'cancelled' project status. if it's deleted, make your own assumptions.
+  Exception to this: if you find yourself cancelling projects and making notes,
+  then could setup a cancelled status and have it auto-log when you cc or somtehing (cc = command for cancaled or cp for cancelled project haha)
 - no: automatic detection of agenda people. yes: user defined agendas
 - non-unique keywords
 - projects contain tasks. no subprojects. no subtasks. flat structure.
