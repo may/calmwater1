@@ -13,8 +13,7 @@ end
 
 # #psudocode #TODO
 def command_loop
-  goodbye if $exit
-  until $exit
+  until $exit # We don't actually set this anymore, we just call exit straight up.
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
     dispatch_user_input(input)
@@ -25,7 +24,6 @@ end
 def dispatch_user_input(input_string)
   input_string.rstrip! # remove trailing whitespace, which is at minimum a newline
   if $writing_mode
-    # todo make 'exit' leane writing mode too
     unless 'exit' == input_string or '!!' == input_string
       writing_mode_input(input_string)
     else
