@@ -8,12 +8,12 @@ require_relative 'task.rb'
 
 class ExtbrainData
   def initialize()
-    # todo load data
+    load_data
   end
   
   def load_data
     print "Loading file..."
-    puts "loaded. TODO #{$projects_and_tasks.projects}"
+    puts "loaded. TODO #{$projects_number} #{$tasks_number}"
   end
   
   def save_data

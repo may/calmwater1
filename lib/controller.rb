@@ -7,7 +7,7 @@ $writing_mode = false
 $exit = false
 
 at_exit do
-  save_data
+  $projects_and_tasks.save_data
   puts "Thank you for using extbrain. Have a good day!"
 end
 
