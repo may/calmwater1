@@ -13,7 +13,7 @@ end
 
 # #psudocode #TODO
 def command_loop
-  until $exit # We don't actually set this anymore, we just call exit straight up.
+  while true 
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
     dispatch_user_input(input)
@@ -34,7 +34,6 @@ def dispatch_user_input(input_string)
     when '!!', 'wm'
       enable_writing_mode
      when 'exit'
-#       $exit = true
        exit
      end
    end
