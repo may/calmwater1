@@ -1,10 +1,36 @@
 # Created: 2020-05-30
-# Revised: 2020-05-30
+# Revised: 2020-06-01
 
 require 'yaml'
 require_relative 'project.rb'
 require_relative 'task.rb'
 
+
+class ExtbrainData
+  def initialize()
+    # todo load data
+  end
+  
+  def load_data
+    print "Loading file..."
+    puts "loaded. TODO #{$projects_and_tasks.projects}"
+  end
+  
+  def save_data
+    print "Saving file..."
+    #File.open('extbrain.yaml', 'w') { |f| f.write(YAML.dump(test)) }
+    puts "saved! TODO"
+  end 
+
+  def projects_number
+  end
+  def tasks_number
+  end
+  def projects_number_average
+  end
+  def tasks_number_average
+  end
+end
 #TODO come up with a better name extbrain-datasabes..
 
 
@@ -31,4 +57,3 @@ require_relative 'task.rb'
 
 #sleep 0.9
 
-#File.open('extbrain.yaml', 'w') { |f| f.write(YAML.dump(test)) }
