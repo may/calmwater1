@@ -4,16 +4,22 @@
 require 'yaml'
 require_relative 'project.rb'
 require_relative 'task.rb'
-
+require_relative 'habit.rb'
 
 class ExtbrainData
+  # todo accessors?
   def initialize()
+    # this should probably be @habits but trying global during dev..
     load_data
+    $habits = Array.new unless $habits
+    @projects = Array.new unless @projects
+    @tasks = Array.new unless @tasks
   end
   
   def load_data
     print "Loading file..."
     puts "loaded. TODO #{$projects_number} #{$tasks_number}"
+    # stats is a hell no, but knowing how many loaded just might be fun! helps with my rtm statks spreadsheet too
   end
   
   def save_data

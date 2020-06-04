@@ -1,43 +1,39 @@
 # Created: 2020-05-30
-# Revised: 2020-06-01
+# Revised: 2020-06-03
 
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
-$writing_mode = false
-$exit = false
 
-at_exit do
-  $projects_and_tasks.save_data
-  puts "Thank you for using extbrain. Have a good day!"
-end
 
-# #psudocode #TODO
-def command_loop
-  while true 
-    $writing_mode ? print("wm> ") : print("> ")
-    input = gets
-    dispatch_user_input(input)
-  end
-end
-
-# # psudocode TODO
-def dispatch_user_input(input_string)
-  input_string.rstrip! # remove trailing whitespace, which is at minimum a newline
-  if $writing_mode
-    unless 'exit' == input_string or '!!' == input_string
-      writing_mode_input(input_string)
+def habit_input(keyword, content)
+  puts "habit_input"
+  if content
+    # todo some kind of checknig to prevent keyword conflicts
+    # eg if it exists do keyword1 then keyword2 etc.
+    # or hardstop
+    # also, todo, make this a generic method across all things
+    h = Habit.new(content, keyword, nil)
+    # TODO prompt user for trigger? or ??
+    $habits << h
+    puts "yay habit created"
+  elsif keyword
+    if $habits.empty?
+      puts 'No habits. Create one by typing \'h keyword title of your habit\'' 
+    elsif content == 'info'
+      habs = $habits.find_all { |habit| habit.keyword == keyword }
+      puts habs.first.info
     else
-      disable_writing_mode
-    end
-  else 
-    case input_string 
-    when '!!', 'wm'
-      enable_writing_mode
-     when 'exit'
-       exit
-     end
-   end
+      # complete the habit for today
+      $habits.find_all.first.completed { |habit| habit.keyword == keyword }
+    end # habits.empty?
+  else
+    # todo how can I not repeat this?
+    if $habits.empty?
+      puts 'No habits. Create one by typing \'h keyword title of your habit\''
+    else 
+      #todo list all habits
+      $habits.each { |habit| puts habit.brief_info }
+    end 
+  end 
+
 end 
-
-
-
