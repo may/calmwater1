@@ -19,9 +19,6 @@ def habit_input(keyword, content)
   elsif keyword
     if $habits.empty?
       puts 'No habits. Create one by typing \'h keyword title of your habit\'' 
-    elsif content == 'info'
-      habs = $habits.find_all { |habit| habit.keyword == keyword }
-      puts habs.first.info
     else
       # complete the habit for today
       $habits.find_all.first.completed { |habit| habit.keyword == keyword }
