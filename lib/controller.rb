@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-03
+# Revised: 2020-06-06
 
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
@@ -20,7 +20,9 @@ def habit_input(keyword, content)
       puts 'No habits. Create one by typing \'h keyword title of your habit\'' 
     else
       # complete the habit for today
-      $habits.find_all.first.completed { |habit| habit.keyword == keyword }
+      h = $habits.find_all { |habit| habit.keyword == keyword }
+      h = h.first
+      h.completed
       puts "Logged completion of #{keyword} habit for today."
     end # habits.empty?
   else

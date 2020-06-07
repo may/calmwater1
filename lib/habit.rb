@@ -10,7 +10,6 @@ class Habit
     @trigger = trigger
     @completion = Array.new
     @creation = Time.now
-    
   end
 
   def completed
@@ -19,7 +18,6 @@ class Habit
 
   def compliance
     days = ((Time.now - @creation) / (60*60*24)).round
-    puts days
     if days == 0
       100
     else
