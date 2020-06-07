@@ -5,11 +5,14 @@ require 'yaml'
 require_relative 'project.rb'
 require_relative 'task.rb'
 require_relative 'habit.rb'
+require_relative '../config.rb'
+
 
 class ExtbrainData
   # todo accessors?
   def initialize()
     # this should probably be @habits but trying global during dev..
+    # todo
     load_data
     $habits = Array.new unless $habits
     @projects = Array.new unless @projects
@@ -18,14 +21,23 @@ class ExtbrainData
   
   def load_data
     print "Loading file..."
+    if File.exist?($savefile_habits)
+      $habits = YAML.load(File.read($savefile_habits))
+    else
+      puts 
+      puts "File not found: #{$savefile_habits}."
+      puts 'If this is your first run, you can ignore this message.'
+    end
     puts "loaded. TODO #{$projects_number} #{$tasks_number}"
     # stats is a hell no, but knowing how many loaded just might be fun! helps with my rtm statks spreadsheet too
   end
   
   def save_data
     print "Saving file..."
-    #File.open('extbrain.yaml', 'w') { |f| f.write(YAML.dump(test)) }
-    puts "saved! TODO"
+    File.open($savefile_habits, 'w') { |f| f.write(YAML.dump($habits)) }
+    puts "saved!"
+    puts "todo projects"
+    puts "todo tasks"
   end 
 
   def projects_number
@@ -56,7 +68,7 @@ end
 
 
 
-#m = YAML.load(File.read('extbrain.yaml'))
+
 
 
 #m = [1, 2, 3, 4, "Ruby"]

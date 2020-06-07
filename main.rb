@@ -1,7 +1,8 @@
 # Created: 2020-05-30
-# Revised: 2020-06-03
+# Revised: 2020-06-06
 
 require_relative 'lib/controller'
+require_relative 'config.rb'
 
 $writing_mode = false
 

@@ -6,7 +6,6 @@ require_relative 'writing_mode.rb'
 
 
 def habit_input(keyword, content)
-  puts "habit_input"
   if content
     # todo some kind of checknig to prevent keyword conflicts
     # eg if it exists do keyword1 then keyword2 etc.
@@ -15,13 +14,14 @@ def habit_input(keyword, content)
     h = Habit.new(content, keyword, nil)
     # TODO prompt user for trigger? or ??
     $habits << h
-    puts "yay habit created"
+    puts "Habit created: #{keyword}."
   elsif keyword
     if $habits.empty?
       puts 'No habits. Create one by typing \'h keyword title of your habit\'' 
     else
       # complete the habit for today
       $habits.find_all.first.completed { |habit| habit.keyword == keyword }
+      puts "Logged completion of #{keyword} habit for today."
     end # habits.empty?
   else
     # todo how can I not repeat this?
