@@ -20,6 +20,13 @@ class ExtbrainData
   end
   
   def load_data
+    if File.exist?($lockfile)
+      $lockfile_locked = true
+      exit
+    else
+      puts "Locking..."
+      File.open($lockfile, 'w') {|f| f.write(Process.pid) }
+    end
     print "Loading file..."
     if File.exist?($savefile_habits)
       $habits = YAML.load(File.read($savefile_habits))
@@ -33,11 +40,16 @@ class ExtbrainData
   end
   
   def save_data
-    print "Saving file..."
-    File.open($savefile_habits, 'w') { |f| f.write(YAML.dump($habits)) }
-    puts "saved!"
-    puts "todo projects"
-    puts "todo tasks"
+    if Process.pid == File.open($lockfile, &:gets).to_i
+      print "Saving file..."
+      File.open($savefile_habits, 'w') { |f| f.write(YAML.dump($habits)) }
+      puts "saved!"
+      puts "todo projects"
+      puts "todo tasks"
+      File.delete($lockfile) # clear lock
+    else
+      puts "Can't get lock, unable to save."
+    end 
   end 
 
   def projects_number

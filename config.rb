@@ -3,3 +3,4 @@
 
 puts 'loading config.rb to see if require_relative does it more than once'
 $savefile_habits = 'extbrain-habits.yaml'
+$lockfile = 'lockfile-extbrain.txt'

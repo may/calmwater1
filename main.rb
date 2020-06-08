@@ -11,8 +11,12 @@ def startup
 end
 
 at_exit do
-  $projects_and_tasks.save_data
-  puts "Thank you for using extbrain. Have a good day!"
+  if $lockfile_locked
+    puts "Can't get lock... exiting.."
+  else
+    $projects_and_tasks.save_data
+    puts "Thank you for using extbrain. Have a good day!"
+  end 
 end
 
 
