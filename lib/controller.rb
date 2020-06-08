@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-06
+# Revised: 2020-06-07
 
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
@@ -12,6 +12,7 @@ def habit_input(keyword, content)
     # or hardstop
     # also, todo, make this a generic method across all things
     h = Habit.new(content, keyword, nil)
+    ### TODO CHECK TO SEE IF IT EXISTS BY KEYWORD! 2020-06-07 
     # TODO prompt user for trigger? or ??
     $habits << h
     puts "Habit created: #{keyword}."
