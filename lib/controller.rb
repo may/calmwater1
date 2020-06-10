@@ -1,10 +1,12 @@
 # Created: 2020-05-30
-# Revised: 2020-06-09
+# Revised: 2020-06-10
+# Assumes $projects_and_tasks exists thanks to main.rb
 
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
 def project_list_input
+  
   # p = list projects
   # lp = list projects
   # lpw or wp = work projects
@@ -16,15 +18,8 @@ end
 
 def habit_input(keyword, content)
   if content
-    # todo some kind of checknig to prevent keyword conflicts
-    # eg if it exists do keyword1 then keyword2 etc.
-    # or hardstop
-    # also, todo, make this a generic method across all things
-    h = Habit.new(content, keyword, nil)
-    ### TODO CHECK TO SEE IF IT EXISTS BY KEYWORD! 2020-06-07 
-    # TODO prompt user for trigger? or ??
-    $habits << h
-    puts "Habit created: #{keyword}."
+    $projects_and_tasks.new_habit(content, keyword)
+      puts "Habit created: #{keyword}."
   elsif keyword
     if $habits.empty?
       puts 'No habits. Create one by typing \'h keyword title of your habit\'' 
