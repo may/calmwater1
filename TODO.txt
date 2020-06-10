@@ -1,18 +1,10 @@
 ;; Created: 2020-05-13
-;; Revised: 2020-06-01
+;; Revised: 2020-06-09
 ;; Copyright: Nicholas E. May. All rights reserved.
 
 
 
 # NOW
-
-NOW NOW - habit tracker.
- h <habit> eg h bike
- puts a tick mark on that day in an array
- or just an array of time.now objects
- or pairs
- see if you can get this implemented tonight
- 2020-06-01 and log that you biked last night 5/31 and 6/1
 
 implementing tasks in ruby
 implementing ui in ruby

@@ -51,6 +51,8 @@ def dispatch_user_input(input_string)
       exit
     when 'h', 'habit'
       habit_input(keyword, content)
+    when 'p', 'proj', 'project', 'projects', 'lp'
+      project_input(keyword, content)
     end
    end
 end 

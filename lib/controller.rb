@@ -1,9 +1,18 @@
 # Created: 2020-05-30
-# Revised: 2020-06-07
+# Revised: 2020-06-09
 
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
+def project_list_input
+  # p = list projects
+  # lp = list projects
+  # lpw or wp = work projects
+  # lph = home projects
+  # lpp = personal projects
+  # li / lm = list info (or metadata) with optional keyword for specific project
+
+end 
 
 def habit_input(keyword, content)
   if content
