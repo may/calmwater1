@@ -1,6 +1,6 @@
 # Created: 2020-05-30
 # Revised: 2020-06-10
-# Assumes $projects_and_tasks exists thanks to main.rb
+# Assumes $data exists thanks to main.rb
 
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
@@ -17,26 +17,24 @@ def project_list_input
 end 
 
 def habit_input(keyword, content)
+  no_habits = 'No habits. Create one by typing \'h keyword title of your habit\'' 
   if content
-    $projects_and_tasks.new_habit(content, keyword)
-      puts "Habit created: #{keyword}."
+    $data.new_habit(content, keyword)
+    puts "Habit created: #{keyword}."
   elsif keyword
-    if $habits.empty?
-      puts 'No habits. Create one by typing \'h keyword title of your habit\'' 
+    if $data.no_habits?
+      puts no_habits 
     else
-      # complete the habit for today
-      h = $habits.find_all { |habit| habit.keyword == keyword }
-      h = h.first
-      h.completed
+      $data.complete_habit(keyword) # complete for *today*
       puts "Logged completion of #{keyword} habit for today."
-    end # habits.empty?
+    end 
   else
-    # todo how can I not repeat this?
-    if $habits.empty?
-      puts 'No habits. Create one by typing \'h keyword title of your habit\''
+    # todo how can I not repeat this? no idea, worry about it later -later nick
+    if $data.no_habits?
+      puts no_habits
     else 
       #todo list all habits
-      $habits.each { |habit| puts habit.brief_info }
+
     end 
   end 
 

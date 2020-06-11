@@ -7,7 +7,7 @@ require_relative 'config.rb'
 $writing_mode = false
 
 def startup
-  $projects_and_tasks = ExtbrainData.new
+  $data = ExtbrainData.new
 end
 
 at_exit do

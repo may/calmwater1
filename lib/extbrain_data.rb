@@ -29,8 +29,6 @@ require_relative '../config.rb'
 ## .find_project
 
 
-
-
 class ExtbrainData
   # todo accessors? NO, try to encapsulate.
   def initialize()
@@ -41,8 +39,21 @@ class ExtbrainData
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
   end
-  
 
+  def list_habits
+    @habits.each { |habit| puts habit.brief_info }
+  end
+  
+  def complete_habit(keyword)
+    h = @habits.find_all { |habit| habit.keyword == keyword }
+    h = h.first 
+    h.completed
+  end 
+  
+  def no_habits?
+    @habits.empty?
+  end 
+  
   def new_habit(content, keyword)
     # todo some kind of checknig to prevent keyword conflicts
     # eg if it exists do keyword1 then keyword2 etc.
