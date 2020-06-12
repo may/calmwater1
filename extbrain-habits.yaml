@@ -30,3 +30,14 @@
   completion:
   - 2020-06-11 21:51:12.437439580 -05:00
   creation: 2020-06-09 13:05:22.340106043 -05:00
+- !ruby/object:WritingHabit
+  title: Write every day, one word more than the last day.
+  keyword: wc
+  trigger: 
+  completion:
+  - 2020-06-11 23:29:50.070866869 -05:00
+  creation: 2020-06-11 23:28:39.290854100 -05:00
+  word_count: 100
+  word_count_over_time:
+  - - 2020-06-11 23:29:50.070874489 -05:00
+    - '100'

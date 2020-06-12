@@ -9,3 +9,9 @@ Optional:
 
 Using:
  rlwrap ruby main.rb
+
+
+todo some documentation
+h to list habits
+h foo to complete foo for the day
+

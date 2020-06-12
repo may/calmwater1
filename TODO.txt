@@ -729,6 +729,8 @@ so that I don't have two tasks with a similar name.
 # MAYBE NOT/HELL NO.
 See devlog.txt for details. Add new at top.
 
+- no stats on habits beyond % completed. fostering a get better mindset, not a be good.
+  - if I have graphs (eg word count) I tend to see how I'm not doing well innstead of how I'm getting better
 - no: 'cancelled' project status. if it's deleted, make your own assumptions.
   Exception to this: if you find yourself cancelling projects and making notes,
   then could setup a cancelled status and have it auto-log when you cc or somtehing (cc = command for cancaled or cp for cancelled project haha)

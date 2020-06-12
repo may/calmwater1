@@ -23,23 +23,11 @@ end
 
 def command_loop
   $no_operation_count = 0
-  $iterations = 0 
   while true
-    $iterations += 1 
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
     dispatch_user_input(input)
     $data.save_data
-    puts $iterations
-    if $iterations % 20 == 0
-      puts "20 times since last save, saving..."
-
-      # TODO THIS IS A GOOD IDEA
-      # BUT IT ALSO REMOVES THE LOCKFILE
-      # SO TODO SAVE WITHOUT LOCKFILE
-      ## TODO ALSO HANDLE SAVING WHEN LOCKFILE ISN'T FOUND
-      puts "saved."
-    end 
   end
 end
 

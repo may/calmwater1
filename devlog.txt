@@ -86,7 +86,7 @@ when adding a project or modifying a keyword, ensure that keyword is unique, els
 
 ;;;;;; And because these are really projects, easily grouped by tag, we can have a task(s) for each:
 
-;; nova notes reviewed #upgrade
+p;; nova notes reviewed #upgrade
 ;;; launch nova.epic.com and read all the notes #hcis [context implied?] [do we tell the system that #upgrade exists only within hcis? would save a lot of time in the long run, but most progjets aren't always ongoing like this]
 ;; build completed #upgrade
 ;;   review nova notes #waiting [consider tag #w?]

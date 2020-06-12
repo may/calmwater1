@@ -1,5 +1,8 @@
 # Created: 2020-06-11
 # Revised: 2020-06-11
+# From extbrain command line, ideally invoke this as:
+# h wc Write every day, one word more than the last day.
+# But do whatever works best for you for a habit title!
 
 class WritingHabit < Habit
   def initialize(title, keyword, trigger)
@@ -19,7 +22,9 @@ class WritingHabit < Habit
   end 
 
   def to_s
-    "(#{keyword}) [#{compliance}%] {#{@word_count}+1=#{@word_count+1}} #{title}"
+    # Write every day, one word more than the last day.
+    # Credit jamesclear.com/measure-backward
+    "(#{keyword}) [#{compliance}%] {Tomorrow: #{@word_count}+1=#{@word_count+1}} #{title}"
   end 
   
 end
