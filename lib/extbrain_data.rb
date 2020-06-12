@@ -1,11 +1,12 @@
 # Created: 2020-05-30
-# Revised: 2020-06-10
-# Saving and loading of data.
+# Revised: 2020-06-11
+# Methods to access data. Saving and loading of data.
 
 require 'yaml'
 require_relative 'project.rb'
 require_relative 'task.rb'
 require_relative 'habit.rb'
+require_relative 'writing_habit.rb'
 require_relative '../config.rb'
 
 
@@ -29,6 +30,14 @@ require_relative '../config.rb'
 ## .find_project
 
 
+
+# you searched: andrew
+# results:
+#  1. (phone) call andrew and wish him a happy birthday
+#  2. (someday/maybe) visit andrew and natalie and try their pizza
+#  3. (computer) update the invite with a google meet instead
+
+
 class ExtbrainData
   # todo accessors? NO, try to encapsulate.
   def initialize()
@@ -40,34 +49,59 @@ class ExtbrainData
     @tasks = Array.new unless @tasks
   end
 
+  def new_task(title, action_context, life_context)
+    task = Task.new(title, action_context, life_context)
+    @tasks << task
+  end 
+  
   def list_habits
     @habits.each { |habit| puts habit.brief_info }
   end
   
-  def complete_habit(keyword)
-    h = @habits.find_all { |habit| habit.keyword == keyword }
-    h = h.first 
-    h.completed
+  def complete_habit(keyword, word_count = nil)
+    h = habit_exist?(keyword)
+    if h
+      h.completed(word_count)
+      success = true
+    else
+      puts "No habit found for keyword: #{keyword}. Can't complete non-existant habit."
+      success = false
+    end
+    success
   end 
   
   def no_habits?
     @habits.empty?
   end 
   
-  def new_habit(content, keyword)
+  def new_habit(content, keyword, writing_habit = nil)
     # todo some kind of checknig to prevent keyword conflicts
     # eg if it exists do keyword1 then keyword2 etc.
     # or hardstop
     # also, todo, make this a generic method across all things
-    h = Habit.new(content, keyword, nil)
-    ### TODO CHECK TO SEE IF IT EXISTS BY KEYWORD! 2020-06-07 
-    # TODO prompt user for trigger? or ??
-    @habits << h
+    if habit_exist?(keyword)
+      puts "Habit exists with that keyword: #{keyword}. Try again."
+      success = nil
+    else 
+      if writing_habit
+        h = WritingHabit.new(content, keyword, nil)
+      else
+        h = Habit.new(content, keyword, nil)
+      end
+      @habits << h
+      success = true
+    end 
+    success
+  end
 
-end 
+  def list_habits()
+    @habits.each { |habit| puts habit }
+  end 
 
-
-
+  def habit_exist?(keyword)
+    @habits.detect { |habit| habit.keyword == keyword }
+  end
+  
   def load_data
     if File.exist?($lockfile)
       $lockfile_locked = true

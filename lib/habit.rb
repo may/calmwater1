@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-06-06
+# Revised: 2020-06-11
 
 class Habit
   attr_reader :title, :keyword, :trigger, :completion
@@ -12,7 +12,7 @@ class Habit
     @creation = Time.now
   end
 
-  def completed
+  def completed(optional = nil) # optional exists b/c of WritingHabit... not perfect encapsulation
     @completion << Time.now
   end
 
@@ -29,7 +29,7 @@ class Habit
     "#{title}\n#{keyword}\n#{trigger}\n#{compliance}%"
   end 
 
-  def brief_info
+  def to_s
     "(#{keyword}) [#{compliance}%] #{title}"
   end 
   

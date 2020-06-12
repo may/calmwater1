@@ -9,6 +9,7 @@
   - 2020-06-01 21:25:08.784757627 -05:00
   - 2020-06-08 21:07:57.620043231 -05:00
   - 2020-05-31 21:21:58.792519834 -05:00
+  - 2020-06-11 22:13:10.278624810 -05:00
   creation: 2020-06-01 21:16:59.993223251 -05:00
 - !ruby/object:Habit
   title: Walk around several blocks (or the pond) if at work, ideally briskly for
@@ -26,5 +27,6 @@
   title: read for an hour instead of reddit
   keyword: read
   trigger: 
-  completion: []
+  completion:
+  - 2020-06-11 21:51:12.437439580 -05:00
   creation: 2020-06-09 13:05:22.340106043 -05:00
