@@ -14,7 +14,7 @@ at_exit do
   if $lockfile_locked
     puts "Can't get lock... exiting.."
   else
-    $data.save_data
+    $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
   end 
 end
@@ -29,10 +29,11 @@ def command_loop
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
     dispatch_user_input(input)
+    $data.save_data
     puts $iterations
     if $iterations % 20 == 0
       puts "20 times since last save, saving..."
-      $data.save_data
+
       # TODO THIS IS A GOOD IDEA
       # BUT IT ALSO REMOVES THE LOCKFILE
       # SO TODO SAVE WITHOUT LOCKFILE

@@ -122,14 +122,16 @@ class ExtbrainData
     # stats is a hell no, but knowing how many loaded just might be fun! helps with my rtm statks spreadsheet too
   end
   
-  def save_data
+  def save_data(clear_lock=nil)
     if Process.pid == File.open($lockfile, &:gets).to_i
-      print "Saving file..."
+      print "Saving file..." if clear_lock # only be chatty if closing program, otherwise save silently each time
       File.open($savefile_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
-      puts "saved!"
-      puts "todo projects"
-      puts "todo tasks"
-      File.delete($lockfile) # clear lock
+      puts "saved!" if clear_lock
+      puts "todo projects" if clear_lock
+      puts "todo tasks" if clear_lock
+      if clear_lock
+        File.delete($lockfile)
+      end 
     else
       puts "Can't get lock, unable to save."
     end 
