@@ -66,21 +66,10 @@ class ExtbrainData
   end 
     
   def list_habits
+    puts 'got here'
     @habits.each { |habit| puts habit.brief_info }
   end
   
-  def complete_habit(keyword, word_count = nil)
-    h = habit_exist?(keyword)
-    if h
-      h.completed(word_count)
-      success = true
-    else
-      puts "No habit found for keyword: #{keyword}. Can't complete non-existant habit."
-      success = false
-    end
-    success
-  end 
-
   def writing_habit_word_count(keyword)
     h = habit_exist?(keyword)
     if h
@@ -99,6 +88,26 @@ class ExtbrainData
     end 
   end 
   
+  def list_habits()
+    @habits.each { |habit| puts habit }
+  end 
+
+  def habit_exist?(keyword)
+    @habits.detect { |habit| habit.keyword == keyword }
+  end
+  
+  def complete_habit(keyword, word_count = nil)
+    h = habit_exist?(keyword)
+    if h
+      h.completed(word_count)
+      success = true
+    else
+      puts "No habit found for keyword: #{keyword}. Can't complete non-existant habit."
+      success = false
+    end
+    success
+  end 
+
   def no_habits?
     @habits.empty?
   end 
@@ -123,14 +132,6 @@ class ExtbrainData
     success
   end
 
-  def list_habits()
-    @habits.each { |habit| puts habit }
-  end 
-
-  def habit_exist?(keyword)
-    @habits.detect { |habit| habit.keyword == keyword }
-  end
-  
   def load_data
     if File.exist?($lockfile)
       $lockfile_locked = true
