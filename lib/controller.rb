@@ -10,10 +10,9 @@ def project_input(commond, keyword, content)
   # p all - list all projects regardless of life context
   # p keyword - view project with keyword
   # p keyword title - create project with keyword and title 
+  if not keyword
+    puts "Need to specify a keyword" #TODO
 
-  # p <keyword> <content>
-  # ^ assumes context due to time of day
-  # should also print what was created and the context
 
   # if p or lp or projects -> list projects
   # if p or project keyword -> list specific project, keyword
@@ -24,14 +23,7 @@ def project_input(commond, keyword, content)
   
 #  case command
 #  when 'p', 'proj', 'project' 
-  if not keyword
-    puts "Need to specify a keyword" #TODO
 
-  if true #8-5 M-F assume work todo
-    life_context = :work
-  else
-    life_context = :personal
-  end 
   if p = $data.new_project(content, keyword, life_context) #todo 
       puts "Project created with: #{keyword} in life context: #{life_context}. (Change context with 'plc keyword context')"
       puts content
