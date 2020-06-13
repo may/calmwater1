@@ -28,8 +28,7 @@ def command_loop
     input = gets
     dispatch_user_input(input)
     $data.save_data
-    end 
-  end
+  end 
 end
 
 def dispatch_user_input(input_string)
