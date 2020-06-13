@@ -50,25 +50,37 @@ class Habit
     print `tput setaf 9` # reset colors
   end 
   
+  def completed_today?
+    @completion.last.mday == Time.now.mday 
+  end
+
+  def completed_yesterday?
+    (@completion.last.mday + 1) == Time.now.mday
+  end
+
+  def completed_two_days_ago?
+    (@completion.last.mday + 2) == Time.now.mday
+  end
+
+  def last_completed_date
+    @completion.last.strftime('%Y-%m-%d')
+  end 
+
+  def last_completed
+    if completed_today?
+      'today'
+    elsif completed_yesterday?
+      'yesterday'
+    elsif completed_two_days_ago?
+      'two days ago'
+    else
+      last_completed_date
+    end
+  end
   
   def to_s
-    puts completion.last
-    puts completion.last.mday
-    puts Time.now.mday
-    if @completion.last.mday == Time.now.mday 
-      last_completed = 'today'
-      puts `tput setaf 2` # instruct linux/unix terminal to go green
-    elsif (@completion.last.mday + 1) == Time.now.mday
-      last_completed = 'yesterday'
-      puts `tput setaf 4` # instruct linux/unix terminal to go blue
-    else
-      last_completed = 'before yesterday'
-      puts `tput setaf 1` # instruct linux/unix terminal to go red
-    end 
-    # todo if logged today or yesterday say that else blank
     # this works b/c attr_reader/method call
     "(#{keyword}) [#{compliance}%] (#{last_completed}) #{title}"
-    print `tput setaf 9` # reset colors
   end 
   
 end

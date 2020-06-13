@@ -84,7 +84,19 @@ class ExtbrainData
   end 
   
   def list_habits()
-    @habits.each { |habit| puts habit.print_status }
+    @habits.each do |habit|
+      if habit.completed_today?
+        print `tput setaf 2` # instruct linux/unix terminal to go green
+      elsif habit.completed_yesterday?
+        print `tput setaf 4` # instruct linux/unix terminal to go blue
+      elsif habit.completed_two_days_ago?
+        print `tput setaf 3` # instruct linux/unix terminal to go red
+      else
+        print `tput setaf 1` # instruct linux/unix terminal to go red
+      end 
+      puts habit.to_s
+      print `tput setaf 9` # reset colors
+    end 
   end 
 
   def habit_exist?(keyword)
