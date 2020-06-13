@@ -66,6 +66,7 @@ p all - list all projects regardless of life context
 p keyword - view project with keyword
 p keyword title - create project with keyword and title 
 tag keyword - add tags to project?
+plc keyword context - edit context
 
 ## HABITS
 xh - list habits

@@ -45,6 +45,12 @@ def dispatch_user_input(input_string)
     keyword = three_pieces[1]
     content = three_pieces[2]
     case command
+    # TODO plc keyword context edit context
+    #   # lpw or wp = work projects
+  # lph = home projects
+  # lpp = personal projects
+  # li / lm = list info (or metadata) with optional keyword for specific project
+
     when '!!', 'wm'
       enable_writing_mode
     when 'e', 'exit'

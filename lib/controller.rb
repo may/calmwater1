@@ -2,17 +2,19 @@
 # Revised: 2020-06-12
 # Assumes $data exists thanks to main.rb
 
+require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-def project_input(commond, keyword, content)
+
+def project_input(command, keyword, content)
   # p [optional: life_context] or lp - list projects for the current or given life context
   # p all - list all projects regardless of life context
   # p keyword - view project with keyword
   # p keyword title - create project with keyword and title 
   if not keyword
     puts "Need to specify a keyword" #TODO
-
+  end 
 
   # if p or lp or projects -> list projects
   # if p or project keyword -> list specific project, keyword
@@ -23,7 +25,7 @@ def project_input(commond, keyword, content)
   
 #  case command
 #  when 'p', 'proj', 'project' 
-
+    # remember $life_context now exists
   if p = $data.new_project(content, keyword, life_context) #todo 
       puts "Project created with: #{keyword} in life context: #{life_context}. (Change context with 'plc keyword context')"
       puts content
@@ -31,16 +33,6 @@ def project_input(commond, keyword, content)
       puts p
       # todo add ???
   end 
-  
-  # plc keyword context edit context
-  
-  # p = list projects
-  # lp = list projects
-  # lpw or wp = work projects
-  # lph = home projects
-  # lpp = personal projects
-  # li / lm = list info (or metadata) with optional keyword for specific project
-
 end 
 
 
