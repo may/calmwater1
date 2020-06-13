@@ -30,8 +30,17 @@ class Habit
   end 
 
   def to_s
-     # this works b/c attr_reader/method call
-    "(#{keyword}) [#{compliance}%] #{title}"
+    puts completion.last
+    puts completion.last.mday
+    puts Time.now.mday
+    if @completion.last.mday == Time.now.mday
+      last_completed = 'today'
+    elsif (@completion.last.mday + 1) == Time.now.mday
+      last_completed = 'yesterday'
+    end 
+    # todo if logged today or yesterday say that else blank
+    # this works b/c attr_reader/method call
+    "#{last_completed} (#{keyword}) [#{compliance}%] #{title}"
   end 
   
 end
