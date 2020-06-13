@@ -29,18 +29,46 @@ class Habit
     "#{title}\n#{keyword}\n#{trigger}\n#{compliance}%"
   end 
 
+
+  def print_status
+    puts completion.last
+    puts completion.last.mday
+    puts Time.now.mday
+    if @completion.last.mday == Time.now.mday 
+      last_completed = 'today'
+      puts `tput setaf 2` # instruct linux/unix terminal to go green
+    elsif (@completion.last.mday + 1) == Time.now.mday
+      last_completed = 'yesterday'
+      puts `tput setaf 4` # instruct linux/unix terminal to go blue
+    else
+      last_completed = 'before yesterday'
+      puts `tput setaf 1` # instruct linux/unix terminal to go red
+    end 
+    # todo if logged today or yesterday say that else blank
+    # this works b/c attr_reader/method call
+    puts "(#{keyword}) [#{compliance}%] (#{last_completed}) #{title}"
+    print `tput setaf 9` # reset colors
+  end 
+  
+  
   def to_s
     puts completion.last
     puts completion.last.mday
     puts Time.now.mday
-    if @completion.last.mday == Time.now.mday
+    if @completion.last.mday == Time.now.mday 
       last_completed = 'today'
+      puts `tput setaf 2` # instruct linux/unix terminal to go green
     elsif (@completion.last.mday + 1) == Time.now.mday
       last_completed = 'yesterday'
+      puts `tput setaf 4` # instruct linux/unix terminal to go blue
+    else
+      last_completed = 'before yesterday'
+      puts `tput setaf 1` # instruct linux/unix terminal to go red
     end 
     # todo if logged today or yesterday say that else blank
     # this works b/c attr_reader/method call
-    "#{last_completed} (#{keyword}) [#{compliance}%] #{title}"
+    "(#{keyword}) [#{compliance}%] (#{last_completed}) #{title}"
+    print `tput setaf 9` # reset colors
   end 
   
 end

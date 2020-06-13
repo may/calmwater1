@@ -84,7 +84,7 @@ class ExtbrainData
   end 
   
   def list_habits()
-    @habits.each { |habit| puts habit }
+    @habits.each { |habit| puts habit.print_status }
   end 
 
   def habit_exist?(keyword)
