@@ -12,8 +12,7 @@
   - 2020-06-11 22:13:10.278624810 -05:00
   creation: 2020-06-01 21:16:59.993223251 -05:00
 - !ruby/object:Habit
-  title: Walk around several blocks (or the pond) if at work, ideally briskly for
-    20 minutes a day, ideally twice a day.
+  title: Walk 2000 steps at least once a day, ideally twice, ideally brisky
   keyword: walk
   trigger: 
   completion:

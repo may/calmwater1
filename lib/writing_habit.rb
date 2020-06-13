@@ -40,7 +40,11 @@ class WritingHabit < Habit
   def to_s
     # Write every day, one word more than the last day (on average).
     # Credit jamesclear.com/measure-backward
-    "(#{keyword}) [#{compliance}%] {Next session: #{@average_word_count}+1=#{@average_word_count+1}} #{title}"
+    if $color_only # let color coding in extbrain_data handle last completed 
+      "(#{keyword}) [#{compliance}%] {Next session: #{@average_word_count}+1=#{@average_word_count+1}} #{title}"
+    else 
+      "(#{keyword}) [#{compliance}%] (#{last_completed}) {Next session: #{@average_word_count}+1=#{@average_word_count+1}} #{title}"
+    end 
   end 
   
 end

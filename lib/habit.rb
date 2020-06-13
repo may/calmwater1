@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-06-12
+# Revised: 2020-06-13
 
 class Habit
   attr_reader :title, :keyword, :trigger, :completion
@@ -21,35 +21,10 @@ class Habit
     if days == 0
       100
     else
-      (completion.count / days.to_f)*100
+      ((completion.count / days.to_f)*100).round
     end
   end
 
-  def info
-    "#{title}\n#{keyword}\n#{trigger}\n#{compliance}%"
-  end 
-
-
-  def print_status
-    puts completion.last
-    puts completion.last.mday
-    puts Time.now.mday
-    if @completion.last.mday == Time.now.mday 
-      last_completed = 'today'
-      puts `tput setaf 2` # instruct linux/unix terminal to go green
-    elsif (@completion.last.mday + 1) == Time.now.mday
-      last_completed = 'yesterday'
-      puts `tput setaf 4` # instruct linux/unix terminal to go blue
-    else
-      last_completed = 'before yesterday'
-      puts `tput setaf 1` # instruct linux/unix terminal to go red
-    end 
-    # todo if logged today or yesterday say that else blank
-    # this works b/c attr_reader/method call
-    puts "(#{keyword}) [#{compliance}%] (#{last_completed}) #{title}"
-    print `tput setaf 9` # reset colors
-  end 
-  
   def completed_today?
     @completion.last.mday == Time.now.mday 
   end
@@ -80,7 +55,11 @@ class Habit
   
   def to_s
     # this works b/c attr_reader/method call
-    "(#{keyword}) [#{compliance}%] (#{last_completed}) #{title}"
+    if $color_only # let color coding in extbrain_data handle last completed 
+      "(#{keyword}) [#{compliance}%] #{title}"
+    else
+      "(#{keyword}) [#{compliance}%] (#{last_completed}) #{title}"
+    end 
   end 
   
 end

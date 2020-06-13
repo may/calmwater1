@@ -90,12 +90,12 @@ class ExtbrainData
       elsif habit.completed_yesterday?
         print `tput setaf 4` # instruct linux/unix terminal to go blue
       elsif habit.completed_two_days_ago?
-        print `tput setaf 3` # instruct linux/unix terminal to go red
+        print `tput setaf 3` # instruct linux/unix terminal to go yellow
       else
         print `tput setaf 1` # instruct linux/unix terminal to go red
       end 
       puts habit.to_s
-      print `tput setaf 9` # reset colors
+      print `tput sgr0` # reset colors
     end 
   end 
 
