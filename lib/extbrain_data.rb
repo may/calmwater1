@@ -56,6 +56,27 @@ class ExtbrainData
 
   def change_context_task # ??? unsure if needed, prolly
   end
+
+  # TODO decide if color coding useful.
+  # ideas include:
+  # yellow if review date > 7 days
+  # red if review date > 14 days
+  def list_projects
+        @habits.each do |habit|
+      if habit.completed_today?
+        print `tput setaf 2` # instruct linux/unix terminal to go green
+      elsif habit.completed_yesterday?
+        print `tput setaf 4` # instruct linux/unix terminal to go blue
+      elsif habit.completed_two_days_ago?
+        print `tput setaf 3` # instruct linux/unix terminal to go yellow
+      else
+        print `tput setaf 1` # instruct linux/unix terminal to go red
+      end 
+      puts habit.to_s
+      print `tput sgr0` # reset colors
+    end 
+
+  end 
   
   def new_project(title, keyword, life_context)
     project = Project.new(title, keyword, life_context)

@@ -5,12 +5,29 @@
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-def project_input(keyword, content)
+def project_input(commond, keyword, content)
+  # p [optional: life_context] or lp - list projects for the current or given life context
+  # p all - list all projects regardless of life context
+  # p keyword - view project with keyword
+  # p keyword title - create project with keyword and title 
+
   # p <keyword> <content>
   # ^ assumes context due to time of day
   # should also print what was created and the context
-  if true #8-5 M-F assume work
 
+  # if p or lp or projects -> list projects
+  # if p or project keyword -> list specific project, keyword
+  # if pe edit project
+ #  todo how to add task?
+  # if p keyword content -> create new project with keyword
+
+  
+#  case command
+#  when 'p', 'proj', 'project' 
+  if not keyword
+    puts "Need to specify a keyword" #TODO
+
+  if true #8-5 M-F assume work todo
     life_context = :work
   else
     life_context = :personal

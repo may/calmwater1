@@ -52,7 +52,7 @@ def dispatch_user_input(input_string)
     when 'h', 'habit'
       habit_input(keyword, content)
     when 'p', 'proj', 'project', 'projects', 'lp'
-      project_input(keyword, content)
+      project_input(command, keyword, content)
     else
       # todo reset no op once the user inputs a command correctly?
       no_op_msg = "That doesn't do anything." # At least not yet.

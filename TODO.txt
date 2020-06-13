@@ -487,7 +487,8 @@ but also within a task or project
 and history fo notes etc. 
 
 
-
+# follow-up
+consider a f command to mark that followed up on a waiting task
 
 ## dynamic lists
 If you've used RTM, you're used to the concept of *smartlists*

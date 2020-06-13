@@ -1,8 +1,10 @@
 # Created: 2020-06-11
-# Revised: 2020-06-12
+# Revised: 2020-06-13
 # From extbrain command line, ideally invoke this as:
 # h wc Write every day, one word more than the last day.
 # But do whatever works best for you for a habit title!
+# Then use h wc 500 each day after writing where 500 is
+#  the total word count of your current document.
 
 class WritingHabit < Habit
   attr_reader :average_word_count, :previous_word_count
