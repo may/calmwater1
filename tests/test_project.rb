@@ -20,7 +20,7 @@ class ProjectTest < Minitest::Test
   end 
 
   def test_project_keyword
-    assert_equal("tp",@test_project.keyword)
+    assert_equal("tp".to_sym,@test_project.keyword)
     @test_project.keyword = "toiletpaper"
     assert_equal("toiletpaper",@test_project.keyword)
     assert_equal("Updated keyword:\n old: tp\n new: toiletpaper",@test_project.notes.first.last)

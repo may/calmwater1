@@ -22,6 +22,8 @@
   - 2020-06-06 21:25:57.979364701 -05:00
   - 2020-06-07 21:37:10.406782099 -05:00
   - 2020-06-08 21:08:01.344978361 -05:00
+  - 2020-06-12 11:41:28.640484676 -05:00
+  - 2020-06-12 20:27:26.475099934 -05:00
   creation: 2020-06-04 21:20:20.128323928 -05:00
 - !ruby/object:Habit
   title: read for an hour instead of reddit
@@ -31,13 +33,17 @@
   - 2020-06-11 21:51:12.437439580 -05:00
   creation: 2020-06-09 13:05:22.340106043 -05:00
 - !ruby/object:WritingHabit
-  title: Write every day, one word more than the last day.
+  title: Write every day, one word more than average.
   keyword: wc
   trigger: 
   completion:
   - 2020-06-11 23:29:50.070866869 -05:00
-  creation: 2020-06-11 23:28:39.290854100 -05:00
-  word_count: 100
+  - 2020-06-12 22:38:03.809735606 -05:00
+  creation: 2020-06-11 22:19:40.150485990 -05:00
+  previous_word_count: 230
+  average_word_count: 115
   word_count_over_time:
-  - - 2020-06-11 23:29:50.070874489 -05:00
-    - '100'
+  - - 117
+    - 2020-06-11 23:29:50.070874489 -05:00
+  - - 113
+    - 2020-06-12 22:38:03.809745437 -05:00

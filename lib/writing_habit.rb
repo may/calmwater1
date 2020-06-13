@@ -1,30 +1,46 @@
 # Created: 2020-06-11
-# Revised: 2020-06-11
+# Revised: 2020-06-12
 # From extbrain command line, ideally invoke this as:
 # h wc Write every day, one word more than the last day.
 # But do whatever works best for you for a habit title!
 
 class WritingHabit < Habit
+  attr_reader :average_word_count, :previous_word_count
+  
   def initialize(title, keyword, trigger)
     super(title, keyword, trigger)
-    @word_count = 0
+    @previous_word_count = 0
+    @average_word_count = 0
     @word_count_over_time = Array.new
   end
 
-  def completed(todays_word_count)
+  def completed(todays_total_word_count)
     @completion << Time.now
-    @word_count = todays_word_count.to_i
-    @word_count_over_time << [Time.now,todays_word_count]
+    todays_total_word_count = todays_total_word_count.to_i
+    words_written_today = todays_total_word_count - @previous_word_count
+    if words_written_today.positive?
+      @word_count_over_time << [words_written_today,Time.now]
+    else
+      # negative means we started a new story eg 100 words minus old count of 5000
+      @word_count_over_time << [todays_total_word_count.to_i,Time.now]
+    end
+    @previous_word_count = todays_total_word_count
+    update_average
   end
   
-  def info
-    "#{title}\n#{keyword}\n#{trigger}\n#{compliance}%\n#{todays_word_count}"
-  end 
+  def update_average
+    @average_word_count = (@word_count_over_time.sum { |wc_pair| wc_pair.first })/@word_count_over_time.count
+  end
 
+  # Eg when the writer wants to know how much they wrote today!
+  def latest_word_count
+    @word_count_over_time.last.first
+  end 
+  
   def to_s
-    # Write every day, one word more than the last day.
+    # Write every day, one word more than the last day (on average).
     # Credit jamesclear.com/measure-backward
-    "(#{keyword}) [#{compliance}%] {Tomorrow: #{@word_count}+1=#{@word_count+1}} #{title}"
+    "(#{keyword}) [#{compliance}%] {Next session: #{@average_word_count}+1=#{@average_word_count+1}} #{title}"
   end 
   
 end

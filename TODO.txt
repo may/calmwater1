@@ -655,10 +655,6 @@ adding to tasks is much harder by design, implement later
 ;;   project -> pointing to project as it's waiting task instead of a separate (duplicated) task?
 
 
-think about on-the-go mobile access/gpd pocket/webaccess/small laptop withyou
- or just paper/printout from my laser printer..
-
-think about using newlisp javascript to run this local in browser?
 
 newlisp logging mode enabled by default during dev/even when running in prod to help enchance 'don't lose data'.
 
@@ -667,45 +663,6 @@ anything in inbox w/ creation >7 days counts against you in the scoring haha
 ## v3 todo have it output projects now, projects upcoming (sorted order?), and future. then copy paste into one note weekly! 
 ^ not sure tracking projects upcoming, but maybe if I am then yes this would be useful instead of managing myself in both my system and in fracking onenote for my boss. supports being strategic with my boss.
 
-=========================================================================
-If the app gets slow due to I/O or parsing data structures, review this:
-While writing this spec 2020-05-15 I just don't have enough data to know if this will be a problem, so wrote down thoughts and went on
-2020-05-15, #2 - I just loaded and saved the entire text of hamlet in less than a tenth of a second on my shitty blue laptop. so I doubt loading/saving will be a file, at least not compared to Ruby. We'll see once ther is more parsing though. Hamlet is 196K.
-=======================
-load data on startup.
- on save:
-  0. check if lockfile exists, if so wait 1 sec, try again, repeat for 65 seconds, then fail.
-  1. lock savefile & set a variable that we have it locked
-  2. load data from disk & parse
-  3. add changes (added task, edited etc.) to data structure
-  4. save data to disk
-  5. unlock savefile & unset variable that we have it locked
-If this loading, and parsing slows us down too much, do this instead.
-  1. lock savefile, and keep it locked for 5 minutes (if the user is making edits, changes are they're going to keep doing it)
-If that's not enough, extend it to 20 minutes.
-If that's not enough, get fancier with hashing the structure and checking that hash.
-If that's not enough, make whomever starts up first get the lock, and everyone else (all other instances) read-only.
-If that's not enough try the below, otherwise look into saving new info/queued edits to another file and merging w/ database when the system is idle?
-Or, even better, save to big data structure, but don't save that to disk; instead just append the change to a small temoprary file that ill exist if we crash. not great, but possibly fast.
-
-
-
-If extbrain loads data on startup and doesn't reload perodically
-and another instance starts up, modifies the database, and shuts down again,
-that could be problematic. (eg we save our older version of the database over that file and we lose info from other copy).
-so do we:
- 1. force all but one running version to be read-only?
- 2. sacrifice speed for data integrity, and reload the database before saving a task?
- 3. reload the database whenever we see the file changes, but only if it's changed?
- 4. hash the database and save that hash in the database so we can detect if it's changed?
- 5. if we don't have database lock, save to other file then the process that does have the database locked, can pickup that file and integrate that task/project/note etc?
-
-I'm thinking #2 + #3/4; conditionally load database if it's changed (not by us).
-
-
-
-
-==================
 
 
 

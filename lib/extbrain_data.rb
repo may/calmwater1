@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-11
+# Revised: 2020-06-12
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -53,7 +53,18 @@ class ExtbrainData
     task = Task.new(title, action_context, life_context)
     @tasks << task
   end 
+
+  def change_context_task # ??? unsure if needed, prolly
+  end
   
+  def new_project(title, keyword, life_context)
+    project = Project.new(title, keyword, life_context)
+    @projects << project
+  end
+  
+  def change_context_project(keyword, context)
+  end 
+    
   def list_habits
     @habits.each { |habit| puts habit.brief_info }
   end
@@ -68,6 +79,24 @@ class ExtbrainData
       success = false
     end
     success
+  end 
+
+  def writing_habit_word_count(keyword)
+    h = habit_exist?(keyword)
+    if h
+      h.latest_word_count
+    else
+      puts "No habit found for keyword: #{keyword}. No word count available." #hopefully never hit this..
+    end 
+  end 
+
+  def writing_habit_average_word_count(keyword)
+    h = habit_exist?(keyword)
+    if h
+      h.average_word_count
+    else
+      puts "No habit found for keyword: #{keyword}. No average word count available." #hopefully not hit this either
+    end 
   end 
   
   def no_habits?

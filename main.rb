@@ -47,7 +47,7 @@ def dispatch_user_input(input_string)
     case command
     when '!!', 'wm'
       enable_writing_mode
-    when 'exit'
+    when 'e', 'exit'
       exit
     when 'h', 'habit'
       habit_input(keyword, content)

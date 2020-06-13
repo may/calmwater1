@@ -15,3 +15,4 @@ todo some documentation
 h to list habits
 h foo to complete foo for the day
 
+alias extbrain='rlwrap ruby ~/Dropbox/scripts/extbrain-dev/main.rb' 

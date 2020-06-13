@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-06-11
+# Revised: 2020-06-12
 
 class Habit
   attr_reader :title, :keyword, :trigger, :completion
@@ -30,6 +30,7 @@ class Habit
   end 
 
   def to_s
+     # this works b/c attr_reader/method call
     "(#{keyword}) [#{compliance}%] #{title}"
   end 
   

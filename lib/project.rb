@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-05-30
+# Revised: 2020-06-11
 
 require_relative 'common_project_task'
 
@@ -11,7 +11,7 @@ class Project < CommonProjectTask
 
   def initialize(title, keyword, life_context = :personal)  # Project
     super(title)
-    @keyword = keyword # s/m make a symbol?
+    @keyword = keyword.to_sym
     @life_context = life_context.to_sym
     @tags = Array.new
     @psm = ""
@@ -45,26 +45,12 @@ class Project < CommonProjectTask
   
   end
   
-  
   def to_s
-    "hello I'm a project TODO"
-  end
+    if @tags.empty?
+      "(#{@keyword}) [#{@life_context}] #{@title}"
+    else
+      "(#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
+    end 
+  end 
 end
-
-=begin
-     ## manual testing
-     test = Project.new("test project","tp","personal")
-     test.add_note("called john")
-     test.add_note("called john2")
-     test.add_note("called john3")
-     #puts test.notes
-     p test.notes
-     if test.title == "test project"
-       puts "ok"
-     else
-       "not ok"
-     end 
-     test.title = "new title"
-     puts test.title
-=end
 
