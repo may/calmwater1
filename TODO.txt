@@ -6,7 +6,7 @@
 
 
 # NOW
-switching from global to class var for habits in extdata
+
 
 implementing tasks in ruby
 implementing ui in ruby
@@ -17,6 +17,9 @@ note and last reviewed timestamp), also display other projects with this same ta
 because there migght be 5-10 things that need to be done 'for upgrade' and seeing them together
 is exteremyl helpful
 esp since maybe you can only have one next action on a project? and not multipule tasks???tbd
+
+
+
 
 
 a to launch agendas
@@ -97,6 +100,8 @@ if >10
 
 
 MAYBE
+
+delete/remove habit sdon't want, ditto tasks or projects
 
 !! is writing mode
 just keeps acecpt ing text line by line
