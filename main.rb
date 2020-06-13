@@ -26,15 +26,8 @@ def command_loop
   while true
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
-    if input.include?('undo')
-      $data = $stash_data
-      puts "Undid!"
-    else
-      $stash_data = $data
-    end 
     dispatch_user_input(input)
-    if $data != $stash_data  # try to not hit the disk every loop
-      $data.save_data
+    $data.save_data
     end 
   end
 end

@@ -47,9 +47,3 @@
     - 2020-06-11 23:29:50.070874489 -05:00
   - - 113
     - 2020-06-12 22:38:03.809745437 -05:00
-- !ruby/object:Habit
-  title: IDEA
-  keyword: TERRIBLE
-  trigger: 
-  completion: []
-  creation: 2020-06-12 22:46:02.321150624 -05:00
