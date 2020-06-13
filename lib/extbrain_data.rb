@@ -64,11 +64,6 @@ class ExtbrainData
   
   def change_context_project(keyword, context)
   end 
-    
-  def list_habits
-    puts 'got here'
-    @habits.each { |habit| puts habit.brief_info }
-  end
   
   def writing_habit_word_count(keyword)
     h = habit_exist?(keyword)
