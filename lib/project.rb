@@ -18,6 +18,7 @@ class Project < CommonProjectTask
   end
 
   # Expects tags to be an array of symbols, but a single symbol is ok too.
+  # You can also just do p1.tags << 'tagname'
   def tags=(tags)
     if tags.is_a? Symbol
       tags = [tags]

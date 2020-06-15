@@ -11,14 +11,14 @@ require_relative '../config.rb'
 
 
   
-  def projects_number
-  end
-  def tasks_number
-  end
-  def projects_number_average
-  end
-  def tasks_number_average
-  end
+def projects_number
+end
+def tasks_number
+end
+def projects_number_average
+end
+def tasks_number_average
+end
 
 ## .find_task
 ## .update_task(replaced task object)
@@ -39,6 +39,7 @@ require_relative '../config.rb'
 
 
 class ExtbrainData
+  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
     # this should probably be @habits but trying global during dev..
@@ -49,42 +50,77 @@ class ExtbrainData
     @tasks = Array.new unless @tasks
   end
 
+  ## TASKS
+  
   def new_task(title, action_context, life_context)
     task = Task.new(title, action_context, life_context)
     @tasks << task
   end 
 
-  def change_context_task # ??? unsure if needed, prolly
+  ## PROJECTS
+
+  def defined_life_contexts
+    p = @projects.uniq { |proj| proj.life_context }    
+    life_contexts = p.collect { |proj| proj.life_context }
+    life_contexts
   end
 
-  # TODO decide if color coding useful.
-  # ideas include:
-  # yellow if review date > 7 days
-  # red if review date > 14 days
-  def list_projects
-        @habits.each do |habit|
-      if habit.completed_today?
-        print `tput setaf 2` # instruct linux/unix terminal to go green
-      elsif habit.completed_yesterday?
-        print `tput setaf 4` # instruct linux/unix terminal to go blue
-      elsif habit.completed_two_days_ago?
-        print `tput setaf 3` # instruct linux/unix terminal to go yellow
-      else
-        print `tput setaf 1` # instruct linux/unix terminal to go red
-      end 
-      puts habit.to_s
-      print `tput sgr0` # reset colors
+  def list_projects(life_context = nil)
+    if life_context
+      proj = @projects.select { |p| p.life_context == life_context.to_sym }
+    else
+      proj = @projects
     end 
-
+    # Group by tags.
+    proj.sort { |a, b| a.tags <=> b.tags }
+    proj.each { |p| puts p }
+    puts "No projects, yet. Add one with 'p keyword title of your project'" if proj.empty?
   end 
   
+  # # TODO decide if color coding useful.
+  # # ideas include:
+  # # yellow if review date > 7 days
+  # # red if review date > 14 days
+  # def list_projects_UNFINISHED_STOLEN_FROM_HABITS
+  #       @habits.each do |habit|
+  #     if habit.completed_today?
+  #       print `tput setaf 2` # instruct linux/unix terminal to go green
+  #     elsif habit.completed_yesterday?
+  #       print `tput setaf 4` # instruct linux/unix terminal to go blue
+  #     elsif habit.completed_two_days_ago?
+  #       print `tput setaf 3` # instruct linux/unix terminal to go yellow
+  #     else
+  #       print `tput setaf 1` # instruct linux/unix terminal to go red
+  #     end 
+  #     puts habit.to_s
+  #     print `tput sgr0` # reset colors
+  #   end 
+  # end 
+
+  # todo test
+  def project_exist?(keyword)
+    keyword = keyword.to_sym
+    @projects.detect { |project| project.keyword == keyword }
+  end
+
+  
   def new_project(title, keyword, life_context)
-    project = Project.new(title, keyword, life_context)
-    @projects << project
+    if project_exist?(keyword)
+      puts "Project exists with that keyword: #{keyword}. Try again."
+      success = nil
+    else
+      project = Project.new(title, keyword, life_context)
+      @projects << project
+      success = true
+    end
+    success
   end
   
   def change_context_project(keyword, context)
+    puts "TODO"
   end 
+
+  ## WRITING HABITS
   
   def writing_habit_word_count(keyword)
     h = habit_exist?(keyword)
@@ -102,7 +138,9 @@ class ExtbrainData
     else
       puts "No habit found for keyword: #{keyword}. No average word count available." #hopefully not hit this either
     end 
-  end 
+  end
+
+  ## HABITS
   
   def list_habits()
     @habits.each do |habit|
@@ -160,6 +198,8 @@ class ExtbrainData
     success
   end
 
+  ## SAVING AND LOADING DATA
+  
   def load_data
     if File.exist?($lockfile)
       $lockfile_locked = true

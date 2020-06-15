@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-11
+# Revised: 2020-06-13
 
 require_relative 'lib/controller'
 require_relative 'config.rb'
@@ -41,10 +41,11 @@ def dispatch_user_input(input_string)
     end
   else
     three_pieces = input_string.split(' ',3)
-    command = three_pieces.first
+    command = three_pieces[0]
     keyword = three_pieces[1]
     content = three_pieces[2]
     case command
+        # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
     # TODO plc keyword context edit context
     #   # lpw or wp = work projects
   # lph = home projects
