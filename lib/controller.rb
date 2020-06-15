@@ -59,7 +59,9 @@ def writing_habit_input(keyword, content)
       puts 'Writing habit completed for today! Go you!'
       puts "You wrote #{$data.writing_habit_word_count(keyword)} words today! Average: #{$data.writing_habit_average_word_count(keyword)} words."
       puts
-      puts "Tomorrow write: #{$data.writing_habit_average_word_count(keyword)+1} words"
+      tomorrow_goal = $data.writing_habit_average_word_count(keyword) + 1
+      tomorrow_total_goal = content.to_i + tomorrow_goal
+      puts "Tomorrow write: #{tomorrow_goal} words, for a total of #{tomorrow_total_goal}"
     else
       puts "Please try again with the current TOTAL word count, eg 'h wc 5000', please"
     end 

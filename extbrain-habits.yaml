@@ -31,6 +31,7 @@
   trigger: 
   completion:
   - 2020-06-11 21:51:12.437439580 -05:00
+  - 2020-06-13 19:23:31.940507030 -05:00
   creation: 2020-06-09 13:05:22.340106043 -05:00
 - !ruby/object:WritingHabit
   title: Write every day, one word more than average.
@@ -39,14 +40,17 @@
   completion:
   - 2020-06-11 23:29:50.070866869 -05:00
   - 2020-06-12 22:38:03.809735606 -05:00
+  - 2020-06-13 21:23:42.188036350 -05:00
   creation: 2020-06-11 22:19:40.150485990 -05:00
-  previous_word_count: 230
-  average_word_count: 115
+  previous_word_count: 351
+  average_word_count: 117
   word_count_over_time:
   - - 117
     - 2020-06-11 23:29:50.070874489 -05:00
   - - 113
     - 2020-06-12 22:38:03.809745437 -05:00
+  - - 121
+    - 2020-06-13 21:23:42.188043540 -05:00
 - !ruby/object:Habit
   title: 16:8 fasting; eat from 1300-2100 (or noon to 8p if you perfer).
   keyword: fast
