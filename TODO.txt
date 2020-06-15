@@ -1,11 +1,12 @@
-
 ;; Created: 2020-05-13
-;; Revised: 2020-06-11
+;; Revised: 2020-06-15
 ;; Copyright: Nicholas E. May. All rights reserved.
 
 
 
 # NOW
+
+
 
 
 implementing tasks in ruby
@@ -18,7 +19,7 @@ because there migght be 5-10 things that need to be done 'for upgrade' and seein
 is exteremyl helpful
 esp since maybe you can only have one next action on a project? and not multipule tasks???tbd
 
-
+stats of # projects, # tasks, # projects by life context array.collect by life context 
 
 
 

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-12
+# Revised: 2020-06-15
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -8,17 +8,6 @@ require_relative 'task.rb'
 require_relative 'habit.rb'
 require_relative 'writing_habit.rb'
 require_relative '../config.rb'
-
-
-  
-def projects_number
-end
-def tasks_number
-end
-def projects_number_average
-end
-def tasks_number_average
-end
 
 ## .find_task
 ## .update_task(replaced task object)
@@ -42,14 +31,31 @@ class ExtbrainData
   attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
-    # this should probably be @habits but trying global during dev..
     # todo
     load_data
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
+    puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_work_projects} work projects."
   end
 
+  def number_of_projects
+    @projects.count
+  end
+  
+  def number_of_tasks
+    if num_tasks = @projects.map { |p| p.task_count }.reduce(:+)
+      @tasks.count + num_tasks
+    else
+      @tasks.count
+    end 
+  end
+  
+  def number_of_work_projects
+    @projects.select { |p| p.life_context == 'work'.to_sym }.count
+  end 
+
+  
   ## TASKS
   
   def new_task(title, action_context, life_context)
@@ -208,25 +214,40 @@ class ExtbrainData
       puts "Locking..."
       File.open($lockfile, 'w') {|f| f.write(Process.pid) }
     end
-    print "Loading file..."
+    print "Loading files..."
     if File.exist?($savefile_habits)
       @habits = YAML.load(File.read($savefile_habits))
     else
-      puts 
       puts "File not found: #{$savefile_habits}."
-      puts 'If this is your first run, you can ignore this message.'
+      puts ' If this is your first run, or you have no habits yet, you can ignore this message.'
     end
-    puts "loaded. TODO #{$projects_number} #{$tasks_number}"
-    # stats is a hell no, but knowing how many loaded just might be fun! helps with my rtm statks spreadsheet too
+    if File.exist?($savefile_projects)
+      @habits = YAML.load(File.read($savefile_projects))
+    else
+      puts "File not found: #{$savefile_projects}."
+      puts ' If this is your first run, or you have no projects yet, you can ignore this message.'
+    end
+    if File.exist?($savefile_tasks)
+      @habits = YAML.load(File.read($savefile_tasks))
+    else
+      puts "File not found: #{$savefile_tasks}."
+      puts ' If this is your first run, or you have no tasks, you can ignore this message.'
+    end
+    puts "loaded."
   end
   
   def save_data(clear_lock=nil)
     if Process.pid == File.open($lockfile, &:gets).to_i
       print "Saving file..." if clear_lock # only be chatty if closing program, otherwise save silently each time
+      print 'habits...' if clear_lock
       File.open($savefile_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
+      print 'projects...' if clear_lock
+      File.open($savefile_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
+      print 'tasks...' if clear_lock
+      File.open($savefile_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
       puts "saved!" if clear_lock
-      puts "todo projects" if clear_lock
-      puts "todo tasks" if clear_lock
+#      puts "todo projects" if clear_lock  TODO TEST
+#      puts "todo tasks" if clear_lock TODO TEST
       if clear_lock
         File.delete($lockfile)
       end 

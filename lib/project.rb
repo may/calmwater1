@@ -15,6 +15,7 @@ class Project < CommonProjectTask
     @life_context = life_context.to_sym
     @tags = Array.new
     @psm = ""
+    @tasks = Array.new
   end
 
   # Expects tags to be an array of symbols, but a single symbol is ok too.
@@ -39,6 +40,10 @@ class Project < CommonProjectTask
   def delete_task(task)
   end
 
+  def task_count
+    @tasks.count
+  end 
+  
   # def remove_task(task) ? If you need to move a task from project A to project B..
   # what about an explicit move command instead? Let the data layer handle the mucking about.
   

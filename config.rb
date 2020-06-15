@@ -1,7 +1,9 @@
 # Created: 2020-06-06
-# Revised: 2020-06-13
+# Revised: 2020-06-15
 
-$savefile_habits = 'extbrain-habits.yaml'
+$savefile_habits = 'extbrain_habits.yaml'
+$savefile_projects = 'extbrain_projects.yaml'
+$savefile_tasks = 'extbrain_tasks.yaml'
 $lockfile = 'lockfile-extbrain.txt'
 $color_only = true # if you don't want to see text indicating *when* you last completed a habit. If colorblind, set this to false.
 
