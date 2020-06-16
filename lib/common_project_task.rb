@@ -1,7 +1,6 @@
 # Created: 2020-05-28
-# Revised: 2020-06-10
+# Revised: 2020-06-15
 # Used by Projects and Tasks.
-$time_formatting_string = "%Y-%m-%d %H:%M, %A."
 
 class CommonProjectTask
   def CommonProjectTask.attr_accessor_with_logging(*names)

@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-06-11
+# Revised: 2020-06-15
 
 require_relative 'common_project_task'
 
@@ -50,6 +50,13 @@ class Project < CommonProjectTask
   def complete_task(task)
   
   end
+
+  def view_project
+    puts self # use to_s
+    puts "Notes:"
+    notes.each { |n| puts " #{n[0].strftime($time_formatting_string)} #{n[1]}"}
+   tasks.each { |t| puts(' ',t) }
+  end 
   
   def to_s
     if @tags.empty?

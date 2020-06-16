@@ -73,6 +73,7 @@ class ExtbrainData
 
   def list_projects(life_context = nil)
     if life_context
+      life_context = life_context.to_sym
       proj = @projects.select { |p| p.life_context == life_context.to_sym }
     else
       proj = @projects
@@ -222,13 +223,13 @@ class ExtbrainData
       puts ' If this is your first run, or you have no habits yet, you can ignore this message.'
     end
     if File.exist?($savefile_projects)
-      @habits = YAML.load(File.read($savefile_projects))
+      @projects = YAML.load(File.read($savefile_projects))
     else
       puts "File not found: #{$savefile_projects}."
       puts ' If this is your first run, or you have no projects yet, you can ignore this message.'
     end
     if File.exist?($savefile_tasks)
-      @habits = YAML.load(File.read($savefile_tasks))
+      @tasks = YAML.load(File.read($savefile_tasks))
     else
       puts "File not found: #{$savefile_tasks}."
       puts ' If this is your first run, or you have no tasks, you can ignore this message.'
@@ -246,8 +247,6 @@ class ExtbrainData
       print 'tasks...' if clear_lock
       File.open($savefile_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
       puts "saved!" if clear_lock
-#      puts "todo projects" if clear_lock  TODO TEST
-#      puts "todo tasks" if clear_lock TODO TEST
       if clear_lock
         File.delete($lockfile)
       end 

@@ -8,15 +8,19 @@ require_relative 'writing_mode.rb'
 
 
 def project_input(command, keyword, content)
-  # view all projects, unless context specified
+  # p [optional: life_context] or lp - list projects for the current or given life context
+  # p keyword - view project with keyword
+  # p keyword title - create project with keyword and title 
+
+  # 'p' or 'lp' etc : view all projects, unless context specified
   # TODO MAYBE or tag specified
   ## ^^ INSTEAD consider GROUPING by TAGS
   ## ^^^ SORT TBD; probably just order projects created in
+  # 'p keyword some project' # creates some project w/ keyword of keyword
   if keyword
     if content
       if $data.new_project(content, keyword, $life_context)
-        # TODO list project just the one we created
-        print "Project created:"
+        print "Project created: "
         puts $data.project_exist?(keyword)
         if $data.projects.count < 10 # todo ideally have proper accessor for # of projects
           puts "Change project context with 'plc keyword context') or see config.rb for automatic settings." 
@@ -24,17 +28,19 @@ def project_input(command, keyword, content)
       end
     else # just a keyword
       if $data.defined_life_contexts.include?(keyword.to_sym)
-        $data.list_projects(keyword.to_sym)
+        $data.list_projects(keyword) # life context
+      else # just a project keyword, not a life context
+        if project = $data.project_exist?(keyword)
+          project.view_project
+        else
+          puts "No project found with keyword: #{keyword}."
+        end 
       end
     end
   else # no keyword or content
     $data.list_projects
   end 
 end     
-  # p [optional: life_context] or lp - list projects for the current or given life context
-  # p all - list all projects regardless of life context
-  # p keyword - view project with keyword
-  # p keyword title - create project with keyword and title 
 #  if not keyword
 #    puts "Need to specify a keyword" #TODO
 #  end 

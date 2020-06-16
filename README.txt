@@ -66,8 +66,8 @@ p all - list all projects regardless of life context
 p keyword - view project with keyword
 p keyword title - create project with keyword and title 
 tag keyword - add tags to project?
-plc keyword context - edit context
-
+plc keyword life_context - edit life context (home, work, etc.)
+pt keyword action_context task - add a task to project with keyword in action_context with a title of task #pt stands for project task
 ## HABITS
 xh - list habits
 xh keyword - log habit for today
