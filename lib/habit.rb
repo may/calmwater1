@@ -16,8 +16,12 @@ class Habit
     @creation = Time.now
   end
   
-  def completed(optional = nil) # optional exists b/c of WritingHabit... not perfect encapsulation
-    @completion << Time.now
+  def completed(optional = nil)
+    if optional
+      @completion << Time.now-86400 # 86400 = 1 day of seconds; 60*60*24
+    else 
+      @completion << Time.now
+    end 
   end
 
   def compliance

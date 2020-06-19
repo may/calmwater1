@@ -169,10 +169,10 @@ class ExtbrainData
     @habits.detect { |habit| habit.keyword == keyword }
   end
   
-  def complete_habit(keyword, word_count = nil)
+  def complete_habit(keyword, word_count_or_yesterday_flag = nil)
     h = habit_exist?(keyword)
     if h
-      h.completed(word_count)
+      h.completed(word_count_or_yesterday_flag)
       success = true
     else
       puts "No habit found for keyword: #{keyword}. Can't complete non-existant habit."

@@ -80,7 +80,11 @@ def habit_input(keyword, content)
   if 'wc' == keyword
     writing_habit_input(keyword, content)
   elsif content
-    puts "Habit created: #{keyword}." if $data.new_habit(content, keyword)
+    if content == 'yesterday'
+      puts "Logged completion of #{keyword} habit for yesterday." if $data.complete_habit(keyword, true)
+    else
+      puts "Habit created: #{keyword}." if $data.new_habit(content, keyword)
+    end 
   elsif keyword
     if $data.no_habits?
       puts no_habits 
