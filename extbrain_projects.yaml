@@ -1,0 +1,93 @@
+---
+- !ruby/object:Project
+  title: testing extbrain test project
+  notes:
+  - - 2020-06-15 12:31:09.495965346 -05:00
+    - 'Created: testing extbrain test project'
+  created: 2020-06-15 12:31:09.495969946 -05:00
+  completed: 
+  deleted: 
+  last_reviewed: 
+  keyword: :test
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: create a logging/journal functionality in extbrain to use 'l' and timestamp
+    plus info. for taking notes of things. tags too?
+  notes:
+  - - 2020-06-16 14:57:45.718109053 -05:00
+    - 'Created: create a logging/journal functionality in extbrain to use ''l'' and
+      timestamp plus info. for taking notes of things. tags too?'
+  created: 2020-06-16 14:57:45.718115953 -05:00
+  completed: 
+  deleted: 
+  last_reviewed: 
+  keyword: :log
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: create functionality to make plc keyword context work in extbrain
+  notes:
+  - - 2020-06-16 14:58:38.546488016 -05:00
+    - 'Created: create functionality to make plc keyword context work in extbrain'
+  created: 2020-06-16 14:58:38.546491497 -05:00
+  completed: 
+  deleted: 
+  last_reviewed: 
+  keyword: :plc
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: Ensure sarah starts an early morning (anytime before 9am) walking habit per
+    Lynda 2020-06-16
+  notes:
+  - - 2020-06-16 16:48:35.739298257 -05:00
+    - 'Created: Ensure sarah starts an early morning (anytime before 9am) walking
+      habit per Lynda 2020-06-16'
+  created: 2020-06-16 16:48:35.739306876 -05:00
+  completed: 
+  deleted: 
+  last_reviewed: 
+  keyword: :sarah-walk
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: create a feature in extbrain to color code projects based on last reviewed;
+    >7 days is yellow, >14 days is red.
+  notes:
+  - - 2020-06-16 16:50:38.458137759 -05:00
+    - 'Created: create a feature in extbrain to color code projects based on last
+      reviewed; >7 days is yellow, >14 days is red.'
+  created: 2020-06-16 16:50:38.458140869 -05:00
+  completed: 
+  deleted: 
+  last_reviewed: 
+  keyword: :proj-color
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: Ensure get 3 upgrade slidedecks reviewed, trimmed, and combined and uploaded
+    to sharepoint. By Aug 7th.
+  notes:
+  - - 2020-06-17 15:12:07.791566184 -05:00
+    - 'Created: Ensure get 3 upgrade slidedecks reviewed, trimmed, and combined and
+      uploaded to sharepoint. By Aug 7th.'
+  created: 2020-06-17 15:12:07.791570224 -05:00
+  completed: 
+  deleted: 
+  last_reviewed: 
+  keyword: :upgrade-slides
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
