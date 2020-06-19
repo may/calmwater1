@@ -1,13 +1,27 @@
 # Created: 2020-05-30
-# Revised: 2020-06-15
+# Revised: 2020-06-16
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
+def project_edit(keyword, content)
+  puts 'todo'
+end 
 
-def project_input(command, keyword, content)
+def project_task(keyword, content)
+  # pt keyword some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found
+  if $data.project_exist?(keyword)
+  # todo figure out how to add a task to project
+  # check datarb
+    #then check project  
+  else
+    puts "No project found with keyword: #{keyword}."
+  end 
+end 
+
+def project_input(keyword, content)
   # p [optional: life_context] or lp - list projects for the current or given life context
   # p keyword - view project with keyword
   # p keyword title - create project with keyword and title 
@@ -41,21 +55,6 @@ def project_input(command, keyword, content)
     $data.list_projects
   end 
 end     
-#  if not keyword
-#    puts "Need to specify a keyword" #TODO
-#  end 
-
-  # if p or lp or projects -> list projects
-  # if p or project keyword -> list specific project, keyword
-  # if pe edit project
- #  todo how to add task?
-  # if p keyword content -> create new project with keyword
-
-  
-#  case command
-#  when 'p', 'proj', 'project' 
-    # remember $life_context now exists
-
 
 def writing_habit_input(keyword, content)
   # h wc 5000

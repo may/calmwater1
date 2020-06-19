@@ -1,5 +1,16 @@
 # Created: 2020-05-30
-# Revised: 2020-06-13
+# Revised: 2020-06-18
+
+# todo d for delete
+# I think r for rename
+# and plc for project life context change
+# the editor is NOT modal
+# so no 'ep' for edit projects where yo uselect a value
+# you have to know what the command is
+# not usefr friendly
+# but ? should also yield a handy command list, stored in main,rb 
+# todo
+# r for rename task, or e for edit, or ep for edit project?
 
 require_relative 'lib/controller'
 require_relative 'config.rb'
@@ -26,6 +37,8 @@ def command_loop
   while true
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
+    # TODO try $data.load_data BEFORE modyiftgin state.
+    # TODO scope lockfile to just save load
     dispatch_user_input(input)
     $data.save_data
   end 
@@ -45,7 +58,7 @@ def dispatch_user_input(input_string)
     keyword = three_pieces[1]
     content = three_pieces[2]
     case command
-        # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
+    # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
     # TODO plc keyword context edit context
     #   # lpw or wp = work projects
   # lph = home projects
@@ -59,7 +72,11 @@ def dispatch_user_input(input_string)
     when 'h', 'habit'
       habit_input(keyword, content)
     when 'p', 'proj', 'project', 'projects', 'lp'
-      project_input(command, keyword, content)
+      project_input(keyword, content)
+    when 'pt', 'project-task'
+      project_task(keyword, content)
+    when 'pe', 'project-edit'
+      project_edit(keyword, content)
     else
       # todo reset no op once the user inputs a command correctly?
       no_op_msg = "That doesn't do anything." # At least not yet.

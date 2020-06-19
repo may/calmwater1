@@ -1,5 +1,8 @@
 # Created: 2020-06-03
-# Revised: 2020-06-13
+# Revised: 2020-06-18
+
+# TODO consider a rename habit function that also dumps previous name into notes field like tasks/projects do.
+# 2020-06-18- did add a notes field that I'm just maintaining manually for any thing like this for now
 
 class Habit
   attr_reader :title, :keyword, :trigger, :completion
@@ -10,8 +13,18 @@ class Habit
     @trigger = trigger
     @completion = Array.new
     @creation = Time.now
+    @notes = ""
   end
 
+  def rename(new_title)
+    add_note("old title: #{@title}")
+    @title = new_title
+  end 
+  
+  def add_note(contents)
+    @notes << contents
+  end 
+  
   def completed(optional = nil) # optional exists b/c of WritingHabit... not perfect encapsulation
     @completion << Time.now
   end
