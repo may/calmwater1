@@ -2,7 +2,7 @@
 - !ruby/object:Habit
   title: bike every night at 8pm
   keyword: bike
-  trigger: 
+  trigger:
   completion:
   - 2020-06-06 21:21:58.792519834 -05:00
   - 2020-06-03 21:25:08.784757627 -05:00
@@ -10,11 +10,12 @@
   - 2020-06-08 21:07:57.620043231 -05:00
   - 2020-05-31 21:21:58.792519834 -05:00
   - 2020-06-11 22:13:10.278624810 -05:00
+  - 2020-06-19 21:42:09.825967778 -05:00
   creation: 2020-06-01 21:16:59.993223251 -05:00
 - !ruby/object:Habit
   title: Walk 2000 steps at least once a day, ideally twice, ideally brisky
   keyword: walk
-  trigger: 
+  trigger:
   completion:
   - 2020-06-04 21:25:24.224450157 -05:00
   - 2020-06-05 21:25:37.139398597 -05:00
@@ -29,11 +30,12 @@
   - 2020-06-16 21:50:39.579336785 -05:00
   - 2020-06-17 09:58:55.614557575 -05:00
   - 2020-06-19 11:16:27.803933664 -05:00
+  - 2020-06-21 21:41:24.757583405 -05:00
   creation: 2020-06-04 21:20:20.128323928 -05:00
 - !ruby/object:Habit
   title: read for an hour instead of reddit
   keyword: read
-  trigger: 
+  trigger:
   completion:
   - 2020-06-11 21:51:12.437439580 -05:00
   - 2020-06-13 19:23:31.940507030 -05:00
@@ -43,7 +45,7 @@
 - !ruby/object:WritingHabit
   title: Write every day, one word more than average.
   keyword: wc
-  trigger: 
+  trigger:
   completion:
   - 2020-06-11 23:29:50.070866869 -05:00
   - 2020-06-12 22:38:03.809735606 -05:00
@@ -73,7 +75,8 @@
 - !ruby/object:Habit
   title: fast for 13 hours a day, from 9p to 10am
   keyword: fast
-  trigger: 
+  trigger:
   completion:
   - 2020-06-19 11:16:21.907485160 -05:00
+  - 2020-06-21 21:41:28.350575904 -05:00
   creation: 2020-06-19 11:16:20.111280527 -05:00

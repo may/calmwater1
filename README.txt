@@ -1,5 +1,5 @@
 Created: 2020-05-30
-Revised: 2020-05-31
+Revised: 2020-06-19
 
 Requirements:
  ruby
@@ -12,8 +12,11 @@ Using:
 
 
 todo some documentation
-h to list habits
-h foo to complete foo for the day
+h - to list habits
+h foo - to complete foo for the day
+h foo yesterday - to complete foo for yesterday
+h wc - to create a word count habit
+h wc 500 - to complete the word count goal for today, with a total word count of 500 for the document (the software will calculate today's word count)
 
 alias extbrain='rlwrap ruby ~/Dropbox/scripts/extbrain-dev/main.rb' 
 

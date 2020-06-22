@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-15
+# Revised: 2020-06-19
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -36,7 +36,7 @@ class ExtbrainData
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
-    puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_work_projects} work projects."
+    puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_work_projects} work projects. Total: #{number_of_projects + number_of_tasks}."
   end
 
   def number_of_projects
