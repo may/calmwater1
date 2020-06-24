@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-06-19
+# Revised: 2020-06-23
 
 # TODO consider a rename habit function that also dumps previous name into notes field like tasks/projects do.
 # 2020-06-19 for now sticking with just deleting/depracating habits as needed
@@ -34,19 +34,27 @@ class Habit
   end
 
   def completed_today?
-    @completion.last.mday == Time.now.mday 
+    unless @completion.empty?
+      @completion.last.mday == Time.now.mday
+    end
   end
 
   def completed_yesterday?
-    (@completion.last.mday + 1) == Time.now.mday
+    unless @completion.empty?
+      (@completion.last.mday + 1) == Time.now.mday
+    end
   end
 
   def completed_two_days_ago?
-    (@completion.last.mday + 2) == Time.now.mday
+    unless @completion.empty?
+      (@completion.last.mday + 2) == Time.now.mday
+    end
   end
 
   def last_completed_date
-    @completion.last.strftime('%Y-%m-%d')
+    unless @completion.empty?   
+      @completion.last.strftime('%Y-%m-%d')
+    end
   end 
 
   def last_completed
