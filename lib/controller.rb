@@ -1,10 +1,14 @@
 # Created: 2020-05-30
-# Revised: 2020-06-16
+# Revised: 2020-06-25
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
+
+def task_input
+
+end
 
 def project_edit(keyword, content)
   puts 'todo'

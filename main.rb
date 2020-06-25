@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-18
+# Revised: 2020-06-25
 
 # todo d for delete
 # I think r for rename
@@ -16,6 +16,13 @@ require_relative 'lib/controller'
 require_relative 'config.rb'
 
 $writing_mode = false
+
+$help_text = <<HEREDOC
+p project
+etc. todo help text
+HEREDOC
+
+
 
 def startup
   $data = ExtbrainData.new
@@ -77,6 +84,9 @@ def dispatch_user_input(input_string)
       project_task(keyword, content)
     when 'pe', 'project-edit'
       project_edit(keyword, content)
+    when 't', 'task'
+    when '?', 'help'
+      puts $help_text
     else
       # todo reset no op once the user inputs a command correctly?
       no_op_msg = "That doesn't do anything." # At least not yet.
