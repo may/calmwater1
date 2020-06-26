@@ -6,8 +6,15 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-def task_input
-
+def task_input(task_body)
+  ## TODO how do you specify action context? that's the keyword field right?
+  ## t computer email bob
+  ## t house clean the gutters etc?
+  # t foo = create task w/ content foo
+  # pt is how you create a project task
+  # ^todo make this print whenever you have less than 10 tasks
+  new_task(title, action_context, life_context)
+        if $data.new_project(content, keyword, $life_context)
 end
 
 def project_edit(keyword, content)

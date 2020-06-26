@@ -85,6 +85,7 @@ def dispatch_user_input(input_string)
     when 'pe', 'project-edit'
       project_edit(keyword, content)
     when 't', 'task'
+      task_input(keyword + ' ' + content)
     when '?', 'help'
       puts $help_text
     else
