@@ -41,7 +41,12 @@ class Habit
 
   def completed_yesterday?
     unless @completion.empty?
-      (@completion.last.mday + 1) == Time.now.mday
+      if (@completion.last.mday + 1) == Time.now.mday
+        true
+      elsif @completion.last.mday > Time.now.mday # month rolls over
+        true
+      else
+        false
     end
   end
 

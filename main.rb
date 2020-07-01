@@ -1,5 +1,6 @@
 # Created: 2020-05-30
-# Revised: 2020-06-25
+# Revised: 2020-06-27
+
 
 # todo d for delete
 # I think r for rename
@@ -18,6 +19,8 @@ require_relative 'config.rb'
 $writing_mode = false
 
 $help_text = <<HEREDOC
+TODO consider scanning source code for each function and documenting but that seems silly
+just keep it all here and extract from this text to the readme
 p project
 etc. todo help text
 HEREDOC
@@ -85,7 +88,7 @@ def dispatch_user_input(input_string)
     when 'pe', 'project-edit'
       project_edit(keyword, content)
     when 't', 'task'
-      task_input(keyword + ' ' + content)
+      task_input(keyword, content)
     when '?', 'help'
       puts $help_text
     else
