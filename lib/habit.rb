@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-07-01
+# Revised: 2020-07-02
 
 # TODO BUGFIX - switch from Time to DateTime to allow proper yesterday & two days ago detection
 # across month boundries
@@ -38,25 +38,33 @@ class Habit
 
   def completed_today?
     unless @completion.empty?
-      @completion.last.mday == Time.now.mday
+      @completion.last.yday == Time.now.yday
     end
   end
 
   def completed_yesterday?
     unless @completion.empty?
-      unless (@completion.last.mday + 1) == Time.now.mday
-        @completion.last.mday > Time.now.mday # month rolled over
-      end 
+
+
+      # this assumes normal checks already failed
+      
+#      if yday 1 or 2
+#        and mday is 31
+      #      then it's jany 1 or jan 2
+      # and how do we account for that?
+      # if completion.last.yday is 30 and today is 1 then two days ago true
+      # if completion.last.yday is 31 and today is 1 then yesterday
+      # if completion.last.yday is 31 and today is 2 then two days ago true
+
+      
+      
+      (@completion.last.yday + 1) == Time.now.yday
     end
   end
 
   def completed_two_days_ago?
     unless @completion.empty?
-      unless (@completion.last.mday + 2) == Time.now.mday
-        false #not accurate, but something
-        #@completion.last.mday > Time.now.mday # month rolled over, inaccurate
-        # TODO switch @completion to datetime, for now get on with life and deal
-      end 
+      (@completion.last.yday + 2) == Time.now.yday
     end
   end
 
