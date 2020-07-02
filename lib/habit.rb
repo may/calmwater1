@@ -1,5 +1,8 @@
 # Created: 2020-06-03
-# Revised: 2020-06-23
+# Revised: 2020-07-01
+
+# TODO BUGFIX - switch from Time to DateTime to allow proper yesterday & two days ago detection
+# across month boundries
 
 # TODO consider a rename habit function that also dumps previous name into notes field like tasks/projects do.
 # 2020-06-19 for now sticking with just deleting/depracating habits as needed
@@ -41,18 +44,19 @@ class Habit
 
   def completed_yesterday?
     unless @completion.empty?
-      if (@completion.last.mday + 1) == Time.now.mday
-        true
-      elsif @completion.last.mday > Time.now.mday # month rolls over
-        true
-      else
-        false
+      unless (@completion.last.mday + 1) == Time.now.mday
+        @completion.last.mday > Time.now.mday # month rolled over
+      end 
     end
   end
 
   def completed_two_days_ago?
     unless @completion.empty?
-      (@completion.last.mday + 2) == Time.now.mday
+      unless (@completion.last.mday + 2) == Time.now.mday
+        false #not accurate, but something
+        #@completion.last.mday > Time.now.mday # month rolled over, inaccurate
+        # TODO switch @completion to datetime, for now get on with life and deal
+      end 
     end
   end
 
@@ -75,7 +79,7 @@ class Habit
   end
   
   def to_s
-    # this works b/c attr_reader/method call
+    # if you read this later and wonder how, this works b/c attr_reader/method call
     if $color_only # let color coding in extbrain_data handle last completed 
       "(#{keyword}) [#{compliance}%] #{title}"
     else

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-27
+# Revised: 2020-07-01
 
 
 # todo d for delete
@@ -75,6 +75,8 @@ def dispatch_user_input(input_string)
   # lpp = personal projects
   # li / lm = list info (or metadata) with optional keyword for specific project
 
+
+        ## TODO if 'clear' send 'clear' to terminal? tput clear??
     when '!!', 'wm'
       enable_writing_mode
     when 'e', 'exit'
