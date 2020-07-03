@@ -44,27 +44,15 @@ class Habit
 
   def completed_yesterday?
     unless @completion.empty?
-
-
-      # this assumes normal checks already failed
-      
-#      if yday 1 or 2
-#        and mday is 31
-      #      then it's jany 1 or jan 2
-      # and how do we account for that?
-      # if completion.last.yday is 30 and today is 1 then two days ago true
-      # if completion.last.yday is 31 and today is 1 then yesterday
-      # if completion.last.yday is 31 and today is 2 then two days ago true
-
-      
-      
+#      ((@completion.last.to_i - 18000) / 86400.0).floor == Time.now.to_i.floor
       (@completion.last.yday + 1) == Time.now.yday
     end
   end
 
   def completed_two_days_ago?
     unless @completion.empty?
-      (@completion.last.yday + 2) == Time.now.yday
+      #((@completion.last.to_i - 18000) / 86400.0).floor == Time.now.to_i.floor
+       (@completion.last.yday + 2) == Time.now.yday
     end
   end
 
