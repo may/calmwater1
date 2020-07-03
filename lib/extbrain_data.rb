@@ -55,6 +55,14 @@ class ExtbrainData
     @projects.select { |p| p.life_context == 'work'.to_sym }.count
   end 
 
+  ## SEARCHING
+  # s string
+  def search
+    
+  end
+
+  def search_all # including notes, shortcut should be sa
+  end
   
   ## TASKS
   
@@ -84,31 +92,20 @@ class ExtbrainData
     puts "No projects, yet. Add one with 'p keyword title of your project'" if proj.empty?
   end 
   
-  # # TODO decide if color coding useful.
+  # # TODO decide if color coding useful for projects
+  # # if so steal tput from habits list
   # # ideas include:
   # # yellow if review date > 7 days
   # # red if review date > 14 days
-  # def list_projects_UNFINISHED_STOLEN_FROM_HABITS
-  #       @habits.each do |habit|
-  #     if habit.completed_today?
-  #       print `tput setaf 2` # instruct linux/unix terminal to go green
-  #     elsif habit.completed_yesterday?
-  #       print `tput setaf 4` # instruct linux/unix terminal to go blue
-  #     elsif habit.completed_two_days_ago?
-  #       print `tput setaf 3` # instruct linux/unix terminal to go yellow
-  #     else
-  #       print `tput setaf 1` # instruct linux/unix terminal to go red
-  #     end 
-  #     puts habit.to_s
-  #     print `tput sgr0` # reset colors
-  #   end 
-  # end 
 
   # todo test
   def project_exist?(keyword)
     keyword = keyword.to_sym
     @projects.detect { |project| project.keyword == keyword }
   end
+
+# todo add task project
+
 
   
   def new_project(title, keyword, life_context)

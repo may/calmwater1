@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-25
+# Revised: 2020-07-03
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -21,14 +21,19 @@ def project_edit(keyword, content)
   puts 'todo'
 end 
 
+# TODO 
 def project_task(keyword, content)
-  # pt keyword some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found
-  if $data.project_exist?(keyword)
+  # pt keyword action_context some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found
+  if p = $data.project_exist?(keyword)
   # todo figure out how to add a task to project
   # check datarb
-    #then check project  
+    #then check project
+    two_pieces = content.split(' ', 2)
+    action_context = two_pieces[0]
+    title = two_pieces[1]
+    p.add_task(title, action_context)
   else
-    puts "No project found with keyword: #{keyword}."
+    puts "No project found with keyword: #{keyword}. Unable to add task"
   end 
 end 
 

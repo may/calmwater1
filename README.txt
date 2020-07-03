@@ -1,5 +1,5 @@
 Created: 2020-05-30
-Revised: 2020-06-19
+Revised: 2020-07-03
 
 Requirements:
  ruby
@@ -18,7 +18,11 @@ h foo yesterday - to complete foo for yesterday
 h wc - to create a word count habit
 h wc 500 - to complete the word count goal for today, with a total word count of 500 for the document (the software will calculate today's word count)
 
-alias extbrain='rlwrap ruby ~/Dropbox/scripts/extbrain-dev/main.rb' 
+p keyword string - creates project with keyword and title of string
+pt keyword action_context string - creates a task within project specified by keyword with specified title of string with action context of action_context
+
+
+alias extbrain='rlwrap ruby ~/extbrain/main.rb' 
 
 
 # COMMAND STRUCTURE

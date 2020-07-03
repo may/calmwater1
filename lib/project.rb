@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-06-15
+# Revised: 2020-07-03
 
 require_relative 'common_project_task'
 
@@ -34,16 +34,19 @@ class Project < CommonProjectTask
     @tags = tags
   end
 
-  def add_task(task)
+  def add_task(title, action_context)
+    task = Task.new(title, action_context, @life_context)
+    @tasks << task
   end
 
-  def delete_task(task)
-  end
 
   def task_count
     @tasks.count
   end 
-  
+
+#  def delete_task(task)
+#  end
+
   # def remove_task(task) ? If you need to move a task from project A to project B..
   # what about an explicit move command instead? Let the data layer handle the mucking about.
   
@@ -53,9 +56,10 @@ class Project < CommonProjectTask
 
   def view_project
     puts self # use to_s
+    @tasks.each { |t| puts " #{t.to_s(true)}" }
     puts "Notes:"
-    notes.each { |n| puts " #{n[0].strftime($time_formatting_string)} #{n[1]}"}
-   tasks.each { |t| puts(' ',t) }
+    @notes.each { |n| puts " #{n[0].strftime($time_formatting_string)} #{n[1]}"}
+
   end 
   
   def to_s
