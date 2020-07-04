@@ -79,6 +79,9 @@ def dispatch_user_input(input_string)
         ## TODO if 'clear' send 'clear' to terminal? tput clear??
     when '!!', 'wm'
       enable_writing_mode
+    when 'c', 'complete', 'finish', 'done'
+      complete_task_or_project(keyword)
+      #MAYBE if you want multi-word searching add content and keyword
     when 'e', 'exit'
       exit
     when 'h', 'habit'

@@ -31,8 +31,30 @@ end
 # else looks for subtask of project w/ string in title
 # if several matches, print list and allow user to choose a task or retry their search
 # string until a match is found
-def complete_task_or_project
-  #
+def complete_task_or_project(string)
+  unless string
+    puts "Need to specify which task or project to complete. Just type a search term."
+  else
+    p = $data.project_exist?(string)
+    if p
+      # todo check if already completed and print that or filter that out from search
+      # probably filter that out from search
+      p.complete
+      # todo set undo variables
+      puts "Completed project: #{p}"
+    elsif p = find_projects(string)
+      if p.count > 1
+      # todo ask which one function
+      else
+        p.complete
+        # todo set undo variables
+        puts "Completed project: #{p}"
+      end
+    else
+      t = find_tasks(string)
+      #todo complete tasks code and undo vars etc.
+    end
+  end
 end
 
 

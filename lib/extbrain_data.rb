@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-03
+# Revised: 2020-07-04
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -28,7 +28,7 @@ require_relative '../config.rb'
 
 
 class ExtbrainData
-  attr_reader :projects
+#  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
     # todo
@@ -40,11 +40,11 @@ class ExtbrainData
   end
 
   def number_of_projects
-    @projects.count
+    projects.count
   end
   
   def number_of_tasks
-    if num_tasks = @projects.map { |p| p.task_count }.reduce(:+)
+    if num_tasks = projects.map { |p| p.task_count }.reduce(:+)
       @tasks.count + num_tasks
     else
       @tasks.count
@@ -52,7 +52,7 @@ class ExtbrainData
   end
   
   def number_of_work_projects
-    @projects.select { |p| p.life_context == 'work'.to_sym }.count
+    projects.select { |p| p.life_context == 'work'.to_sym }.count
   end 
 
   # Returns array of projects containing search_string
@@ -79,6 +79,10 @@ class ExtbrainData
   end
   
   ## TASKS
+
+  def tasks
+    @tasks.filter { |task| not (task.completed? or task.deleted?) }
+  end
   
   def new_task(title, action_context, life_context)
     task = Task.new(title, action_context, life_context)
@@ -93,12 +97,13 @@ class ExtbrainData
     life_contexts
   end
 
+  # todo use projects to filter out completed/deleted
   def list_projects(life_context = nil)
     if life_context
       life_context = life_context.to_sym
-      proj = @projects.select { |p| p.life_context == life_context.to_sym }
+      proj = projects.select { |p| p.life_context == life_context.to_sym }
     else
-      proj = @projects
+      proj = projects
     end 
     # Group by tags.
     proj.sort { |a, b| a.tags <=> b.tags }
@@ -112,15 +117,22 @@ class ExtbrainData
   # # yellow if review date > 7 days
   # # red if review date > 14 days
 
+  def projects
+    p = @projects.filter { |project| not (project.completed? or project.deleted?) }
+  end
+  
+  
   # todo test
   def project_exist?(keyword)
     keyword = keyword.to_sym
-    @projects.detect { |project| project.keyword == keyword }
+#    p = @projects.filter { |project| project. == keyword }
+    projects.detect { |project| project.keyword == keyword }
+
   end
 
-# todo add task project
-
-
+  def complete_project(keyword)
+#    @projects.exist..todo
+  end
   
   def new_project(title, keyword, life_context)
     if project_exist?(keyword)

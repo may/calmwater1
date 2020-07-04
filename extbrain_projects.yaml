@@ -2,10 +2,16 @@
 - !ruby/object:Project
   title: testing extbrain test project
   notes:
+  - - 2020-07-04 13:27:23.407786500 -05:00
+    - Project completed.
+  - - 2020-07-03 21:57:16.726470209 -05:00
+    - Project completed.
+  - - 2020-07-03 21:57:13.051268051 -05:00
+    - Project completed.
   - - 2020-06-15 12:31:09.495965346 -05:00
     - 'Created: testing extbrain test project'
   created: 2020-06-15 12:31:09.495969946 -05:00
-  completed:
+  completed: 2020-07-04 13:27:23.407743831 -05:00
   deleted:
   last_reviewed:
   keyword: :test
@@ -108,10 +114,12 @@
 - !ruby/object:Project
   title: 819878 - move new preadmission report to prd
   notes:
+  - - 2020-07-03 22:24:50.493460478 -05:00
+    - Project completed.
   - - 2020-06-25 16:22:28.381000989 -05:00
     - 'Created: 819878 - move new preadmission report to prd'
   created: 2020-06-25 16:22:28.381021070 -05:00
-  completed:
+  completed: 2020-07-03 22:24:50.493413393 -05:00
   deleted:
   last_reviewed:
   keyword: :socscreen
@@ -155,6 +163,20 @@
   last_reviewed:
   keyword: :extb-subt
   life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: testing deletion
+  notes:
+  - - 2020-07-04 13:44:58.252774861 -05:00
+    - 'Created: testing deletion'
+  created: 2020-07-04 13:44:58.252792984 -05:00
+  completed:
+  deleted: 2020-07-04 13:46:58.252792984 -05:00
+  last_reviewed:
+  keyword: :testing
+  life_context: :personal
   tags: []
   psm: ''
   tasks: []
