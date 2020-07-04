@@ -21,13 +21,25 @@ def project_edit(keyword, content)
   puts 'todo'
 end 
 
-# TODO 
+
+# looks for project with keyword of string
+# if exact match found stop, complete, print & give undo option
+## undo option implemented via eval
+## eg $last_object + $last_operation_opposite
+## should yield project.uncomplete
+# else looks for task or project with string in title
+# else looks for subtask of project w/ string in title
+# if several matches, print list and allow user to choose a task or retry their search
+# string until a match is found
+def complete_task_or_project
+  #
+end
+
+
+
 def project_task(keyword, content)
   # pt keyword action_context some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found
   if p = $data.project_exist?(keyword)
-  # todo figure out how to add a task to project
-  # check datarb
-    #then check project
     two_pieces = content.split(' ', 2)
     action_context = two_pieces[0]
     title = two_pieces[1]
@@ -71,6 +83,15 @@ def project_input(keyword, content)
     $data.list_projects
   end 
 end     
+
+def search(string)
+  if string
+    $data.search(string)
+  else
+    puts 'Empty query. Try again.'
+  end
+end
+
 
 def writing_habit_input(keyword, content)
   # h wc 5000

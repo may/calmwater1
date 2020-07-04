@@ -89,6 +89,8 @@ def dispatch_user_input(input_string)
       project_task(keyword, content)
     when 'pe', 'project-edit'
       project_edit(keyword, content)
+    when 's', 'search'
+      search(keyword)
     when 't', 'task'
       task_input(keyword, content)
     when '?', 'help'

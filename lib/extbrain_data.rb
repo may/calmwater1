@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-06-25
+# Revised: 2020-07-03
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -55,10 +55,24 @@ class ExtbrainData
     @projects.select { |p| p.life_context == 'work'.to_sym }.count
   end 
 
+  # Returns array of projects containing search_string
+  def find_projects(search_string)
+    @projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
+  end
+
+  # Returns array of tasks containing search_string
+  def find_tasks(search_string)
+    @tasks.filter { |task| task.title.downcase.include?(search_string.downcase) }
+  end
+  
   ## SEARCHING
   # s string
-  def search
-    
+  # .downcase to ensure case-insensitive search
+  def search(string)
+    p = find_projects(string)
+    p.each { |project| puts project }
+    t = find_tasks(string)
+    t.each { |task| puts task }
   end
 
   def search_all # including notes, shortcut should be sa

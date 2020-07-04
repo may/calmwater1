@@ -2,7 +2,7 @@ Created: 2020-05-30
 Revised: 2020-07-03
 
 Requirements:
- ruby
+ ruby 2.6.3 or greater
 
 Optional:
  rlwrap
