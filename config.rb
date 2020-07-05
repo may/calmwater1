@@ -1,11 +1,11 @@
 # Created: 2020-06-06
-# Revised: 2020-06-15
+# Revised: 2020-07-05
 
 $savefile_habits = 'extbrain_habits.yaml'
 $savefile_projects = 'extbrain_projects.yaml'
 $savefile_tasks = 'extbrain_tasks.yaml'
 $lockfile = 'lockfile-extbrain.txt'
-$color_only = true # if you don't want to see text indicating *when* you last completed a habit. If colorblind, set this to false.
+$color_only = true # if you don't want to see text indicating *when* you last completed a habit. If colorblind, set this to false. If running Windows, set to false.
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 

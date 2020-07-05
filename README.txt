@@ -1,11 +1,12 @@
 Created: 2020-05-30
-Revised: 2020-07-03
+Revised: 2020-07-05
 
 Requirements:
  ruby 2.6.3 or greater
 
 Optional:
  rlwrap
+ tput (if not, or if using Windows, set $color_only to false in config.rb)
 
 Using:
  rlwrap ruby main.rb

@@ -42,9 +42,10 @@ def complete_task_or_project(string)
       p.complete
       # todo set undo variables
       puts "Completed project: #{p}"
-    elsif p = find_projects(string)
+# TODO figure out if find projects needed and create, else use search for projects?
+    elsif p = $data.find_projects(string)
       if p.count > 1
-      # todo ask which one function
+        puts 'todo ask which one function'
       else
         p.complete
         # todo set undo variables

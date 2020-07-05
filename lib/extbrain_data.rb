@@ -55,10 +55,6 @@ class ExtbrainData
     projects.select { |p| p.life_context == 'work'.to_sym }.count
   end 
 
-  # Returns array of projects containing search_string
-  def find_projects(search_string)
-    @projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
-  end
 
   # Returns array of tasks containing search_string
   def find_tasks(search_string)
@@ -91,6 +87,17 @@ class ExtbrainData
 
   ## PROJECTS
 
+  def project_exist?(keyword)
+    keyword = keyword.to_sym
+    projects.detect { |project| project.keyword == keyword }
+  end
+
+  
+  # Returns array of projects containing search_string
+  def find_projects(search_string)
+    projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
+  end
+  
   def defined_life_contexts
     p = @projects.uniq { |proj| proj.life_context }    
     life_contexts = p.collect { |proj| proj.life_context }
@@ -121,19 +128,7 @@ class ExtbrainData
     p = @projects.filter { |project| not (project.completed? or project.deleted?) }
   end
   
-  
-  # todo test
-  def project_exist?(keyword)
-    keyword = keyword.to_sym
-#    p = @projects.filter { |project| project. == keyword }
-    projects.detect { |project| project.keyword == keyword }
 
-  end
-
-  def complete_project(keyword)
-#    @projects.exist..todo
-  end
-  
   def new_project(title, keyword, life_context)
     if project_exist?(keyword)
       puts "Project exists with that keyword: #{keyword}. Try again."
@@ -174,17 +169,21 @@ class ExtbrainData
   
   def list_habits()
     @habits.each do |habit|
-      if habit.completed_today?
-        print `tput setaf 2` # instruct linux/unix terminal to go green
-      elsif habit.completed_yesterday?
-        print `tput setaf 4` # instruct linux/unix terminal to go blue
-      elsif habit.completed_two_days_ago?
-        print `tput setaf 3` # instruct linux/unix terminal to go yellow
-      else
-        print `tput setaf 1` # instruct linux/unix terminal to go red
-      end 
+      if $color_only
+        if habit.completed_today?
+          print `tput setaf 2` # instruct linux/unix terminal to go green
+        elsif habit.completed_yesterday?
+          print `tput setaf 4` # instruct linux/unix terminal to go blue
+        elsif habit.completed_two_days_ago?
+          print `tput setaf 3` # instruct linux/unix terminal to go yellow
+        else
+          print `tput setaf 1` # instruct linux/unix terminal to go red
+        end
+      end
       puts habit.to_s
-      print `tput sgr0` # reset colors
+      if $color_only
+        print `tput sgr0` # reset colors
+      end
     end 
   end 
 
