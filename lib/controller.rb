@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-03
+# Revised: 2020-07-15
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -10,7 +10,13 @@ def show_actions(action_context)
   
 end
 
-
+# TODO 7-15
+def task_list(keyword)
+  # todo string validation of keyword if nil??
+  # keyword is really action_context
+  $data.list_tasks(keyword)
+end
+  
 def task_input(task_action_context,task_body)
   # t action_context description_of_action_that_needs_to_be_taken
   # t computer email bob re: request for widgets
@@ -73,14 +79,19 @@ end
 
 def project_task(keyword, content)
   # pt keyword action_context some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found
-  if p = $data.project_exist?(keyword)
-    two_pieces = content.split(' ', 2)
-    action_context = two_pieces[0]
-    title = two_pieces[1]
-    p.add_task(title, action_context)
+  if keyword.nil? or content.nil?
+    puts "Must specify a keyword and more."
+    puts "Proper usage: pt keyword action_context the title of your task"
   else
-    puts "No project found with keyword: #{keyword}. Unable to add task"
-  end 
+    if p = $data.project_exist?(keyword)
+      two_pieces = content.split(' ', 2)
+      action_context = two_pieces[0]
+      title = two_pieces[1]
+      p.add_task(title, action_context)
+    else
+      puts "No project found with keyword: #{keyword}. Unable to add task."
+    end
+  end #nil?
 end 
 
 def project_input(keyword, content)

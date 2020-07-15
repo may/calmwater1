@@ -88,6 +88,9 @@ def dispatch_user_input(input_string)
       exit
     when 'h', 'habit'
       habit_input(keyword, content)
+    when 'lt', 'list-tasks'
+      task_list(keyword)
+      # TODO when lw work, lcomputer, lerrands, lagenda?
     when 'p', 'proj', 'project', 'projects', 'lp'
       project_input(keyword, content)
     when 'pt', 'project-task'

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-04
+# Revised: 2020-07-15
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -26,7 +26,7 @@ require_relative '../config.rb'
 #  2. (someday/maybe) visit andrew and natalie and try their pizza
 #  3. (computer) update the invite with a google meet instead
 
-
+p
 class ExtbrainData
 #  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
@@ -39,6 +39,8 @@ class ExtbrainData
     puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_work_projects} work projects. Total: #{number_of_projects + number_of_tasks}."
   end
 
+  ## COUNTS
+  
   def number_of_projects
     projects.count
   end
@@ -52,16 +54,16 @@ class ExtbrainData
   end
   
   def number_of_work_projects
-    projects.select { |p| p.life_context == 'work'.to_sym }.count
+    projects.filter { |p| p.life_context == 'work'.to_sym }.count
   end 
 
-
+  ## SEARCHING
+  
   # Returns array of tasks containing search_string
   def find_tasks(search_string)
     @tasks.filter { |task| task.title.downcase.include?(search_string.downcase) }
   end
   
-  ## SEARCHING
   # s string
   # .downcase to ensure case-insensitive search
   def search(string)
@@ -77,7 +79,10 @@ class ExtbrainData
   ## TASKS
 
   def tasks
-    @tasks.filter { |task| not (task.completed? or task.deleted?) }
+    tasks_all = @tasks.filter { |task| not (task.completed? or task.deleted?) }
+    # todo grab all tasks from all projects
+    tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
+    tasks_all.flatten!
   end
   
   def new_task(title, action_context, life_context)
@@ -85,8 +90,31 @@ class ExtbrainData
     @tasks << task
   end 
 
+  def list_tasks(action_context)
+    if action_context
+      tsk = tasks.filter { |t| t.action_context == action_context.to_sym }
+    else
+      tsk = tasks
+    end
+    # sort by oldest on top. no .modified, so use .creation.
+    # oldest on top to try to avoid procrastionation.
+    # may also TODO try randomize sometimes to avoid me skipping the top 5 tasks everytime I look at the list
+    tsk.sort_by! {|t| t.created } 
+    tsk.each { |t| puts t }
+    puts "No tasks, yet. Add one with 'pt' or 't':" if tsk.empty?
+    puts "Usage: 't keyword action_context title of your task'" if tsk.empty?
+  end 
+  
   ## PROJECTS
 
+  def projects
+    p = @projects.filter { |project| not (project.completed? or project.deleted?) }
+  end
+  
+  def projects_with_tasks
+    proj_w_tasks = projects.filter { |project| not project.tasks.empty? }
+  end
+  
   def project_exist?(keyword)
     keyword = keyword.to_sym
     projects.detect { |project| project.keyword == keyword }
@@ -105,10 +133,11 @@ class ExtbrainData
   end
 
   # todo use projects to filter out completed/deleted
+  # ^ I think that is done, as of 7/15 but leave this until 8/1 unless you explicityl test
   def list_projects(life_context = nil)
     if life_context
       life_context = life_context.to_sym
-      proj = projects.select { |p| p.life_context == life_context.to_sym }
+      proj = projects.filter { |p| p.life_context == life_context.to_sym }
     else
       proj = projects
     end 
@@ -123,10 +152,6 @@ class ExtbrainData
   # # ideas include:
   # # yellow if review date > 7 days
   # # red if review date > 14 days
-
-  def projects
-    p = @projects.filter { |project| not (project.completed? or project.deleted?) }
-  end
   
 
   def new_project(title, keyword, life_context)
