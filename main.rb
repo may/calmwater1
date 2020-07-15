@@ -90,6 +90,10 @@ def dispatch_user_input(input_string)
       habit_input(keyword, content)
     when 'lt', 'list-tasks'
       task_list(keyword)
+    when 'lw'
+      task_list('work')
+    when 'lc'
+      task_list('computer')
       # TODO when lw work, lcomputer, lerrands, lagenda?
     when 'p', 'proj', 'project', 'projects', 'lp'
       project_input(keyword, content)

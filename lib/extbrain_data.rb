@@ -26,7 +26,7 @@ require_relative '../config.rb'
 #  2. (someday/maybe) visit andrew and natalie and try their pizza
 #  3. (computer) update the invite with a google meet instead
 
-p
+
 class ExtbrainData
 #  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
@@ -90,7 +90,7 @@ class ExtbrainData
     @tasks << task
   end 
 
-  def list_tasks(action_context)
+  def list_tasks(action_context = nil)
     if action_context
       tsk = tasks.filter { |t| t.action_context == action_context.to_sym }
     else
@@ -102,7 +102,7 @@ class ExtbrainData
     tsk.sort_by! {|t| t.created } 
     tsk.each { |t| puts t }
     puts "No tasks, yet. Add one with 'pt' or 't':" if tsk.empty?
-    puts "Usage: 't keyword action_context title of your task'" if tsk.empty?
+    puts "Usage: 't action_context title of your task'" if tsk.empty?
   end 
   
   ## PROJECTS

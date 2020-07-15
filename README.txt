@@ -1,5 +1,5 @@
 Created: 2020-05-30
-Revised: 2020-07-05
+Revised: 2020-07-15
 
 Requirements:
  ruby 2.6.3 or greater
@@ -10,17 +10,35 @@ Optional:
 
 Using:
  rlwrap ruby main.rb
+ or, if on Windows: ruby main.rb
 
+# todo some documentation
 
-todo some documentation
+# HABITS
 h - to list habits
 h foo - to complete foo for the day
 h foo yesterday - to complete foo for yesterday
 h wc - to create a word count habit
 h wc 500 - to complete the word count goal for today, with a total word count of 500 for the document (the software will calculate today's word count)
 
+# PROJECTS
 p keyword string - creates project with keyword and title of string
 pt keyword action_context string - creates a task within project specified by keyword with specified title of string with action context of action_context
+
+# TASKS
+t - lists tasks
+t work - list tasks in work action context
+t work call bob re: proposal - create task in work action context with the contents of 'call bob re: proposal'
+
+
+
+
+
+
+
+
+
+# TODO VET THIS STUFF LATER
 
 
 alias extbrain='rlwrap ruby ~/extbrain/main.rb' 

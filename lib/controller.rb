@@ -6,18 +6,28 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-def show_actions(action_context)
-  
-end
-
-# TODO 7-15
-def task_list(keyword)
-  # todo string validation of keyword if nil??
-  # keyword is really action_context
-  $data.list_tasks(keyword)
+def task_list(keyword = nil)
+  if keyword
+    # keyword is really action_context
+    $data.list_tasks(keyword)
+  else
+    $data.list_tasks
+  end
 end
   
 def task_input(task_action_context,task_body)
+#  puts 'currently a no-op, will be implemented later'
+#  puts "would be nice if a t no args called 'task_list'"
+  if task_action_context
+    if task_body
+      $data.new_task(task_body,task_action_context,"unused")
+      # Not sure I'll actually use life_context with tasks, although I could see the benefit of a single 'computer' list across work and personal and freelance and home, seprated by life context, but for now we'll just default to 'unused' and if this is a problem we have the structures in place to revisit. 2020-07-15.
+    else
+      task_list(task_action_context)
+    end
+  else
+    task_list
+  end
   # t action_context description_of_action_that_needs_to_be_taken
   # t computer email bob re: request for widgets
   # t house get the ladder from the garage, grab the hose and clean the gutters

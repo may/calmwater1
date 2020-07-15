@@ -48,7 +48,18 @@
   life_context: :work
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: testing computer context
+    notes:
+    - - 2020-07-15 15:31:24.880925934 -05:00
+      - 'Created: testing computer context'
+    created: 2020-07-15 15:31:24.880963539 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :work
 - !ruby/object:Project
   title: Ensure sarah starts an early morning (anytime before 9am) walking habit per
     Lynda 2020-06-16
