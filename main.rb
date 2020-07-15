@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-01
+# Revised: 2020-07-15
 
 
 # todo d for delete
@@ -79,12 +79,10 @@ def dispatch_user_input(input_string)
         ## TODO if 'clear' send 'clear' to terminal? tput clear??
     when '!!', 'wm'
       enable_writing_mode
-    when 'c', 'complete', 'finish', 'done'
-      complete_or_delete_task_or_project(keyword)
     #MAYBE if you want multi-word searching add content and keyword
     when 'c', 'complete', 'finish', 'done'
       complete_or_delete_task_or_project(keyword, true)
-    when 'e', 'exit'
+    when 'e', 'exit', 'q'
       exit
     when 'h', 'habit'
       habit_input(keyword, content)

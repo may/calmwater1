@@ -56,32 +56,37 @@ def complete_or_delete_task_or_project(string, delete)
   unless string
     puts "Need to specify which task or project to complete. Just type a search term."
   else
-    p = $data.project_exist?(string)
-    if p
-      # todo check if already completed and print that or filter that out from search
-      # probably filter that out from search
-      if delete?
-        p.delete
-        puts "Deleted project: #{p}"
+    a_project = $data.project_exist?(string)
+    unless a_project
+      project_search_results  = $data.find_projects(string)
+    end
+    if a_project
+      if delete
+        a_project.delete
+        puts "Deleted project: #{a_project}"
       else
-        p.complete
+        a_project.complete
         # todo implement undo functionality by setting undo variables
-        puts "Completed project: #{p}"
+        puts "Completed project: #{a_project}"
       end
 # TODO figure out if find projects needed and create, else use search for projects?
-    elsif p = $data.find_projects(string)
+    elsif project_search_results.count > 0
       if p.count > 1
         puts 'todo ask which one function'
-      else
+      elsif p.count == 1 
         p.complete
         # todo set undo variables
         puts "Completed project: #{p}"
+      else
+        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project"
       end
     else
-      t = find_tasks(string)
+      puts 'todo in task completion/deletion code'
+      t = $data.find_tasks(string)
+      puts t #messy but for dev
       #todo complete tasks code and undo vars etc.
       # todo delete tasks code and undo vars etc
-    end
+    end # if p
   end
 end
 
