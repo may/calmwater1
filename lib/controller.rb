@@ -6,6 +6,11 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
+def show_actions(action_context)
+  
+end
+
+
 def task_input(task_action_context,task_body)
   # t action_context description_of_action_that_needs_to_be_taken
   # t computer email bob re: request for widgets
@@ -31,7 +36,7 @@ end
 # else looks for subtask of project w/ string in title
 # if several matches, print list and allow user to choose a task or retry their search
 # string until a match is found
-def complete_task_or_project(string)
+def complete_or_delete_task_or_project(string, delete)
   unless string
     puts "Need to specify which task or project to complete. Just type a search term."
   else
@@ -39,9 +44,14 @@ def complete_task_or_project(string)
     if p
       # todo check if already completed and print that or filter that out from search
       # probably filter that out from search
-      p.complete
-      # todo set undo variables
-      puts "Completed project: #{p}"
+      if delete?
+        p.delete
+        puts "Deleted project: #{p}"
+      else
+        p.complete
+        # todo implement undo functionality by setting undo variables
+        puts "Completed project: #{p}"
+      end
 # TODO figure out if find projects needed and create, else use search for projects?
     elsif p = $data.find_projects(string)
       if p.count > 1
@@ -54,6 +64,7 @@ def complete_task_or_project(string)
     else
       t = find_tasks(string)
       #todo complete tasks code and undo vars etc.
+      # todo delete tasks code and undo vars etc
     end
   end
 end

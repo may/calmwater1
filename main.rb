@@ -80,8 +80,10 @@ def dispatch_user_input(input_string)
     when '!!', 'wm'
       enable_writing_mode
     when 'c', 'complete', 'finish', 'done'
-      complete_task_or_project(keyword)
-      #MAYBE if you want multi-word searching add content and keyword
+      complete_or_delete_task_or_project(keyword)
+    #MAYBE if you want multi-word searching add content and keyword
+    when 'c', 'complete', 'finish', 'done'
+      complete_or_delete_task_or_project(keyword, true)
     when 'e', 'exit'
       exit
     when 'h', 'habit'

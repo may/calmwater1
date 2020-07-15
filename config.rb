@@ -1,6 +1,10 @@
 # Created: 2020-06-06
 # Revised: 2020-07-05
 
+$keep_deleted_for_days = 60
+$archive_completed_after_days = 90
+# everytime it's the first of the month, >> to extbrain_completed_YYYY
+
 $savefile_habits = 'extbrain_habits.yaml'
 $savefile_projects = 'extbrain_projects.yaml'
 $savefile_tasks = 'extbrain_tasks.yaml'
