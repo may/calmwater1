@@ -61,7 +61,7 @@ class ExtbrainData
   
   # Returns array of tasks containing search_string
   def find_tasks(search_string)
-    @tasks.filter { |task| task.title.downcase.include?(search_string.downcase) }
+    @tasks.select { |task| task.title.downcase.include?(search_string.downcase) }
   end
   
   # s string

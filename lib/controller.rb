@@ -42,7 +42,7 @@ def project_edit(keyword, content)
   puts 'todo'
 end 
 
-
+# TODO I should probably refactor into smaller helper functions?
 # looks for project with keyword of string
 # if exact match found stop, complete, print & give undo option
 ## undo option implemented via eval
@@ -78,14 +78,26 @@ def complete_or_delete_task_or_project(string, delete)
         # todo set undo variables
         puts "Completed project: #{p}"
       else
-        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project"
+        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - project"
       end
     else
       puts 'todo in task completion/deletion code'
       t = $data.find_tasks(string)
-      puts t #messy but for dev
+      if t.count > 1
+        puts "todo ask the user to get more specific/show options and have them pick"
+      elsif t.count == 1
+        if delete
+          t.delete
+        else
+          t.complete
+        end
+      elsif t.count == 0
+        puts 'No tasks found.'
+      else
+        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - task"
       #todo complete tasks code and undo vars etc.
-      # todo delete tasks code and undo vars etc
+        # todo delete tasks code and undo vars etc
+      end # t.count > 1
     end # if p
   end
 end
