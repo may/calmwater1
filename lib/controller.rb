@@ -81,15 +81,16 @@ def complete_or_delete_task_or_project(string, delete)
         puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - project"
       end
     else
-      puts 'todo in task completion/deletion code'
-      t = $data.find_tasks(string)
+       t = $data.find_tasks(string)
       if t.count > 1
         puts "todo ask the user to get more specific/show options and have them pick"
       elsif t.count == 1
         if delete
-          t.delete
+          t.first.delete # it's an array of one item, hence the .first
+          puts "Deleted task: #{t.first}"
         else
-          t.complete
+          t.first.complete
+          puts "Completed task: #{t.first}"
         end
       elsif t.count == 0
         puts 'No tasks found.'

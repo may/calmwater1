@@ -33,6 +33,10 @@ t work call bob re: proposal - create task in work action context with the conte
 
 
 
+# Testing
+rake test
+test coverage for some underlying data structures, but not for middleware
+
 
 
 

@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-03
+# Revised: 2020-07-15
 
 require_relative 'common_project_task'
 
@@ -7,7 +7,7 @@ require_relative 'common_project_task'
 
 class Project < CommonProjectTask
   attr_accessor_with_logging :keyword, :life_context, :psm
-  attr_reader :tasks, :tags
+  attr_reader :tags
 
   def initialize(title, keyword, life_context = :personal)  # Project
     super(title)
@@ -32,6 +32,15 @@ class Project < CommonProjectTask
     end
     add_note("Updated tags:\n old: #{@tags}\n new: #{tags}")
     @tags = tags
+  end
+
+  def tasks
+    tasks_all = @tasks.filter { |task| not (task.completed? or task.deleted?) }
+  end
+
+  # Includes deleted/completed tasks.
+  def tasks_all
+    @tasks
   end
 
   def add_task(title, action_context)

@@ -52,10 +52,14 @@
   - !ruby/object:Task
     title: testing computer context
     notes:
+    - - 2020-07-15 21:08:00.186399224 -05:00
+      - Task completed.
+    - - 2020-07-15 21:06:16.381356268 -05:00
+      - Task completed.
     - - 2020-07-15 15:31:24.880925934 -05:00
       - 'Created: testing computer context'
     created: 2020-07-15 15:31:24.880963539 -05:00
-    completed:
+    completed: 2020-07-15 21:08:00.186351962 -05:00
     deleted:
     last_reviewed:
     action_context: :computer
@@ -198,6 +202,20 @@
   deleted: 2020-07-04 13:46:58.252792984 -05:00
   last_reviewed:
   keyword: :testing
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: testing some shit
+  notes:
+  - - 2020-07-15 21:03:55.479419043 -05:00
+    - 'Created: testing some shit'
+  created: 2020-07-15 21:03:55.479447748 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :testing-proj
   life_context: :personal
   tags: []
   psm: ''

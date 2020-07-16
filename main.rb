@@ -81,6 +81,8 @@ def dispatch_user_input(input_string)
       enable_writing_mode
     #MAYBE if you want multi-word searching add content and keyword
     when 'c', 'complete', 'finish', 'done'
+      complete_or_delete_task_or_project(keyword, false)
+    when 'd', 'delete', 'remove'
       complete_or_delete_task_or_project(keyword, true)
     when 'e', 'exit', 'q'
       exit

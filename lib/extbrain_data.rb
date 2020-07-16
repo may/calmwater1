@@ -55,11 +55,6 @@ class ExtbrainData
 
   ## SEARCHING
   
-  # Returns array of tasks containing search_string
-  def find_tasks(search_string)
-    tasks.select { |task| task.title.downcase.include?(search_string.downcase) }
-  end
-  
   # s string
   # .downcase to ensure case-insensitive search
   def search(string)
@@ -70,6 +65,7 @@ class ExtbrainData
   end
 
   def search_all # including notes, shortcut should be sa
+    puts 'todo search_all'
   end
   
   ## TASKS
@@ -99,13 +95,19 @@ class ExtbrainData
     puts "No tasks, yet. Add one with 'pt' or 't':" if tsk.empty?
     puts "Usage: 't action_context title of your task'" if tsk.empty?
   end 
+
+  # Returns array of tasks containing search_string
+  def find_tasks(search_string)
+    tasks.select { |task| task.title.downcase.include?(search_string.downcase) }
+  end
   
   ## PROJECTS
 
   def projects
     p = @projects.filter { |project| not (project.completed? or project.deleted?) }
   end
-  
+
+  # TODO filter for completed/deleted
   def projects_with_tasks
     proj_w_tasks = projects.filter { |project| not project.tasks.empty? }
   end
