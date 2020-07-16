@@ -46,11 +46,7 @@ class ExtbrainData
   end
   
   def number_of_tasks
-    if num_tasks = projects.map { |p| p.task_count }.reduce(:+)
-      @tasks.count + num_tasks
-    else
-      @tasks.count
-    end 
+    tasks.count
   end
   
   def number_of_work_projects
@@ -61,7 +57,7 @@ class ExtbrainData
   
   # Returns array of tasks containing search_string
   def find_tasks(search_string)
-    @tasks.select { |task| task.title.downcase.include?(search_string.downcase) }
+    tasks.select { |task| task.title.downcase.include?(search_string.downcase) }
   end
   
   # s string
@@ -80,7 +76,6 @@ class ExtbrainData
 
   def tasks
     tasks_all = @tasks.filter { |task| not (task.completed? or task.deleted?) }
-    # todo grab all tasks from all projects
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
   end
