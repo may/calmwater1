@@ -1,5 +1,5 @@
 Created: 2020-05-30
-Revised: 2020-07-15
+Revised: 2020-07-16
 
 Requirements:
  ruby 2.6.3 or greater
@@ -24,6 +24,7 @@ h wc 500 - to complete the word count goal for today, with a total word count of
 # PROJECTS
 p keyword string - creates project with keyword and title of string
 pt keyword action_context string - creates a task within project specified by keyword with specified title of string with action context of action_context
+plc keyword new_life_context - change life context eg from work to personal
 
 # TASKS
 t - lists tasks

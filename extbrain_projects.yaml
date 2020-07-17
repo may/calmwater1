@@ -52,6 +52,8 @@
   - !ruby/object:Task
     title: testing computer context
     notes:
+    - - 2020-07-15 21:18:59.410043127 -05:00
+      - Task deleted.
     - - 2020-07-15 21:08:00.186399224 -05:00
       - Task completed.
     - - 2020-07-15 21:06:16.381356268 -05:00
@@ -59,8 +61,8 @@
     - - 2020-07-15 15:31:24.880925934 -05:00
       - 'Created: testing computer context'
     created: 2020-07-15 15:31:24.880963539 -05:00
-    completed: 2020-07-15 21:08:00.186351962 -05:00
-    deleted:
+    completed:
+    deleted: 2020-07-15 21:18:59.409998787 -05:00
     last_reviewed:
     action_context: :computer
     life_context: :work
@@ -209,14 +211,50 @@
 - !ruby/object:Project
   title: testing some shit
   notes:
+  - - 2020-07-15 21:19:22.421480261 -05:00
+    - Project completed.
   - - 2020-07-15 21:03:55.479419043 -05:00
     - 'Created: testing some shit'
   created: 2020-07-15 21:03:55.479447748 -05:00
-  completed:
+  completed: 2020-07-15 21:19:22.421440147 -05:00
   deleted:
   last_reviewed:
   keyword: :testing-proj
   life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: 'extbrain: for GTD, create a lightweight, reliable, fast, powerfully keyboard/language-driven,
+    and simple and highly searchable rememberthemilk alternative in plain text command
+    line (extbrain = external brain, and extra brain to augment mine)'
+  notes:
+  - - 2020-07-17 14:13:15.133786444 -05:00
+    - |-
+      Updated life_context:
+       old: home
+       new: personal
+  - - 2020-07-17 14:13:10.374361799 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: home
+  - - 2020-07-17 14:12:57.823373357 -05:00
+    - |-
+      Updated life_context:
+       old: work
+       new: personal
+  - - 2020-07-17 13:01:07.009675183 -05:00
+    - 'Created: extbrain: for GTD, create a lightweight, reliable, fast, powerfully
+      keyboard/language-driven, and simple and highly searchable rememberthemilk alternative
+      in plain text command line (extbrain = external brain, and extra brain to augment
+      mine)'
+  created: 2020-07-17 13:01:07.009716961 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :extbrain
+  life_context: personal
   tags: []
   psm: ''
   tasks: []

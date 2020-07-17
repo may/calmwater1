@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-15
+# Revised: 2020-07-17
 
 
 # todo d for delete
@@ -101,6 +101,8 @@ def dispatch_user_input(input_string)
       project_task(keyword, content)
     when 'pe', 'project-edit'
       project_edit(keyword, content)
+    when 'plc'
+      project_life_context(keyword, content)
     when 's', 'search'
       search(keyword)
     when 't', 'task'

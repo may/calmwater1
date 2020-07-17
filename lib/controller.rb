@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-15
+# Revised: 2020-07-17
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -103,7 +103,18 @@ def complete_or_delete_task_or_project(string, delete)
   end
 end
 
-
+# plc
+def project_life_context(keyword,new_life_context)
+  if keyword.nil? or new_life_context.nil?
+    puts "Proper usage: plc keyword new_life_context"
+  else
+    if p = $data.project_exist?(keyword)
+      p.life_context=new_life_context
+    else
+      puts "No project found with keyword: #{keyword}. Unable to update life context."
+    end
+  end
+end
 
 def project_task(keyword, content)
   # pt keyword action_context some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found

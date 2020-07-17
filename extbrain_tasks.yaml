@@ -10,3 +10,17 @@
   last_reviewed:
   action_context: :bike
   life_context: :unused
+- !ruby/object:Task
+  title: create the selfupgrade reddit account, subscribe to leanfire, gtd, music,
+    eroticauthors, romancebooks, romance authors (if it exists) and not much else.
+  notes:
+  - - 2020-07-16 22:02:27.002828875 -05:00
+    - 'Created: create the selfupgrade reddit account, subscribe to leanfire, gtd,
+      music, eroticauthors, romancebooks, romance authors (if it exists) and not much
+      else.'
+  created: 2020-07-16 22:02:27.002847687 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
