@@ -103,6 +103,8 @@ def dispatch_user_input(input_string)
       project_edit(keyword, content)
     when 'plc'
       project_life_context(keyword, content)
+    when 'r', 'rename', 'retitle'
+      rename_project_or_task(keyword, content)
     when 's', 'search'
       search(keyword)
     when 't', 'task'

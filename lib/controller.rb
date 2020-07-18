@@ -42,6 +42,72 @@ def project_edit(keyword, content)
   puts 'todo'
 end 
 
+def rename_project_or_task(keyword, content)
+  # and just print existing title first, no messing with readline for now
+  # this decision made to help/strongly encourage the user to properly define
+  # what the desired outcome is *now*. They can easily re-type it if needed from
+  # the 'here's what the title is right now' output.
+  # If you want to get fancy, you can use readline (or highline if need cross platform)
+  # to output a prompt and then put some text in the read buffer so the user can
+  # edit what is already there.
+
+  # TODO trimming down algorithm for find_project_or_task
+  def find_project_or_task(action_verb, keyword, content)
+  unless keyword
+    puts "Need to specify which task or project to #{action_verb}. Just type a search term."
+  else
+    unless handle_single_project
+      unless handle_multiple_projects
+        unless handle_tasks
+    
+    a_project = $data.project_exist?(keyword)
+    unless a_project
+      project_search_results = $data.find_projects(keyword)
+    end
+    if a_project
+      if delete
+        a_project.delete
+        puts "Deleted project: #{a_project}"
+      else
+        a_project.complete
+        # todo implement undo functionality by setting undo variables
+        puts "Completed project: #{a_project}"
+      end
+# TODO figure out if find projects needed and create, else use search for projects?
+    elsif project_search_results.count > 0
+      if p.count > 1
+        puts 'todo ask which one function'
+      elsif p.count == 1 
+        p.complete
+        # todo set undo variables
+        puts "Completed project: #{p}"
+      else
+        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - project"
+      end
+    else
+       t = $data.find_tasks(string)
+      if t.count > 1
+        puts "todo ask the user to get more specific/show options and have them pick"
+      elsif t.count == 1
+        if delete
+          t.first.delete # it's an array of one item, hence the .first
+          puts "Deleted task: #{t.first}"
+        else
+          t.first.complete
+          puts "Completed task: #{t.first}"
+        end
+      elsif t.count == 0
+        puts 'No tasks found.'
+      else
+        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - task"
+      #todo complete tasks code and undo vars etc.
+        # todo delete tasks code and undo vars etc
+      end # t.count > 1
+    end # if p
+
+  
+end 
+
 # TODO I should probably refactor into smaller helper functions?
 # looks for project with keyword of string
 # if exact match found stop, complete, print & give undo option
