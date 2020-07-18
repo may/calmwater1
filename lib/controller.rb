@@ -126,7 +126,7 @@ def project_task(keyword, content)
       two_pieces = content.split(' ', 2)
       action_context = two_pieces[0]
       title = two_pieces[1]
-      p.add_task(title, action_context)
+      puts p.add_task(title, action_context)
     else
       puts "No project found with keyword: #{keyword}. Unable to add task."
     end

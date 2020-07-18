@@ -1,5 +1,5 @@
 Created: 2020-05-30
-Revised: 2020-07-16
+Revised: 2020-07-17
 
 Requirements:
  ruby 2.6.3 or greater
@@ -7,6 +7,7 @@ Requirements:
 Optional:
  rlwrap
  tput (if not, or if using Windows, set $color_only to false in config.rb)
+      https://command-not-found.com/tput
 
 Using:
  rlwrap ruby main.rb
@@ -31,7 +32,15 @@ t - lists tasks
 t work - list tasks in work action context
 t work call bob re: proposal - create task in work action context with the contents of 'call bob re: proposal'
 
+when creating tasks, can use abbrevations for action contexts such as 'c' for computer, 'w' for waiting, and 's' or 's/m' or 'm' etc. for someday/maybe
 
+
+use 't action_context' to list tasks in a given action context, like 't computer' or 't job'
+shortcuts available: lc and lj 
+
+# ADVANCED
+w what you are waiting on
+w  (no arguments, works like lw)
 
 
 # Testing

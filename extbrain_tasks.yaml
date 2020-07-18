@@ -24,3 +24,82 @@
   last_reviewed:
   action_context: :computer
   life_context: :unused
+- !ruby/object:Task
+  title: create a reddit account for theselfupgrade
+  notes:
+  - - 2020-07-17 15:14:01.347019492 -05:00
+    - 'Created: create a reddit account for theselfupgrade'
+  created: 2020-07-17 15:14:01.347046131 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+- !ruby/object:Task
+  title: todo lj and add which context to error message of no tasks yet
+  notes:
+  - - 2020-07-17 15:16:51.553165929 -05:00
+    - 'Created: todo lj and add which context to error message of no tasks yet'
+  created: 2020-07-17 15:16:51.553191883 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+- !ruby/object:Task
+  title: consider switching back to bash for panix, see if can edit home end delete
+    better that way and only move time zone setting from zsh to bash.
+  notes:
+  - - 2020-07-18 11:46:46.510316258 -05:00
+    - 'Created: consider switching back to bash for panix, see if can edit home end
+      delete better that way and only move time zone setting from zsh to bash.'
+  created: 2020-07-18 11:46:46.510417037 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+- !ruby/object:Task
+  title: testing waiting
+  notes:
+  - - 2020-07-18 11:53:07.354423362 -05:00
+    - 'Created: testing waiting'
+  created: 2020-07-18 11:53:07.354441780 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
+- !ruby/object:Task
+  title: bob to do his shit
+  notes:
+  - - 2020-07-18 11:53:17.354318080 -05:00
+    - 'Created: bob to do his shit'
+  created: 2020-07-18 11:53:17.354338734 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
+- !ruby/object:Task
+  title: test
+  notes:
+  - - 2020-07-18 11:55:08.931820293 -05:00
+    - 'Created: test'
+  created: 2020-07-18 11:55:08.931854799 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
+- !ruby/object:Task
+  title: test test
+  notes:
+  - - 2020-07-18 11:55:17.542143993 -05:00
+    - 'Created: test test'
+  created: 2020-07-18 11:55:17.542164356 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused

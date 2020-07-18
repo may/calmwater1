@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-15
+# Revised: 2020-07-17
 
 require_relative 'common_project_task'
 
@@ -46,6 +46,7 @@ class Project < CommonProjectTask
   def add_task(title, action_context)
     task = Task.new(title, action_context, @life_context)
     @tasks << task
+    task
   end
 
 

@@ -257,4 +257,92 @@
   life_context: personal
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: 'decide on this/compare to existing specs: review projects weekly, focus
+      monthly, goals quartely, and the oldest 5 s/m each week!'
+    notes:
+    - - 2020-07-17 14:19:40.316227104 -05:00
+      - 'Created: on this/compare to existing specs: review projects weekly, focus
+        monthly, goals quartely, and the oldest 5 s/m each week!'
+    created: 2020-07-17 14:19:40.316255573 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: decide & document decision regarding not having due dates in extbrain;
+      that's what your calendar is for. But this means no tickler function? Is this
+      an overreaction to the overwhlem I have in RTM?
+    notes:
+    - - 2020-07-17 14:33:35.450079255 -05:00
+      - 'Created: decide & document decision regarding not having due dates in extbrain;
+        that''s what your calendar is for. But this means no tickler function? Is
+        this an overreaction to the overwhlem I have in RTM?'
+    created: 2020-07-17 14:33:35.450105120 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: consider/decide on a 'next'/sequential vs parallel option for tasking in
+      extbrain. See some existing software for examples, and consider a use case of
+      someone who has hundreds of next actions and needs to filter the list to what
+      is 'next' rather than what is possible, although I'm not sure that jives with
+      GTD.
+    notes:
+    - - 2020-07-17 14:36:15.143650177 -05:00
+      - 'Created: consider/decide on a ''next''/sequential vs parallel option for
+        tasking in extbrain. See some existing software for examples, and consider
+        a use case of someone who has hundreds of next actions and needs to filter
+        the list to what is ''next'' rather than what is possible, although I''m not
+        sure that jives with GTD.'
+    created: 2020-07-17 14:36:15.143672027 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :someday/maybe
+    life_context: :personal
+  - !ruby/object:Task
+    title: implement a method to prune completed/deleted tasks on every save, into
+      a file for the current year. make a note in the search_all function to load
+      this file if needed, progressively going back into past years.
+    notes:
+    - - 2020-07-17 15:03:51.053958725 -05:00
+      - 'Created: implement a method to prune completed/deleted tasks on every save,
+        into a file for the current year. make a note in the search_all function to
+        load this file if needed, progressively going back into past years.'
+    created: 2020-07-17 15:03:51.053999614 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: research/try high quality ssh / mosh apps for android to use extbrain remotely/on
+      the go.
+    notes:
+    - - 2020-07-17 15:06:13.459444319 -05:00
+      - 'Created: research/try high quality ssh / mosh apps for android to use extbrain
+        remotely/on the go.'
+    created: 2020-07-17 15:06:13.459473589 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: once you feel like you've reached a good place, bump the version to 0.2
+      with a date, and consider putting on github under the selfupgrade.
+    notes:
+    - - 2020-07-17 15:13:53.163485927 -05:00
+      - 'Created: once you feel like you''ve reached a good place, bump the version
+        to 0.2 with a date, and consider putting on github under the selfupgrade.'
+    created: 2020-07-17 15:13:53.163507071 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal

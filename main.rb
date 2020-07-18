@@ -91,7 +91,7 @@ def dispatch_user_input(input_string)
     when 'lt', 'list-tasks'
       task_list(keyword)
     when 'lw'
-      task_list('work')
+      task_list('waiting')
     when 'lc'
       task_list('computer')
       # TODO when lw work, lcomputer, lerrands, lagenda?
@@ -107,6 +107,15 @@ def dispatch_user_input(input_string)
       search(keyword)
     when 't', 'task'
       task_input(keyword, content)
+    when 'w', 'wait', 'waiting'
+      if keyword and content
+        task_input('waiting', keyword + ' ' + content)
+      elsif keyword
+        task_input('waiting', keyword)
+      else
+        task_list('waiting')
+        #puts 'Need to specify what you are waiting on.'
+      end 
     when '?', 'help'
       puts $help_text
     else
