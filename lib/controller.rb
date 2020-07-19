@@ -188,10 +188,11 @@ def complete_or_delete_task_or_project(string, delete)
     a_project = $data.project_exist?(string)
     if a_project
       if delete
-#        $undo = [a_project,'undelete']
+        $undo = [a_project,'undelete']
         a_project.delete
         puts "Deleted project: #{a_project}"
       else
+        $undo = [a_project,'uncomplete']
         a_project.complete
         puts "Completed project: #{a_project}"
       end
@@ -210,9 +211,11 @@ def complete_or_delete_task_or_project(string, delete)
         unless number.empty?
           p = project_search_results[number.to_i]
           if delete
+            $undo = [p,'undelete']
             p.delete
             puts "Deleted project: #{p}"
           else
+            $undo = [p,'uncomplete']
             p.complete
             puts "Completed project: #{p}"
           end
@@ -222,9 +225,11 @@ def complete_or_delete_task_or_project(string, delete)
       elsif project_search_results.count == 1
         p = project_search_results.first
         if delete
+          $undo = [p,'undelete']
           p.delete
           puts "Deleted project: #{p}"
         else
+          $undo = [p,'uncomplete']
           p.complete
           puts "Completed project: #{p}"
         end
@@ -247,21 +252,25 @@ def complete_or_delete_task_or_project(string, delete)
          unless number.empty? 
            t = tasks_result[number.to_i]
            if delete
+             $undo = [t,'undelete']
              t.delete
              puts "Deleted task: #{t}"
            else
+             $undo = [t,'uncomplete']
              t.complete
              puts "Completed task: #{t}"
            end
          end
        elsif tasks_result.count == 1
          t = tasks_result.first # it's an array of one item, hence the .first
-        if delete
-          t.delete
-          puts "Deleted task: #{t}"
-        else
-          t.complete
-          puts "Completed task: #{t}"
+         if delete
+           $undo = [t,'undelete']
+           t.delete
+           puts "Deleted task: #{t}"
+         else
+           $undo = [t,'uncomplete']
+           t.complete
+           puts "Completed task: #{t}"
         end
       elsif tasks_result.count == 0
         puts 'No tasks found.'

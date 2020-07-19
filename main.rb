@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-18
+# Revised: 2020-07-19
 
 
 # todo d for delete
@@ -113,6 +113,15 @@ def dispatch_user_input(input_string)
       search(keyword)
     when 't', 'task'
       task_input(keyword, content)
+    when 'undo'
+      if $undo
+        $undo[0].send($undo[1])
+        puts 'Undo performed. Specifically did this: '
+        puts "object: #{$undo[0]}"
+        puts "action: #{$undo[1]}"
+      else
+        puts '$undo variable not set, nothing to undo?'
+      end
     when 'w', 'wait', 'waiting'
       if keyword and content
         task_input('waiting', keyword + ' ' + content)

@@ -365,13 +365,21 @@
 - !ruby/object:Project
   title: test project
   notes:
+  - - 2020-07-19 12:27:53.496614023 -05:00
+    - Project UNdeleted.
+  - - 2020-07-19 12:27:45.722690775 -05:00
+    - Project deleted.
+  - - 2020-07-19 12:26:54.466708338 -05:00
+    - Project UNdeleted.
+  - - 2020-07-19 12:26:53.270258555 -05:00
+    - Project deleted.
   - - 2020-07-18 19:27:26.405433586 -05:00
     - Project deleted.
   - - 2020-07-18 19:27:24.584350234 -05:00
     - 'Created: test project'
   created: 2020-07-18 19:27:24.584378667 -05:00
   completed:
-  deleted: 2020-07-18 19:27:26.405394593 -05:00
+  deleted:
   last_reviewed:
   keyword: :testp
   life_context: :personal
@@ -381,6 +389,8 @@
 - !ruby/object:Project
   title: testing
   notes:
+  - - 2020-07-19 12:25:02.039489808 -05:00
+    - Project deleted.
   - - 2020-07-19 10:13:56.669798146 -05:00
     - |-
       Updated title:
@@ -417,7 +427,7 @@
     - 'Created: test project'
   created: 2020-07-18 19:27:43.447155818 -05:00
   completed:
-  deleted:
+  deleted: 2020-07-19 12:25:02.039462032 -05:00
   last_reviewed:
   keyword: :testp
   life_context: :personal

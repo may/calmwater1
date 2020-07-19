@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-06-15
+# Revised: 2020-07-19
 # Used by Projects and Tasks.
 
 class CommonProjectTask
@@ -49,6 +49,11 @@ class CommonProjectTask
     add_note("#{self.class.name} completed.")
   end
 
+  def uncomplete
+    @completed = nil
+    add_note("#{self.class.name} UNcompleted.")
+  end
+
   def completed?
     # !! is not not, to force boolean
     !!@completed
@@ -57,6 +62,11 @@ class CommonProjectTask
   def delete
     @deleted = Time.now
     add_note("#{self.class.name} deleted.")
+  end
+
+  def undelete
+    @deleted = nil
+    add_note("#{self.class.name} UNdeleted.")
   end
 
   def deleted?

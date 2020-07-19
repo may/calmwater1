@@ -1,5 +1,5 @@
 Created: 2020-05-30
-Revised: 2020-07-17
+Revised: 2020-07-19
 
 Requirements:
  ruby 2.6.3 or greater
@@ -37,6 +37,11 @@ when creating tasks, can use abbrevations for action contexts such as 'c' for co
 
 use 't action_context' to list tasks in a given action context, like 't computer' or 't job'
 shortcuts available: lc and lj 
+
+in general hitting ENTER on a prompt will do nothing and allow you to exit out of that prompt, such as when selecting tasks
+
+in general, the undo command is available for some actions such as completion, deletion and other serious actions
+
 
 # ADVANCED
 w what you are waiting on
