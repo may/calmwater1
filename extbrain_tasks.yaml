@@ -71,8 +71,26 @@
   action_context: :waiting
   life_context: :unused
 - !ruby/object:Task
-  title: bob to do his shit
+  title: bob needs to do his fucking shit
   notes:
+  - - 2020-07-18 22:36:40.094578926 -05:00
+    - more baeustnaheusnth
+  - - 2020-07-18 22:35:42.480635306 -05:00
+    - I called bob's boss about bob not doing his fucking shit
+  - - 2020-07-18 22:34:43.101799176 -05:00
+    - Bob really needs to do his fucking shit
+  - - 2020-07-18 22:30:35.607675023 -05:00
+    - |-
+      Updated title:
+       old: bob needs to do his fucking shit
+       new: bob needs to do his fucking shit
+  - - 2020-07-18 22:29:16.339183060 -05:00
+    - "Updated title:\n old: bob needs to do his fuckisg shit\n new: "
+  - - 2020-07-18 22:29:03.903761280 -05:00
+    - |-
+      Updated title:
+       old: bob to do his shit
+       new: bob needs to do his fuckisg shit
   - - 2020-07-18 11:53:17.354318080 -05:00
     - 'Created: bob to do his shit'
   created: 2020-07-18 11:53:17.354338734 -05:00
@@ -102,4 +120,15 @@
   deleted:
   last_reviewed:
   action_context: :waiting
+  life_context: :unused
+- !ruby/object:Task
+  title: fucking
+  notes:
+  - - 2020-07-18 22:30:16.729745835 -05:00
+    - 'Created: fucking'
+  created: 2020-07-18 22:30:16.729766489 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
   life_context: :unused

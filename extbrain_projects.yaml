@@ -229,6 +229,8 @@
     and simple and highly searchable rememberthemilk alternative in plain text command
     line (extbrain = external brain, and extra brain to augment mine)'
   notes:
+  - - 2020-07-18 22:37:45.194397082 -05:00
+    - I'm happy with how development is going.
   - - 2020-07-17 13:01:07.009675183 -05:00
     - 'Created: extbrain: for GTD, create a lightweight, reliable, fast, powerfully
       keyboard/language-driven, and simple and highly searchable rememberthemilk alternative
@@ -377,8 +379,30 @@
   psm: ''
   tasks: []
 - !ruby/object:Project
-  title: testing project testing bah
+  title: more testing satnehuasntohu
   notes:
+  - - 2020-07-18 22:40:44.471642032 -05:00
+    - |-
+      Updated psm:
+       old: snhsnthsnth
+       new: psm testpthdnthdnthd
+  - - 2020-07-18 22:40:21.339818155 -05:00
+    - |-
+      Updated psm:
+       old: e
+       new: snhsnthsnth
+  - - 2020-07-18 22:40:10.326497968 -05:00
+    - |-
+      Updated psm:
+       old: Here is some psm for testp
+       new: e
+  - - 2020-07-18 22:38:24.825942870 -05:00
+    - "Updated psm:\n old: \n new: Here is some psm for testp"
+  - - 2020-07-18 22:19:07.057247776 -05:00
+    - |-
+      Updated title:
+       old: testing project testing bah
+       new: more testing satnehuasntohu
   - - 2020-07-18 22:17:49.895779029 -05:00
     - |-
       Updated title:
@@ -393,7 +417,7 @@
   keyword: :testp
   life_context: :personal
   tags: []
-  psm: ''
+  psm: psm testpthdnthdnthd
   tasks:
   - !ruby/object:Task
     title: make 'e' edit instead of exit maybe

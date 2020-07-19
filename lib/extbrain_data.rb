@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-15
+# Revised: 2020-07-18
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -120,7 +120,12 @@ class ExtbrainData
   
   # Returns array of projects containing search_string
   def find_projects(search_string)
-    projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
+    projs = projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
+    if projs.empty?
+      nil
+    else
+      projs
+    end
   end
   
   def defined_life_contexts

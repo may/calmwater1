@@ -51,31 +51,41 @@ def add_note(project_or_task)
   print 'Add note to project or task: '
   puts project_or_task.title
   note = gets.strip
-  project_or_task.add_note(note)
-  puts "Note added:"
-  puts project_or_task.notes.last
+  if note.empty?
+    puts 'No note added.'
+  else
+    project_or_task.add_note(note)
+    puts "Note added:"
+    puts project_or_task.notes.first
+  end
 end
 
 
 def edit_title(project_or_task)
-  puts 'Current title:'
+  print 'Current title: '
   puts project_or_task.title
-  puts 
-  puts 'Enter new title:'
-  project_or_task.title = gets.strip
-  puts 
-  puts "Updated title: #{project_or_task.title}"
-
+  print 'Enter new title: '
+  new_title = gets.strip
+  if new_title.empty?
+    puts 'Title unchanged.'
+  else
+    project_or_task.title = new_title
+    puts "Updated title: #{project_or_task.title}"
+  end
 end
 
 def edit_psm(project)
   puts 'Current project support material:'
+  print ' ' 
   puts project.psm
-  puts 
   puts 'Enter new project support material/summary: '
-  project.psm = gets.strip
-  puts 
-  puts "Updated project support material/summary: #{project.psm}"
+  new_psm = gets.strip
+  if new_psm.empty?
+    puts 'PSM/summary unchanged.'
+  else
+    project.psm = new_psm
+    puts "Updated project support material/summary: #{project.psm}"
+  end
 end
 
 
@@ -98,18 +108,24 @@ def edit_project_or_task(action_verb, keyword, content)
         puts 'Try again and specify exact project keyword.'
         puts
         puts 'todo ask which one function'
+        object_to_operate_on = nil
       elsif project_search_results.count == 1
         object_to_operate_on = project_search_results.first
       else
         puts "You shouldn't see this. controller.rb/edit_project_or_task - project"
       end # project_search_results.count > 1
     else # not a project
-       t = $data.find_tasks(string)
+      if content
+        t = $data.find_tasks(keyword + ' ' + content)
+      else
+        t = $data.find_tasks(keyword)
+      end
        if t.count > 1
          puts 'More than one task matched search critera.'
          puts 'Try again and specify a more detailed string..'
          puts
          puts "todo ask the user to get more specific/show options and have them pick"
+         object_to_operate_on = nil
        elsif t.count == 1
          object_to_operate_on = t.first
        elsif t.count == 0
@@ -118,14 +134,15 @@ def edit_project_or_task(action_verb, keyword, content)
          puts "You shouldn't see this. controller.rb/edit_project_or_task - task"
        end # t.count > 1
     end # if a_project
-        
-    case action_verb
-    when 'add_note'
-      add_note(object_to_operate_on)
-    when 'edit_psm'
-      edit_psm(object_to_operate_on)
-    when 'rename'
-      edit_title(object_to_operate_on)
+    if object_to_operate_on # check for nil
+      case action_verb
+      when 'add_note'
+        add_note(object_to_operate_on)
+      when 'edit_psm'
+        edit_psm(object_to_operate_on)
+      when 'rename'
+        edit_title(object_to_operate_on)
+      end
     end
   end
 end
