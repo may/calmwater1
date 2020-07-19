@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-17
+# Revised: 2020-07-18
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -38,11 +38,7 @@ def task_input(task_action_context,task_body)
 #        if $data.new_project(content, keyword, $life_context)
 end
 
-def project_edit(keyword, content)
-  puts 'todo'
-end 
-
-def rename_project_or_task(keyword, content)
+# SOME EDITING FUNCTIONS
   # and just print existing title first, no messing with readline for now
   # this decision made to help/strongly encourage the user to properly define
   # what the desired outcome is *now*. They can easily re-type it if needed from
@@ -51,62 +47,88 @@ def rename_project_or_task(keyword, content)
   # to output a prompt and then put some text in the read buffer so the user can
   # edit what is already there.
 
-  # TODO trimming down algorithm for find_project_or_task
-  def find_project_or_task(action_verb, keyword, content)
-  unless keyword
-    puts "Need to specify which task or project to #{action_verb}. Just type a search term."
-  else
-    unless handle_single_project
-      unless handle_multiple_projects
-        unless handle_tasks
-    
-    a_project = $data.project_exist?(keyword)
-    unless a_project
-      project_search_results = $data.find_projects(keyword)
-    end
-    if a_project
-      if delete
-        a_project.delete
-        puts "Deleted project: #{a_project}"
-      else
-        a_project.complete
-        # todo implement undo functionality by setting undo variables
-        puts "Completed project: #{a_project}"
-      end
-# TODO figure out if find projects needed and create, else use search for projects?
-    elsif project_search_results.count > 0
-      if p.count > 1
-        puts 'todo ask which one function'
-      elsif p.count == 1 
-        p.complete
-        # todo set undo variables
-        puts "Completed project: #{p}"
-      else
-        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - project"
-      end
-    else
-       t = $data.find_tasks(string)
-      if t.count > 1
-        puts "todo ask the user to get more specific/show options and have them pick"
-      elsif t.count == 1
-        if delete
-          t.first.delete # it's an array of one item, hence the .first
-          puts "Deleted task: #{t.first}"
-        else
-          t.first.complete
-          puts "Completed task: #{t.first}"
-        end
-      elsif t.count == 0
-        puts 'No tasks found.'
-      else
-        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - task"
-      #todo complete tasks code and undo vars etc.
-        # todo delete tasks code and undo vars etc
-      end # t.count > 1
-    end # if p
+def add_note(project_or_task)
+  print 'Add note to project or task: '
+  puts project_or_task.title
+  note = gets.strip
+  project_or_task.add_note(note)
+  puts "Note added:"
+  puts project_or_task.notes.last
+end
 
-  
-end 
+
+def edit_title(project_or_task)
+  puts 'Current title:'
+  puts project_or_task.title
+  puts 
+  puts 'Enter new title:'
+  project_or_task.title = gets.strip
+  puts 
+  puts "Updated title: #{project_or_task.title}"
+
+end
+
+def edit_psm(project)
+  puts 'Current project support material:'
+  puts project.psm
+  puts 
+  puts 'Enter new project support material/summary: '
+  project.psm = gets.strip
+  puts 
+  puts "Updated project support material/summary: #{project.psm}"
+end
+
+
+# action_verb should be one of:
+#  'edit_psm'
+#  'add_note'
+#  'rename'
+def edit_project_or_task(action_verb, keyword, content)
+  unless keyword
+    puts "Need to specify which task or project in order to #{action_verb}."
+    puts "For a project, specify a keyword or type a seach term. "
+    puts "For tasks, just type a search term."
+  else
+    a_project = $data.project_exist?(keyword)
+    if a_project
+      object_to_operate_on = a_project
+    elsif project_search_results = $data.find_projects(keyword)
+      if project_search_results.count > 1
+        puts 'More than one project matched search critera.'
+        puts 'Try again and specify exact project keyword.'
+        puts
+        puts 'todo ask which one function'
+      elsif project_search_results.count == 1
+        object_to_operate_on = project_search_results.first
+      else
+        puts "You shouldn't see this. controller.rb/edit_project_or_task - project"
+      end # project_search_results.count > 1
+    else # not a project
+       t = $data.find_tasks(string)
+       if t.count > 1
+         puts 'More than one task matched search critera.'
+         puts 'Try again and specify a more detailed string..'
+         puts
+         puts "todo ask the user to get more specific/show options and have them pick"
+       elsif t.count == 1
+         object_to_operate_on = t.first
+       elsif t.count == 0
+        puts 'No tasks found.'
+       else
+         puts "You shouldn't see this. controller.rb/edit_project_or_task - task"
+       end # t.count > 1
+    end # if a_project
+        
+    case action_verb
+    when 'add_note'
+      add_note(object_to_operate_on)
+    when 'edit_psm'
+      edit_psm(object_to_operate_on)
+    when 'rename'
+      edit_title(object_to_operate_on)
+    end
+  end
+end
 
 # TODO I should probably refactor into smaller helper functions?
 # looks for project with keyword of string
@@ -124,7 +146,7 @@ def complete_or_delete_task_or_project(string, delete)
   else
     a_project = $data.project_exist?(string)
     unless a_project
-      project_search_results  = $data.find_projects(string)
+      project_search_results = $data.find_projects(string)
     end
     if a_project
       if delete
@@ -137,10 +159,13 @@ def complete_or_delete_task_or_project(string, delete)
       end
 # TODO figure out if find projects needed and create, else use search for projects?
     elsif project_search_results.count > 0
-      if p.count > 1
+      if project_search_results.count > 1
+        puts 'More than one project matched search critera.'
+        puts 'Try again and specify exact project keyword.'
+        puts
         puts 'todo ask which one function'
-      elsif p.count == 1 
-        p.complete
+      elsif project_search_results.count == 1 
+        project_search_results.first.complete
         # todo set undo variables
         puts "Completed project: #{p}"
       else
@@ -148,8 +173,11 @@ def complete_or_delete_task_or_project(string, delete)
       end
     else
        t = $data.find_tasks(string)
-      if t.count > 1
-        puts "todo ask the user to get more specific/show options and have them pick"
+       if t.count > 1
+         puts 'More than one task matched search critera.'
+         puts 'Try again and specify a more detailed string..'
+         puts
+         puts "todo ask the user to get more specific/show options and have them pick"
       elsif t.count == 1
         if delete
           t.first.delete # it's an array of one item, hence the .first
@@ -192,6 +220,8 @@ def project_task(keyword, content)
       two_pieces = content.split(' ', 2)
       action_context = two_pieces[0]
       title = two_pieces[1]
+      print p.keyword 
+      print ' ' 
       puts p.add_task(title, action_context)
     else
       puts "No project found with keyword: #{keyword}. Unable to add task."

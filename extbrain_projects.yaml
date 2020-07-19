@@ -229,21 +229,6 @@
     and simple and highly searchable rememberthemilk alternative in plain text command
     line (extbrain = external brain, and extra brain to augment mine)'
   notes:
-  - - 2020-07-17 14:13:15.133786444 -05:00
-    - |-
-      Updated life_context:
-       old: home
-       new: personal
-  - - 2020-07-17 14:13:10.374361799 -05:00
-    - |-
-      Updated life_context:
-       old: personal
-       new: home
-  - - 2020-07-17 14:12:57.823373357 -05:00
-    - |-
-      Updated life_context:
-       old: work
-       new: personal
   - - 2020-07-17 13:01:07.009675183 -05:00
     - 'Created: extbrain: for GTD, create a lightweight, reliable, fast, powerfully
       keyboard/language-driven, and simple and highly searchable rememberthemilk alternative
@@ -346,3 +331,92 @@
     last_reviewed:
     action_context: :waiting
     life_context: :personal
+  - !ruby/object:Task
+    title: 'I''ve said no to this in the past, and I still am hesitant, but consider
+      color-coding for different action contexts on a given project. perhaps: s/m:
+      dark grey, computer: light pink/red, waiting: light green, etc. with a goal
+      of being able to quickly ascertain what''s what at a glance. And underline project
+      name at the top'
+    notes:
+    - - 2020-07-18 22:01:47.107108803 -05:00
+      - 'Created: I''ve said no to this in the past, and I still am hesitant, but
+        consider color-coding for different action contexts on a given project. perhaps:
+        s/m: dark grey, computer: light pink/red, waiting: light green, etc. with
+        a goal of being able to quickly ascertain what''s what at a glance.'
+    created: 2020-07-18 22:01:47.107126642 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: make 'e' edit instead of exit maybe
+    notes:
+    - - 2020-07-18 22:16:12.623552408 -05:00
+      - 'Created: make ''e'' edit instead of exit maybe'
+    created: 2020-07-18 22:16:12.623582158 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :someday/maybe
+    life_context: :personal
+- !ruby/object:Project
+  title: test project
+  notes:
+  - - 2020-07-18 19:27:26.405433586 -05:00
+    - Project deleted.
+  - - 2020-07-18 19:27:24.584350234 -05:00
+    - 'Created: test project'
+  created: 2020-07-18 19:27:24.584378667 -05:00
+  completed:
+  deleted: 2020-07-18 19:27:26.405394593 -05:00
+  last_reviewed:
+  keyword: :testp
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: testing project testing bah
+  notes:
+  - - 2020-07-18 22:17:49.895779029 -05:00
+    - |-
+      Updated title:
+       old: test project
+       new: testing project testing bah
+  - - 2020-07-18 19:27:43.447129995 -05:00
+    - 'Created: test project'
+  created: 2020-07-18 19:27:43.447155818 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :testp
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: make 'e' edit instead of exit maybe
+    notes:
+    - - 2020-07-18 22:17:19.221479372 -05:00
+      - 'Created: make ''e'' edit instead of exit maybe'
+    created: 2020-07-18 22:17:19.221515202 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :someday/maybe
+    life_context: :personal
+- !ruby/object:Project
+  title: test project
+  notes:
+  - - 2020-07-18 19:27:47.737614922 -05:00
+    - 'Created: test project'
+  created: 2020-07-18 19:27:47.737631252 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :testp2
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []

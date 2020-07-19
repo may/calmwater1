@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-17
+# Revised: 2020-07-18
 
 
 # todo d for delete
@@ -94,7 +94,9 @@ def dispatch_user_input(input_string)
       task_list('waiting')
     when 'lc'
       task_list('computer')
-      # TODO when lw work, lcomputer, lerrands, lagenda?
+    # TODO when lw work, lcomputer, lerrands, lagenda?
+    when 'n', 'an', 'add-note', 'note'
+      edit_project_or_task('add_note', keyword, content)
     when 'p', 'proj', 'project', 'projects', 'lp'
       project_input(keyword, content)
     when 'pt', 'project-task'
@@ -103,8 +105,10 @@ def dispatch_user_input(input_string)
       project_edit(keyword, content)
     when 'plc'
       project_life_context(keyword, content)
+    when 'psm', 'edit-psm'
+      edit_project_or_task('edit_psm', keyword, content)
     when 'r', 'rename', 'retitle'
-      rename_project_or_task(keyword, content)
+      edit_project_or_task('rename', keyword, content)
     when 's', 'search'
       search(keyword)
     when 't', 'task'
