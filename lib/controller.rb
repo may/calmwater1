@@ -105,10 +105,15 @@ def edit_project_or_task(action_verb, keyword, content)
     elsif project_search_results = $data.find_projects(keyword)
       if project_search_results.count > 1
         puts 'More than one project matched search critera.'
-        puts 'Try again and specify exact project keyword.'
-        puts
-        puts 'todo ask which one function'
-        object_to_operate_on = nil
+        puts 'Choose a project, by entering a number.'
+        project_search_results.each_with_index do
+          |project,index|
+          print index
+          print '. ' 
+          puts project
+        end
+        number = gets.strip
+        object_to_operate_on = project_search_results[number.to_i]
       elsif project_search_results.count == 1
         object_to_operate_on = project_search_results.first
       else

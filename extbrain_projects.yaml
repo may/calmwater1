@@ -379,8 +379,13 @@
   psm: ''
   tasks: []
 - !ruby/object:Project
-  title: more testing satnehuasntohu
+  title: testing
   notes:
+  - - 2020-07-19 10:13:56.669798146 -05:00
+    - |-
+      Updated title:
+       old: more testing satnehuasntohu
+       new: testing
   - - 2020-07-18 22:40:44.471642032 -05:00
     - |-
       Updated psm:
