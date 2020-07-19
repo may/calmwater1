@@ -427,10 +427,14 @@
   - !ruby/object:Task
     title: make 'e' edit instead of exit maybe
     notes:
+    - - 2020-07-19 12:11:15.039276239 -05:00
+      - Task completed.
+    - - 2020-07-19 12:05:17.780093848 -05:00
+      - Task completed.
     - - 2020-07-18 22:17:19.221479372 -05:00
       - 'Created: make ''e'' edit instead of exit maybe'
     created: 2020-07-18 22:17:19.221515202 -05:00
-    completed:
+    completed: 2020-07-19 12:11:15.039214770 -05:00
     deleted:
     last_reviewed:
     action_context: :someday/maybe

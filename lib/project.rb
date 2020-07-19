@@ -18,6 +18,12 @@ class Project < CommonProjectTask
     @tasks = Array.new
   end
 
+  # todo
+#  def complete
+#    super
+#    plus complete all @tasks
+#  end
+  
   # Expects tags to be an array of symbols, but a single symbol is ok too.
   # You can also just do p1.tags << 'tagname'
   def tags=(tags)
