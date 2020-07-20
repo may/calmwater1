@@ -3,6 +3,10 @@
 ;; Copyright: Nicholas E. May. All rights reserved.
 
 
+implement searching archived tasks if needed, eg 'I know I completed something this year...'
+of course I can always grep in the meantime
+but for your average user..
+
 
 # NOW
 
