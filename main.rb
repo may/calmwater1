@@ -32,6 +32,10 @@ def startup
 end
 
 at_exit do
+  if $log_command_usage_locally
+    puts $command_usage
+    File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
+  end
   if $lockfile_locked
     puts "Can't get lock... exiting.."
   else
@@ -55,6 +59,8 @@ def command_loop
   if $log_command_usage_locally
     if File.exist?($data_file_command_usage)
       $command_usage = YAML.load(File.read($data_file_command_usage))
+    else
+      $command_usage = Hash.new
     end
   end
 
@@ -65,9 +71,6 @@ def command_loop
     # TODO scope lockfile to just save load
     dispatch_user_input(input)
     $data.save_data # disable this if it gets slow, but then you could lose data if session killed
-  end
-  if $log_command_usage_locally
-    File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
   end
 end
 
@@ -86,7 +89,7 @@ def dispatch_user_input(input_string)
     content = three_pieces[2]
 
     if $log_command_usage_locally
-      $command_usage[command] += 1
+      $command_usage[command] = $command_usage[command].to_i + 1 # increment, even if nil
     end
     case command
     # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
