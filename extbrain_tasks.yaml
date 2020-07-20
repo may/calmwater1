@@ -108,14 +108,3 @@
   last_reviewed:
   action_context: :waiting
   life_context: :unused
-- !ruby/object:Task
-  title: testing
-  notes:
-  - - 2020-07-19 23:41:58.752956273 -05:00
-    - 'Created: testing'
-  created: 2020-07-19 23:41:58.752985029 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :job
-  life_context: :unused

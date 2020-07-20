@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-19
+# Revised: 2020-07-20
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -32,7 +32,7 @@ class ExtbrainData
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
-    puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_work_projects} work projects. Total: #{number_of_projects + number_of_tasks}."
+    puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_job_projects} job projects. Total: #{number_of_projects + number_of_tasks}."
   end
 
   ## COUNTS
@@ -45,8 +45,8 @@ class ExtbrainData
     tasks.count
   end
   
-  def number_of_work_projects
-    projects.filter { |p| p.life_context == 'work'.to_sym }.count
+  def number_of_job_projects
+    projects.filter { |p| p.life_context == 'job'.to_sym }.count
   end 
 
   ## SEARCHING

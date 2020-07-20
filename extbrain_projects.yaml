@@ -371,6 +371,28 @@
     last_reviewed:
     action_context: :computer
     life_context: :personal
+  - !ruby/object:Task
+    title: enable changing the keyword of a project after creation
+    notes:
+    - - 2020-07-20 08:27:19.633233930 -05:00
+      - 'Created: enable changing the keyword of a project after creation'
+    created: 2020-07-20 08:27:19.633251586 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: enable 'p help' to give the proper usage of p
+    notes:
+    - - 2020-07-20 08:29:26.674098056 -05:00
+      - 'Created: enable ''p help'' to give the proper usage of p'
+    created: 2020-07-20 08:29:26.674114886 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: a test project
   notes:
@@ -446,26 +468,124 @@
   psm: aoeusnth
   tasks: []
 - !ruby/object:Project
-  title: testing job context
+  title: implement by 4/2021 with pm and compliance and rest of HCIS. CMS Patient
+    Event Notifications Strategy
   notes:
-  - - 2020-07-19 23:40:45.189697457 -05:00
-    - |-
-      Updated life_context:
-       old: job
-       new: job
-  - - 2020-07-19 23:36:48.200175004 -05:00
-    - |-
-      Updated life_context:
-       old: personal
-       new: job
-  - - 2020-07-19 23:36:23.840093319 -05:00
-    - 'Created: testing job context'
-  created: 2020-07-19 23:36:23.840116117 -05:00
+  - - 2020-07-20 08:26:57.099715307 -05:00
+    - 'Created: by 4/2021 with pm and compliance and rest of HCIS. CMS Patient Event
+      Notifications Strategy'
+  created: 2020-07-20 08:26:57.099733137 -05:00
   completed:
   deleted:
   last_reviewed:
-  keyword: :testing-job-context
+  keyword: :cms-notify
   life_context: :job
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: alex for email with setup guide, then contact joanne, kylie b, Nathanael,
+      deniseg , blodget, chung re who is stakeholder and who will own this, and can
+      we get a pm.
+    notes:
+    - - 2020-07-20 08:30:57.875426614 -05:00
+      - 'Created: alex for email with setup guide, then contact joanne, kylie b, Nathanael,
+        deniseg , blodget, chung re who is stakeholder and who will own this, and
+        can we get a pm.'
+    created: 2020-07-20 08:30:57.875450531 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: implement ADT orders before August 2020 version, eg April 2021 date.
+  notes:
+  - - 2020-07-20 08:41:37.857718035 -05:00
+    - 'Created: implement ADT orders before August 2020 version, eg April 2021 date.'
+  created: 2020-07-20 08:41:37.857749684 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :adt-orders
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: Alex - setup meeting with Kevin C and Paul and I for September 2020
+    notes:
+    - - 2020-07-20 08:41:58.110445171 -05:00
+      - 'Created: Alex - setup meeting with Kevin C and Paul and I for September 2020'
+    created: 2020-07-20 08:41:58.110469693 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: implement Leave of Abscence for Psych, by manaaging work, doing the implementation/build,
+    leading the meetings.
+  notes:
+  - - 2020-07-20 09:43:43.663179420 -05:00
+    - 'Created: implement Leave of Abscence for Psych, by manaaging work, doing the
+      implementation/build, leading the meetings.'
+  created: 2020-07-20 09:43:43.663223399 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :loa
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: paul - change setting so patient goes ed expected when going on LOA, else
+      Nick can do it.
+    notes:
+    - - 2020-07-20 09:44:08.757848341 -05:00
+      - 'Created: paul - change setting so patient goes ed expected when going on
+        LOA, else Nick can do it.'
+    created: 2020-07-20 09:44:08.757877274 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: 'contact john beyer re: who to include for LOA meetings?'
+    notes:
+    - - 2020-07-20 09:45:42.920940372 -05:00
+      - Task deleted.
+    - - 2020-07-20 09:45:24.904818953 -05:00
+      - 'Created: contact john beyer re: who to include for LOA meetings?'
+    created: 2020-07-20 09:45:24.904874625 -05:00
+    completed:
+    deleted: 2020-07-20 09:45:42.920887608 -05:00
+    last_reviewed:
+    action_context: :j
+    life_context: :job
+  - !ruby/object:Task
+    title: 'contact john beyer re: who to include for LOA meetings?'
+    notes:
+    - - 2020-07-20 09:50:38.617806830 -05:00
+      - Task deleted.
+    - - 2020-07-20 09:45:49.594873388 -05:00
+      - 'Created: contact john beyer re: who to include for LOA meetings?'
+    created: 2020-07-20 09:45:49.594888694 -05:00
+    completed:
+    deleted: 2020-07-20 09:50:38.617784887 -05:00
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: 'contact john beyer re: who to include for LOA meetings?'
+    notes:
+    - - 2020-07-20 09:50:50.864730536 -05:00
+      - 'Created: contact john beyer re: who to include for LOA meetings?'
+    created: 2020-07-20 09:50:50.864758352 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
