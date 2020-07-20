@@ -1,9 +1,10 @@
 # Created: 2020-05-28
-# Revised: 2020-07-17
+# Revised: 2020-07-19
 
 require_relative 'common_project_task'
 
- # TODO test tasks/do implementaiton @tasks
+# TODO test tasks/do implementaiton @tasks
+# TODO should ensure that when you set life_context via  accessor it sets it to a sym, but for now handling outside this class 2020-07-19 .
 
 class Project < CommonProjectTask
   attr_accessor_with_logging :keyword, :life_context, :psm
@@ -73,9 +74,7 @@ class Project < CommonProjectTask
   def view_project
     puts self # use to_s
     @tasks.each { |t| puts " #{t.to_s(true)}" }
-    puts "Notes:"
-    @notes.each { |n| puts " #{n[0].strftime($time_formatting_string)} #{n[1]}"}
-
+    self.view_notes
   end 
   
   def to_s

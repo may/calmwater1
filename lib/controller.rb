@@ -6,7 +6,7 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-# SELECTION FUNCITONS
+# SELECTION FUNCTIONS
 
 def narrow_project_results_to_one(search_string)
   projects_result = $data.find_projects(search_string)
@@ -211,7 +211,7 @@ def project_life_context(keyword,new_life_context)
     puts "Proper usage: plc keyword new_life_context"
   else
     if p = $data.project_exist?(keyword)
-      p.life_context=new_life_context
+      p.life_context = new_life_context.to_sym
     else
       puts "No project found with keyword: #{keyword}. Unable to update life context."
     end
@@ -268,7 +268,11 @@ def project_input(keyword, content)
       end
     end
   else # no keyword or content
-    $data.list_projects
+    if $time_sensitive_life_context
+      $data.list_projects($life_context)
+    else
+      $data.list_projects
+    end
   end 
 end     
 

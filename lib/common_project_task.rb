@@ -78,4 +78,9 @@ class CommonProjectTask
     add_note("#{self.class.name} reviewed.")
   end
 
+  def view_notes
+        puts "Notes:"
+    @notes.each { |n| puts " #{n[0].strftime($time_formatting_string)} #{n[1]}"}
+  end
+  
 end

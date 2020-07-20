@@ -293,6 +293,84 @@
     last_reviewed:
     action_context: :someday/maybe
     life_context: :personal
+  - !ruby/object:Task
+    title: task_list to allow the user to select from one of the tasks to view it
+      using .view_task, which also shows notes. the 'v' command should also allow
+      this, search for a task by name and then show it once only one task narrowed
+      to
+    notes:
+    - - 2020-07-19 23:51:10.453522098 -05:00
+      - 'Created: task_list to allow the user to select from one of the tasks to view
+        it using .view_task, which also shows notes. the ''v'' command should also
+        allow this, search for a task by name and then show it once only one task
+        narrowed to'
+    created: 2020-07-19 23:51:10.453556498 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: creat the 'tac' command for when you've created a task in the wrong action
+      context. same as plc.
+    notes:
+    - - 2020-07-19 23:52:02.891417026 -05:00
+      - 'Created: creat the ''tac'' command for when you''ve created a task in the
+        wrong action context. same as plc.'
+    created: 2020-07-19 23:52:02.891433474 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: consider making the 'c' command show everything on the computer action
+      list and instead use 'co' and 'com' etc. to complete a task
+    notes:
+    - - 2020-07-19 23:53:31.378851313 -05:00
+      - 'Created: consider making the ''c'' command show everything on the computer
+        action list and instead use ''co'' and ''com'' etc. to complete a task'
+    created: 2020-07-19 23:53:31.378868621 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: list agenda 'foo'  grabs all tasks with  'foo' in them and filters to agendas
+      and waiting  and then sorts by agenda then waiting
+    notes:
+    - - 2020-07-19 23:54:20.735547122 -05:00
+      - 'Created: list agenda ''foo''  grabs all tasks with  ''foo'' in them and filters
+        to agendas and waiting  and then sorts by agenda then waiting'
+    created: 2020-07-19 23:54:20.735571486 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: if complete a project, then complete all subtasks, code started
+    notes:
+    - - 2020-07-19 23:54:32.870892748 -05:00
+      - 'Created: if complete a project, then complete all subtasks, code started'
+    created: 2020-07-19 23:54:32.870918042 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: undo for renames and psm
+    notes:
+    - - 2020-07-19 23:54:59.964784736 -05:00
+      - 'Created: undo for renames and psm'
+    created: 2020-07-19 23:54:59.964808863 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: a test project
   notes:
@@ -366,4 +444,28 @@
   life_context: :personal
   tags: []
   psm: aoeusnth
+  tasks: []
+- !ruby/object:Project
+  title: testing job context
+  notes:
+  - - 2020-07-19 23:40:45.189697457 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: job
+  - - 2020-07-19 23:36:48.200175004 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: job
+  - - 2020-07-19 23:36:23.840093319 -05:00
+    - 'Created: testing job context'
+  created: 2020-07-19 23:36:23.840116117 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :testing-job-context
+  life_context: :job
+  tags: []
+  psm: ''
   tasks: []

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-17
+# Revised: 2020-07-19
 
 require_relative 'common_project_task'
 
@@ -32,6 +32,11 @@ class Task < CommonProjectTask
     else
       "[#{life_context}] (@#{action_context}) #{@title}"
     end 
+  end
+
+  def view_task
+    puts self # use to_s
+    puts self.view_notes
   end
 end
 

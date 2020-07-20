@@ -99,10 +99,22 @@ def dispatch_user_input(input_string)
       task_list('waiting')
     when 'lc'
       task_list('computer')
+    when 'j', 'lj'
+      task_list('job')
+    when 'lp'
+      if $time_sensitive_life_context
+        $data.list_projects($life_context)
+      else
+        $data.list_projects
+      end
+    when 'lpa'
+      $data.list_projects
+    when 'lpj'
+      project_input('job', nil)
     # TODO when lw work, lcomputer, lerrands, lagenda?
     when 'n', 'an', 'add-note', 'note'
       edit_project_or_task('add_note', keyword, content)
-    when 'p', 'proj', 'project', 'projects', 'lp'
+    when 'p', 'proj', 'project', 'projects'
       project_input(keyword, content)
     when 'pt', 'project-task'
       project_task(keyword, content)
