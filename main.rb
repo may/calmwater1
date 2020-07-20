@@ -67,6 +67,11 @@ def dispatch_user_input(input_string)
     command = three_pieces[0]
     keyword = three_pieces[1]
     content = three_pieces[2]
+    if $log_command_usage_locally
+      # TODO save/load $command_usage, shoudl be a hash
+      #2020-07-19 
+      $command_usage[command] += 1
+    end
     case command
     # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
     # TODO plc keyword context edit context
@@ -162,9 +167,8 @@ end
 
 
 
-
-# Once development finished, update this to 0.2 "testing", with a fixed date
-puts "Welcome to extbrain, version 0.1 (\"prototype\"), #{Time.now.strftime('%Y-%m-%d')}"
+# todo once more beyond testing make date fixed
+puts "Welcome to extbrain, version 0.3 (\"user acceptance testing\"), #{Time.now.strftime('%Y-%m-%d')}"
 startup
 command_loop
 

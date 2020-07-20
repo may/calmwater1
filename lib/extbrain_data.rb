@@ -12,10 +12,6 @@ require_relative '../config.rb'
 ## .find_task
 ## .update_task(replaced task object)
 ## .delete_task(sets deleted flag on that task object)
-## .archive_deleted( saves all with deleted flag set to YYYY-MM-DD-trash.ymal with a timestamp)
-##  ^ separate code that checks on exit and handles if month # has changed
-## .archive_completed( saves all with completed?=true AND date > 1yr? to YYYY-MM-DD-completed.ymal
-##  ^ separate code that checks on exit and handles if month # has changed
 ## .find_project
 
 
@@ -265,36 +261,49 @@ class ExtbrainData
       File.open($lockfile, 'w') {|f| f.write(Process.pid) }
     end
     print "Loading files..."
-    if File.exist?($savefile_habits)
-      @habits = YAML.load(File.read($savefile_habits))
+    if File.exist?($save_file_habits)
+      @habits = YAML.load(File.read($save_file_habits))
     else
-      puts "File not found: #{$savefile_habits}."
+      puts "File not found: #{$save_file_habits}."
       puts ' If this is your first run, or you have no habits yet, you can ignore this message.'
     end
-    if File.exist?($savefile_projects)
-      @projects = YAML.load(File.read($savefile_projects))
+    if File.exist?($save_file_projects)
+      @projects = YAML.load(File.read($save_file_projects))
     else
-      puts "File not found: #{$savefile_projects}."
+      puts "File not found: #{$save_file_projects}."
       puts ' If this is your first run, or you have no projects yet, you can ignore this message.'
     end
-    if File.exist?($savefile_tasks)
-      @tasks = YAML.load(File.read($savefile_tasks))
+    if File.exist?($save_file_tasks)
+      @tasks = YAML.load(File.read($save_file_tasks))
     else
-      puts "File not found: #{$savefile_tasks}."
+      puts "File not found: #{$save_file_tasks}."
       puts ' If this is your first run, or you have no tasks, you can ignore this message.'
     end
     puts "loaded."
   end
-  
+
+  # We save freqeuntly, and clear_lock being true means it's the final save of the session.
   def save_data(clear_lock=nil)
     if Process.pid == File.open($lockfile, &:gets).to_i
+      if clear_lock
+        print "Archiving completed and deleted tasks & projects..."
+        # If you ever edit this code, be sure to use @projects & @tasks; projects/tasks already exclude completed/deleted.
+        p = @projects.filter { |project| (project.completed? or project.deleted?) }
+        File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
+        @projects = @projects - p # remove completed/deleted
+        
+        t = @tasks.filter { |task| (task.completed? or task.deleted?) }
+        File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
+        @tasks = @tasks - t # remove completed/deleted
+        puts "archival complete."
+      end
       print "Saving file..." if clear_lock # only be chatty if closing program, otherwise save silently each time
       print 'habits...' if clear_lock
-      File.open($savefile_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
+      File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
       print 'projects...' if clear_lock
-      File.open($savefile_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
+      File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
       print 'tasks...' if clear_lock
-      File.open($savefile_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
+      File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
       puts "saved!" if clear_lock
       if clear_lock
         File.delete($lockfile)
