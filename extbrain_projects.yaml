@@ -120,8 +120,14 @@
     action_context: computer
     life_context: :work
 - !ruby/object:Project
-  title: implement help
+  title: implement help for users so people like your software and you can remember
+    how to use it yourself
   notes:
+  - - 2020-07-19 23:29:00.843851752 -05:00
+    - |-
+      Updated title:
+       old: implement help
+       new: implement help for users so people like your software and you can remember how to use it yourself
   - - 2020-06-25 16:28:33.932244497 -05:00
     - 'Created: implement help'
   created: 2020-06-25 16:28:33.932279051 -05:00
@@ -247,6 +253,8 @@
     title: once you feel like you've reached a good place, bump the version to 0.2
       with a date, and consider putting on github under the selfupgrade.
     notes:
+    - - 2020-07-19 23:27:06.842462523 -05:00
+      - Doing some testing, going well.
     - - 2020-07-17 15:13:53.163485927 -05:00
       - 'Created: once you feel like you''ve reached a good place, bump the version
         to 0.2 with a date, and consider putting on github under the selfupgrade.'
@@ -286,16 +294,76 @@
     action_context: :someday/maybe
     life_context: :personal
 - !ruby/object:Project
-  title: test project
+  title: a test project
   notes:
-  - - 2020-07-18 19:27:47.737614922 -05:00
-    - 'Created: test project'
-  created: 2020-07-18 19:27:47.737631252 -05:00
+  - - 2020-07-19 23:27:46.922906707 -05:00
+    - aoesunth
+  - - 2020-07-19 23:27:22.302043615 -05:00
+    - testing
+  - - 2020-07-19 23:19:50.934938053 -05:00
+    - "Updated psm:\n old: \n new: taeustnaheu"
+  - - 2020-07-19 22:56:57.178722765 -05:00
+    - Project UNcompleted.
+  - - 2020-07-19 22:56:54.874057723 -05:00
+    - Project completed.
+  - - 2020-07-19 22:56:23.360515668 -05:00
+    - Project UNcompleted.
+  - - 2020-07-19 22:56:20.937470378 -05:00
+    - Project completed.
+  - - 2020-07-19 22:54:46.869546296 -05:00
+    - 'Created: a test project'
+  created: 2020-07-19 22:54:46.869580917 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :testp1
+  life_context: :personal
+  tags: []
+  psm: taeustnaheu
+  tasks: []
+- !ruby/object:Project
+  title: another second test project
+  notes:
+  - - 2020-07-19 23:28:18.004634163 -05:00
+    - |-
+      Updated title:
+       old: a second test project yes
+       new: another second test project
+  - - 2020-07-19 23:27:58.419655036 -05:00
+    - |-
+      Updated title:
+       old: a second test project
+       new: a second test project yes
+  - - 2020-07-19 23:23:00.406006575 -05:00
+    - "Updated psm:\n old: \n new: aoeusnth"
+  - - 2020-07-19 23:19:33.348132557 -05:00
+    - Project UNdeleted.
+  - - 2020-07-19 23:19:31.944629892 -05:00
+    - Project deleted.
+  - - 2020-07-19 23:19:17.528829033 -05:00
+    - Project UNcompleted.
+  - - 2020-07-19 23:19:16.245814829 -05:00
+    - Project completed.
+  - - 2020-07-19 23:19:09.351820498 -05:00
+    - Project UNcompleted.
+  - - 2020-07-19 23:19:06.433908058 -05:00
+    - Project completed.
+  - - 2020-07-19 22:58:35.329248838 -05:00
+    - Project UNcompleted.
+  - - 2020-07-19 22:57:54.600582280 -05:00
+    - Project completed.
+  - - 2020-07-19 22:56:41.992756476 -05:00
+    - Project UNdeleted.
+  - - 2020-07-19 22:56:39.408615335 -05:00
+    - Project deleted.
+  - - 2020-07-19 22:54:54.882053881 -05:00
+    - 'Created: a second test project'
+  created: 2020-07-19 22:54:54.882078978 -05:00
   completed:
   deleted:
   last_reviewed:
   keyword: :testp2
   life_context: :personal
   tags: []
-  psm: ''
+  psm: aoeusnth
   tasks: []

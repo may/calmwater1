@@ -55,9 +55,9 @@ class ExtbrainData
   # .downcase to ensure case-insensitive search
   def search(string)
     p = find_projects(string)
-    p.each { |project| puts project }
+    p.each { |project| puts project } unless p.nil?
     t = find_tasks(string)
-    t.each { |task| puts task }
+    t.each { |task| puts task } unless t.nil?
   end
 
   def search_all # including notes, shortcut should be sa
@@ -117,6 +117,8 @@ class ExtbrainData
   # Returns array of projects containing search_string
   def find_projects(search_string)
     projs = projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
+    projs << projects.filter { |project| project.keyword.to_s.downcase.include?(search_string.downcase) }
+    projs.flatten!
     if projs.empty?
       nil
     else

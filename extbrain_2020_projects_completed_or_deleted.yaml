@@ -167,3 +167,24 @@
   tags: []
   psm: ''
   tasks: []
+---
+- !ruby/object:Project
+  title: test project
+  notes:
+  - - 2020-07-19 22:22:29.155754351 -05:00
+    - Project completed.
+  - - 2020-07-19 22:12:03.600611132 -05:00
+    - aeuau
+  - - 2020-07-19 22:11:53.999848546 -05:00
+    - sntaeuhaosnuthaoeusntaoheunsatoeuhaoenstuha
+  - - 2020-07-18 19:27:47.737614922 -05:00
+    - 'Created: test project'
+  created: 2020-07-18 19:27:47.737631252 -05:00
+  completed: 2020-07-19 22:22:29.155712634 -05:00
+  deleted:
+  last_reviewed:
+  keyword: :testp2
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []

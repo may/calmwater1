@@ -86,9 +86,9 @@ def dispatch_user_input(input_string)
       enable_writing_mode
     #MAYBE if you want multi-word searching add content and keyword
     when 'c', 'complete', 'finish', 'done'
-      complete_or_delete_task_or_project(keyword, false)
+      edit_project_or_task('complete', keyword, content)
     when 'd', 'delete', 'remove'
-      complete_or_delete_task_or_project(keyword, true)
+      edit_project_or_task('delete', keyword, content)
     when 'e', 'exit', 'q'
       exit
     when 'h', 'habit'
@@ -106,8 +106,6 @@ def dispatch_user_input(input_string)
       project_input(keyword, content)
     when 'pt', 'project-task'
       project_task(keyword, content)
-    when 'pe', 'project-edit'
-      project_edit(keyword, content)
     when 'plc'
       project_life_context(keyword, content)
     when 'psm', 'edit-psm'

@@ -6,6 +6,64 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
+# SELECTION FUNCITONS
+
+def narrow_project_results_to_one(search_string)
+  projects_result = $data.find_projects(search_string)
+  if projects_result == nil
+    puts 'No projects found.'
+    nil
+  elsif projects_result.count > 1
+    puts 'More than one project matched search critera.'
+    puts 'Choose a project, by entering a number.'
+    puts 'Press ENTER to search for tasks.'
+    projects_result.each_with_index do
+      |project,index|
+      print index+1 # make the list start at 1 for the user
+      print '. ' 
+      puts project
+    end
+    print '>> '
+    number = gets.strip
+    unless number.empty?
+      index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
+      projects_result[index_to_use]
+    end
+  elsif projects_result.count == 1
+    projects_result.first # it's an array of one item, hence the .first
+  elsif projects_result.count == 0
+    puts 'No projects found.'
+    nil
+  end
+end
+
+def narrow_task_results_to_one(search_string)
+  tasks_result = $data.find_tasks(search_string)
+  if tasks_result.count > 1
+    puts 'More than one task matched search critera.'
+    puts 'Choose a task, by entering a number.'
+    tasks_result.each_with_index do
+      |task,index|
+      print index+1 # make the list start at 1 for the user
+      print '. ' 
+      puts task
+    end
+    print '>> '
+    number = gets.strip
+    unless number.empty?
+      index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
+      tasks_result[index_to_use]
+    end
+  elsif tasks_result.count == 1
+    tasks_result.first # it's an array of one item, hence the .first
+  elsif tasks_result.count == 0
+    puts 'No tasks found.'
+    nil
+  end
+end
+
+# TASKS
+
 def task_list(keyword = nil)
   if keyword
     # keyword is really action_context
@@ -16,8 +74,6 @@ def task_list(keyword = nil)
 end
   
 def task_input(task_action_context,task_body)
-#  puts 'currently a no-op, will be implemented later'
-#  puts "would be nice if a t no args called 'task_list'"
   if task_action_context
     if task_body
       $data.new_task(task_body,task_action_context,"unused")
@@ -39,14 +95,16 @@ def task_input(task_action_context,task_body)
 end
 
 # SOME EDITING FUNCTIONS
-# TODO refactor repeated code into smaller parts? OTOH if it's working and isn't copied again leave it?
-  # and just print existing title first, no messing with readline for now
-  # this decision made to help/strongly encourage the user to properly define
-  # what the desired outcome is *now*. They can easily re-type it if needed from
-  # the 'here's what the title is right now' output.
-  # If you want to get fancy, you can use readline (or highline if need cross platform)
-  # to output a prompt and then put some text in the read buffer so the user can
-  # edit what is already there.
+# For now, when renaming, we will just print the existing title first,
+# and encourage the user to re-type the content.
+# 
+# It is possible to pre-populate the user's text field with the existing title or content
+# but that is a bit messy, and we'd like to strongly encourage the user to think
+# and clearly define, for example, what the desired outcome is *now*,
+# instead of just adding more text to what's already there.
+# I have totally been guilty of that in the past.
+#
+# If you need to edit what's there, see readline or highline (if cross-platfrom needed).
 
 def add_note(project_or_task)
   print 'Add note to project or task: '
@@ -60,7 +118,6 @@ def add_note(project_or_task)
     puts project_or_task.notes.first
   end
 end
-
 
 def edit_title(project_or_task)
   print 'Current title: '
@@ -89,10 +146,11 @@ def edit_psm(project)
   end
 end
 
-
 # action_verb should be one of:
-#  'edit_psm'
 #  'add_note'
+#  'complete'
+#  'delete'
+#  'edit_psm'
 #  'rename'
 def edit_project_or_task(action_verb, keyword, content)
   unless keyword
@@ -103,58 +161,26 @@ def edit_project_or_task(action_verb, keyword, content)
     a_project = $data.project_exist?(keyword)
     if a_project
       object_to_operate_on = a_project
-    elsif project_search_results = $data.find_projects(keyword)
-      if project_search_results.count > 1
-        puts 'More than one project matched search critera.'
-        puts 'Choose a project, by entering a number.'
-        project_search_results.each_with_index do
-          |project,index|
-          print index
-          print '. ' 
-          puts project
-        end
-        print '>> '
-        number = gets.strip
-        unless number.empty?
-          object_to_operate_on = project_search_results[number.to_i]
-        end
-        elsif project_search_results.count == 1
-        object_to_operate_on = project_search_results.first
+    elsif object_to_operate_on = narrow_project_results_to_one(keyword)
+    else # not a project or user wants tasks
+      if action_verb == 'edit_psm'
+        puts "Can't edit project support material on a *task*. Exiting. Try 'n' for add note, instead."
       else
-        puts "You shouldn't see this. controller.rb/edit_project_or_task - project"
-      end # project_search_results.count > 1
-    else # not a project
-      if content
-        t = $data.find_tasks(keyword + ' ' + content)
-      else
-        t = $data.find_tasks(keyword)
+        if content
+          object_to_operate_on = narrow_task_results_to_one(keyword + ' ' + content)
+        else
+          object_to_operate_on = narrow_task_results_to_one(keyword)
+        end
       end
-      if t.count > 1
-        puts 'More than one project matched search critera.'
-        puts 'Choose a task, by entering a number.'
-        t.each_with_index do
-          |task,index|
-          print index
-          print '. ' 
-          puts task
-        end
-        print '>> '
-        number = gets.strip
-        unless number.empty?
-          object_to_operate_on = t[number.to_i]
-        end
-      elsif t.count == 1
-         object_to_operate_on = t.first
-       elsif t.count == 0
-        puts 'No tasks found.'
-       else
-         puts "You shouldn't see this. controller.rb/edit_project_or_task - task"
-       end # t.count > 1
     end # if a_project
     if object_to_operate_on # check for nil
       case action_verb
       when 'add_note'
         add_note(object_to_operate_on)
+      when 'complete'
+        complete_task_or_project(object_to_operate_on)
+      when 'delete'
+        delete_task_or_project(object_to_operate_on)
       when 'edit_psm'
         edit_psm(object_to_operate_on)
       when 'rename'
@@ -166,122 +192,18 @@ def edit_project_or_task(action_verb, keyword, content)
   end
 end
 
-# TODO I should probably refactor into smaller helper functions?
-# looks for project with keyword of string
-# if exact match found stop, complete, print & give undo option
-## undo option implemented via eval
-## eg $last_object + $last_operation_opposite
-## should yield project.uncomplete
-# else looks for task or project with string in title
-# else looks for subtask of project w/ string in title
-# if several matches, print list and allow user to choose a task or retry their search
-# string until a match is found
-# TODO implement undo functionality by setting undo variables on each action
-def complete_or_delete_task_or_project(string, delete)
-  unless string
-    if delete
-      puts "Need to specify which task or project to delete. Just type a search term."
-    else
-      puts "Need to specify which task or project to complete. Just type a search term."
-    end
-  else
-    a_project = $data.project_exist?(string)
-    if a_project
-      if delete
-        $undo = [a_project,'undelete']
-        a_project.delete
-        puts "Deleted project: #{a_project}"
-      else
-        $undo = [a_project,'uncomplete']
-        a_project.complete
-        puts "Completed project: #{a_project}"
-      end
-    elsif project_search_results = $data.find_projects(string)
-      if project_search_results.count > 1
-        puts 'More than one project matched search critera.'
-        puts 'Choose a project, by entering a number.'
-        project_search_results.each_with_index do
-          |project,index|
-          print index
-          print '. ' 
-          puts project
-        end
-        print '>> '
-        number = gets.strip
-        unless number.empty?
-          p = project_search_results[number.to_i]
-          if delete
-            $undo = [p,'undelete']
-            p.delete
-            puts "Deleted project: #{p}"
-          else
-            $undo = [p,'uncomplete']
-            p.complete
-            puts "Completed project: #{p}"
-          end
-        else
-          puts 'No action taken.'
-        end
-      elsif project_search_results.count == 1
-        p = project_search_results.first
-        if delete
-          $undo = [p,'undelete']
-          p.delete
-          puts "Deleted project: #{p}"
-        else
-          $undo = [p,'uncomplete']
-          p.complete
-          puts "Completed project: #{p}"
-        end
-      else
-        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - project"
-      end
-    else
-      tasks_result = $data.find_tasks(string)
-       if tasks_result.count > 1
-         puts 'More than one project matched search critera.'
-         puts 'Choose a task, by entering a number.'
-         tasks_result.each_with_index do
-           |task,index|
-           print index
-           print '. ' 
-           puts task
-         end
-         print '>> '
-         number = gets.strip
-         unless number.empty? 
-           t = tasks_result[number.to_i]
-           if delete
-             $undo = [t,'undelete']
-             t.delete
-             puts "Deleted task: #{t}"
-           else
-             $undo = [t,'uncomplete']
-             t.complete
-             puts "Completed task: #{t}"
-           end
-         end
-       elsif tasks_result.count == 1
-         t = tasks_result.first # it's an array of one item, hence the .first
-         if delete
-           $undo = [t,'undelete']
-           t.delete
-           puts "Deleted task: #{t}"
-         else
-           $undo = [t,'uncomplete']
-           t.complete
-           puts "Completed task: #{t}"
-        end
-      elsif tasks_result.count == 0
-        puts 'No tasks found.'
-      else
-        puts "You shouldn't see this. controller.rb/complete_or_delete_task_or_project - task"
-      #todo complete tasks code and undo vars etc.
-        # todo delete tasks code and undo vars etc
-      end # t.count > 1
-    end # if p
-  end
+def delete_task_or_project(object)
+  $undo = [object,'undelete']
+  object.delete
+  puts "Deleted #{object.class}: #{object}. Undo available if needed."
 end
+
+def complete_task_or_project(object)
+  $undo = [object,'uncomplete']
+  object.complete
+  puts "Completed #{object.class}: #{object}. Undo available if needed."
+end
+
 
 # plc
 def project_life_context(keyword,new_life_context)

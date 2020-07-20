@@ -29,3 +29,44 @@
   last_reviewed:
   action_context: :computer
   life_context: :unused
+---
+- !ruby/object:Task
+  title: test
+  notes:
+  - - 2020-07-19 22:23:52.943704518 -05:00
+    - Task deleted.
+  - - 2020-07-18 11:55:08.931820293 -05:00
+    - 'Created: test'
+  created: 2020-07-18 11:55:08.931854799 -05:00
+  completed:
+  deleted: 2020-07-19 22:23:52.943659475 -05:00
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
+- !ruby/object:Task
+  title: test test
+  notes:
+  - - 2020-07-19 22:23:40.510387963 -05:00
+    - Task completed.
+  - - 2020-07-18 11:55:17.542143993 -05:00
+    - 'Created: test test'
+  created: 2020-07-18 11:55:17.542164356 -05:00
+  completed: 2020-07-19 22:23:40.510350571 -05:00
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
+---
+- !ruby/object:Task
+  title: testing waiting
+  notes:
+  - - 2020-07-19 22:24:54.988500081 -05:00
+    - Task deleted.
+  - - 2020-07-18 11:53:07.354423362 -05:00
+    - 'Created: testing waiting'
+  created: 2020-07-18 11:53:07.354441780 -05:00
+  completed:
+  deleted: 2020-07-19 22:24:54.988453645 -05:00
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
