@@ -108,3 +108,16 @@
   last_reviewed:
   action_context: :waiting
   life_context: :unused
+- !ruby/object:Task
+  title: email jacob/jason can we get our sherlock team name changed from adt/bedboard
+    to grand central?
+  notes:
+  - - 2020-07-20 13:21:52.529043959 -05:00
+    - 'Created: email jacob/jason can we get our sherlock team name changed from adt/bedboard
+      to grand central?'
+  created: 2020-07-20 13:21:52.529064125 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :job
+  life_context: :unused

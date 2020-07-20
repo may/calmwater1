@@ -393,6 +393,30 @@
     last_reviewed:
     action_context: :computer
     life_context: :personal
+  - !ruby/object:Task
+    title: chunk task listing w/n projects into 80 character limit and indent by 4
+      spaces
+    notes:
+    - - 2020-07-20 10:02:54.818381847 -05:00
+      - 'Created: chunk task listing w/n projects into 80 character limit and indent
+        by 4 spaces'
+    created: 2020-07-20 10:02:54.818399075 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: create an added today query
+    notes:
+    - - 2020-07-20 10:52:18.153030192 -05:00
+      - 'Created: create an added today query'
+    created: 2020-07-20 10:52:18.153047591 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: a test project
   notes:
@@ -584,6 +608,87 @@
     - - 2020-07-20 09:50:50.864730536 -05:00
       - 'Created: contact john beyer re: who to include for LOA meetings?'
     created: 2020-07-20 09:50:50.864758352 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: cancel 8/3 meeting LOA meeting per Heather to make space for upgrade, ok
+      by me
+    notes:
+    - - 2020-07-20 09:56:29.647425341 -05:00
+      - 'Created: cancel 8/3 meeting LOA meeting per Heather to make space for upgrade,
+        ok by me'
+    created: 2020-07-20 09:56:29.647461723 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: add S hacker to loa meeting recurrance
+    notes:
+    - - 2020-07-20 09:56:39.989202041 -05:00
+      - 'Created: add S hacker to loa meeting recurrance'
+    created: 2020-07-20 09:56:39.989226940 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: add to agenda for 7/30 meeting with psych docs - do they want to see patients
+      who are on LOA on your lists while on LOA?
+    notes:
+    - - 2020-07-20 09:57:30.776017658 -05:00
+      - 'Created: add to agenda for 7/30 meeting with psych docs - do they want to
+        see patients who are on LOA on your lists while on LOA?'
+    created: 2020-07-20 09:57:30.776033294 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: 'setup meeting in mid august with beth s, sarah h, todd z, nic o, paul
+      b, jake c re: legal status + current psych workflows around keeping the legal
+      status across discharge/LOA.'
+    notes:
+    - - 2020-07-20 10:00:12.167277958 -05:00
+      - 'Created: setup meeting in mid august with beth s, sarah h, todd z, nic o,
+        paul b, jake c re: legal status + current psych workflows around keeping the
+        legal status across discharge/LOA.'
+    created: 2020-07-20 10:00:12.167319077 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: 'grab notest from 2020-07-20-loa meeting in H: and send out, and update
+      to onenote as well'
+    notes:
+    - - 2020-07-20 10:02:13.970921352 -05:00
+      - 'Created: grab notest from 2020-07-20-loa meeting in H: and send out, and
+        update to onenote as well'
+    created: 2020-07-20 10:02:13.970956904 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: extend loa testing meeting series to 1.5 hours
+    notes:
+    - - 2020-07-20 10:10:43.933555513 -05:00
+      - |-
+        Updated title:
+         old: extend loa testing meeting series to 1.5 hours?
+         new: extend loa testing meeting series to 1.5 hours
+    - - 2020-07-20 10:10:25.080470431 -05:00
+      - 'Created: extend loa testing meeting series to 1.5 hours?'
+    created: 2020-07-20 10:10:25.080503523 -05:00
     completed:
     deleted:
     last_reviewed:

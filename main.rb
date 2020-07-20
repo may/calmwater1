@@ -40,18 +40,35 @@ at_exit do
   end 
 end
 
-
+def view_or_add_task(action_context, keyword, content)
+  if keyword and content
+    task_input(action_context, keyword + ' ' + content)
+  elsif keyword
+    task_input(action_context, keyword)
+  else
+    task_list(action_context)
+  end
+end
 
 def command_loop
   $no_operation_count = 0
+  if $log_command_usage_locally
+    if File.exist?($data_file_command_usage)
+      $command_usage = YAML.load(File.read($data_file_command_usage))
+    end
+  end
+
   while true
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
     # TODO try $data.load_data BEFORE modyiftgin state.
     # TODO scope lockfile to just save load
     dispatch_user_input(input)
-    $data.save_data
-  end 
+    $data.save_data # disable this if it gets slow, but then you could lose data if session killed
+  end
+  if $log_command_usage_locally
+    File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
+  end
 end
 
 def dispatch_user_input(input_string)
@@ -67,9 +84,8 @@ def dispatch_user_input(input_string)
     command = three_pieces[0]
     keyword = three_pieces[1]
     content = three_pieces[2]
+
     if $log_command_usage_locally
-      # TODO save/load $command_usage, shoudl be a hash
-      #2020-07-19 
       $command_usage[command] += 1
     end
     case command
@@ -85,7 +101,9 @@ def dispatch_user_input(input_string)
     when '!!', 'wm'
       enable_writing_mode
     #MAYBE if you want multi-word searching add content and keyword
-    when 'c', 'complete', 'finish', 'done'
+    when 'c', 'lc', 'comp', 'computer'
+      view_or_add_task('computer', keyword, content)
+    when 'co', 'com', 'complete', 'finish', 'done'
       edit_project_or_task('complete', keyword, content)
     when 'd', 'delete', 'remove'
       edit_project_or_task('delete', keyword, content)
@@ -97,10 +115,8 @@ def dispatch_user_input(input_string)
       task_list(keyword)
     when 'lw'
       task_list('waiting')
-    when 'lc'
-      task_list('computer')
     when 'j', 'lj'
-      task_list('job')
+      view_or_add_task('job', keyword, content)
     when 'lp'
       if $time_sensitive_life_context
         $data.list_projects($life_context)
@@ -138,14 +154,7 @@ def dispatch_user_input(input_string)
         puts '$undo variable not set, nothing to undo?'
       end
     when 'w', 'wait', 'waiting'
-      if keyword and content
-        task_input('waiting', keyword + ' ' + content)
-      elsif keyword
-        task_input('waiting', keyword)
-      else
-        task_list('waiting')
-        #puts 'Need to specify what you are waiting on.'
-      end 
+      view_or_add_task('waiting', keyword, content)
     when '?', 'help'
       puts $help_text
     else
