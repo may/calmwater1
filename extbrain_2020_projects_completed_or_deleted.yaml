@@ -1,0 +1,169 @@
+---
+- !ruby/object:Project
+  title: testing extbrain test project
+  notes:
+  - - 2020-07-04 13:27:23.407786500 -05:00
+    - Project completed.
+  - - 2020-07-03 21:57:16.726470209 -05:00
+    - Project completed.
+  - - 2020-07-03 21:57:13.051268051 -05:00
+    - Project completed.
+  - - 2020-06-15 12:31:09.495965346 -05:00
+    - 'Created: testing extbrain test project'
+  created: 2020-06-15 12:31:09.495969946 -05:00
+  completed: 2020-07-04 13:27:23.407743831 -05:00
+  deleted:
+  last_reviewed:
+  keyword: :test
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: 819878 - move new preadmission report to prd
+  notes:
+  - - 2020-07-03 22:24:50.493460478 -05:00
+    - Project completed.
+  - - 2020-06-25 16:22:28.381000989 -05:00
+    - 'Created: 819878 - move new preadmission report to prd'
+  created: 2020-06-25 16:22:28.381021070 -05:00
+  completed: 2020-07-03 22:24:50.493413393 -05:00
+  deleted:
+  last_reviewed:
+  keyword: :socscreen
+  life_context: :work
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: testing tasks
+    notes:
+    - - 2020-07-03 13:34:42.635353973 -05:00
+      - 'Created: testing tasks'
+    created: 2020-07-03 13:34:42.635374727 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: computer
+    life_context: :work
+- !ruby/object:Project
+  title: testing deletion
+  notes:
+  - - 2020-07-04 13:44:58.252774861 -05:00
+    - 'Created: testing deletion'
+  created: 2020-07-04 13:44:58.252792984 -05:00
+  completed:
+  deleted: 2020-07-04 13:46:58.252792984 -05:00
+  last_reviewed:
+  keyword: :testing
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: testing some shit
+  notes:
+  - - 2020-07-15 21:19:22.421480261 -05:00
+    - Project completed.
+  - - 2020-07-15 21:03:55.479419043 -05:00
+    - 'Created: testing some shit'
+  created: 2020-07-15 21:03:55.479447748 -05:00
+  completed: 2020-07-15 21:19:22.421440147 -05:00
+  deleted:
+  last_reviewed:
+  keyword: :testing-proj
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: testing
+  notes:
+  - - 2020-07-19 12:25:02.039489808 -05:00
+    - Project deleted.
+  - - 2020-07-19 10:13:56.669798146 -05:00
+    - |-
+      Updated title:
+       old: more testing satnehuasntohu
+       new: testing
+  - - 2020-07-18 22:40:44.471642032 -05:00
+    - |-
+      Updated psm:
+       old: snhsnthsnth
+       new: psm testpthdnthdnthd
+  - - 2020-07-18 22:40:21.339818155 -05:00
+    - |-
+      Updated psm:
+       old: e
+       new: snhsnthsnth
+  - - 2020-07-18 22:40:10.326497968 -05:00
+    - |-
+      Updated psm:
+       old: Here is some psm for testp
+       new: e
+  - - 2020-07-18 22:38:24.825942870 -05:00
+    - "Updated psm:\n old: \n new: Here is some psm for testp"
+  - - 2020-07-18 22:19:07.057247776 -05:00
+    - |-
+      Updated title:
+       old: testing project testing bah
+       new: more testing satnehuasntohu
+  - - 2020-07-18 22:17:49.895779029 -05:00
+    - |-
+      Updated title:
+       old: test project
+       new: testing project testing bah
+  - - 2020-07-18 19:27:43.447129995 -05:00
+    - 'Created: test project'
+  created: 2020-07-18 19:27:43.447155818 -05:00
+  completed:
+  deleted: 2020-07-19 12:25:02.039462032 -05:00
+  last_reviewed:
+  keyword: :testp
+  life_context: :personal
+  tags: []
+  psm: psm testpthdnthdnthd
+  tasks:
+  - !ruby/object:Task
+    title: make 'e' edit instead of exit maybe
+    notes:
+    - - 2020-07-19 12:11:15.039276239 -05:00
+      - Task completed.
+    - - 2020-07-19 12:05:17.780093848 -05:00
+      - Task completed.
+    - - 2020-07-18 22:17:19.221479372 -05:00
+      - 'Created: make ''e'' edit instead of exit maybe'
+    created: 2020-07-18 22:17:19.221515202 -05:00
+    completed: 2020-07-19 12:11:15.039214770 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :someday/maybe
+    life_context: :personal
+
+---
+- !ruby/object:Project
+  title: test project
+  notes:
+  - - 2020-07-19 22:03:50.785911599 -05:00
+    - Project completed.
+  - - 2020-07-19 12:27:53.496614023 -05:00
+    - Project UNdeleted.
+  - - 2020-07-19 12:27:45.722690775 -05:00
+    - Project deleted.
+  - - 2020-07-19 12:26:54.466708338 -05:00
+    - Project UNdeleted.
+  - - 2020-07-19 12:26:53.270258555 -05:00
+    - Project deleted.
+  - - 2020-07-18 19:27:26.405433586 -05:00
+    - Project deleted.
+  - - 2020-07-18 19:27:24.584350234 -05:00
+    - 'Created: test project'
+  created: 2020-07-18 19:27:24.584378667 -05:00
+  completed: 2020-07-19 22:03:50.785883929 -05:00
+  deleted:
+  last_reviewed:
+  keyword: :testp
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []

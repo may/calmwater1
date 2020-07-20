@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2020-07-18
+# Revised: 2020-07-19
 
 # Disable this if you don't work 8-5, or don't find automatic contexts useful. It's also adjustable, below.
 $time_sensitive_life_context = true 

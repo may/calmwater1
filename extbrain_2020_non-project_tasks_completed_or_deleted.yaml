@@ -1,0 +1,31 @@
+---
+- !ruby/object:Task
+  title: consider switching back to bash for panix, see if can edit home end delete
+    better that way and only move time zone setting from zsh to bash.
+  notes:
+  - - 2020-07-19 12:13:02.906234845 -05:00
+    - Task completed.
+  - - 2020-07-18 11:46:46.510316258 -05:00
+    - 'Created: consider switching back to bash for panix, see if can edit home end
+      delete better that way and only move time zone setting from zsh to bash.'
+  created: 2020-07-18 11:46:46.510417037 -05:00
+  completed: 2020-07-19 12:13:02.906199165 -05:00
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+
+---
+- !ruby/object:Task
+  title: fucking
+  notes:
+  - - 2020-07-19 22:04:02.798609450 -05:00
+    - Task completed.
+  - - 2020-07-18 22:30:16.729745835 -05:00
+    - 'Created: fucking'
+  created: 2020-07-18 22:30:16.729766489 -05:00
+  completed: 2020-07-19 22:04:02.798508109 -05:00
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused

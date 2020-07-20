@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-18
+# Revised: 2020-07-19
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -289,12 +289,16 @@ class ExtbrainData
         print "Archiving completed and deleted tasks & projects..."
         # If you ever edit this code, be sure to use @projects & @tasks; projects/tasks already exclude completed/deleted.
         p = @projects.filter { |project| (project.completed? or project.deleted?) }
-        File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
-        @projects = @projects - p # remove completed/deleted
+        unless p.empty?
+          File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
+          @projects = @projects - p # remove completed/deleted
+        end
         
         t = @tasks.filter { |task| (task.completed? or task.deleted?) }
-        File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
-        @tasks = @tasks - t # remove completed/deleted
+        unless t.empty?
+          File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
+          @tasks = @tasks - t # remove completed/deleted
+        end
         puts "archival complete."
       end
       print "Saving file..." if clear_lock # only be chatty if closing program, otherwise save silently each time
