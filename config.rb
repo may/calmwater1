@@ -10,8 +10,10 @@ $time_sensitive_life_context = true
 $save_file_habits = 'extbrain_habits.yaml'
 $save_file_projects = 'extbrain_projects.yaml'
 $save_file_tasks = 'extbrain_tasks.yaml'
-$lockfile = 'lockfile-extbrain.txt' # assumes you always run from the same directory
-#$lockfile = '~/extbrain/lockfile-extbrain.txt' # unix/linux/osx only?
+#$lockfile = 'lockfile-extbrain.txt' # assumes you always run from the same directory
+$lockfile = "#{Dir.home}/extbrain/lockfile-extbrain.txt" # unix/linux/osx only?
+
+#$lockfile = '/home/nmay/extbrain/lockfile-extbrain.txt' 
 
 $archive_file_projects = "extbrain_#{Time.now.year}_projects_completed_or_deleted.yaml"
 $archive_file_tasks = "extbrain_#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"

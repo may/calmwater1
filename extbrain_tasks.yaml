@@ -121,3 +121,14 @@
   last_reviewed:
   action_context: :job
   life_context: :unused
+- !ruby/object:Task
+  title: write.as/cj - file hosting? else third party
+  notes:
+  - - 2020-07-20 19:11:41.144371605 -05:00
+    - 'Created: write.as/cj - file hosting? else third party'
+  created: 2020-07-20 19:11:41.144403252 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused

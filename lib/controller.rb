@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-19
+# Revised: 2020-07-20
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -329,3 +329,15 @@ def habit_input(keyword, content)
     end 
   end 
 end 
+
+# A checklist that requires explict checking to get past each step.
+def weekly_review
+  def do_until_done(task_text)
+    print task_text
+    until (gets.strip == 'done')
+      print task_text
+    end
+  end
+  do_until_done('Clarify and organize all of your email.')
+  do_until_done('Review your waiting folder in your email.')
+end

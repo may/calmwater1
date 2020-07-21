@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-19
+# Revised: 2020-07-20
 
 
 # todo d for delete
@@ -158,6 +158,8 @@ def dispatch_user_input(input_string)
       end
     when 'w', 'wait', 'waiting'
       view_or_add_task('waiting', keyword, content)
+    when 'wr', 'weekly review'
+      weekly_review
     when '?', 'help'
       puts $help_text
     else
