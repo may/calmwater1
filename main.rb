@@ -15,6 +15,7 @@
 
 require_relative 'lib/controller'
 require_relative 'config.rb'
+require_relative 'tips.rb'
 
 $writing_mode = false
 
@@ -129,7 +130,7 @@ def dispatch_user_input(input_string)
       else
         $data.list_projects
       end
-    when 'lpa'
+    when 'pa', 'lpa' # list all, regardless of life_context
       $data.list_projects
     when 'lpj'
       project_input('job', nil)
@@ -193,11 +194,16 @@ def dispatch_user_input(input_string)
 end
 
 
+def random_tip
+  # todo stop once the create date of the first project is > 200 days from now.
+  puts $tips.sample
+end 
 
 
 
 # todo once more beyond testing make date fixed
 puts "Welcome to extbrain, version 0.3 (\"user acceptance testing\"), #{Time.now.strftime('%Y-%m-%d')}"
 startup
+random_tip
 command_loop
 

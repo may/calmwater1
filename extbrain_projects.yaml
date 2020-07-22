@@ -11,7 +11,7 @@
   deleted:
   last_reviewed:
   keyword: :log
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks: []
@@ -25,7 +25,7 @@
   deleted:
   last_reviewed:
   keyword: :plc
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks:
@@ -45,7 +45,7 @@
     deleted: 2020-07-15 21:18:59.409998787 -05:00
     last_reviewed:
     action_context: :computer
-    life_context: :work
+    life_context: :job
 - !ruby/object:Project
   title: Ensure sarah starts an early morning (anytime before 9am) walking habit per
     Lynda 2020-06-16
@@ -58,7 +58,7 @@
   deleted:
   last_reviewed:
   keyword: :sarah-walk
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks: []
@@ -74,7 +74,7 @@
   deleted:
   last_reviewed:
   keyword: :proj-color
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks: []
@@ -90,7 +90,7 @@
   deleted:
   last_reviewed:
   keyword: :upgrade-slides
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks: []
@@ -104,7 +104,7 @@
   deleted:
   last_reviewed:
   keyword: :figure
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks:
@@ -118,7 +118,7 @@
     deleted:
     last_reviewed:
     action_context: computer
-    life_context: :work
+    life_context: :job
 - !ruby/object:Project
   title: implement help for users so people like your software and you can remember
     how to use it yourself
@@ -135,7 +135,7 @@
   deleted:
   last_reviewed:
   keyword: :extb-help
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks: []
@@ -153,7 +153,7 @@
   deleted:
   last_reviewed:
   keyword: :extb-subt
-  life_context: :work
+  life_context: :job
   tags: []
   psm: ''
   tasks: []
@@ -481,6 +481,17 @@
       - 'Created: implement a way to change the keyword of a project if created wrong.
         say pk current new'
     created: 2020-07-21 10:45:57.625687399 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: add a clear command to clear the screen same as in linux
+    notes:
+    - - 2020-07-22 17:17:16.588087982 -05:00
+      - 'Created: add a clear command to clear the screen same as in linux'
+    created: 2020-07-22 17:17:16.588115504 -05:00
     completed:
     deleted:
     last_reviewed:

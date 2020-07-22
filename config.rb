@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2020-07-21
+# Revised: 2020-07-22
 $log_command_usage_locally = true
 $data_file_command_usage = "#{Dir.home}/extbrain/extbrain_command_usage.yaml"
 
@@ -24,7 +24,7 @@ $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 # May need to have it reevaluated hourly if long-running process on a single remote machine.
 if $time_sensitive_life_context == true
   # 8am-5pm & M-F assume work
-  if Time.now.wday.between?(1, 5) and Time.now.hour.between?(8, 17) 
+  if Time.now.wday.between?(1, 5) and Time.now.hour.between?(8, 16) 
     $life_context = :job
   else
     $life_context = :personal
