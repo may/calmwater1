@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-21
+# Revised: 2020-07-22
 
 
 # todo d for delete
@@ -32,14 +32,16 @@ def startup
 end
 
 at_exit do
-  if $log_command_usage_locally
-    File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
-    usage = $command_usage.sort_by { |key, value| -value }
-    puts usage.to_h
-  end
   if $lockfile_locked
     puts "Can't get lock... exiting.."
   else
+    if $log_command_usage_locally
+      if $command_usage
+        File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
+        usage = $command_usage.sort_by { |key, value| -value }
+        puts usage.to_h
+      end
+    end
     $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
   end 
@@ -136,6 +138,8 @@ def dispatch_user_input(input_string)
       edit_project_or_task('add_note', keyword, content)
     when 'p', 'proj', 'project', 'projects'
       project_input(keyword, content)
+    when 'pn', 'project notes'
+      find_and_show_project(keyword, true)
     when 'pt', 'project-task'
       project_task(keyword, content)
     when 'plc'

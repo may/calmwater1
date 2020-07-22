@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-20
+# Revised: 2020-07-22
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -7,6 +7,17 @@ require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
 # SELECTION FUNCTIONS
+def find_and_show_project(keyword, notes=nil)
+  if project = $data.project_exist?(keyword)
+    if notes
+      project.view_project_and_notes
+    else
+      project.view_project
+    end 
+  else
+    puts "No project found with keyword: #{keyword}."
+  end 
+end
 
 def narrow_project_results_to_one(search_string)
   projects_result = $data.find_projects(search_string)
@@ -218,6 +229,11 @@ def project_life_context(keyword,new_life_context)
   end
 end
 
+### PROJECTS
+
+
+
+
 def project_task(keyword, content)
   # pt keyword action_context some text about my task - adds a new task 'some text about my task' to the project specified by keyword, or errors of no keyword found
   if keyword.nil? or content.nil?
@@ -260,11 +276,7 @@ def project_input(keyword, content)
       if $data.defined_life_contexts.include?(keyword.to_sym)
         $data.list_projects(keyword) # life context
       else # just a project keyword, not a life context
-        if project = $data.project_exist?(keyword)
-          project.view_project
-        else
-          puts "No project found with keyword: #{keyword}."
-        end 
+        find_and_show_project(keyword)
       end
     end
   else # no keyword or content

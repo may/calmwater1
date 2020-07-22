@@ -143,3 +143,49 @@
   last_reviewed:
   action_context: :computer
   life_context: :unused
+- !ruby/object:Task
+  title: blog reddit daystrom institude thread about professionalism
+  notes:
+  - - 2020-07-22 08:27:49.617725940 -05:00
+    - 'Created: blog reddit daystrom institude thread about professionalism'
+  created: 2020-07-22 08:27:49.617762410 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+- !ruby/object:Task
+  title: blog reddit daystrom institude thread about professionalism
+  notes:
+  - - 2020-07-22 08:27:53.272060104 -05:00
+    - 'Created: blog reddit daystrom institude thread about professionalism'
+  created: 2020-07-22 08:27:53.272086231 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+- !ruby/object:Task
+  title: blog reddit daystrom institude thread about professionalism https://www.reddit.com/r/DaystromInstitute/comments/hutjvq/roddenberrys_no_melodrama_rule_was_very_important
+  notes:
+  - - 2020-07-22 08:27:59.323311614 -05:00
+    - 'Created: blog reddit daystrom institude thread about professionalism https://www.reddit.com/r/DaystromInstitute/comments/hutjvq/roddenberrys_no_melodrama_rule_was_very_important'
+  created: 2020-07-22 08:27:59.323327868 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused
+- !ruby/object:Task
+  title: goto basement, get wolfe, charge and boot and take pictures, list on reddit
+    $700 obo.
+  notes:
+  - - 2020-07-22 16:51:07.181598176 -05:00
+    - 'Created: goto basement, get wolfe, charge and boot and take pictures, list
+      on reddit $700 obo.'
+  created: 2020-07-22 16:51:07.181617274 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :home
+  life_context: :unused
