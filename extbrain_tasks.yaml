@@ -132,3 +132,14 @@
   last_reviewed:
   action_context: :waiting
   life_context: :unused
+- !ruby/object:Task
+  title: google what is music theory and learn
+  notes:
+  - - 2020-07-20 20:24:07.337840619 -05:00
+    - 'Created: google what is music theory and learn'
+  created: 2020-07-20 20:24:07.337870405 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :unused

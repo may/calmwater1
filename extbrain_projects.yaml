@@ -142,6 +142,10 @@
 - !ruby/object:Project
   title: consider listing number of subtasks when viewing projects
   notes:
+  - - 2020-07-20 22:19:42.724247385 -05:00
+    - Project UNcompleted.
+  - - 2020-07-20 22:19:38.573973632 -05:00
+    - Project completed.
   - - 2020-07-03 15:01:52.728130038 -05:00
     - 'Created: consider listing number of subtasks when viewing projects'
   created: 2020-07-03 15:01:52.728147901 -05:00
@@ -158,6 +162,14 @@
     and simple and highly searchable rememberthemilk alternative in plain text command
     line (extbrain = external brain, and extra brain to augment mine)'
   notes:
+  - - 2020-07-20 22:19:31.784923571 -05:00
+    - Project UNcompleted.
+  - - 2020-07-20 22:19:29.312248355 -05:00
+    - Project completed.
+  - - 2020-07-20 22:19:14.177373971 -05:00
+    - Project UNcompleted.
+  - - 2020-07-20 22:19:05.985763718 -05:00
+    - Project completed.
   - - 2020-07-18 22:37:45.194397082 -05:00
     - I'm happy with how development is going.
   - - 2020-07-17 13:01:07.009675183 -05:00
@@ -412,6 +424,63 @@
     - - 2020-07-20 10:52:18.153030192 -05:00
       - 'Created: create an added today query'
     created: 2020-07-20 10:52:18.153047591 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: the problem of 'co blah' completes a project that has no apparent keyw
+    notes:
+    - - 2020-07-20 22:25:39.824382363 -05:00
+      - Task completed.
+    - - 2020-07-20 22:24:24.664999622 -05:00
+      - 'Created: the problem of ''co blah'' completes a project that has no apparent
+        keyw'
+    created: 2020-07-20 22:24:24.665018636 -05:00
+    completed: 2020-07-20 22:25:39.824357497 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: the problem of 'co blah' completes a project that has no apparent keyword
+      insetad of the task that obviously does, consider 'cp' and 'ct' if really needed
+      explictly task or project, but try searching for tasks first (and press enter
+      to do projects) or having one big unified narrowing function that sorts tasks
+      firs.
+    notes:
+    - - 2020-07-20 22:25:00.562314096 -05:00
+      - 'Created: the problem of ''co blah'' completes a project that has no apparent
+        keyword insetad of the task that obviously does, consider ''cp'' and ''ct''
+        if really needed explictly task or project, but try searching for tasks first
+        (and press enter to do projects) or having one big unified narrowing function
+        that sorts tasks firs.'
+    created: 2020-07-20 22:25:00.562331159 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :fix
+    life_context: :personal
+  - !ruby/object:Task
+    title: ADD A WAY to change the action context, eg ac new searchkeyword
+    notes:
+    - - 2020-07-20 22:26:28.722491068 -05:00
+      - 'Created: ADD A WAY to change the action context, eg ac new searchkeyword'
+    created: 2020-07-20 22:26:28.722510191 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: implement a way to change the keyword of a project if created wrong. say
+      pk current new
+    notes:
+    - - 2020-07-21 10:45:57.625671765 -05:00
+      - 'Created: implement a way to change the keyword of a project if created wrong.
+        say pk current new'
+    created: 2020-07-21 10:45:57.625687399 -05:00
     completed:
     deleted:
     last_reviewed:
@@ -693,4 +762,64 @@
     deleted:
     last_reviewed:
     action_context: :job
+    life_context: :job
+- !ruby/object:Project
+  title: blogging at theselfupgrade.com for fun, to express myself, and help others
+    get better.
+  notes:
+  - - 2020-07-20 22:17:44.664411564 -05:00
+    - 'Created: blogging at theselfupgrade.com for fun, to express myself, and help
+      others get better.'
+  created: 2020-07-20 22:17:44.664439604 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :blog
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: theselfupgraed.com to my amazon assoicates onec it's up and running
+    notes:
+    - - 2020-07-20 22:17:57.207422227 -05:00
+      - 'Created: theselfupgraed.com to my amazon assoicates onec it''s up and running'
+    created: 2020-07-20 22:17:57.207449564 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+- !ruby/object:Project
+  title: ensure that how to delete an epic level lock is documented in SOS and the
+    helpdesk can do it w/o paging the access team
+  notes:
+  - - 2020-07-21 10:45:26.967812372 -05:00
+    - 'Created: ensure that how to delete an epic level lock is documented in SOS
+      and the helpdesk can do it w/o paging the access team'
+  created: 2020-07-21 10:45:26.967849104 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :lock
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: paul do a writeup of what he experienced, how he fixed it, and check w/
+      jason/jacob proper lock clear method, and send to Nathanael and I to send onto
+      helpdesk for their processes.
+    notes:
+    - - 2020-07-21 16:48:35.037948791 -05:00
+      - Task completed.
+    - - 2020-07-21 10:47:39.427501056 -05:00
+      - 'Created: paul do a writeup of what he experienced, how he fixed it, and check
+        w/ jason/jacob proper lock clear method, and send to Nathanael and I to send
+        onto helpdesk for their processes.'
+    created: 2020-07-21 10:47:39.427523103 -05:00
+    completed: 2020-07-21 16:48:35.037915835 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
     life_context: :job

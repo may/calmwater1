@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-20
+# Revised: 2020-07-21
 
 
 # todo d for delete
@@ -33,8 +33,9 @@ end
 
 at_exit do
   if $log_command_usage_locally
-    puts $command_usage
     File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
+    usage = $command_usage.sort_by { |key, value| -value }
+    puts usage.to_h
   end
   if $lockfile_locked
     puts "Can't get lock... exiting.."
