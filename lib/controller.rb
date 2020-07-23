@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-22
+# Revised: 2020-07-23
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -120,11 +120,17 @@ end
 def add_note(project_or_task)
   print 'Add note to project or task: '
   puts project_or_task.title
-  note = gets.strip
-  if note.empty?
+  puts "Keep typing your note and pressing Enter. Say 'done' when complete."
+  note_so_far = String.new
+  print '>>'
+  until (note = gets.strip) == 'done'
+    note_so_far << note + "\n"
+    print '>>'
+  end 
+  if note_so_far.empty?
     puts 'No note added.'
   else
-    project_or_task.add_note(note)
+    project_or_task.add_note(note_so_far)
     puts "Note added:"
     puts project_or_task.notes.first
   end
