@@ -8,17 +8,20 @@ require_relative 'writing_mode.rb'
 
 # SELECTION FUNCTIONS
 def find_and_show_project(keyword, notes=nil)
-  if project = $data.project_exist?(keyword)
-    if notes
-      project.view_project_and_notes
+  unless keyword
+    puts "Need keyword."
+  else 
+    if project = $data.project_exist?(keyword)
+      if notes
+        project.view_project_and_notes
+      else
+        project.view_project
+      end 
     else
-      project.view_project
+      puts "No project found with keyword: #{keyword}."
     end 
-  else
-    puts "No project found with keyword: #{keyword}."
-  end 
-end
-
+  end #keyword
+end 
 def narrow_project_results_to_one(search_string)
   projects_result = $data.find_projects(search_string)
   if projects_result == nil

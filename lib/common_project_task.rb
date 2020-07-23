@@ -79,8 +79,10 @@ class CommonProjectTask
   end
 
   def view_notes
-        puts "Notes:"
-    @notes.each { |n| puts " #{n[0].strftime($time_formatting_string)} #{n[1]}"}
+        puts " Notes:"
+        @notes.each do |n|
+          puts "  #{n[0].strftime($time_formatting_string)}"
+          n[1].lines.each { |note_line| puts "    #{note_line}" }
+        end 
   end
-  
 end
