@@ -56,7 +56,7 @@ class ExtbrainData
       array = array.filter { |t_or_p| t_or_p.life_context == life_context_desired }
     end 
   end 
-  # TODO should this be bound to life context? yes unless using search all
+
   # s string
   # .downcase to ensure case-insensitive search
   def search(string, life_context)
@@ -76,6 +76,7 @@ class ExtbrainData
   end
 
   def search_all # including notes, shortcut should be sa
+    # should also not filter to life context.. hence 'all'
     puts 'todo search_all'
   end
   

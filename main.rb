@@ -105,12 +105,11 @@ def dispatch_user_input(input_string)
   # li / lm = list info (or metadata) with optional keyword for specific project
 
 
-        ## TODO if 'clear' send 'clear' to terminal? tput clear??
     when '!!', 'wm'
       enable_writing_mode
     #MAYBE if you want multi-word searching add content and keyword
-#    when 'clear'
-#      system('clear')
+    when 'clear'
+      system('clear')
     when 'context'
       change_context
     when 'c', 'lc', 'comp', 'computer'
