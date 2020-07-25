@@ -634,11 +634,24 @@
       deniseg , blodget, chung re who is stakeholder and who will own this, and can
       we get a pm.
     notes:
+    - - 2020-07-24 15:58:49.199868234 -05:00
+      - Task completed.
     - - 2020-07-20 08:30:57.875426614 -05:00
       - 'Created: alex for email with setup guide, then contact joanne, kylie b, Nathanael,
         deniseg , blodget, chung re who is stakeholder and who will own this, and
         can we get a pm.'
     created: 2020-07-20 08:30:57.875450531 -05:00
+    completed: 2020-07-24 15:58:49.199822258 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: meeting schd for 8/7
+    notes:
+    - - 2020-07-24 15:59:06.773524687 -05:00
+      - 'Created: meeting schd for 8/7'
+    created: 2020-07-24 15:59:06.773548924 -05:00
     completed:
     deleted:
     last_reviewed:
@@ -739,11 +752,13 @@
     title: cancel 8/3 meeting LOA meeting per Heather to make space for upgrade, ok
       by me
     notes:
+    - - 2020-07-24 10:28:51.511412055 -05:00
+      - Task completed.
     - - 2020-07-20 09:56:29.647425341 -05:00
       - 'Created: cancel 8/3 meeting LOA meeting per Heather to make space for upgrade,
         ok by me'
     created: 2020-07-20 09:56:29.647461723 -05:00
-    completed:
+    completed: 2020-07-24 10:28:51.509130777 -05:00
     deleted:
     last_reviewed:
     action_context: :job
@@ -838,6 +853,39 @@
     - - 2020-07-20 22:17:57.207422227 -05:00
       - 'Created: theselfupgraed.com to my amazon assoicates onec it''s up and running'
     created: 2020-07-20 22:17:57.207449564 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: write.as - tried to subscribe to 5yr plan and it didn't work
+    notes:
+    - - 2020-07-24 20:18:50.795124543 -05:00
+      - 'Created: write.as - tried to subscribe to 5yr plan and it didn''t work'
+    created: 2020-07-24 20:18:50.795144461 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: setup email subscriptions once pro subscription up and running
+    notes:
+    - - 2020-07-25 10:13:02.982939152 -05:00
+      - 'Created: setup email subscriptions once pro subscription up and running'
+    created: 2020-07-25 10:13:02.982956439 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: setup about page again once pro subscription up and running
+    notes:
+    - - 2020-07-25 10:13:39.058191542 -05:00
+      - 'Created: setup about page again once pro subscription up and running'
+    created: 2020-07-25 10:13:39.058215802 -05:00
     completed:
     deleted:
     last_reviewed:
@@ -974,6 +1022,120 @@
     - - 2020-07-23 12:28:08.036280119 -05:00
       - 'Created: sarah h create esc'
     created: 2020-07-23 12:28:08.036296115 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: Ensure fence is replaced this summer since it is falling down.
+  notes:
+  - - 2020-07-24 11:33:41.581238807 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
+  - - 2020-07-24 11:33:34.695657676 -05:00
+    - 'Created: Ensure fence is replaced this summer since it is falling down.'
+  created: 2020-07-24 11:33:34.695675005 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :fence
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: D&N tell us when they're coming out, they will give one week notice, called
+      7/24, 8 wk behind, started 6/22, so likely end of August
+    notes:
+    - - 2020-07-24 11:34:33.725960766 -05:00
+      - 'Created: D&N tell us when they''re coming out, they will give one week notice,
+        called 7/24, 8 wk behind, started 6/22, so likely end of August'
+    created: 2020-07-24 11:34:33.725985890 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+- !ruby/object:Project
+  title: MMS come out and do a survey of our property lines
+  notes:
+  - - 2020-07-24 11:35:30.303819876 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
+  - - 2020-07-24 11:35:23.300244850 -05:00
+    - 'Created: MMS come out and do a survey of our property lines'
+  created: 2020-07-24 11:35:23.300270897 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :survey
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: MMS tell us when they are coming out to survey, likely first week of august.
+      bring abstract copy back with them at that time.
+    notes:
+    - - 2020-07-24 11:36:10.285950544 -05:00
+      - 'Created: MMS tell us when they are coming out to survey, likely first week
+        of august. bring abstract copy back with them at that time.'
+    created: 2020-07-24 11:36:10.285967591 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+- !ruby/object:Project
+  title: epicstudio see email in hold
+  notes:
+  - - 2020-07-24 13:22:41.041507097 -05:00
+    - 'Created: install epicstudio see email in hold'
+  created: 2020-07-24 13:22:41.041561020 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :epicstudio
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: helpdesk 839852 Need access to pluto account for MME662
+    notes:
+    - - 2020-07-24 13:25:37.023254932 -05:00
+      - 'Created: helpdesk 839852 Need access to pluto account for MME662'
+    created: 2020-07-24 13:25:37.023302308 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: Switch to ADT Orders for Spring 2021.
+  notes:
+  - - 2020-07-24 15:19:01.020946508 -05:00
+    - 'Created: Switch to ADT Orders for Spring 2021.'
+  created: 2020-07-24 15:19:01.020991317 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :adtorders
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: Work with Paul on checklist and build status on 9/23/2020.
+    notes:
+    - - 2020-07-24 15:19:31.564917614 -05:00
+      - 'Created: Work with Paul on checklist and build status on 9/23/2020.'
+    created: 2020-07-24 15:19:31.564943907 -05:00
     completed:
     deleted:
     last_reviewed:

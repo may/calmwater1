@@ -189,3 +189,25 @@
   last_reviewed:
   action_context: :home
   life_context: :unused
+- !ruby/object:Task
+  title: paul epicstudio installed on his computer and configured for POC
+  notes:
+  - - 2020-07-24 13:25:52.669620559 -05:00
+    - 'Created: paul epicstudio installed on his computer and configured for POC'
+  created: 2020-07-24 13:25:52.669638837 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :unused
+- !ruby/object:Task
+  title: switch from f3 for rtm to putty
+  notes:
+  - - 2020-07-24 15:18:38.284679132 -05:00
+    - 'Created: switch from f3 for rtm to putty'
+  created: 2020-07-24 15:18:38.284738151 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :job
+  life_context: :unused
