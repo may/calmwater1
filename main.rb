@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-22
+# Revised: 2020-07-25
 
 
 # todo d for delete
@@ -109,6 +109,8 @@ def dispatch_user_input(input_string)
     when '!!', 'wm'
       enable_writing_mode
     #MAYBE if you want multi-word searching add content and keyword
+#    when 'clear'
+#      system('clear')
     when 'context'
       change_context
     when 'c', 'lc', 'comp', 'computer'

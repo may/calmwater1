@@ -51,16 +51,19 @@ class ExtbrainData
 
   ## SEARCHING
 
-def filter_to_life_context
-
-end 
+  def filter_to_life_context(array, life_context_desired)
+    unless array.nil?
+      array = array.filter { |t_or_p| t_or_p.life_context == life_context_desired }
+    end 
+  end 
   # TODO should this be bound to life context? yes unless using search all
   # s string
   # .downcase to ensure case-insensitive search
-  def search(string)
+  def search(string, life_context)
     p = find_projects(string)
-    p = filter_to_life_context(p)
+    p = filter_to_life_context(p, life_context)
     t = find_tasks(string)
+    t = filter_to_life_context(t, life_context)
     if p.nil? and t.nil?
       nil
     elsif t.nil?

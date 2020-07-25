@@ -346,7 +346,7 @@ end
 
 def search(string)
   if string
-    results = $data.search(string)
+    results = $data.search(string, $life_context)
     if results 
       results.each { |p_or_t| puts p_or_t }
     else
