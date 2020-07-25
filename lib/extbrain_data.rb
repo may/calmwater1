@@ -50,14 +50,22 @@ class ExtbrainData
   end 
 
   ## SEARCHING
-  
+
+  # TODO should this be bound to life context? yes unless using search all
   # s string
   # .downcase to ensure case-insensitive search
   def search(string)
     p = find_projects(string)
-    p.each { |project| puts project } unless p.nil?
     t = find_tasks(string)
-    t.each { |task| puts task } unless t.nil?
+    if p.nil? and t.nil?
+      nil
+    elsif t.nil?
+      p
+    elsif p.nil?
+      t 
+    else
+      t + p
+    end 
   end
 
   def search_all # including notes, shortcut should be sa

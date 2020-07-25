@@ -9,7 +9,7 @@
   deleted:
   last_reviewed:
   action_context: :bike
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: create the selfupgrade reddit account, subscribe to leanfire, gtd, music,
     eroticauthors, romancebooks, romance authors (if it exists) and not much else.
@@ -23,7 +23,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: create a reddit account for theselfupgrade
   notes:
@@ -34,7 +34,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: todo lj and add which context to error message of no tasks yet
   notes:
@@ -45,7 +45,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: bob needs to do his fucking shit
   notes:
@@ -74,7 +74,7 @@
   deleted:
   last_reviewed:
   action_context: :waiting
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: help test this software
   notes:
@@ -89,7 +89,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: bob still needs to do his other shit
   notes:
@@ -107,7 +107,7 @@
   deleted:
   last_reviewed:
   action_context: :waiting
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: email jacob/jason can we get our sherlock team name changed from adt/bedboard
     to grand central?
@@ -120,7 +120,7 @@
   deleted:
   last_reviewed:
   action_context: :job
-  life_context: :unused
+  life_context: :job
 - !ruby/object:Task
   title: write.as/cj - file hosting? else third party
   notes:
@@ -131,7 +131,7 @@
   deleted:
   last_reviewed:
   action_context: :waiting
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: google what is music theory and learn
   notes:
@@ -142,7 +142,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: blog reddit daystrom institude thread about professionalism
   notes:
@@ -153,7 +153,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: blog reddit daystrom institude thread about professionalism
   notes:
@@ -164,7 +164,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: blog reddit daystrom institude thread about professionalism https://www.reddit.com/r/DaystromInstitute/comments/hutjvq/roddenberrys_no_melodrama_rule_was_very_important
   notes:
@@ -175,7 +175,7 @@
   deleted:
   last_reviewed:
   action_context: :computer
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: goto basement, get wolfe, charge and boot and take pictures, list on reddit
     $700 obo.
@@ -188,7 +188,7 @@
   deleted:
   last_reviewed:
   action_context: :home
-  life_context: :unused
+  life_context: :personal
 - !ruby/object:Task
   title: paul epicstudio installed on his computer and configured for POC
   notes:
@@ -199,7 +199,7 @@
   deleted:
   last_reviewed:
   action_context: :waiting
-  life_context: :unused
+  life_context: :job
 - !ruby/object:Task
   title: switch from f3 for rtm to putty
   notes:
@@ -210,4 +210,4 @@
   deleted:
   last_reviewed:
   action_context: :job
-  life_context: :unused
+  life_context: :job

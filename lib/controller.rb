@@ -6,6 +6,42 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
+
+
+
+# How completion should work:
+# 1. c word
+# 2. system searches for word
+# 3. system generates list of all possibilites *with tasks sorted first, since
+#      completing tasks is more likely than projects*
+# 4. user selects from a numbered list which one to complete
+# 5. if there is only one option, user can still press 1 to complete that item or type 'y' for yes
+# 6. evuntually #5 could be removed, but only after me and others have used extbrain for awhile
+
+
+# and can we just use the existing search function to return a set
+# and then filter down with numbered lists, instead of narrow project to one or narrow task to one, just a single function that narrows the whole list, indicating which is P and which is T
+#   similar to how it goes today?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # SELECTION FUNCTIONS
 def find_and_show_project(keyword, notes=nil)
   unless keyword
@@ -90,7 +126,7 @@ end
 def task_input(task_action_context,task_body)
   if task_action_context
     if task_body
-      $data.new_task(task_body,task_action_context,"unused")
+      $data.new_task(task_body,task_action_context,$life_context)
       # Not sure I'll actually use life_context with tasks, although I could see the benefit of a single 'computer' list across work and personal and freelance and home, seprated by life context, but for now we'll just default to 'unused' and if this is a problem we have the structures in place to revisit. 2020-07-15.
     else
       task_list(task_action_context)
@@ -299,7 +335,12 @@ end
 
 def search(string)
   if string
-    $data.search(string)
+    results = $data.search(string)
+    if results 
+      results.each { |p_or_t| puts p_or_t }
+    else
+      puts "No results found for query: #{string}."
+    end 
   else
     puts 'Empty query. Try again.'
   end
