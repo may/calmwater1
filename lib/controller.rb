@@ -35,41 +35,59 @@ end
 #   similar to how it goes today?
 
 
-
+# todo need to intake keyword AND content and concat them and then test THORUGHLY
 def complete2(string)
   if string
     results = $data.search(string, $life_context)
     if results.empty?
       puts "No results found for query: #{string}."
-    elsif results.count == 1
-      # todo removeme development printing
-      print 'WE WOULD HAVE COMPLETED THIS: ' 
-      puts results.first # it's an array of one item, hence the .first
-    # take action
-    elsif results.count > 1
-      puts 'More than one project matched search critera.'
-      puts 'Choose a project, by entering a number.'
-      puts 'Press ENTER to search for tasks.'
-      projects_result.each_with_index do
-        |project,index|
-        print index+1 # make the list start at 1 for the user
-        print '. ' 
-        puts project
-      end
-      print '>> '
-      number = gets.strip
-      unless number.empty?
-        # convert from what we showed user to what we have internally
-        index_to_use = number.to_i-1 
+    else
+      if results.count == 1
         # todo removeme development printing
         print 'WE WOULD HAVE COMPLETED THIS: ' 
-        puts result[index_to_use]
+        puts results.first # it's an array of one item, hence the .first
+      # take action
+      elsif results.count > 1
+        puts 'More than one project or task matched search critera.'
+        puts 'Choose an item by entering a number.'
+        results.each_with_index do
+          |project,index|
+          print index+1 # make the list start at 1 for the user
+          print '. ' 
+          puts project
+        end
+        print '>> '
+        number = gets.strip
+        unless number.empty?
+          # convert from what we showed user to what we have internally
+          index_to_use = number.to_i-1 
+          # todo removeme development printing
+          print 'WE WOULD HAVE COMPLETED THIS: ' 
+          puts results[index_to_use]
+        end
       end
-    end 
+      if object_to_operate_on # check for nil
+        case action_verb
+        when 'add_note'
+          add_note(object_to_operate_on)
+        when 'complete'
+          complete_task_or_project(object_to_operate_on)
+        when 'delete'
+          delete_task_or_project(object_to_operate_on)
+        when 'edit_psm'
+          edit_psm(object_to_operate_on)
+        when 'rename'
+          edit_title(object_to_operate_on)
+        end
+      else
+        "No action taken."
+      end
+    end
   else
     puts 'Empty query. Try again.'
   end
-end
+end 
+  
 
 
 
