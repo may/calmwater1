@@ -1,19 +1,17 @@
 # Created: 2020-05-28
-# Revised: 2020-07-22
+# Revised: 2020-07-25
 
 require_relative 'common_project_task'
 
 # TODO test tasks/do implementaiton @tasks
-# TODO should ensure that when you set life_context via  accessor it sets it to a sym, but for now handling outside this class 2020-07-19 .
 
 class Project < CommonProjectTask
-  attr_accessor_with_logging :keyword, :life_context, :psm
+  attr_accessor_with_logging :keyword, :psm
   attr_reader :tags
 
   def initialize(title, keyword, life_context = :personal)  # Project
-    super(title)
+    super(title, life_context)
     @keyword = keyword.to_sym
-    @life_context = life_context.to_sym
     @tags = Array.new
     @psm = ""
     @tasks = Array.new

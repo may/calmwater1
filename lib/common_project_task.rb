@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-19
+# Revised: 2020-07-25
 # Used by Projects and Tasks.
 
 class CommonProjectTask
@@ -19,11 +19,12 @@ class CommonProjectTask
   # on the Project is touched, which requires more coding/custom assessor and readers.
   #  attr_accessor :modified
   
-  attr_accessor_with_logging :title
+  attr_accessor_with_logging :title, :life_context
   attr_reader :notes, :created, :completed, :deleted, :last_reviewed
 
-  def initialize(title)
+  def initialize(title,life_context)
     @title = title
+    @life_context = life_context.to_sym 
     @notes = Array.new
     add_note("Created: #{title}")
     @created = Time.now
@@ -34,6 +35,7 @@ class CommonProjectTask
     # upon creation; it's just created - possibly with little thought! :-D
     # But that's OK; dump it in here, review it later.
     @last_reviewed = nil
+
   end
 
   def add_note(note_text)

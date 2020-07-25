@@ -51,8 +51,9 @@ class ExtbrainData
 
   ## SEARCHING
 
-#def filter_to_life_context
+def filter_to_life_context
 
+end 
   # TODO should this be bound to life context? yes unless using search all
   # s string
   # .downcase to ensure case-insensitive search

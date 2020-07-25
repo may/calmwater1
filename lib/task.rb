@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-20
+# Revised: 2020-07-25
 
 require_relative 'common_project_task'
 
@@ -7,7 +7,7 @@ class Task < CommonProjectTask
   attr_reader :action_context
   
   def initialize(title, action_context, life_context = :personal)
-    super(title)
+    super(title, life_context)
     case action_context
       when 'c', 'com', 'comp'
         action_context = 'computer'
@@ -21,7 +21,6 @@ class Task < CommonProjectTask
         # leave action context unchanged
     end
     @action_context = action_context.to_sym
-    @life_context = life_context.to_sym 
   end
 
   # default to true, since we won't always have a life context
