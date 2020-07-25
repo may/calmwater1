@@ -19,23 +19,6 @@ def change_context
   end
 end 
 
-
-# How completion should work:
-# 1. c word
-# 2. system searches for word
-# 3. system generates list of all possibilites *with tasks sorted first, since
-#      completing tasks is more likely than projects*
-# 4. user selects from a numbered list which one to complete
-# 5. if there is only one option, user can still press 1 to complete that item or type 'y' for yes
-# 6. evuntually #5 could be removed, but only after me and others have used extbrain for awhile
-
-
-# and can we just use the existing search function to return a set
-# and then filter down with numbered lists, instead of narrow project to one or narrow task to one, just a single function that narrows the whole list, indicating which is P and which is T
-#   similar to how it goes today?
-
-
-# todo need to intake keyword AND content and concat them and then test THORUGHLY
 # action_verb should be one of:
 #  'add_note'
 #  'complete'
@@ -52,7 +35,7 @@ def edit_project_or_task(action_verb, keyword, content)
     object_to_operate_on = nil
     results = $data.search(keyword, content, $life_context)
     if results.empty?
-      puts "No results found for query: #{string}."
+      puts "No results found for query."
     else
       if results.count == 1
         # todo removeme development printing
@@ -99,101 +82,6 @@ def edit_project_or_task(action_verb, keyword, content)
 end # def
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # SELECTION FUNCTIONS
-# def find_and_show_project(keyword, notes=nil)
-#   unless keyword
-#     puts "Need keyword."
-#   else 
-#     if project = $data.project_exist?(keyword)
-#       if notes
-#         project.view_project_and_notes
-#       else
-#         project.view_project
-#       end 
-#     else
-#       puts "No project found with keyword: #{keyword}."
-#     end 
-#   end #keyword
-# end 
-# def narrow_project_results_to_one(search_string)
-#   projects_result = $data.find_projects(search_string)
-#   if projects_result == nil
-#     puts 'No projects found.'
-#     nil
-#   elsif projects_result.count > 1
-#     puts 'More than one project matched search critera.'
-#     puts 'Choose a project, by entering a number.'
-#     puts 'Press ENTER to search for tasks.'
-#     projects_result.each_with_index do
-#       |project,index|
-#       print index+1 # make the list start at 1 for the user
-#       print '. ' 
-#       puts project
-#     end
-#     print '>> '
-#     number = gets.strip
-#     unless number.empty?
-#       index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
-#       projects_result[index_to_use]
-#     end
-#   elsif projects_result.count == 1
-#     projects_result.first # it's an array of one item, hence the .first
-#   elsif projects_result.count == 0
-#     puts 'No projects found.'
-#     nil
-#   end
-# end
-
-# def narrow_task_results_to_one(search_string)
-#   tasks_result = $data.find_tasks(search_string)
-#   if tasks_result.count > 1
-#     puts 'More than one task matched search critera.'
-#     puts 'Choose a task, by entering a number.'
-#     tasks_result.each_with_index do
-#       |task,index|
-#       print index+1 # make the list start at 1 for the user
-#       print '. ' 
-#       puts task
-#     end
-#     print '>> '
-#     number = gets.strip
-#     unless number.empty?
-#       index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
-#       tasks_result[index_to_use]
-#     end
-#   elsif tasks_result.count == 1
-#     tasks_result.first # it's an array of one item, hence the .first
-#   elsif tasks_result.count == 0
-#     puts 'No tasks found.'
-#     nil
-#   end
-# end
 
 # TASKS
 
@@ -284,52 +172,6 @@ def edit_psm(project)
   end
 end
 
-# # action_verb should be one of:
-# #  'add_note'
-# #  'complete'
-# #  'delete'
-# #  'edit_psm'
-# #  'rename'
-# def edit_project_or_task(action_verb, keyword, content)
-#   unless keyword
-#     puts "Need to specify which task or project in order to #{action_verb}."
-#     puts "For a project, specify a keyword or type a seach term. "
-#     puts "For tasks, just type a search term."
-#   else
-#     a_project = $data.project_exist?(keyword)
-#     if a_project
-#       object_to_operate_on = a_project
-#     elsif object_to_operate_on = narrow_project_results_to_one(keyword)
-#     else # not a project or user wants tasks
-#       if action_verb == 'edit_psm'
-#         puts "Can't edit project support material on a *task*. Exiting. Try 'n' for add note, instead."
-#       else
-#         if content
-#           object_to_operate_on = narrow_task_results_to_one(keyword + ' ' + content)
-#         else
-#           object_to_operate_on = narrow_task_results_to_one(keyword)
-#         end
-#       end
-#     end # if a_project
-#     if object_to_operate_on # check for nil
-#       case action_verb
-#       when 'add_note'
-#         add_note(object_to_operate_on)
-#       when 'complete'
-#         complete_task_or_project(object_to_operate_on)
-#       when 'delete'
-#         delete_task_or_project(object_to_operate_on)
-#       when 'edit_psm'
-#         edit_psm(object_to_operate_on)
-#       when 'rename'
-#         edit_title(object_to_operate_on)
-#       end
-#     else
-#       "No action taken."
-#     end
-#   end
-# end
-
 def delete_task_or_project(object)
   $undo = [object,'undelete']
   object.delete
@@ -342,9 +184,28 @@ def complete_task_or_project(object)
   puts "Completed #{object.class}: #{object}. Undo available if needed."
 end
 
+def project_keyword(keyword, new_keyword)
+  if keyword.nil? or new_keyword.nil?
+    puts "Proper usage: pk keyword new_keyword"
+  else
+    if p = $data.project_exist?(keyword)
+      # TODO I should fix this, see project.rb/add_task
+      puts "NOTE THIS WILL BREAK THE *DISPLAY* LINKAGE BETWEEN EXISTING PROJECT TASKS" 
+      puts "Are you sure? (y/n)"
+      if gets.strip == 'y'
+        p.keyword = new_keyword.to_sym
+        puts "Changed keyword."
+      else
+        puts "No action taken"
+      end 
+    else
+      puts "No project found with keyword: #{keyword}. Unable to update keyword."
+    end
+  end
+end
 
 # plc
-def project_life_context(keyword,new_life_context)
+def project_life_context(keyword, new_life_context)
   if keyword.nil? or new_life_context.nil?
     puts "Proper usage: plc keyword new_life_context"
   else

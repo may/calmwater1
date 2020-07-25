@@ -244,3 +244,25 @@
   last_reviewed:
   action_context: :computer
   life_context: :personal
+- !ruby/object:Task
+  title: testing task with alex in it outside of job contexnt
+  notes:
+  - - 2020-07-25 16:25:23.140108828 -05:00
+    - 'Created: testing task with alex in it outside of job contexnt'
+  created: 2020-07-25 16:25:23.140183884 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal
+- !ruby/object:Task
+  title: sarah
+  notes:
+  - - 2020-07-25 16:42:33.484075475 -05:00
+    - 'Created: sarah'
+  created: 2020-07-25 16:42:33.484104175 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job

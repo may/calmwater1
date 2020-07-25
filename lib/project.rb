@@ -49,6 +49,15 @@ class Project < CommonProjectTask
   end
 
   def add_task(title, action_context)
+    # I hate to say this, but hardcode the keyword of the project
+    # that a task lives inside so that when you are looking at tasks
+    # outside of the context of a project you'll know what project they're tied to.
+    # This will break horribly if you ever change the project keyword.
+    # But the data structures will still be there, so it's not totally terrible.
+    # And as those tasks get completed and new ones added it will mitigate itself.
+    # It's still a hack, but it's better than nothing right now.
+    # see: controller.rb/project_keyword
+    title = "(#{keyword}) #{title}" # Hard code
     task = Task.new(title, action_context, @life_context)
     @tasks << task
     task

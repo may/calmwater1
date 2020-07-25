@@ -66,9 +66,7 @@ class ExtbrainData
       string = keyword
     end
     p = find_projects(string)
-    p = filter_to_life_context(p, life_context)
     t = find_tasks(string)
-    t = filter_to_life_context(t, life_context)
     if p.nil? and t.nil?
       nil
     elsif t.nil?
@@ -91,6 +89,7 @@ class ExtbrainData
     tasks_all = @tasks.filter { |task| not (task.completed? or task.deleted?) }
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
+    tasks_all = filter_to_life_context(tasks_all, $life_context)
   end
   
   def new_task(title, action_context, life_context)
@@ -99,6 +98,11 @@ class ExtbrainData
     task
   end 
 
+  # Returns array of tasks containing search_string
+  def find_tasks(search_string)
+    tasks.filter { |task| task.title.downcase.include?(search_string.downcase) }
+  end
+  
   def list_tasks(action_context = nil)
     if action_context
       tsk = tasks.filter { |t| t.action_context == action_context.to_sym }
@@ -114,15 +118,12 @@ class ExtbrainData
     puts "Usage: 't action_context title of your task'" if tsk.empty?
   end 
 
-  # Returns array of tasks containing search_string
-  def find_tasks(search_string)
-    tasks.select { |task| task.title.downcase.include?(search_string.downcase) }
-  end
   
   ## PROJECTS
 
   def projects
     p = @projects.filter { |project| not (project.completed? or project.deleted?) }
+    p = filter_to_life_context(p, $life_context)
   end
 
   # TODO filter for completed/deleted
