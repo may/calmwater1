@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-20
+# Revised: 2020-07-25
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -51,11 +51,14 @@ class ExtbrainData
 
   ## SEARCHING
 
+#def filter_to_life_context
+
   # TODO should this be bound to life context? yes unless using search all
   # s string
   # .downcase to ensure case-insensitive search
   def search(string)
     p = find_projects(string)
+    p = filter_to_life_context(p)
     t = find_tasks(string)
     if p.nil? and t.nil?
       nil

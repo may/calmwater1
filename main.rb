@@ -110,10 +110,7 @@ def dispatch_user_input(input_string)
       enable_writing_mode
     #MAYBE if you want multi-word searching add content and keyword
     when 'context'
-      puts "Current life context: #{$life_context}"
-      print "Enter new life context: "
-      $life_context = gets.strip.to_sym
-      puts "Current life context: #{$life_context}"
+      change_context
     when 'c', 'lc', 'comp', 'computer'
       view_or_add_task('computer', keyword, content)
     when 'co', 'com', 'complete', 'finish', 'done'

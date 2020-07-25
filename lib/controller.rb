@@ -1,12 +1,23 @@
 # Created: 2020-05-30
-# Revised: 2020-07-23
+# Revised: 2020-07-25
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-
+def change_context
+  puts "Current life context: #{$life_context}"
+  print "Enter new life context: "
+  $life_context = gets.strip.to_sym
+  unless $data.defined_life_contexts.include?($life_context)
+    puts "WARNING: the context '#{$life_context}' not used anywhere in your data."
+    puts "This is OK if you're starting a new life context or know what you're doing."
+    puts 
+    puts "Otherwise, please call 'context' again and use one of thes contexts: "
+    $data.defined_life_contexts.each {|lc| puts "  #{lc}" }
+  end
+end 
 
 
 # How completion should work:
