@@ -211,3 +211,25 @@
   last_reviewed:
   action_context: :job
   life_context: :job
+- !ruby/object:Task
+  title: test
+  notes:
+  - - 2020-07-25 15:44:39.778547229 -05:00
+    - 'Created: test'
+  created: 2020-07-25 15:44:39.778576439 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal
+- !ruby/object:Task
+  title: testing more
+  notes:
+  - - 2020-07-25 15:46:23.615826766 -05:00
+    - 'Created: testing more'
+  created: 2020-07-25 15:46:23.615845021 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal

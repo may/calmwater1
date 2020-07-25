@@ -115,7 +115,9 @@ def dispatch_user_input(input_string)
     when 'c', 'lc', 'comp', 'computer'
       view_or_add_task('computer', keyword, content)
     when 'co', 'com', 'complete', 'finish', 'done'
-      edit_project_or_task('complete', keyword, content)
+      #      edit_project_or_task('complete', keyword, content)
+      # TODO accept content as well for multiword search?
+      complete2(keyword)
     when 'd', 'delete', 'remove'
       edit_project_or_task('delete', keyword, content)
     when 'e', 'exit', 'q'

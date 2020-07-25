@@ -36,6 +36,66 @@ end
 
 
 
+def complete2(string)
+  if string
+    results = $data.search(string, $life_context)
+    if results.empty?
+      puts "No results found for query: #{string}."
+    elsif results.count == 1
+      # todo removeme development printing
+      print 'WE WOULD HAVE COMPLETED THIS: ' 
+      puts results.first # it's an array of one item, hence the .first
+    # take action
+    elsif results.count > 1
+      puts 'More than one project matched search critera.'
+      puts 'Choose a project, by entering a number.'
+      puts 'Press ENTER to search for tasks.'
+      projects_result.each_with_index do
+        |project,index|
+        print index+1 # make the list start at 1 for the user
+        print '. ' 
+        puts project
+      end
+      print '>> '
+      number = gets.strip
+      unless number.empty?
+        # convert from what we showed user to what we have internally
+        index_to_use = number.to_i-1 
+        # todo removeme development printing
+        print 'WE WOULD HAVE COMPLETED THIS: ' 
+        puts result[index_to_use]
+      end
+    end 
+  else
+    puts 'Empty query. Try again.'
+  end
+end
+
+
+
+
+def narrow_project_results_to_one(search_string)
+  projects_result = $data.find_projects(search_string)
+  if projects_result == nil
+    puts 'No projects found.'
+    nil
+  elsif projects_result.count > 1
+  elsif projects_result.count == 1
+
+  elsif projects_result.count == 0
+    puts 'No projects found.'
+    nil
+  end
+end
+
+
+
+
+
+
+
+
+
 
 
 
@@ -137,8 +197,7 @@ end
 def task_input(task_action_context,task_body)
   if task_action_context
     if task_body
-      $data.new_task(task_body,task_action_context,$life_context)
-      # Not sure I'll actually use life_context with tasks, although I could see the benefit of a single 'computer' list across work and personal and freelance and home, seprated by life context, but for now we'll just default to 'unused' and if this is a problem we have the structures in place to revisit. 2020-07-15.
+      puts $data.new_task(task_body,task_action_context,$life_context)
     else
       task_list(task_action_context)
     end

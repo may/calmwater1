@@ -91,6 +91,7 @@ class ExtbrainData
   def new_task(title, action_context, life_context)
     task = Task.new(title, action_context, life_context)
     @tasks << task
+    task
   end 
 
   def list_tasks(action_context = nil)
