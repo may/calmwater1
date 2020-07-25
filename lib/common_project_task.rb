@@ -14,11 +14,6 @@ class CommonProjectTask
     end
   end
 
-  # Not sure need modified, since have explict reviewed date. 2020-05-30 
-  # IF we do have modified, need to make sure it gets updated whenever ANYTHING
-  # on the Project is touched, which requires more coding/custom assessor and readers.
-  #  attr_accessor :modified
-  
   attr_accessor_with_logging :title, :life_context
   attr_reader :notes, :created, :completed, :deleted, :last_reviewed
 
@@ -28,14 +23,12 @@ class CommonProjectTask
     @notes = Array.new
     add_note("Created: #{title}")
     @created = Time.now
-#    @modified = Time.now
     @completed = nil
     @deleted = nil
     # Explicitly set this to nil, because it isn't technically reviewed
-    # upon creation; it's just created - possibly with little thought! :-D
-    # But that's OK; dump it in here, review it later.
+    # upon creation; it's just created - possibly with little thought!
+    # But that's OK; dump it in extbrain, review it later.
     @last_reviewed = nil
-
   end
 
   def add_note(note_text)
