@@ -38,10 +38,7 @@ def edit_project_or_task(action_verb, keyword, content)
       puts "No results found for query."
     else
       if results.count == 1
-        # todo removeme development printing
-        print 'WE WOULD HAVE COMPLETED THIS: ' 
-        puts results.first # it's an array of one item, hence the .first
-      # take action
+        object_to_operate_on = results.first # it's an array of one item, hence the .first
       elsif results.count > 1
         puts 'More than one project or task matched search critera.'
         puts 'Choose an item by entering a number.'
@@ -55,10 +52,8 @@ def edit_project_or_task(action_verb, keyword, content)
         number = gets.strip
         unless number.empty?
           # convert from what we showed user to what we have internally
-          index_to_use = number.to_i-1 
-          # todo removeme development printing
-          print 'WE WOULD HAVE COMPLETED THIS: ' 
-          puts results[index_to_use]
+          index_to_use = number.to_i-1
+          object_to_operate_on = results[index_to_use]
         end
       end
       if object_to_operate_on # check for nil
