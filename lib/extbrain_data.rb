@@ -59,7 +59,12 @@ class ExtbrainData
 
   # s string
   # .downcase to ensure case-insensitive search
-  def search(string, life_context)
+  def search(keyword, content, life_context)
+    if keyword and content
+      string = keyword + ' ' + content
+    elsif keyword
+      string = keyword
+    end
     p = find_projects(string)
     p = filter_to_life_context(p, life_context)
     t = find_tasks(string)

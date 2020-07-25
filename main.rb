@@ -107,7 +107,6 @@ def dispatch_user_input(input_string)
 
     when '!!', 'wm'
       enable_writing_mode
-    #MAYBE if you want multi-word searching add content and keyword
     when 'clear'
       system('clear')
     when 'context'
@@ -115,9 +114,7 @@ def dispatch_user_input(input_string)
     when 'c', 'lc', 'comp', 'computer'
       view_or_add_task('computer', keyword, content)
     when 'co', 'com', 'complete', 'finish', 'done'
-      #      edit_project_or_task('complete', keyword, content)
-      # TODO accept content as well for multiword search?
-      complete2(keyword)
+      edit_project_or_task('complete', keyword, content)
     when 'd', 'delete', 'remove'
       edit_project_or_task('delete', keyword, content)
     when 'e', 'exit', 'q'
@@ -156,7 +153,7 @@ def dispatch_user_input(input_string)
     when 'r', 'rename', 'retitle'
       edit_project_or_task('rename', keyword, content)
     when 's', 'search'
-      search(keyword)
+      search(keyword, content)
     when 't', 'task'
       task_input(keyword, content)
     when 'undo'

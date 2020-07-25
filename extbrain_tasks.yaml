@@ -233,3 +233,14 @@
   last_reviewed:
   action_context: :computer
   life_context: :personal
+- !ruby/object:Task
+  title: bike testing example task
+  notes:
+  - - 2020-07-25 16:09:39.230483772 -05:00
+    - 'Created: bike testing example task'
+  created: 2020-07-25 16:09:39.230512626 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal

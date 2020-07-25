@@ -36,9 +36,21 @@ end
 
 
 # todo need to intake keyword AND content and concat them and then test THORUGHLY
-def complete2(string)
-  if string
-    results = $data.search(string, $life_context)
+# action_verb should be one of:
+#  'add_note'
+#  'complete'
+#  'delete'
+#  'edit_psm'
+#  'rename'
+def edit_project_or_task(action_verb, keyword, content)
+  unless keyword
+    puts "Need to specify which task or project in order to #{action_verb}."
+    puts "For a project, specify a keyword or type a seach term. "
+    puts "For tasks, just type a search term."
+    puts "Multi-word searching is supported. TODO."
+  else
+    object_to_operate_on = nil
+    results = $data.search(keyword, content, $life_context)
     if results.empty?
       puts "No results found for query: #{string}."
     else
@@ -80,31 +92,16 @@ def complete2(string)
           edit_title(object_to_operate_on)
         end
       else
-        "No action taken."
-      end
-    end
-  else
-    puts 'Empty query. Try again.'
-  end
-end 
+        puts "No action taken."
+      end # if object_to_operate_on
+    end # results.empty?
+  end # unless keyword
+end # def
   
 
 
 
 
-def narrow_project_results_to_one(search_string)
-  projects_result = $data.find_projects(search_string)
-  if projects_result == nil
-    puts 'No projects found.'
-    nil
-  elsif projects_result.count > 1
-  elsif projects_result.count == 1
-
-  elsif projects_result.count == 0
-    puts 'No projects found.'
-    nil
-  end
-end
 
 
 
@@ -128,78 +125,75 @@ end
 
 
 
+# # SELECTION FUNCTIONS
+# def find_and_show_project(keyword, notes=nil)
+#   unless keyword
+#     puts "Need keyword."
+#   else 
+#     if project = $data.project_exist?(keyword)
+#       if notes
+#         project.view_project_and_notes
+#       else
+#         project.view_project
+#       end 
+#     else
+#       puts "No project found with keyword: #{keyword}."
+#     end 
+#   end #keyword
+# end 
+# def narrow_project_results_to_one(search_string)
+#   projects_result = $data.find_projects(search_string)
+#   if projects_result == nil
+#     puts 'No projects found.'
+#     nil
+#   elsif projects_result.count > 1
+#     puts 'More than one project matched search critera.'
+#     puts 'Choose a project, by entering a number.'
+#     puts 'Press ENTER to search for tasks.'
+#     projects_result.each_with_index do
+#       |project,index|
+#       print index+1 # make the list start at 1 for the user
+#       print '. ' 
+#       puts project
+#     end
+#     print '>> '
+#     number = gets.strip
+#     unless number.empty?
+#       index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
+#       projects_result[index_to_use]
+#     end
+#   elsif projects_result.count == 1
+#     projects_result.first # it's an array of one item, hence the .first
+#   elsif projects_result.count == 0
+#     puts 'No projects found.'
+#     nil
+#   end
+# end
 
-
-
-# SELECTION FUNCTIONS
-def find_and_show_project(keyword, notes=nil)
-  unless keyword
-    puts "Need keyword."
-  else 
-    if project = $data.project_exist?(keyword)
-      if notes
-        project.view_project_and_notes
-      else
-        project.view_project
-      end 
-    else
-      puts "No project found with keyword: #{keyword}."
-    end 
-  end #keyword
-end 
-def narrow_project_results_to_one(search_string)
-  projects_result = $data.find_projects(search_string)
-  if projects_result == nil
-    puts 'No projects found.'
-    nil
-  elsif projects_result.count > 1
-    puts 'More than one project matched search critera.'
-    puts 'Choose a project, by entering a number.'
-    puts 'Press ENTER to search for tasks.'
-    projects_result.each_with_index do
-      |project,index|
-      print index+1 # make the list start at 1 for the user
-      print '. ' 
-      puts project
-    end
-    print '>> '
-    number = gets.strip
-    unless number.empty?
-      index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
-      projects_result[index_to_use]
-    end
-  elsif projects_result.count == 1
-    projects_result.first # it's an array of one item, hence the .first
-  elsif projects_result.count == 0
-    puts 'No projects found.'
-    nil
-  end
-end
-
-def narrow_task_results_to_one(search_string)
-  tasks_result = $data.find_tasks(search_string)
-  if tasks_result.count > 1
-    puts 'More than one task matched search critera.'
-    puts 'Choose a task, by entering a number.'
-    tasks_result.each_with_index do
-      |task,index|
-      print index+1 # make the list start at 1 for the user
-      print '. ' 
-      puts task
-    end
-    print '>> '
-    number = gets.strip
-    unless number.empty?
-      index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
-      tasks_result[index_to_use]
-    end
-  elsif tasks_result.count == 1
-    tasks_result.first # it's an array of one item, hence the .first
-  elsif tasks_result.count == 0
-    puts 'No tasks found.'
-    nil
-  end
-end
+# def narrow_task_results_to_one(search_string)
+#   tasks_result = $data.find_tasks(search_string)
+#   if tasks_result.count > 1
+#     puts 'More than one task matched search critera.'
+#     puts 'Choose a task, by entering a number.'
+#     tasks_result.each_with_index do
+#       |task,index|
+#       print index+1 # make the list start at 1 for the user
+#       print '. ' 
+#       puts task
+#     end
+#     print '>> '
+#     number = gets.strip
+#     unless number.empty?
+#       index_to_use = number.to_i-1 # convert from what we showed user to what we have internally
+#       tasks_result[index_to_use]
+#     end
+#   elsif tasks_result.count == 1
+#     tasks_result.first # it's an array of one item, hence the .first
+#   elsif tasks_result.count == 0
+#     puts 'No tasks found.'
+#     nil
+#   end
+# end
 
 # TASKS
 
@@ -290,51 +284,51 @@ def edit_psm(project)
   end
 end
 
-# action_verb should be one of:
-#  'add_note'
-#  'complete'
-#  'delete'
-#  'edit_psm'
-#  'rename'
-def edit_project_or_task(action_verb, keyword, content)
-  unless keyword
-    puts "Need to specify which task or project in order to #{action_verb}."
-    puts "For a project, specify a keyword or type a seach term. "
-    puts "For tasks, just type a search term."
-  else
-    a_project = $data.project_exist?(keyword)
-    if a_project
-      object_to_operate_on = a_project
-    elsif object_to_operate_on = narrow_project_results_to_one(keyword)
-    else # not a project or user wants tasks
-      if action_verb == 'edit_psm'
-        puts "Can't edit project support material on a *task*. Exiting. Try 'n' for add note, instead."
-      else
-        if content
-          object_to_operate_on = narrow_task_results_to_one(keyword + ' ' + content)
-        else
-          object_to_operate_on = narrow_task_results_to_one(keyword)
-        end
-      end
-    end # if a_project
-    if object_to_operate_on # check for nil
-      case action_verb
-      when 'add_note'
-        add_note(object_to_operate_on)
-      when 'complete'
-        complete_task_or_project(object_to_operate_on)
-      when 'delete'
-        delete_task_or_project(object_to_operate_on)
-      when 'edit_psm'
-        edit_psm(object_to_operate_on)
-      when 'rename'
-        edit_title(object_to_operate_on)
-      end
-    else
-      "No action taken."
-    end
-  end
-end
+# # action_verb should be one of:
+# #  'add_note'
+# #  'complete'
+# #  'delete'
+# #  'edit_psm'
+# #  'rename'
+# def edit_project_or_task(action_verb, keyword, content)
+#   unless keyword
+#     puts "Need to specify which task or project in order to #{action_verb}."
+#     puts "For a project, specify a keyword or type a seach term. "
+#     puts "For tasks, just type a search term."
+#   else
+#     a_project = $data.project_exist?(keyword)
+#     if a_project
+#       object_to_operate_on = a_project
+#     elsif object_to_operate_on = narrow_project_results_to_one(keyword)
+#     else # not a project or user wants tasks
+#       if action_verb == 'edit_psm'
+#         puts "Can't edit project support material on a *task*. Exiting. Try 'n' for add note, instead."
+#       else
+#         if content
+#           object_to_operate_on = narrow_task_results_to_one(keyword + ' ' + content)
+#         else
+#           object_to_operate_on = narrow_task_results_to_one(keyword)
+#         end
+#       end
+#     end # if a_project
+#     if object_to_operate_on # check for nil
+#       case action_verb
+#       when 'add_note'
+#         add_note(object_to_operate_on)
+#       when 'complete'
+#         complete_task_or_project(object_to_operate_on)
+#       when 'delete'
+#         delete_task_or_project(object_to_operate_on)
+#       when 'edit_psm'
+#         edit_psm(object_to_operate_on)
+#       when 'rename'
+#         edit_title(object_to_operate_on)
+#       end
+#     else
+#       "No action taken."
+#     end
+#   end
+# end
 
 def delete_task_or_project(object)
   $undo = [object,'undelete']
@@ -421,9 +415,9 @@ def project_input(keyword, content)
   end 
 end     
 
-def search(string)
-  if string
-    results = $data.search(string, $life_context)
+def search(keyword, content)
+  if keyword
+    results = $data.search(keyword, content, $life_context)
     if results 
       results.each { |p_or_t| puts p_or_t }
     else
