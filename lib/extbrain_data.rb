@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-25
+# Revised: 2020-07-26
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -46,7 +46,9 @@ class ExtbrainData
   end
   
   def number_of_job_projects
-    projects.filter { |p| p.life_context == 'job'.to_sym }.count
+    # Needs to be @projects, and the newer remove-completed/deleted-on-save code should
+    # ensure the number is correct without filtering for completed/deleted.
+    @projects.filter { |p| p.life_context == 'job'.to_sym }.count
   end 
 
   ## SEARCHING
