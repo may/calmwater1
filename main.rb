@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-25
+# Revised: 2020-07-26
 
 
 # todo d for delete
@@ -148,7 +148,7 @@ def dispatch_user_input(input_string)
       project_task(keyword, content)
     when 'plc'
       project_life_context(keyword, content)
-    when 'psm', 'edit-psm'
+    when 'psm', 'edit-psm', 'epsm'
       edit_project_or_task('edit_psm', keyword, content)
     when 'r', 'rename', 'retitle'
       edit_project_or_task('rename', keyword, content)
