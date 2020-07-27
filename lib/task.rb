@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-26
+# Revised: 2020-07-27
 
 require_relative 'common_project_task'
 
@@ -29,9 +29,9 @@ class Task < CommonProjectTask
   # was surpsied to find it  2020-07-15 
   def to_s(inside_project = true)
     if inside_project # project already has life context
-      "(#{action_context}) #{@title}"
+      "[#{action_context}] #{@title}"
     else
-      "[#{life_context}] (@#{action_context}) #{@title}"
+      "{#{life_context}} [@#{action_context}] #{@title}"
     end 
   end
 

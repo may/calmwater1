@@ -266,3 +266,60 @@
   last_reviewed:
   action_context: :waiting
   life_context: :job
+- !ruby/object:Task
+  title: vasca work time scheduled 2020-07-28
+  notes:
+  - - 2020-07-27 11:10:09.695988914 -05:00
+    - 'Created: vasca work time scheduled 2020-07-28'
+  created: 2020-07-27 11:10:09.696010682 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job
+- !ruby/object:Task
+  title: vasca nick poch for pager number to page
+  notes:
+  - - 2020-07-27 11:10:52.490331298 -05:00
+    - 'Created: vasca nick poch for pager number to page'
+  created: 2020-07-27 11:10:52.490357278 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job
+- !ruby/object:Task
+  title: infs2 work time scheduled for 8/11
+  notes:
+  - - 2020-07-27 11:26:13.939457849 -05:00
+    - 'Created: infs2 work time scheduled for 8/11'
+  created: 2020-07-27 11:26:13.939491586 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job
+- !ruby/object:Task
+  title: 'The Longing for Less: Living with Minimalism Kindle Edition by Kyle Chayka  (Author)  Format:
+    Kindle Edition'
+  notes:
+  - - 2020-07-27 12:13:21.147340821 -05:00
+    - 'Created: The Longing for Less: Living with Minimalism Kindle Edition by Kyle
+      Chayka  (Author)  Format: Kindle Edition'
+  created: 2020-07-27 12:13:21.147359994 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :job
+- !ruby/object:Task
+  title: move gc priorities into esc, and remove that tab from OneNote
+  notes:
+  - - 2020-07-27 12:36:37.583721316 -05:00
+    - 'Created: move gc priorities into esc, and remove that tab from OneNote'
+  created: 2020-07-27 12:36:37.583758891 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :job
+  life_context: :job

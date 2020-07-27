@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-26
+# Revised: 2020-07-27
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -218,6 +218,17 @@ end
 
 ### PROJECTS
 
+def find_and_show_project(keyword, show_notes = false)
+  if p = $data.project_exist?(keyword)
+    if show_notes
+      p.view_project_and_notes
+    else
+      p.view_project
+    end 
+  else
+    puts "No project found for keyword #{keyword}"
+  end
+end 
 
 
 
@@ -231,8 +242,6 @@ def project_task(keyword, content)
       two_pieces = content.split(' ', 2)
       action_context = two_pieces[0]
       title = two_pieces[1]
-      print p.keyword 
-      print ' ' 
       puts p.add_task(title, action_context)
     else
       puts "No project found with keyword: #{keyword}. Unable to add task."
@@ -265,15 +274,15 @@ def project_input(keyword, content)
       else # just a project keyword, not a life context
         find_and_show_project(keyword)
       end
-    end
+    end # content
   else # no keyword or content
     if $time_sensitive_life_context
       $data.list_projects($life_context)
     else
       $data.list_projects
-    end
-  end 
-end     
+    end #time_sensitive
+  end #keyword
+end # def
 
 def search(keyword, content)
   if keyword

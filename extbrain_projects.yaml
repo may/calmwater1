@@ -50,6 +50,11 @@
   title: Ensure sarah starts an early morning (anytime before 9am) walking habit per
     Lynda 2020-06-16
   notes:
+  - - 2020-07-27 10:50:44.688696077 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
   - - 2020-06-16 16:48:35.739298257 -05:00
     - 'Created: Ensure sarah starts an early morning (anytime before 9am) walking
       habit per Lynda 2020-06-16'
@@ -58,7 +63,7 @@
   deleted:
   last_reviewed:
   keyword: :sarah-walk
-  life_context: :job
+  life_context: :personal
   tags: []
   psm: ''
   tasks: []
@@ -97,6 +102,11 @@
 - !ruby/object:Project
   title: figure out how to make rlwrap home end work in extbrain
   notes:
+  - - 2020-07-27 10:51:01.590951808 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
   - - 2020-06-25 09:12:34.856928528 -05:00
     - 'Created: out how to make rlwrap home end work in extbrain'
   created: 2020-06-25 09:12:34.856945827 -05:00
@@ -104,7 +114,7 @@
   deleted:
   last_reviewed:
   keyword: :extb-rlwrap
-  life_context: :job
+  life_context: :personal
   tags: []
   psm: ''
   tasks:
@@ -123,6 +133,11 @@
   title: implement help for users so people like your software and you can remember
     how to use it yourself
   notes:
+  - - 2020-07-27 10:51:07.792325400 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
   - - 2020-07-19 23:29:00.843851752 -05:00
     - |-
       Updated title:
@@ -135,13 +150,18 @@
   deleted:
   last_reviewed:
   keyword: :extb-help
-  life_context: :job
+  life_context: :personal
   tags: []
   psm: ''
   tasks: []
 - !ruby/object:Project
   title: consider listing number of subtasks when viewing projects
   notes:
+  - - 2020-07-27 10:51:15.432209643 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
   - - 2020-07-20 22:19:42.724247385 -05:00
     - Project UNcompleted.
   - - 2020-07-20 22:19:38.573973632 -05:00
@@ -153,7 +173,7 @@
   deleted:
   last_reviewed:
   keyword: :extb-subt
-  life_context: :job
+  life_context: :personal
   tags: []
   psm: ''
   tasks: []
@@ -553,6 +573,17 @@
       - 'Created: one way to handle the complete vs computer quandry is to stick to
         ''lc'' to list computer tasks'
     created: 2020-07-25 14:38:47.727955166 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(extb) create 'tac' to change action context on a task"
+    notes:
+    - - 2020-07-27 13:03:03.158599013 -05:00
+      - 'Created: (extb) create ''tac'' to change action context on a task'
+    created: 2020-07-27 13:03:03.158625967 -05:00
     completed:
     deleted:
     last_reviewed:
@@ -1175,3 +1206,126 @@
   tags: []
   psm: ''
   tasks: []
+- !ruby/object:Project
+  title: ensure send page on admission
+  notes:
+  - - 2020-07-27 11:09:35.482552233 -05:00
+    - |+
+      A.When patient will be admitted first and then the PICC will be placed:
+      oSend a page to the Vasc Access team at time of admission - Nick May
+      Logic will need to look at the ABR order that created the Preadmission, and if that order was written as part of the new "CCC Vascular Access - Clinic" Order Set then send a page.
+
+  - - 2020-07-27 11:08:55.585689241 -05:00
+    - |-
+      Updated psm:
+       old: A.When patient will be admitted first and then the PICC will be placed:
+       new: See NOTES.
+  - - 2020-07-27 11:08:42.078328486 -05:00
+    - |-
+      Updated psm:
+       old: A.When patient will be admitted first and then the PICC will be placed:
+       new: A.When patient will be admitted first and then the PICC will be placed:
+  - - 2020-07-27 11:06:35.313504520 -05:00
+    - "Updated psm:\n old: \n new: A.When patient will be admitted first and then
+      the PICC will be placed:"
+  - - 2020-07-27 11:06:19.932717222 -05:00
+    - 'Created: ensure send page on admission'
+  created: 2020-07-27 11:06:19.932735287 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :vasca
+  life_context: :job
+  tags: []
+  psm: See NOTES.
+  tasks: []
+- !ruby/object:Project
+  title: 840659 rewrite infection screening rules to be one or two and much more streamlined
+  notes:
+  - - 2020-07-27 11:35:39.488792401 -05:00
+    - |-
+      Updated title:
+       old: rewrite infection screening rules to be one or two and much more streamlined
+       new: 840659 rewrite infection screening rules to be one or two and much more streamlined
+  - - 2020-07-27 11:12:42.071185220 -05:00
+    - 'Created: rewrite infection screening rules to be one or two and much more streamlined'
+  created: 2020-07-27 11:12:42.071211943 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :infs2
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks: []
+- !ruby/object:Project
+  title: Epic upgrade to May 2020, on 10/10/2020.
+  notes:
+  - - 2020-07-27 13:00:50.564902256 -05:00
+    - 'ED and ATC both OK with fully remote teams this time, and I don''t see why
+      we can''t do that going forward (yeah, Nathanael!!).
+
+      '
+  - - 2020-07-27 12:59:33.550379667 -05:00
+    - 'Created: Epic upgrade to May 2020, on 10/10/2020.'
+  created: 2020-07-27 12:59:33.550427200 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :upgrade
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(upgrade) last 3 nova notes, follow-up or just complete them for now,
+      create esc to track those barcode ones?"
+    notes:
+    - - 2020-07-27 13:02:16.012897707 -05:00
+      - 'Created: (upgrade) last 3 nova notes, follow-up or just complete them for
+        now, create esc to track those barcode ones?'
+    created: 2020-07-27 13:02:16.012915187 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: "(upgrade) working meeting 8/19 ensure BCA in REL is ready, batch jobs
+      etc. transparent upgrade starts 8/24"
+    notes:
+    - - 2020-07-27 13:04:09.964855255 -05:00
+      - 'Created: (upgrade) working meeting 8/19 ensure BCA in REL is ready, batch
+        jobs etc. transparent upgrade starts 8/24'
+    created: 2020-07-27 13:04:09.964898663 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(upgrade) testing task"
+    notes:
+    - - 2020-07-27 13:05:35.511123092 -05:00
+      - Task deleted.
+    - - 2020-07-27 13:05:11.837974815 -05:00
+      - 'Created: (upgrade) testing task'
+    created: 2020-07-27 13:05:11.838008590 -05:00
+    completed:
+    deleted: 2020-07-27 13:05:35.511074372 -05:00
+    last_reviewed:
+    action_context: :computer
+    life_context: :job
+  - !ruby/object:Task
+    title: "(upgrade) testing task two"
+    notes:
+    - - 2020-07-27 13:05:40.106356680 -05:00
+      - Task deleted.
+    - - 2020-07-27 13:05:22.852019087 -05:00
+      - 'Created: (upgrade) testing task two'
+    created: 2020-07-27 13:05:22.852039300 -05:00
+    completed:
+    deleted: 2020-07-27 13:05:40.106332054 -05:00
+    last_reviewed:
+    action_context: :computer
+    life_context: :job
