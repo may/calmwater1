@@ -338,77 +338,75 @@ end
 # else allow t at any time
 def review_and_maybe_edit(object)
   action_verb = nil
-  if object.is_a? Project
-    puts object.view_project
-  else
+  unless object.is_a? Task and object.action_context == 'someday/maybe'.to_sym
     puts object
-  end
-  print '>> '
-  action = gets.strip
-#  puts action
-#  p action
-#  puts "action.empty? #{action.empty?}"
-  #  puts "action_verb.nil? #{action_verb.nil?}"
-  
-  # ENTER or space to go to next item, eg return from this function, after setting reviewed date
-  if action.empty?
-    object.reviewed
-    puts "#{object.class} marked as reviewed."
-  else
-    case action
-    # keep these in sync with main.rb as best you can
-    # last synced: 2020-07-26
-    # TODO INSTEAD make this a fuction that's called from here and main.rb
-    # something like 'core_editing'
-    when 'e', 'exit','q', 'quit'
-      puts 'not implemented yet. try ctrl-c'
+    print '>> '
+    action = gets.strip
+    #  puts action
+    #  p action
+    #  puts "action.empty? #{action.empty?}"
+    #  puts "action_verb.nil? #{action_verb.nil?}"
+    
+    # ENTER or space to go to next item, eg return from this function, after setting reviewed date
+    if action.empty?
+      object.reviewed
+      puts "#{object.class} marked as reviewed."
+    else
+      case action
+      # keep these in sync with main.rb as best you can
+      # last synced: 2020-07-26
+      # TODO INSTEAD make this a fuction that's called from here and main.rb
+      # something like 'core_editing'
+      when 'e', 'exit','q', 'quit'
+        puts 'not implemented yet. try ctrl-c'
       # next time you look at htis code
       # add this to all of your blocks, expanding them to do/end
-    # and reset this variable at end of weekly_review method
+      # and reset this variable at end of weekly_review method
       # break if $quit_weekly_review
-#      puts "Leaving weekly review..."
- #     $quit_weekly_review = true
-    when 'n', 'an', 'add-note', 'note'
-      action_verb = 'add_note'
-    when 'co', 'com', 'complete', 'finish', 'done'
-      action_verb = 'complete'
-    when 'd', 'delete', 'remove'
-      action_verb = 'delete'
-    when 'psm', 'edit-psm', 'epsm'
-      action_verb = 'edit_psm'
-    when 'r', 'rename', 'retitle'
-      action_verb = 'rename'
-    else
-      puts 'Input unrecognized. Skipping..' # should probably not skip TODO, should loop
-    end
-    if action_verb
-      take_edit_action(action_verb, object)
-    end
-  end
-end
+      #      puts "Leaving weekly review..."
+      #     $quit_weekly_review = true
+      when 'n', 'an', 'add-note', 'note'
+        action_verb = 'add_note'
+      when 'co', 'com', 'complete', 'finish', 'done'
+        action_verb = 'complete'
+      when 'd', 'delete', 'remove'
+        action_verb = 'delete'
+      when 'psm', 'edit-psm', 'epsm'
+        action_verb = 'edit_psm'
+      when 'r', 'rename', 'retitle'
+        action_verb = 'rename'
+      else
+        puts 'Input unrecognized. Skipping..' # should probably not skip TODO, should loop
+      end
+      if action_verb
+        take_edit_action(action_verb, object)
+      end
+    end # action.empty?
+  end # task & action == s/m
+end # def
+
+def not_recently_reviewed(object)
+  the_7_days_ago_timestamp = Time.now.to_i - 7*24*60*60
+  (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_7_days_ago_timestamp)
+end 
 
 def review_projects_and_subtasks(projects)
   projects.each do |p|
+    puts "Project, so reviewing tasks first."
+    puts "Here is the project: #{p}"
+    subtasks_to_review = p.tasks.filter { |t| not_recently_reviewed(t) }
+    subtasks_to_review.each { |t| review_and_maybe_edit(t) }
     review_and_maybe_edit(p)
-    p.tasks.each { |t| review_and_maybe_edit(t) }
   end
 end
 
+def review_need_reviewed
+  projects = $data.projects.filter {|p| not_recently_reviewed(p) }
+  review_projects_and_subtasks(projects)
+  tasks = $tasks.filter {|t| not_recently_reviewed(t) }
+  review_and_maybe_edit(tasks)
+end 
 
-def review_last_reviewed_nil
-  p_nil = $data.projects.filter {|p| p.last_reviewed == nil}
-  review_projects_and_subtasks(p_nil)
-  t_nil = $tasks.filter {|t| t.last_reviewed == nil}
-  review_and_maybe_edit(t)
-end
-
-def review_last_reviewed_too_long_ago
-  the_7_days_ago_timestamp = Time.now.to_i - 7*24*60*60 
-  p_7d = $data.projects.filter { |p| p.last_reviewed.to_i < the_7_days_ago_timestamp }
-  review_projects_and_subtasks(p_7d)
-  t_7d = $data.tasks.filter { |t| t.last_reviewed < the_7_days_ago_timestamp }
-  t_7d.each { |t| review_and_maybe_edit(t) }
-end
 
 # A checklist that requires explict checking to get past each step.
 def weekly_review
@@ -421,8 +419,5 @@ def weekly_review
 #  do_until_done('Clarify and organize all of your email.')
 #  do_until_done('Review your waiting folder in your email.')
 
-  review_last_reviewed_nil
-  review_last_reviewed_too_long_ago
-  
-
+  review_need_reviewed
 end

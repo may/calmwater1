@@ -190,13 +190,15 @@
     title: "(extb) decide on this/compare to existing specs: review projects weekly,
       focus monthly, goals quartely, and the oldest 5 s/m each week!"
     notes:
+    - - 2020-07-26 22:30:27.325610794 -05:00
+      - Task reviewed.
     - - 2020-07-17 14:19:40.316227104 -05:00
       - 'Created: on this/compare to existing specs: review projects weekly, focus
         monthly, goals quartely, and the oldest 5 s/m each week!'
     created: 2020-07-17 14:19:40.316255573 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-07-26 22:30:27.325561469 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -204,6 +206,8 @@
       that's what your calendar is for. But this means no tickler function? Is this
       an overreaction to the overwhlem I have in RTM?"
     notes:
+    - - 2020-07-26 22:30:34.366046093 -05:00
+      - Task reviewed.
     - - 2020-07-17 14:33:35.450079255 -05:00
       - 'Created: decide & document decision regarding not having due dates in extbrain;
         that''s what your calendar is for. But this means no tickler function? Is
@@ -211,7 +215,7 @@
     created: 2020-07-17 14:33:35.450105120 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-07-26 22:30:34.366007533 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
