@@ -192,6 +192,10 @@
 - !ruby/object:Task
   title: paul epicstudio installed on his computer and configured for POC
   notes:
+  - - 2020-07-27 14:52:34.378506200 -05:00
+    - Task UNcompleted.
+  - - 2020-07-27 14:52:29.916536213 -05:00
+    - Task completed.
   - - 2020-07-24 13:25:52.669620559 -05:00
     - 'Created: paul epicstudio installed on his computer and configured for POC'
   created: 2020-07-24 13:25:52.669638837 -05:00
@@ -322,4 +326,15 @@
   deleted:
   last_reviewed:
   action_context: :job
+  life_context: :job
+- !ruby/object:Task
+  title: jacob epicstudio for poc/bld for me
+  notes:
+  - - 2020-07-27 16:51:45.967126376 -05:00
+    - 'Created: jacob epicstudio for poc/bld for me'
+  created: 2020-07-27 16:51:45.967147106 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
   life_context: :job

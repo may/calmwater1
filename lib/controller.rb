@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-27
+# Revised: 2020-07-28
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -60,7 +60,7 @@ def edit_project_or_task(action_verb, keyword, content)
         object_to_operate_on = results.first # it's an array of one item, hence the .first
       elsif results.count > 1
         puts 'More than one project or task matched search critera.'
-        puts 'Choose an item by entering a number.'
+        puts 'Choose an item by entering a number. Press ENTER (without input) to exit without changes.'
         results.each_with_index do
           |project,index|
           print index+1 # make the list start at 1 for the user

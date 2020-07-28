@@ -620,6 +620,10 @@
 - !ruby/object:Project
   title: another second test project
   notes:
+  - - 2020-07-28 12:51:51.884458417 -05:00
+    - Project UNcompleted.
+  - - 2020-07-28 12:51:47.451537323 -05:00
+    - Project completed.
   - - 2020-07-19 23:28:18.004634163 -05:00
     - |-
       Updated title:
@@ -980,33 +984,6 @@
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
-  title: infection screening 836695 latest round of changes, first 90 days, then,
-    second, changes to questions w/ tom feldmen
-  notes:
-  - - 2020-07-22 08:23:17.047095861 -05:00
-    - 'Created: 836695 latest round of changes, first 90 days, then, second, changes
-      to questions w/ tom feldmen'
-  created: 2020-07-22 08:23:17.047113651 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  keyword: :infscreen
-  life_context: :job
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: "(infscreen) tom - meeting and info from epi"
-    notes:
-    - - 2020-07-22 16:32:59.727149690 -05:00
-      - 'Created: tom - meeting and info from epi'
-    created: 2020-07-22 16:32:59.727165502 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :job
-- !ruby/object:Project
   title: Ensure we implement expected date of discharge as part of patient flow, ideally
     for upgrade 10/10/2020.
   notes:
@@ -1143,31 +1120,6 @@
     action_context: :waiting
     life_context: :personal
 - !ruby/object:Project
-  title: epicstudio see email in hold
-  notes:
-  - - 2020-07-24 13:22:41.041507097 -05:00
-    - 'Created: install epicstudio see email in hold'
-  created: 2020-07-24 13:22:41.041561020 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  keyword: :epicstudio
-  life_context: :job
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: "(epicstudio) helpdesk 839852 Need access to pluto account for MME662"
-    notes:
-    - - 2020-07-24 13:25:37.023254932 -05:00
-      - 'Created: helpdesk 839852 Need access to pluto account for MME662'
-    created: 2020-07-24 13:25:37.023302308 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :job
-- !ruby/object:Project
   title: Switch to ADT Orders for Spring 2021.
   notes:
   - - 2020-07-24 15:19:01.020946508 -05:00
@@ -1207,8 +1159,13 @@
   psm: ''
   tasks: []
 - !ruby/object:Project
-  title: ensure send page on admission
+  title: ensure send page on admission for vascular access
   notes:
+  - - 2020-07-28 12:51:19.610398392 -05:00
+    - |-
+      Updated title:
+       old: ensure send page on admission
+       new: ensure send page on admission for vascular access
   - - 2020-07-27 11:09:35.482552233 -05:00
     - |+
       A.When patient will be admitted first and then the PICC will be placed:
@@ -1328,4 +1285,85 @@
     deleted: 2020-07-27 13:05:40.106332054 -05:00
     last_reviewed:
     action_context: :computer
+    life_context: :job
+- !ruby/object:Project
+  title: 833159 Confidential inpatient admissions should be visible to outpatient
+    nurses
+  notes:
+  - - 2020-07-27 17:00:13.760705181 -05:00
+    - "Updated psm:\n old: \n new: See email RE: 833159 - Confidential inpatient admissions
+      should be visible to outpatient nurses in HOLD."
+  - - 2020-07-27 16:59:00.536885869 -05:00
+    - 'Created: 833159 Confidential inpatient admissions should be visible to outpatient
+      nurses'
+  created: 2020-07-27 16:59:00.536930823 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :conf
+  life_context: :job
+  tags: []
+  psm: 'See email RE: 833159 - Confidential inpatient admissions should be visible
+    to outpatient nurses in HOLD.'
+  tasks:
+  - !ruby/object:Task
+    title: "(conf) Make clinical pt station red and then test then do screenshots
+      and put in whats new."
+    notes:
+    - - 2020-07-27 16:59:47.616700834 -05:00
+      - 'Created: (conf) Make clinical pt station red and then test then do screenshots
+        and put in whats new.'
+    created: 2020-07-27 16:59:47.616730150 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+- !ruby/object:Project
+  title: 820464 speed up bed planning
+  notes:
+  - - 2020-07-28 11:47:56.498383393 -05:00
+    - |-
+      Updated title:
+       old: speed up bed planning
+       new: 820464 speed up bed planning
+  - - 2020-07-28 11:37:34.591078165 -05:00
+    - "Updated psm:\n old: \n new: 5194387 / Ways to speed up bed planning?"
+  - - 2020-07-28 11:37:06.219420356 -05:00
+    - 'Created: speed up bed planning'
+  created: 2020-07-28 11:37:06.219438267 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :bp
+  life_context: :job
+  tags: []
+  psm: 5194387 / Ways to speed up bed planning?
+  tasks:
+  - !ruby/object:Task
+    title: "(bp) "
+    notes:
+    - - 2020-07-28 11:44:34.160220322 -05:00
+      - Task deleted.
+    - - 2020-07-28 11:43:27.614344840 -05:00
+      - 'Created: (bp) '
+    created: 2020-07-28 11:43:27.614380711 -05:00
+    completed:
+    deleted: 2020-07-28 11:44:34.160184180 -05:00
+    last_reviewed:
+    action_context: :job
+    life_context: :job
+  - !ruby/object:Task
+    title: "(bp) I can confirm that CER 907751 adds a second to the wall clock time
+      of loading Bed Planning in SUP. And I'll work on figuring out a way to optimize."
+    notes:
+    - - 2020-07-28 11:44:21.203286604 -05:00
+      - 'Created: (bp) I can confirm that CER 907751 adds a second to the wall clock
+        time of loading Bed Planning in SUP. And I''ll work on figuring out a way
+        to optimize.'
+    created: 2020-07-28 11:44:21.203340783 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :job
     life_context: :job
