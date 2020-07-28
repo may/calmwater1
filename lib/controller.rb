@@ -6,16 +6,19 @@ require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
-def change_context
-  puts "Current life context: #{$life_context}"
-  print "Enter new life context: "
-  $life_context = gets.strip.to_sym
-  unless $data.defined_life_contexts.include?($life_context)
-    puts "WARNING: the context '#{$life_context}' not used anywhere in your data."
-    puts "This is OK if you're starting a new life context or know what you're doing."
-    puts 
-    puts "Otherwise, please call 'context' again and use one of thes contexts: "
-    $data.defined_life_contexts.each {|lc| puts "  #{lc}" }
+def change_life_context(new_life_context)
+  if new_life_context.nil?
+    puts "Current context is: #{$life_context}"
+    puts "Proper usage: context new_context"
+  else
+    $life_context = new_life_context.to_sym
+    unless $data.defined_life_contexts.include?($life_context)
+      puts "WARNING: the context '#{$life_context}' not used anywhere in your data."
+      puts "This is OK if you're starting a new life context or know what you're doing."
+      puts 
+      puts "Otherwise, please call 'context' again and use one of thes contexts: "
+      $data.defined_life_contexts.each {|lc| puts "  #{lc}" }
+    end
   end
 end 
 

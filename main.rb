@@ -110,7 +110,7 @@ def dispatch_user_input(input_string)
     when 'clear'
       system('clear')
     when 'context'
-      change_context
+      change_life_context(keyword)
     when 'c', 'lc', 'comp', 'computer'
       view_or_add_task('computer', keyword, content)
     when 'co', 'com', 'complete', 'finish', 'done'

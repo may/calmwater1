@@ -26,37 +26,6 @@
   psm: ''
   tasks: []
 - !ruby/object:Project
-  title: create functionality to make plc keyword context work in extbrain
-  notes:
-  - - 2020-06-16 14:58:38.546488016 -05:00
-    - 'Created: create functionality to make plc keyword context work in extbrain'
-  created: 2020-06-16 14:58:38.546491497 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  keyword: :plc
-  life_context: :job
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: testing computer context
-    notes:
-    - - 2020-07-15 21:18:59.410043127 -05:00
-      - Task deleted.
-    - - 2020-07-15 21:08:00.186399224 -05:00
-      - Task completed.
-    - - 2020-07-15 21:06:16.381356268 -05:00
-      - Task completed.
-    - - 2020-07-15 15:31:24.880925934 -05:00
-      - 'Created: testing computer context'
-    created: 2020-07-15 15:31:24.880963539 -05:00
-    completed:
-    deleted: 2020-07-15 21:18:59.409998787 -05:00
-    last_reviewed:
-    action_context: :computer
-    life_context: :job
-- !ruby/object:Project
   title: Ensure sarah starts an early morning (anytime before 9am) walking habit per
     Lynda 2020-06-16
   notes:
