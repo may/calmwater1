@@ -127,6 +127,8 @@ def dispatch_user_input(input_string)
       task_list('waiting')
     when 'j', 'lj'
       view_or_add_task('job', keyword, content)
+    when 'jc', 'ljc'
+      view_or_add_task('job-computer', keyword, content)
     when 'lp'
       if $time_sensitive_life_context
         $data.list_projects($life_context)

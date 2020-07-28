@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-27
+# Revised: 2020-07-28
 
 require_relative 'common_project_task'
 
@@ -13,6 +13,8 @@ class Task < CommonProjectTask
         action_context = 'computer'
       when 'j', 'jo', 'job'
         action_context = 'job'
+      when 'jc', 'job-computer'
+        action_context = 'job-computer'
       when 's/m', 'sm', 's', 'm'
         action_context = 'someday/maybe' # not really an action context, but potentially useful
       when 'w', 'wai', 'wait'

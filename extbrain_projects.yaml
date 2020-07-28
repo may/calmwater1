@@ -3,6 +3,16 @@
   title: create a logging/journal functionality in extbrain to use 'l' and timestamp
     plus info. for taking notes of things. tags too?
   notes:
+  - - 2020-07-28 13:04:40.944387970 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
+  - - 2020-07-28 13:04:29.914299885 -05:00
+    - |-
+      Updated keyword:
+       old: log
+       new: extb-log
   - - 2020-06-16 14:57:45.718109053 -05:00
     - 'Created: create a logging/journal functionality in extbrain to use ''l'' and
       timestamp plus info. for taking notes of things. tags too?'
@@ -10,8 +20,8 @@
   completed:
   deleted:
   last_reviewed:
-  keyword: :log
-  life_context: :job
+  keyword: :extb-log
+  life_context: :personal
   tags: []
   psm: ''
   tasks: []
