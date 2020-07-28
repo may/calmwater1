@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-26
+# Revised: 2020-07-28
 
 
 # todo d for delete
@@ -142,6 +142,8 @@ def dispatch_user_input(input_string)
       edit_project_or_task('add_note', keyword, content)
     when 'p', 'proj', 'project', 'projects'
       project_input(keyword, content)
+    when 'pk', 'project-keyword'
+      project_keyword(keyword, content)
     when 'pn', 'project notes'
       find_and_show_project(keyword, true)
     when 'pt', 'project-task'
