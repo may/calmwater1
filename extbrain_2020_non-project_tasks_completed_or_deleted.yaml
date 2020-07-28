@@ -70,3 +70,17 @@
   last_reviewed:
   action_context: :waiting
   life_context: :unused
+---
+- !ruby/object:Task
+  title: alex
+  notes:
+  - - 2020-07-28 12:58:44.904386504 -05:00
+    - Task deleted.
+  - - 2020-07-28 12:58:39.435285327 -05:00
+    - 'Created: alex'
+  created: 2020-07-28 12:58:39.435312037 -05:00
+  completed:
+  deleted: 2020-07-28 12:58:44.904358546 -05:00
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job

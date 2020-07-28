@@ -71,6 +71,11 @@
   title: create a feature in extbrain to color code projects based on last reviewed;
     >7 days is yellow, >14 days is red.
   notes:
+  - - 2020-07-28 12:57:13.755336284 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
   - - 2020-06-16 16:50:38.458137759 -05:00
     - 'Created: create a feature in extbrain to color code projects based on last
       reviewed; >7 days is yellow, >14 days is red.'
@@ -79,7 +84,7 @@
   deleted:
   last_reviewed:
   keyword: :proj-color
-  life_context: :job
+  life_context: :personal
   tags: []
   psm: ''
   tasks: []
@@ -712,32 +717,6 @@
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
-  title: implement ADT orders before August 2020 version, eg April 2021 date.
-  notes:
-  - - 2020-07-20 08:41:37.857718035 -05:00
-    - 'Created: implement ADT orders before August 2020 version, eg April 2021 date.'
-  created: 2020-07-20 08:41:37.857749684 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  keyword: :adt-orders
-  life_context: :job
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: "(adt-orders) Alex - setup meeting with Kevin C and Paul and I for September
-      2020"
-    notes:
-    - - 2020-07-20 08:41:58.110445171 -05:00
-      - 'Created: Alex - setup meeting with Kevin C and Paul and I for September 2020'
-    created: 2020-07-20 08:41:58.110469693 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :job
-- !ruby/object:Project
   title: implement Leave of Abscence for Psych, by manaaging work, doing the implementation/build,
     leading the meetings.
   notes:
@@ -1139,6 +1118,19 @@
     - - 2020-07-24 15:19:31.564917614 -05:00
       - 'Created: Work with Paul on checklist and build status on 9/23/2020.'
     created: 2020-07-24 15:19:31.564943907 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(adtorders) Alex - setup meeting with Kevin C and Paul and I for September
+      2020"
+    notes:
+    - - 2020-07-28 12:58:05.793775736 -05:00
+      - 'Created: (adtorders) Alex - setup meeting with Kevin C and Paul and I for
+        September 2020'
+    created: 2020-07-28 12:58:05.793805316 -05:00
     completed:
     deleted:
     last_reviewed:

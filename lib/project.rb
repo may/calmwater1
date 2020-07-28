@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-25
+# Revised: 2020-07-28
 
 require_relative 'common_project_task'
 
@@ -17,7 +17,8 @@ class Project < CommonProjectTask
     @tasks = Array.new
   end
 
-  # todo
+  # sure this would be nice, but they should be filtered out b/c parent project is completed.
+  #plus as soon as user exists extbrain the whole project (AND subtasks) will be archived.
 #  def complete
 #    super
 #    plus complete all @tasks

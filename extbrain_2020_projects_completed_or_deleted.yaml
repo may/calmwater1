@@ -188,3 +188,32 @@
   tags: []
   psm: ''
   tasks: []
+---
+- !ruby/object:Project
+  title: implement ADT orders before August 2020 version, eg April 2021 date.
+  notes:
+  - - 2020-07-28 12:58:21.549208285 -05:00
+    - Project deleted.
+  - - 2020-07-20 08:41:37.857718035 -05:00
+    - 'Created: implement ADT orders before August 2020 version, eg April 2021 date.'
+  created: 2020-07-20 08:41:37.857749684 -05:00
+  completed:
+  deleted: 2020-07-28 12:58:21.549179867 -05:00
+  last_reviewed:
+  keyword: :adt-orders
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(adt-orders) Alex - setup meeting with Kevin C and Paul and I for September
+      2020"
+    notes:
+    - - 2020-07-20 08:41:58.110445171 -05:00
+      - 'Created: Alex - setup meeting with Kevin C and Paul and I for September 2020'
+    created: 2020-07-20 08:41:58.110469693 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job

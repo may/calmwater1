@@ -144,9 +144,7 @@ class ExtbrainData
     projs = projects.filter { |project| project.title.downcase.include?(search_string.downcase) }
     projs << projects.filter { |project| project.keyword.to_s.downcase.include?(search_string.downcase) }
     projs.flatten!
-    puts projs.count
     projs.uniq! # since we search both title and keyword, ensure we only list each project once
-    puts projs.count
     if projs.empty?
       nil
     else
