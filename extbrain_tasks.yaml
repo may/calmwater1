@@ -271,28 +271,6 @@
   action_context: :waiting
   life_context: :job
 - !ruby/object:Task
-  title: vasca work time scheduled 2020-07-28
-  notes:
-  - - 2020-07-27 11:10:09.695988914 -05:00
-    - 'Created: vasca work time scheduled 2020-07-28'
-  created: 2020-07-27 11:10:09.696010682 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
-  life_context: :job
-- !ruby/object:Task
-  title: vasca nick poch for pager number to page
-  notes:
-  - - 2020-07-27 11:10:52.490331298 -05:00
-    - 'Created: vasca nick poch for pager number to page'
-  created: 2020-07-27 11:10:52.490357278 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
-  life_context: :job
-- !ruby/object:Task
   title: infs2 work time scheduled for 8/11
   notes:
   - - 2020-07-27 11:26:13.939457849 -05:00
@@ -326,15 +304,4 @@
   deleted:
   last_reviewed:
   action_context: :job
-  life_context: :job
-- !ruby/object:Task
-  title: jacob epicstudio for poc/bld for me
-  notes:
-  - - 2020-07-27 16:51:45.967126376 -05:00
-    - 'Created: jacob epicstudio for poc/bld for me'
-  created: 2020-07-27 16:51:45.967147106 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
   life_context: :job

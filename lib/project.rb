@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-28
+# Revised: 2020-07-29
 
 require_relative 'common_project_task'
 
@@ -81,7 +81,7 @@ class Project < CommonProjectTask
 
   def view_project
     puts self # use to_s
-    @tasks.each { |t| puts " #{t.to_s(true)}" }
+    tasks.each { |t| puts " #{t.to_s(true)}" }
   end 
 
   def view_project_and_notes

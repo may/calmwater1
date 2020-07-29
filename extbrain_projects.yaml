@@ -1166,7 +1166,39 @@
   life_context: :job
   tags: []
   psm: See NOTES.
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: "(vasca) time scheduled 2020-07-31"
+    notes:
+    - - 2020-07-29 08:24:34.359121541 -05:00
+      - Task completed.
+    - - 2020-07-29 08:24:20.653935071 -05:00
+      - Task UNdeleted.
+    - - 2020-07-29 08:23:07.021971137 -05:00
+      - Task deleted.
+    - - 2020-07-29 08:22:26.243753083 -05:00
+      - Task UNdeleted.
+    - - 2020-07-29 08:22:24.330870598 -05:00
+      - Task deleted.
+    - - 2020-07-29 08:21:28.736569355 -05:00
+      - 'Created: (vasca) time scheduled 2020-07-31'
+    created: 2020-07-29 08:21:28.736598555 -05:00
+    completed: 2020-07-29 08:24:34.359078344 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :work
+    life_context: :job
+  - !ruby/object:Task
+    title: "(vasca) work time scheduled 2020-07-31"
+    notes:
+    - - 2020-07-29 08:23:15.843885262 -05:00
+      - 'Created: (vasca) work time scheduled 2020-07-31'
+    created: 2020-07-29 08:23:15.843901718 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: 840659 rewrite infection screening rules to be one or two and much more streamlined
   notes:

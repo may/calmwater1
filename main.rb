@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-28
+# Revised: 2020-07-29
 
 
 # todo d for delete
@@ -115,7 +115,7 @@ def dispatch_user_input(input_string)
       view_or_add_task('computer', keyword, content)
     when 'co', 'com', 'complete', 'finish', 'done'
       edit_project_or_task('complete', keyword, content)
-    when 'd', 'delete', 'remove'
+    when 'd', 'del', 'delete', 'remove'
       edit_project_or_task('delete', keyword, content)
     when 'e', 'exit', 'q'
       exit
