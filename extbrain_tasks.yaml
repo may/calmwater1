@@ -1,16 +1,5 @@
 ---
 - !ruby/object:Task
-  title: another thing to do on my bike testing
-  notes:
-  - - 2020-07-15 17:04:53.406370092 -05:00
-    - 'Created: another thing to do on my bike testing'
-  created: 2020-07-15 17:04:53.406401762 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :bike
-  life_context: :personal
-- !ruby/object:Task
   title: create the selfupgrade reddit account, subscribe to leanfire, gtd, music,
     eroticauthors, romancebooks, romance authors (if it exists) and not much else.
   notes:
@@ -76,21 +65,6 @@
   action_context: :waiting
   life_context: :personal
 - !ruby/object:Task
-  title: help test this software
-  notes:
-  - - 2020-07-19 23:06:57.398345676 -05:00
-    - Task UNcompleted.
-  - - 2020-07-19 23:06:55.554738965 -05:00
-    - Task completed.
-  - - 2020-07-19 22:57:22.977792509 -05:00
-    - 'Created: help test this software'
-  created: 2020-07-19 22:57:22.977810719 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
   title: bob still needs to do his other shit
   notes:
   - - 2020-07-19 23:28:37.091117860 -05:00
@@ -122,44 +96,11 @@
   action_context: :job
   life_context: :job
 - !ruby/object:Task
-  title: write.as/cj - file hosting? else third party
-  notes:
-  - - 2020-07-20 19:11:41.144371605 -05:00
-    - 'Created: write.as/cj - file hosting? else third party'
-  created: 2020-07-20 19:11:41.144403252 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
-  life_context: :personal
-- !ruby/object:Task
   title: google what is music theory and learn
   notes:
   - - 2020-07-20 20:24:07.337840619 -05:00
     - 'Created: google what is music theory and learn'
   created: 2020-07-20 20:24:07.337870405 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: blog reddit daystrom institude thread about professionalism
-  notes:
-  - - 2020-07-22 08:27:49.617725940 -05:00
-    - 'Created: blog reddit daystrom institude thread about professionalism'
-  created: 2020-07-22 08:27:49.617762410 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: blog reddit daystrom institude thread about professionalism
-  notes:
-  - - 2020-07-22 08:27:53.272060104 -05:00
-    - 'Created: blog reddit daystrom institude thread about professionalism'
-  created: 2020-07-22 08:27:53.272086231 -05:00
   completed:
   deleted:
   last_reviewed:
@@ -216,44 +157,11 @@
   action_context: :job
   life_context: :job
 - !ruby/object:Task
-  title: test
-  notes:
-  - - 2020-07-25 15:44:39.778547229 -05:00
-    - 'Created: test'
-  created: 2020-07-25 15:44:39.778576439 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: testing more
-  notes:
-  - - 2020-07-25 15:46:23.615826766 -05:00
-    - 'Created: testing more'
-  created: 2020-07-25 15:46:23.615845021 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
   title: bike testing example task
   notes:
   - - 2020-07-25 16:09:39.230483772 -05:00
     - 'Created: bike testing example task'
   created: 2020-07-25 16:09:39.230512626 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: testing task with alex in it outside of job contexnt
-  notes:
-  - - 2020-07-25 16:25:23.140108828 -05:00
-    - 'Created: testing task with alex in it outside of job contexnt'
-  created: 2020-07-25 16:25:23.140183884 -05:00
   completed:
   deleted:
   last_reviewed:
@@ -305,3 +213,78 @@
   last_reviewed:
   action_context: :job
   life_context: :job
+- !ruby/object:Task
+  title: testing
+  notes:
+  - - 2020-07-31 16:17:28.096861507 -05:00
+    - 'Created: testing'
+  created: 2020-07-31 16:17:28.096892170 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :bs
+  life_context: :job
+- !ruby/object:Task
+  title: put extbrain on the selfupgrade once you feel it's ready
+  notes:
+  - - 2020-07-31 18:23:25.104520309 -05:00
+    - 'Created: put extbrain on the selfupgrade once you feel it''s ready'
+  created: 2020-07-31 18:23:25.104538504 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :personal
+- !ruby/object:Task
+  title: write blog post about introdoucing extbrain
+  notes:
+  - - 2020-07-31 18:23:40.737035961 -05:00
+    - 'Created: write blog post about introdoucing extbrain'
+  created: 2020-07-31 18:23:40.737064058 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal
+- !ruby/object:Task
+  title: extb read-only extb to allow multipule versions running concurrently, for
+    referencing during wr, unless I create an automatic detection of duplicates somehow.
+  notes:
+  - - 2020-07-31 19:55:38.183730146 -05:00
+    - 'I think I will just add a search option to the wr instead.
+
+      '
+  - - 2020-07-31 19:42:49.555431984 -05:00
+    - 'Created: extb read-only extb to allow multipule versions running concurrently,
+      for referencing during wr, unless I create an automatic detection of duplicates
+      somehow.'
+  created: 2020-07-31 19:42:49.555461451 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- !ruby/object:Task
+  title: switch grand central status to 2p fridays, to allow a group weekly review
+    and clearing of the decks before the weekend.
+  notes:
+  - - 2020-07-31 19:44:13.769135033 -05:00
+    - 'Created: switch grand central status to 2p fridays, to allow a group weekly
+      review and clearing of the decks before the weekend.'
+  created: 2020-07-31 19:44:13.769155133 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :job
+- !ruby/object:Task
+  title: sarah call vet for more meds fro lola
+  notes:
+  - - 2020-08-01 09:56:21.228655647 -05:00
+    - 'Created: sarah call vet for more meds fro lola'
+  created: 2020-08-01 09:56:21.228687733 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :personal

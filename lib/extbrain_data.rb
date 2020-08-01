@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-28
+# Revised: 2020-07-31
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -82,6 +82,7 @@ class ExtbrainData
 
   def search_all # including notes, shortcut should be sa
     # should also not filter to life context.. hence 'all'
+    # TODO if you implement this, need to account for completed and deleted at least as an option. grabbing those files and reading from disk.
     puts 'todo search_all'
   end
   

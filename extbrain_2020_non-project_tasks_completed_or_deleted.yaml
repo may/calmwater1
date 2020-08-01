@@ -84,3 +84,33 @@
   last_reviewed:
   action_context: :waiting
   life_context: :job
+---
+- !ruby/object:Task
+  title: a habit of getting up at 0700 daily, and second habit of getting to bed by
+    21:45.
+  notes:
+  - - 2020-07-31 17:55:11.187986585 -05:00
+    - Task deleted.
+  - - 2020-07-31 17:24:34.846963211 -05:00
+    - 'Created: a habit of getting up at 0700 daily, and second habit of getting to
+      bed by 21:45.'
+  created: 2020-07-31 17:24:34.846998544 -05:00
+  completed:
+  deleted: 2020-07-31 17:55:11.187954253 -05:00
+  last_reviewed:
+  action_context: :create
+  life_context: :personal
+- !ruby/object:Task
+  title: decide if want to go forward with color coding projects based on last reviewed.
+  notes:
+  - - 2020-07-31 17:55:05.452087519 -05:00
+    - Task deleted.
+  - - 2020-07-31 17:39:53.921172926 -05:00
+    - 'Created: decide if want to go forward with color coding projects based on last
+      reviewed.'
+  created: 2020-07-31 17:39:53.921210679 -05:00
+  completed:
+  deleted: 2020-07-31 17:55:05.452060522 -05:00
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal

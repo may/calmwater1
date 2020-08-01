@@ -19,6 +19,8 @@ require_relative 'tips.rb'
 
 $writing_mode = false
 
+
+# TODO steal from controller.rb around 393 inside review_and_maybe_edit
 $help_text = <<HEREDOC
 TODO consider scanning source code for each function and documenting but that seems silly
 just keep it all here and extract from this text to the readme
@@ -47,16 +49,6 @@ at_exit do
     $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
   end 
-end
-
-def view_or_add_task(action_context, keyword, content)
-  if keyword and content
-    task_input(action_context, keyword + ' ' + content)
-  elsif keyword
-    task_input(action_context, keyword)
-  else
-    task_list(action_context)
-  end
 end
 
 def command_loop
@@ -154,6 +146,8 @@ def dispatch_user_input(input_string)
       project_life_context(keyword, content)
     when 'psm', 'edit-psm', 'epsm'
       edit_project_or_task('edit_psm', keyword, content)
+    when 'pw' # pw keyword 'whatever I'm waiting on' - create project-specific waiting task
+      project_task(keyword, 'waiting ' + content)
     when 'r', 'rename', 'retitle'
       edit_project_or_task('rename', keyword, content)
     when 's', 'search'
@@ -173,7 +167,7 @@ def dispatch_user_input(input_string)
       view_or_add_task('waiting', keyword, content)
     when 'wr', 'weekly review'
       weekly_review
-    when '?', 'help'
+    when '?', 'help', 'wtf'
       puts $help_text
     else
       # todo reset no op once the user inputs a command correctly?

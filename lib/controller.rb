@@ -1,10 +1,20 @@
 # Created: 2020-05-30
-# Revised: 2020-07-28
+# Revised: 2020-07-31
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
+
+def view_or_add_task(action_context, keyword, content)
+  if keyword and content
+    task_input(action_context, keyword + ' ' + content)
+  elsif keyword
+    task_input(action_context, keyword)
+  else
+    task_list(action_context)
+  end
+end
 
 def change_life_context(new_life_context)
   if new_life_context.nil?
@@ -177,13 +187,15 @@ end
 def delete_task_or_project(object)
   $undo = [object,'undelete']
   object.delete
-  puts "Deleted #{object.class}: #{object}. Undo available if needed."
+  puts "Deleted #{object.class}: #{object}."
+  puts "Undo available if needed."
 end
 
 def complete_task_or_project(object)
   $undo = [object,'uncomplete']
   object.complete
-  puts "Completed #{object.class}: #{object}. Undo available if needed."
+  puts "Completed #{object.class}: #{object}."
+  puts "Undo available if needed."
 end
 
 def project_keyword(keyword, new_keyword)
@@ -350,27 +362,98 @@ end
 # else allow t at any time
 def review_and_maybe_edit(object)
   action_verb = nil
+  def project_task_maybe(object, action_context, keyword, content)
+    if object.is_a?(Project)
+      puts object.add_task(keyword + ' ' + content, action_context)
+    else
+      puts "Error: can't add a project waiting task to something that isn't a Project."
+      review_and_maybe_edit(object)
+    end 
+  end #project_task_maybe
+
   unless object.is_a? Task and object.action_context == 'someday/maybe'.to_sym
+    if object.is_a? Project
+      print '      '  
+    else
+      print '        '
+    end
     puts object
     print '>> '
-    action = gets.strip
-    #  puts action
-    #  p action
-    #  puts "action.empty? #{action.empty?}"
-    #  puts "action_verb.nil? #{action_verb.nil?}"
+    input_string = gets.rstrip!
+    three_pieces = input_string.split(' ',3)
+    command = three_pieces[0]
+    keyword = three_pieces[1]
+    content = three_pieces[2]
     
     # ENTER or space to go to next item, eg return from this function, after setting reviewed date
-    if action.empty?
+    if command.nil?
       object.reviewed
-      puts "#{object.class} marked as reviewed."
+      if object.is_a?(Project)
+        puts "    Project (#{object.keyword}) marked as reviewed."
+      else
+        puts "      #{object.class} marked as reviewed."
+      end
+      action_verb = "reviewed"
     else
-      case action
+      case command
       # keep these in sync with main.rb as best you can
       # last synced: 2020-07-26
       # TODO INSTEAD make this a fuction that's called from here and main.rb
       # something like 'core_editing'
+      when '?', 'help', 'wtf', 'fuck'
+        puts "Here's what you can do:"
+        puts ' Press ENTER to mark the item as reviewed and move onto the next one.'
+        puts ' This is the most common thing you will do 90%+ of the time.'
+        puts " Marking something as reviewed means you've thought about it, and the current status or state of the task/project is correct."
+        puts
+        puts 'You can also do one of these against the current item: '
+        puts " 'co' or 'com' - complete"
+        puts " 'd' - delete'"
+        puts " 'an' or 'n' - add note'"
+        puts " 'r' - rename" 
+        puts " 'psm' 'epsm' - edit project support material"
+        puts
+        puts "Additionally, you can use these commands in this context:"
+        puts " 'pt project_keyword action_context contents of task' - create a task tied to a project"
+        puts " 't action_context contents of task' - create a adhoc task"
+        puts " 'c contents of task' - create an adhoc task in the computer action context"
+        puts " 'j contents of task' - create an adhoc task in the job action context"
+        puts " 'w contents of task' - create an adhoc task in the waiting action context"
+      when 'pt'
+        if object.is_a?(Project) # add to current project
+          project_task(object.keyword, keyword + ' ' + content)
+        else
+          puts "Error: can't add a project task to something that isn't a Project."
+          review_and_maybe_edit(object)
+        end
+      when 'c'
+        view_or_add_task('computer', keyword, content)
+      when 'j'
+        view_or_add_task('job', keyword, content)
+      when 'pc' # pc 'whatever you need to do at your computer'
+        project_task_maybe(object, 'computer', keyword, content)
+      when 'pj' # pj 'whatever you need to do at your job'
+        project_task_maybe(object, 'job', keyword, content)
+      when 'pw' # pw 'whatever you are waiting on'
+        project_task_maybe(object, 'waiting', keyword, content)
+      when 's', 'search'
+        search(keyword, content)
+      when 't'
+        task_input(keyword, content)
+      when 'p'
+        project_input(keyword, content)
+      when 'w'
+        view_or_add_task('waiting', keyword, content)
+      # TODO pt  or t eg to add a ne wawiting taskask a
+        # todo pt, t, (w)aiting, (c)compuuter, (j)job
       when 'e', 'exit','q', 'quit'
-        puts 'not implemented yet. try ctrl-c'
+        exit # we at least want exit rather than ctrl-c, since that doesn't store history of completed/deleted
+        # exit may be enough, sure it'd be nice to get out of the weekly review
+      # overall and back to the main prompt, but exiting out of the entire program
+      # seems reasonable to me, esp. now that the weekly review subprompt does so much of what the main prompt does
+      # also we don't *really* want to encourage people to leave this wr process,
+        # esp since they can still create tasks and projects in here
+        # TODO MAYBE 
       # next time you look at htis code
       # add this to all of your blocks, expanding them to do/end
       # and reset this variable at end of weekly_review method
@@ -387,11 +470,25 @@ def review_and_maybe_edit(object)
         action_verb = 'edit_psm'
       when 'r', 'rename', 'retitle'
         action_verb = 'rename'
+      when 'undo'
+        if $undo
+          $undo[0].send($undo[1])
+          puts 'Undo performed. Specifically did this: '
+          puts "object: #{$undo[0]}"
+          puts "action: #{$undo[1]}"
+        else
+          puts '$undo variable not set, nothing to undo?'
+        end
       else
         puts 'Input unrecognized. Skipping..' # should probably not skip TODO, should loop
       end
       if action_verb
-        take_edit_action(action_verb, object)
+        if action_verb != 'reviewed'
+          take_edit_action(action_verb, object)
+          puts
+        end 
+      else
+        review_and_maybe_edit(object)        
       end
     end # action.empty?
   end # task & action == s/m
@@ -404,10 +501,15 @@ end
 
 def review_projects_and_subtasks(projects)
   projects.each do |p|
-    puts "Project, so reviewing tasks first."
-    puts "Here is the project: #{p}"
+    puts
+    puts "Reviewing project: #{p.keyword}"
     subtasks_to_review = p.tasks.filter { |t| not_recently_reviewed(t) }
-    subtasks_to_review.each { |t| review_and_maybe_edit(t) }
+    if subtasks_to_review.empty?
+      puts "    No subtasks! Need to define next action/waiting for this project."
+    else
+      puts "    #{p}"
+      subtasks_to_review.each { |t| review_and_maybe_edit(t) }      
+    end 
     review_and_maybe_edit(p)
   end
 end
