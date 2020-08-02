@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-31
+# Revised: 2020-08-02
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -361,7 +361,6 @@ end
 # todo if project, allow adding pt
 # else allow t at any time
 def review_and_maybe_edit(object)
-  action_verb = nil
   def project_task_maybe(object, action_context, keyword, content)
     if object.is_a?(Project)
       puts object.add_task(keyword + ' ' + content, action_context)
@@ -371,6 +370,9 @@ def review_and_maybe_edit(object)
     end 
   end #project_task_maybe
 
+  action_verb = nil
+  #  system('clear')
+  10.times do puts end 
   unless object.is_a? Task and object.action_context == 'someday/maybe'.to_sym
     if object.is_a? Project
       print '      '  
@@ -407,7 +409,8 @@ def review_and_maybe_edit(object)
         puts " Marking something as reviewed means you've thought about it, and the current status or state of the task/project is correct."
         puts
         puts 'You can also do one of these against the current item: '
-        puts " 'co' or 'com' - complete"
+        #        puts " 'co' or 'com' - complete"
+        puts " 'c' or 'com' - complete"
         puts " 'd' - delete'"
         puts " 'an' or 'n' - add note'"
         puts " 'r' - rename" 
@@ -416,7 +419,7 @@ def review_and_maybe_edit(object)
         puts "Additionally, you can use these commands in this context:"
         puts " 'pt project_keyword action_context contents of task' - create a task tied to a project"
         puts " 't action_context contents of task' - create a adhoc task"
-        puts " 'c contents of task' - create an adhoc task in the computer action context"
+        puts " 'co contents of task' - create an adhoc task in the computer action context"
         puts " 'j contents of task' - create an adhoc task in the job action context"
         puts " 'w contents of task' - create an adhoc task in the waiting action context"
       when 'pt'
@@ -426,7 +429,7 @@ def review_and_maybe_edit(object)
           puts "Error: can't add a project task to something that isn't a Project."
           review_and_maybe_edit(object)
         end
-      when 'c'
+      when 'co'
         view_or_add_task('computer', keyword, content)
       when 'j'
         view_or_add_task('job', keyword, content)
@@ -462,7 +465,7 @@ def review_and_maybe_edit(object)
       #     $quit_weekly_review = true
       when 'n', 'an', 'add-note', 'note'
         action_verb = 'add_note'
-      when 'co', 'com', 'complete', 'finish', 'done'
+      when 'c', 'com', 'complete', 'finish', 'done'
         action_verb = 'complete'
       when 'd', 'delete', 'remove'
         action_verb = 'delete'

@@ -948,6 +948,8 @@
     title: "(blog) add www.theselfupgrade.com to my amazon associates once it's up
       and running"
     notes:
+    - - 2020-08-01 15:41:55.761970991 -05:00
+      - Task completed.
     - - 2020-08-01 15:00:11.417242526 -05:00
       - |-
         Updated title:
@@ -956,7 +958,7 @@
     - - 2020-07-20 22:17:57.207422227 -05:00
       - 'Created: theselfupgraed.com to my amazon assoicates onec it''s up and running'
     created: 2020-07-20 22:17:57.207449564 -05:00
-    completed:
+    completed: 2020-08-01 15:41:55.761828834 -05:00
     deleted:
     last_reviewed:
     action_context: :computer
@@ -977,11 +979,13 @@
   - !ruby/object:Task
     title: "(blog) setup email subscriptions once pro subscription up and running"
     notes:
+    - - 2020-08-02 14:00:27.284217062 -05:00
+      - Task deleted.
     - - 2020-07-25 10:13:02.982939152 -05:00
       - 'Created: setup email subscriptions once pro subscription up and running'
     created: 2020-07-25 10:13:02.982956439 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-02 14:00:27.284182722 -05:00
     last_reviewed:
     action_context: :computer
     life_context: :personal
@@ -1077,6 +1081,32 @@
     deleted:
     last_reviewed:
     action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: blog) matt/cj - GDPR compliance around email subscriptions?"
+    notes:
+    - - 2020-08-01 15:42:12.857926922 -05:00
+      - 'Created: (pt: blog) matt/cj - GDPR compliance around email subscriptions?'
+    created: 2020-08-01 15:42:12.857955172 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: blog) decide if I should run my own email list on TheSelfUpgrade.
+      As sweet as write.as is, I perfer having control. Of course, offering both is
+      an option too."
+    notes:
+    - - 2020-08-01 15:43:15.126333400 -05:00
+      - 'Created: (pt: blog) decide if I should run my own email list on TheSelfUpgrade.
+        As sweet as write.as is, I perfer having control. Of course, offering both
+        is an option too.'
+    created: 2020-08-01 15:43:15.126372919 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
     life_context: :personal
 - !ruby/object:Project
   title: ensure that how to delete an epic level lock is documented in SOS and the
@@ -1706,3 +1736,30 @@
   tags: []
   psm: ''
   tasks: []
+- !ruby/object:Project
+  title: do whatever charles needs, and get closer to FIRE goal.
+  notes:
+  - - 2020-08-01 17:05:47.079274493 -05:00
+    - 'Created: do whatever charles needs, and get closer to FIRE goal.'
+  created: 2020-08-01 17:05:47.079302803 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :cngo
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(pt: cngo) ask charles if there's a grade level that's too high when using
+      hemmingwrite?"
+    notes:
+    - - 2020-08-01 17:06:02.013855781 -05:00
+      - 'Created: (pt: cngo) ask charles if there''s a grade level that''s too high
+        when using hemmingwrite?'
+    created: 2020-08-01 17:06:02.013875086 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
