@@ -43,13 +43,15 @@
   title: email jacob/jason can we get our sherlock team name changed from adt/bedboard
     to grand central?
   notes:
+  - - 2020-08-02 15:21:08.555858281 -05:00
+    - Task reviewed.
   - - 2020-07-20 13:21:52.529043959 -05:00
     - 'Created: email jacob/jason can we get our sherlock team name changed from adt/bedboard
       to grand central?'
   created: 2020-07-20 13:21:52.529064125 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:21:08.555810121 -05:00
   action_context: :job
   life_context: :job
 - !ruby/object:Task
@@ -82,18 +84,22 @@
   title: goto basement, get wolfe, charge and boot and take pictures, list on reddit
     $700 obo.
   notes:
+  - - 2020-08-02 15:17:38.024685587 -05:00
+    - Task reviewed.
   - - 2020-07-22 16:51:07.181598176 -05:00
     - 'Created: goto basement, get wolfe, charge and boot and take pictures, list
       on reddit $700 obo.'
   created: 2020-07-22 16:51:07.181617274 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:17:38.024652529 -05:00
   action_context: :home
   life_context: :personal
 - !ruby/object:Task
   title: paul epicstudio installed on his computer and configured for POC
   notes:
+  - - 2020-08-02 15:21:11.155801060 -05:00
+    - Task reviewed.
   - - 2020-07-27 14:52:34.378506200 -05:00
     - Task UNcompleted.
   - - 2020-07-27 14:52:29.916536213 -05:00
@@ -103,51 +109,33 @@
   created: 2020-07-24 13:25:52.669638837 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:21:11.155755228 -05:00
   action_context: :waiting
   life_context: :job
 - !ruby/object:Task
   title: switch from f3 for rtm to putty
   notes:
+  - - 2020-08-02 15:21:13.470819457 -05:00
+    - Task reviewed.
   - - 2020-07-24 15:18:38.284679132 -05:00
     - 'Created: switch from f3 for rtm to putty'
   created: 2020-07-24 15:18:38.284738151 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:21:13.470773703 -05:00
   action_context: :job
-  life_context: :job
-- !ruby/object:Task
-  title: bike testing example task
-  notes:
-  - - 2020-07-25 16:09:39.230483772 -05:00
-    - 'Created: bike testing example task'
-  created: 2020-07-25 16:09:39.230512626 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: sarah
-  notes:
-  - - 2020-07-25 16:42:33.484075475 -05:00
-    - 'Created: sarah'
-  created: 2020-07-25 16:42:33.484104175 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
   life_context: :job
 - !ruby/object:Task
   title: infs2 work time scheduled for 8/11
   notes:
+  - - 2020-08-02 15:21:36.513481904 -05:00
+    - Task reviewed.
   - - 2020-07-27 11:26:13.939457849 -05:00
     - 'Created: infs2 work time scheduled for 8/11'
   created: 2020-07-27 11:26:13.939491586 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:21:36.513450780 -05:00
   action_context: :waiting
   life_context: :job
 - !ruby/object:Task
@@ -166,45 +154,40 @@
 - !ruby/object:Task
   title: move gc priorities into esc, and remove that tab from OneNote
   notes:
+  - - 2020-08-02 15:21:39.889126480 -05:00
+    - Task reviewed.
   - - 2020-07-27 12:36:37.583721316 -05:00
     - 'Created: move gc priorities into esc, and remove that tab from OneNote'
   created: 2020-07-27 12:36:37.583758891 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:21:39.889080811 -05:00
   action_context: :job
-  life_context: :job
-- !ruby/object:Task
-  title: testing
-  notes:
-  - - 2020-07-31 16:17:28.096861507 -05:00
-    - 'Created: testing'
-  created: 2020-07-31 16:17:28.096892170 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :bs
   life_context: :job
 - !ruby/object:Task
   title: put extbrain on the selfupgrade once you feel it's ready
   notes:
+  - - 2020-08-02 15:17:59.148775383 -05:00
+    - Task reviewed.
   - - 2020-07-31 18:23:25.104520309 -05:00
     - 'Created: put extbrain on the selfupgrade once you feel it''s ready'
   created: 2020-07-31 18:23:25.104538504 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:17:59.148744022 -05:00
   action_context: :waiting
   life_context: :personal
 - !ruby/object:Task
   title: write blog post about introdoucing extbrain
   notes:
+  - - 2020-08-02 15:18:04.861149299 -05:00
+    - Task reviewed.
   - - 2020-07-31 18:23:40.737035961 -05:00
     - 'Created: write blog post about introdoucing extbrain'
   created: 2020-07-31 18:23:40.737064058 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:18:04.861101843 -05:00
   action_context: :computer
   life_context: :personal
 - !ruby/object:Task
@@ -241,12 +224,14 @@
 - !ruby/object:Task
   title: sarah call vet for more meds fro lola
   notes:
+  - - 2020-08-02 15:18:08.391704428 -05:00
+    - Task reviewed.
   - - 2020-08-01 09:56:21.228655647 -05:00
     - 'Created: sarah call vet for more meds fro lola'
   created: 2020-08-01 09:56:21.228687733 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:18:08.391658368 -05:00
   action_context: :waiting
   life_context: :personal
 - !ruby/object:Task
@@ -261,15 +246,4 @@
   deleted:
   last_reviewed:
   action_context: :someday/maybe
-  life_context: :personal
-- !ruby/object:Task
-  title: testing
-  notes:
-  - - 2020-08-02 14:31:48.669164347 -05:00
-    - 'Created: testing'
-  created: 2020-08-02 14:31:48.669202216 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :testing
   life_context: :personal
