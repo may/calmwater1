@@ -113,6 +113,8 @@ def dispatch_user_input(input_string)
       exit
     when 'h', 'habit'
       habit_input(keyword, content)
+    when 'ho', 'home', 'house', 'apartment', 'dorm', 'rv'
+      view_or_add_task('home', keyword, content)
     when 'lt', 'list-tasks'
       task_list(keyword)
     when 'lw'
@@ -197,6 +199,7 @@ end
 
 def random_tip
   # todo stop once the create date of the first project is > 200 days from now.
+  print ' '
   puts $tips.sample
 end 
 

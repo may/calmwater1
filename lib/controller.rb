@@ -375,9 +375,9 @@ def review_and_maybe_edit(object)
   10.times do puts end 
   unless object.is_a? Task and object.action_context == 'someday/maybe'.to_sym
     if object.is_a? Project
-      print '      '  
+      print '      Project: '  
     else
-      print '        '
+      print '        Task: '
     end
     puts object
     print '>> '
@@ -415,9 +415,9 @@ def review_and_maybe_edit(object)
         puts " 'an' or 'n' - add note'"
         puts " 'r' - rename" 
         puts " 'psm' 'epsm' - edit project support material"
+        puts " 'pt action_context <contents of task>' - add a project task to the current project"
         puts
         puts "Additionally, you can use these commands in this context:"
-        puts " 'pt project_keyword action_context contents of task' - create a task tied to a project"
         puts " 't action_context contents of task' - create a adhoc task"
         puts " 'co contents of task' - create an adhoc task in the computer action context"
         puts " 'j contents of task' - create an adhoc task in the job action context"
@@ -426,7 +426,7 @@ def review_and_maybe_edit(object)
         if object.is_a?(Project) # add to current project
           project_task(object.keyword, keyword + ' ' + content)
         else
-          puts "Error: can't add a project task to something that isn't a Project."
+          puts "Error: can't add a project task to something that isn't a Project. During the Weekly Review, the 'pt' command only operates on the current project."
           review_and_maybe_edit(object)
         end
       when 'co'
@@ -507,7 +507,7 @@ def review_projects_and_subtasks(projects)
     puts
     puts "Reviewing project: #{p.keyword}"
     subtasks_to_review = p.tasks.filter { |t| not_recently_reviewed(t) }
-    if subtasks_to_review.empty?
+    if subtasks_to_review.empty? and p.tasks.empty?
       puts "    No subtasks! Need to define next action/waiting for this project."
     else
       puts "    #{p}"
@@ -520,8 +520,8 @@ end
 def review_need_reviewed
   projects = $data.projects.filter {|p| not_recently_reviewed(p) }
   review_projects_and_subtasks(projects)
-  tasks = $tasks.filter {|t| not_recently_reviewed(t) }
-  review_and_maybe_edit(tasks)
+  tasks = $data.tasks.filter {|t| not_recently_reviewed(t) }
+  tasks.each { |t| review_and_maybe_edit(t) }
 end 
 
 

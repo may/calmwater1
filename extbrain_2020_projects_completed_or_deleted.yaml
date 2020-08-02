@@ -256,3 +256,93 @@
     last_reviewed:
     action_context: :computer
     life_context: :job
+---
+- !ruby/object:Project
+  title: ensure extbrain highlights projects WITHOUT next actions in red
+  notes:
+  - - 2020-08-02 14:18:07.056878895 -05:00
+    - Project deleted.
+  - - 2020-08-02 14:14:01.806608887 -05:00
+    - 'I''m not sure generically highlighting when a given project has no next actions
+      - presumably while I''m looking at other things - is really that helpful. may
+      be more of a distraction. I do have a check in place for the weekly review to
+      highlight anyone who doesn''t so that should be enough.
+
+      '
+  - - 2020-07-26 14:54:03.785176909 -05:00
+    - 'Created: ensure extbrain highlights projects WITHOUT next actions in red'
+  created: 2020-07-26 14:54:03.785205502 -05:00
+  completed:
+  deleted: 2020-08-02 14:18:07.056833561 -05:00
+  last_reviewed:
+  keyword: :extb-wr
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+---
+- !ruby/object:Project
+  title: adding a project in the middle
+  notes:
+  - - 2020-08-02 14:19:54.685764788 -05:00
+    - Project deleted.
+  - - 2020-08-02 14:19:03.019355237 -05:00
+    - Project UNdeleted.
+  - - 2020-08-02 14:18:58.534363209 -05:00
+    - Project deleted.
+  - - 2020-07-31 17:11:56.309156564 -05:00
+    - 'Created: adding a project in the middle'
+  created: 2020-07-31 17:11:56.309191168 -05:00
+  completed:
+  deleted: 2020-08-02 14:19:54.685719651 -05:00
+  last_reviewed:
+  keyword: :testing
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+---
+- !ruby/object:Project
+  title: testing new p
+  notes:
+  - - 2020-08-02 14:40:54.576242004 -05:00
+    - Project deleted.
+  - - 2020-08-02 14:32:47.755401038 -05:00
+    - 'Created: testing new p'
+  created: 2020-08-02 14:32:47.755421801 -05:00
+  completed:
+  deleted: 2020-08-02 14:40:54.576212876 -05:00
+  last_reviewed:
+  keyword: :newp
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []
+---
+- !ruby/object:Project
+  title: test project
+  notes:
+  - - 2020-08-02 15:12:08.387227411 -05:00
+    - Project deleted.
+  - - 2020-08-02 15:11:43.596734473 -05:00
+    - 'Created: test project'
+  created: 2020-08-02 15:11:43.596770405 -05:00
+  completed:
+  deleted: 2020-08-02 15:12:08.387182512 -05:00
+  last_reviewed:
+  keyword: :testp
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(pt: testp) testingcontenthere"
+    notes:
+    - - 2020-08-02 15:11:55.479475912 -05:00
+      - 'Created: (pt: testp) testingcontenthere'
+    created: 2020-08-02 15:11:55.479502799 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal

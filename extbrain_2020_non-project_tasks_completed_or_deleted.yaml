@@ -114,3 +114,55 @@
   last_reviewed:
   action_context: :computer
   life_context: :personal
+---
+- !ruby/object:Task
+  title: bob needs to do his fucking shit
+  notes:
+  - - 2020-08-02 15:12:14.665542340 -05:00
+    - Task deleted.
+  - - 2020-07-18 22:36:40.094578926 -05:00
+    - more baeustnaheusnth
+  - - 2020-07-18 22:35:42.480635306 -05:00
+    - I called bob's boss about bob not doing his fucking shit
+  - - 2020-07-18 22:34:43.101799176 -05:00
+    - Bob really needs to do his fucking shit
+  - - 2020-07-18 22:30:35.607675023 -05:00
+    - |-
+      Updated title:
+       old: bob needs to do his fucking shit
+       new: bob needs to do his fucking shit
+  - - 2020-07-18 22:29:16.339183060 -05:00
+    - "Updated title:\n old: bob needs to do his fuckisg shit\n new: "
+  - - 2020-07-18 22:29:03.903761280 -05:00
+    - |-
+      Updated title:
+       old: bob to do his shit
+       new: bob needs to do his fuckisg shit
+  - - 2020-07-18 11:53:17.354318080 -05:00
+    - 'Created: bob to do his shit'
+  created: 2020-07-18 11:53:17.354338734 -05:00
+  completed:
+  deleted: 2020-08-02 15:12:14.665512423 -05:00
+  last_reviewed:
+  action_context: :waiting
+  life_context: :personal
+- !ruby/object:Task
+  title: bob still needs to do his other shit
+  notes:
+  - - 2020-08-02 15:12:15.713588142 -05:00
+    - Task deleted.
+  - - 2020-07-19 23:28:37.091117860 -05:00
+    - |-
+      Updated title:
+       old: bob needs to do other shit
+       new: bob still needs to do his other shit
+  - - 2020-07-19 23:25:58.040306413 -05:00
+    - aeousntahoeu
+  - - 2020-07-19 23:23:33.529049033 -05:00
+    - 'Created: bob needs to do other shit'
+  created: 2020-07-19 23:23:33.529077793 -05:00
+  completed:
+  deleted: 2020-08-02 15:12:15.713545439 -05:00
+  last_reviewed:
+  action_context: :waiting
+  life_context: :personal

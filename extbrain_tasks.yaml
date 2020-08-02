@@ -3,6 +3,8 @@
   title: create the selfupgrade reddit account, subscribe to leanfire, gtd, music,
     eroticauthors, romancebooks, romance authors (if it exists) and not much else.
   notes:
+  - - 2020-08-02 14:43:22.820029541 -05:00
+    - Task reviewed.
   - - 2020-07-16 22:02:27.002828875 -05:00
     - 'Created: create the selfupgrade reddit account, subscribe to leanfire, gtd,
       music, eroticauthors, romancebooks, romance authors (if it exists) and not much
@@ -10,7 +12,7 @@
   created: 2020-07-16 22:02:27.002847687 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 14:43:22.819995795 -05:00
   action_context: :computer
   life_context: :personal
 - !ruby/object:Task
@@ -22,65 +24,20 @@
   completed:
   deleted:
   last_reviewed:
-  action_context: :computer
+  action_context: :someday/maybe
   life_context: :personal
 - !ruby/object:Task
   title: todo lj and add which context to error message of no tasks yet
   notes:
+  - - 2020-08-02 15:12:10.982687935 -05:00
+    - Task reviewed.
   - - 2020-07-17 15:16:51.553165929 -05:00
     - 'Created: todo lj and add which context to error message of no tasks yet'
   created: 2020-07-17 15:16:51.553191883 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:12:10.982638488 -05:00
   action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: bob needs to do his fucking shit
-  notes:
-  - - 2020-07-18 22:36:40.094578926 -05:00
-    - more baeustnaheusnth
-  - - 2020-07-18 22:35:42.480635306 -05:00
-    - I called bob's boss about bob not doing his fucking shit
-  - - 2020-07-18 22:34:43.101799176 -05:00
-    - Bob really needs to do his fucking shit
-  - - 2020-07-18 22:30:35.607675023 -05:00
-    - |-
-      Updated title:
-       old: bob needs to do his fucking shit
-       new: bob needs to do his fucking shit
-  - - 2020-07-18 22:29:16.339183060 -05:00
-    - "Updated title:\n old: bob needs to do his fuckisg shit\n new: "
-  - - 2020-07-18 22:29:03.903761280 -05:00
-    - |-
-      Updated title:
-       old: bob to do his shit
-       new: bob needs to do his fuckisg shit
-  - - 2020-07-18 11:53:17.354318080 -05:00
-    - 'Created: bob to do his shit'
-  created: 2020-07-18 11:53:17.354338734 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
-  life_context: :personal
-- !ruby/object:Task
-  title: bob still needs to do his other shit
-  notes:
-  - - 2020-07-19 23:28:37.091117860 -05:00
-    - |-
-      Updated title:
-       old: bob needs to do other shit
-       new: bob still needs to do his other shit
-  - - 2020-07-19 23:25:58.040306413 -05:00
-    - aeousntahoeu
-  - - 2020-07-19 23:23:33.529049033 -05:00
-    - 'Created: bob needs to do other shit'
-  created: 2020-07-19 23:23:33.529077793 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  action_context: :waiting
   life_context: :personal
 - !ruby/object:Task
   title: email jacob/jason can we get our sherlock team name changed from adt/bedboard
@@ -98,23 +55,27 @@
 - !ruby/object:Task
   title: google what is music theory and learn
   notes:
+  - - 2020-08-02 15:12:18.049588917 -05:00
+    - Task reviewed.
   - - 2020-07-20 20:24:07.337840619 -05:00
     - 'Created: google what is music theory and learn'
   created: 2020-07-20 20:24:07.337870405 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:12:18.049540967 -05:00
   action_context: :computer
   life_context: :personal
 - !ruby/object:Task
   title: blog reddit daystrom institude thread about professionalism https://www.reddit.com/r/DaystromInstitute/comments/hutjvq/roddenberrys_no_melodrama_rule_was_very_important
   notes:
+  - - 2020-08-02 15:12:22.646713972 -05:00
+    - Task reviewed.
   - - 2020-07-22 08:27:59.323311614 -05:00
     - 'Created: blog reddit daystrom institude thread about professionalism https://www.reddit.com/r/DaystromInstitute/comments/hutjvq/roddenberrys_no_melodrama_rule_was_very_important'
   created: 2020-07-22 08:27:59.323327868 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-02 15:12:22.646664978 -05:00
   action_context: :computer
   life_context: :personal
 - !ruby/object:Task
@@ -287,4 +248,28 @@
   deleted:
   last_reviewed:
   action_context: :waiting
+  life_context: :personal
+- !ruby/object:Task
+  title: have project listing highlight in red any projects without subtasks/next
+    actions defined.
+  notes:
+  - - 2020-08-02 14:17:52.619465149 -05:00
+    - 'Created: have project listing highlight in red any projects without subtasks/next
+      actions defined.'
+  created: 2020-08-02 14:17:52.619495175 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- !ruby/object:Task
+  title: testing
+  notes:
+  - - 2020-08-02 14:31:48.669164347 -05:00
+    - 'Created: testing'
+  created: 2020-08-02 14:31:48.669202216 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :testing
   life_context: :personal
