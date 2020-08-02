@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-07-31
+# Revised: 2020-08-02
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -38,11 +38,20 @@ class ExtbrainData
   ## COUNTS
   
   def number_of_projects
-    projects.count
+    # Points to @projects to get the full count, regardless of life context.
+    # Assumes the code that removes/archives the completed or deleted projects
+    # continues to operate sucessfully on each save.
+    @projects.count
   end
   
   def number_of_tasks
-    tasks.count
+    # Points to @tasks to get the full count, regardless of life context.
+    # Assumes the code that removes/archives the completed or deleted tasks
+    # continues to operate sucessfully on each save.
+    tasks_all = @tasks
+    tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
+    tasks_all.flatten!
+    tasks_all.count
   end
   
   def number_of_job_projects

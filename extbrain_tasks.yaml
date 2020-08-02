@@ -247,3 +247,1191 @@
   last_reviewed:
   action_context: :someday/maybe
   life_context: :personal
+- &1 !ruby/object:Task
+  title: "(extb-log) decide how to store logging info/journal info."
+  notes:
+  - - 2020-07-31 17:22:31.973096319 -05:00
+    - Task reviewed.
+  - - 2020-07-31 17:20:45.575091836 -05:00
+    - 'Created: (extb-log) decide how to store logging info/journal info.'
+  created: 2020-07-31 17:20:45.575110822 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 17:22:31.973064009 -05:00
+  action_context: :computer
+  life_context: :personal
+- &2 !ruby/object:Task
+  title: "(sarah-walk) create a habit of getting up at 0700 daily, and second habit
+    of getting to bed by 21:45."
+  notes:
+  - - 2020-08-02 15:18:18.006056718 -05:00
+    - Task reviewed.
+  - - 2020-07-31 17:56:51.619209109 -05:00
+    - 'Created: (sarah-walk) create a habit of getting up at 0700 daily, and second
+      habit of getting to bed by 21:45.'
+  created: 2020-07-31 17:56:51.619227413 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:18.006022094 -05:00
+  action_context: :computer
+  life_context: :personal
+- &3 !ruby/object:Task
+  title: "(proj-color) decide if want to go forward with color coding projects based
+    on last reviewed."
+  notes:
+  - - 2020-08-02 15:18:27.005570580 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:06:38.324189084 -05:00
+    - 'Created: (proj-color) decide if want to go forward with color coding projects
+      based on last reviewed.'
+  created: 2020-07-31 18:06:38.324206777 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:27.005523001 -05:00
+  action_context: :computer
+  life_context: :personal
+- &4 !ruby/object:Task
+  title: "(extb-rlwrap) google this about rlwrap"
+  notes:
+  - - 2020-07-31 18:07:03.943987131 -05:00
+    - Task reviewed.
+  - - 2020-07-15 12:03:15.406852514 -05:00
+    - 'Created: google this about rlwrap'
+  created: 2020-07-15 12:03:15.406872268 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:07:03.943933139 -05:00
+  action_context: computer
+  life_context: :job
+- &5 !ruby/object:Task
+  title: "(extb-help) sit down and write up a brief guide to common workflows"
+  notes:
+  - - 2020-08-02 15:18:30.099268835 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:07:26.903374318 -05:00
+    - 'Created: (extb-help) sit down and write up a brief guide to common workflows'
+  created: 2020-07-31 18:07:26.903391739 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:30.099224776 -05:00
+  action_context: :computer
+  life_context: :personal
+- &6 !ruby/object:Task
+  title: "(extb-subt) think about and decide if want to ilst number of subtasks when
+    viewing projects"
+  notes:
+  - - 2020-08-02 15:18:37.928391845 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:07:46.841363299 -05:00
+    - 'Created: (extb-subt) think about and decide if want to ilst number of subtasks
+      when viewing projects'
+  created: 2020-07-31 18:07:46.841380759 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:37.928360505 -05:00
+  action_context: :computer
+  life_context: :personal
+- &7 !ruby/object:Task
+  title: "(extb) decide on this/compare to existing specs: review projects weekly,
+    focus monthly, goals quartely, and the oldest 5 s/m each week!"
+  notes:
+  - - 2020-07-26 22:30:27.325610794 -05:00
+    - Task reviewed.
+  - - 2020-07-17 14:19:40.316227104 -05:00
+    - 'Created: on this/compare to existing specs: review projects weekly, focus monthly,
+      goals quartely, and the oldest 5 s/m each week!'
+  created: 2020-07-17 14:19:40.316255573 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-26 22:30:27.325561469 -05:00
+  action_context: :computer
+  life_context: :personal
+- &8 !ruby/object:Task
+  title: "(extb) decide & document decision regarding not having due dates in extbrain;
+    that's what your calendar is for. But this means no tickler function? Is this
+    an overreaction to the overwhlem I have in RTM?"
+  notes:
+  - - 2020-07-26 22:30:34.366046093 -05:00
+    - Task reviewed.
+  - - 2020-07-17 14:33:35.450079255 -05:00
+    - 'Created: decide & document decision regarding not having due dates in extbrain;
+      that''s what your calendar is for. But this means no tickler function? Is this
+      an overreaction to the overwhlem I have in RTM?'
+  created: 2020-07-17 14:33:35.450105120 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-26 22:30:34.366007533 -05:00
+  action_context: :computer
+  life_context: :personal
+- &9 !ruby/object:Task
+  title: "(extb) consider/decide on a 'next'/sequential vs parallel option for tasking
+    in extbrain. See some existing software for examples, and consider a use case
+    of someone who has hundreds of next actions and needs to filter the list to what
+    is 'next' rather than what is possible, although I'm not sure that jives with
+    GTD."
+  notes:
+  - - 2020-07-17 14:36:15.143650177 -05:00
+    - 'Created: consider/decide on a ''next''/sequential vs parallel option for tasking
+      in extbrain. See some existing software for examples, and consider a use case
+      of someone who has hundreds of next actions and needs to filter the list to
+      what is ''next'' rather than what is possible, although I''m not sure that jives
+      with GTD.'
+  created: 2020-07-17 14:36:15.143672027 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- &10 !ruby/object:Task
+  title: "(extb) research/try high quality ssh / mosh apps for android to use extbrain
+    remotely/on the go."
+  notes:
+  - - 2020-07-31 18:23:05.135224063 -05:00
+    - Task reviewed.
+  - - 2020-07-17 15:06:13.459444319 -05:00
+    - 'Created: research/try high quality ssh / mosh apps for android to use extbrain
+      remotely/on the go.'
+  created: 2020-07-17 15:06:13.459473589 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:23:05.135023638 -05:00
+  action_context: :computer
+  life_context: :personal
+- &11 !ruby/object:Task
+  title: "(extb) I've said no to this in the past, and I still am hesitant, but consider
+    color-coding for different action contexts on a given project. perhaps: s/m: dark
+    grey, computer: light pink/red, waiting: light green, etc. with a goal of being
+    able to quickly ascertain what's what at a glance. And underline project name
+    at the top"
+  notes:
+  - - 2020-07-31 20:10:22.642107980 -05:00
+    - moved from computer to s/m maybe manually
+  - - 2020-07-31 18:25:22.642107980 -05:00
+    - 'maaaybe
+
+      '
+  - - 2020-07-18 22:01:47.107108803 -05:00
+    - 'Created: I''ve said no to this in the past, and I still am hesitant, but consider
+      color-coding for different action contexts on a given project. perhaps: s/m:
+      dark grey, computer: light pink/red, waiting: light green, etc. with a goal
+      of being able to quickly ascertain what''s what at a glance.'
+  created: 2020-07-18 22:01:47.107126642 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- &12 !ruby/object:Task
+  title: "(extb) make 'e' edit instead of exit maybe"
+  notes:
+  - - 2020-07-18 22:16:12.623552408 -05:00
+    - 'Created: make ''e'' edit instead of exit maybe'
+  created: 2020-07-18 22:16:12.623582158 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- &13 !ruby/object:Task
+  title: "(extb) task_list to allow the user to select from one of the tasks to view
+    it using .view_task, which also shows notes. the 'v' command should also allow
+    this, search for a task by name and then show it once only one task narrowed to"
+  notes:
+  - - 2020-07-31 18:29:30.386332446 -05:00
+    - Task reviewed.
+  - - 2020-07-19 23:51:10.453522098 -05:00
+    - 'Created: task_list to allow the user to select from one of the tasks to view
+      it using .view_task, which also shows notes. the ''v'' command should also allow
+      this, search for a task by name and then show it once only one task narrowed
+      to'
+  created: 2020-07-19 23:51:10.453556498 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:29:30.386300532 -05:00
+  action_context: :computer
+  life_context: :personal
+- &14 !ruby/object:Task
+  title: "(extb) create the 'tac' command for when you've created a task in the wrong
+    action context. same as plc."
+  notes:
+  - - 2020-07-31 18:29:34.958558348 -05:00
+    - Task reviewed.
+  - - 2020-07-19 23:52:02.891417026 -05:00
+    - 'Created: creat the ''tac'' command for when you''ve created a task in the wrong
+      action context. same as plc.'
+  created: 2020-07-19 23:52:02.891433474 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:29:34.958515952 -05:00
+  action_context: :computer
+  life_context: :personal
+- &15 !ruby/object:Task
+  title: "(extb) list agenda 'foo'  grabs all tasks with  'foo' in them and filters
+    to agendas and waiting  and then sorts by agenda then waiting"
+  notes:
+  - - 2020-07-31 20:12:03.203205563 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:39:08.857773287 -05:00
+    - 'maybe
+
+      '
+  - - 2020-07-19 23:54:20.735547122 -05:00
+    - 'Created: list agenda ''foo''  grabs all tasks with  ''foo'' in them and filters
+      to agendas and waiting  and then sorts by agenda then waiting'
+  created: 2020-07-19 23:54:20.735571486 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:12:03.203162923 -05:00
+  action_context: :computer
+  life_context: :personal
+- &16 !ruby/object:Task
+  title: "(extb) undo for renames and psm"
+  notes:
+  - - 2020-07-31 19:21:53.773254607 -05:00
+    - Task reviewed.
+  - - 2020-07-19 23:54:59.964784736 -05:00
+    - 'Created: undo for renames and psm'
+  created: 2020-07-19 23:54:59.964808863 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:21:53.773219737 -05:00
+  action_context: :computer
+  life_context: :personal
+- &17 !ruby/object:Task
+  title: "(extb) enable changing the keyword of a project after creation"
+  notes:
+  - - 2020-07-31 19:22:07.994878047 -05:00
+    - Task reviewed.
+  - - 2020-07-20 08:27:19.633233930 -05:00
+    - 'Created: enable changing the keyword of a project after creation'
+  created: 2020-07-20 08:27:19.633251586 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:22:07.994847831 -05:00
+  action_context: :computer
+  life_context: :personal
+- &18 !ruby/object:Task
+  title: "(extb) enable 'p help' to give the proper usage of p"
+  notes:
+  - - 2020-07-31 19:22:33.831497208 -05:00
+    - Task reviewed.
+  - - 2020-07-20 08:29:26.674098056 -05:00
+    - 'Created: enable ''p help'' to give the proper usage of p'
+  created: 2020-07-20 08:29:26.674114886 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:22:33.831456039 -05:00
+  action_context: :computer
+  life_context: :personal
+- &19 !ruby/object:Task
+  title: "(extb) chunk task listing w/n projects into 80 character limit and indent
+    by 4 spaces"
+  notes:
+  - - 2020-07-31 19:23:53.442581697 -05:00
+    - Task reviewed.
+  - - 2020-07-20 10:02:54.818381847 -05:00
+    - 'Created: chunk task listing w/n projects into 80 character limit and indent
+      by 4 spaces'
+  created: 2020-07-20 10:02:54.818399075 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:23:53.442534890 -05:00
+  action_context: :computer
+  life_context: :personal
+- &20 !ruby/object:Task
+  title: "(extb) create an added today query"
+  notes:
+  - - 2020-07-31 19:23:55.656929107 -05:00
+    - Task reviewed.
+  - - 2020-07-20 10:52:18.153030192 -05:00
+    - 'Created: create an added today query'
+  created: 2020-07-20 10:52:18.153047591 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:23:55.656881100 -05:00
+  action_context: :computer
+  life_context: :personal
+- &21 !ruby/object:Task
+  title: "(extb) implement a way to change the keyword of a project if created wrong.
+    say pk current new"
+  notes:
+  - - 2020-07-31 20:43:15.609800263 -05:00
+    - Task reviewed.
+  - - 2020-07-21 10:45:57.625671765 -05:00
+    - 'Created: implement a way to change the keyword of a project if created wrong.
+      say pk current new'
+  created: 2020-07-21 10:45:57.625687399 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:43:15.609763495 -05:00
+  action_context: :computer
+  life_context: :personal
+- &22 !ruby/object:Task
+  title: "(extb) implement a tutorial for first run, p, c, d, com, etc. that runs
+    IF there are no save files"
+  notes:
+  - - 2020-07-31 20:47:57.841393443 -05:00
+    - Task reviewed.
+  - - 2020-07-22 17:22:37.698493271 -05:00
+    - |-
+      Updated title:
+       old: implement a tutorial for first run, p, c, d, com, etc.
+       new: implement a tutorial for first run, p, c, d, com, etc. that runs IF there are no save files
+  - - 2020-07-22 17:21:56.888708642 -05:00
+    - 'Created: implement a tutorial for first run, p, c, d, com, etc.'
+  created: 2020-07-22 17:21:56.888728636 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:47:57.841351047 -05:00
+  action_context: :computer
+  life_context: :personal
+- &23 !ruby/object:Task
+  title: "(extb) update the add note method to make it obvious when the user is being
+    prompetd for input by adding >> prompt."
+  notes:
+  - - 2020-07-31 20:48:11.677950750 -05:00
+    - Task reviewed.
+  - - 2020-07-23 09:50:35.436081181 -05:00
+    - 'Created: update the add note method to make it obvious when the user is being
+      prompetd for input by adding >> prompt.'
+  created: 2020-07-23 09:50:35.436112645 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:48:11.677906102 -05:00
+  action_context: :computer
+  life_context: :personal
+- &24 !ruby/object:Task
+  title: "(extb) create 'tac' to change action context on a task"
+  notes:
+  - - 2020-07-31 20:48:53.250199114 -05:00
+    - Task reviewed.
+  - - 2020-07-27 13:03:03.158599013 -05:00
+    - 'Created: (extb) create ''tac'' to change action context on a task'
+  created: 2020-07-27 13:03:03.158625967 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:48:53.250154094 -05:00
+  action_context: :computer
+  life_context: :personal
+- &25 !ruby/object:Task
+  title: "(pt: extb) add a search option to wr instead"
+  notes:
+  - - 2020-08-01 14:55:13.006565862 -05:00
+    - Task reviewed.
+  - - 2020-07-31 19:55:44.903163817 -05:00
+    - 'Created: (pt: extb) add a search option to wr instead'
+  created: 2020-07-31 19:55:44.903181787 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-01 14:55:13.006529154 -05:00
+  action_context: :computer
+  life_context: :personal
+- &26 !ruby/object:Task
+  title: "(pt: extb) when viewing tasks - to_s - show the number of notes as a number
+    or none if no notes eg '{2} task name'"
+  notes:
+  - - 2020-08-01 14:55:22.274862704 -05:00
+    - Task reviewed.
+  - - 2020-07-31 19:56:24.631190444 -05:00
+    - 'Created: (pt: extb) when viewing tasks - to_s - show the number of notes as
+      a number or none if no notes eg ''{2} task name'''
+  created: 2020-07-31 19:56:24.631215921 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-01 14:55:22.274829404 -05:00
+  action_context: :computer
+  life_context: :personal
+- &27 !ruby/object:Task
+  title: "(blog) patook review"
+  notes:
+  - - 2020-08-02 14:02:48.659471834 -05:00
+    - Task reviewed.
+  - - 2020-07-29 17:41:27.714802761 -05:00
+    - 'Created: (blog) patook review'
+  created: 2020-07-29 17:41:27.714829411 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:02:48.659416721 -05:00
+  action_context: :computer
+  life_context: :personal
+- &28 !ruby/object:Task
+  title: "(blog) write.as review - feel free to contact me, and also see what this
+    blog is on in 10 years"
+  notes:
+  - - 2020-08-02 14:02:50.628671834 -05:00
+    - Task reviewed.
+  - - 2020-08-01 13:24:43.980462104 -05:00
+    - |
+      Also note that I've used wordpress for years, and stil support clients doing it, and also tried:
+      hugo
+      jekyell
+      ghost
+      ec.
+      etc.
+      and wriet.as is still my reccommendation for 90% of cases
+      the other 10% involving needing a CRM, billing, or something fancier than a blog.
+  - - 2020-07-29 17:41:50.743409383 -05:00
+    - 'Created: (blog) write.as review - feel free to contact me, and also see what
+      this blog is on in 10 years'
+  created: 2020-07-29 17:41:50.743436343 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:02:50.628641854 -05:00
+  action_context: :computer
+  life_context: :personal
+- &29 !ruby/object:Task
+  title: "(blog) hey.com review"
+  notes:
+  - - 2020-08-02 14:02:51.807204667 -05:00
+    - Task reviewed.
+  - - 2020-07-29 17:47:07.999906635 -05:00
+    - 'Created: (blog) hey.com review'
+  created: 2020-07-29 17:47:07.999940131 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:02:51.807173387 -05:00
+  action_context: :computer
+  life_context: :personal
+- &30 !ruby/object:Task
+  title: "(pt: blog) write.as - why no ssl at www.theselfupgrade.com?"
+  notes:
+  - - 2020-08-02 14:09:41.263740401 -05:00
+    - Task reviewed.
+  - - 2020-08-01 14:53:48.489721661 -05:00
+    - 'Created: (pt: blog) write.as - why no ssl at www.theselfupgrade.com?'
+  created: 2020-08-01 14:53:48.489751674 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:09:41.263690332 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &31 !ruby/object:Task
+  title: "(pt: blog) matt/cj - GDPR compliance around email subscriptions?"
+  notes:
+  - - 2020-08-02 14:09:45.960172826 -05:00
+    - Task reviewed.
+  - - 2020-08-01 15:42:12.857926922 -05:00
+    - 'Created: (pt: blog) matt/cj - GDPR compliance around email subscriptions?'
+  created: 2020-08-01 15:42:12.857955172 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:09:45.960127259 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &32 !ruby/object:Task
+  title: "(pt: blog) decide if I should run my own email list on TheSelfUpgrade. As
+    sweet as write.as is, I perfer having control. Of course, offering both is an
+    option too."
+  notes:
+  - - 2020-08-02 14:09:53.245622154 -05:00
+    - Task reviewed.
+  - - 2020-08-01 15:43:15.126333400 -05:00
+    - 'Created: (pt: blog) decide if I should run my own email list on TheSelfUpgrade.
+      As sweet as write.as is, I perfer having control. Of course, offering both is
+      an option too.'
+  created: 2020-08-01 15:43:15.126372919 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:09:53.245575357 -05:00
+  action_context: :computer
+  life_context: :personal
+- &33 !ruby/object:Task
+  title: "(fence) D&N tell us when they're coming out, they will give one week notice,
+    called 7/24, 8 wk behind, started 6/22, so likely end of August"
+  notes:
+  - - 2020-08-02 14:12:38.399180972 -05:00
+    - Task reviewed.
+  - - 2020-07-24 11:34:33.725960766 -05:00
+    - 'Created: D&N tell us when they''re coming out, they will give one week notice,
+      called 7/24, 8 wk behind, started 6/22, so likely end of August'
+  created: 2020-07-24 11:34:33.725985890 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:12:38.399134275 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &34 !ruby/object:Task
+  title: "(survey) MMS tell us when they are coming out to survey, likely first week
+    of august. bring abstract copy back with them at that time."
+  notes:
+  - - 2020-08-02 14:12:54.393801026 -05:00
+    - Task reviewed.
+  - - 2020-07-24 11:36:10.285950544 -05:00
+    - 'Created: MMS tell us when they are coming out to survey, likely first week
+      of august. bring abstract copy back with them at that time.'
+  created: 2020-07-24 11:36:10.285967591 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:12:54.393765573 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &35 !ruby/object:Task
+  title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
+    one article to write as and see how it goes. write.as/thenickmay"
+  notes:
+  - - 2020-08-02 14:37:17.182736033 -05:00
+    - Task reviewed.
+  - - 2020-08-02 14:37:16.008926010 -05:00
+    - Task reviewed.
+  - - 2020-08-02 14:36:43.861154001 -05:00
+    - Task reviewed.
+  - - 2020-08-01 12:48:48.860981347 -05:00
+    - 'I think this is a good idea, but I''m a little worried about write.as'' uptime...
+      OTOH I''ve had more issues with not having the site updated than I have with
+      uptime. I could totally use uptime robot to asuage me
+
+      '
+  - - 2020-08-01 12:04:54.606355634 -05:00
+    - 'Created: (pt: thenickmay) the markdown source for thenickmay and try porting
+      one article to write as and see how it goes. write.as/thenickmay'
+  created: 2020-08-01 12:04:54.606381904 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:37:17.182705032 -05:00
+  action_context: :computer
+  life_context: :personal
+- &36 !ruby/object:Task
+  title: "(pt: cngo) ask charles if there's a grade level that's too high when using
+    hemmingwrite?"
+  notes:
+  - - 2020-08-02 14:38:30.473261912 -05:00
+    - Task reviewed.
+  - - 2020-08-01 17:06:02.013855781 -05:00
+    - 'Created: (pt: cngo) ask charles if there''s a grade level that''s too high
+      when using hemmingwrite?'
+  created: 2020-08-01 17:06:02.013875086 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:38:30.473209899 -05:00
+  action_context: :computer
+  life_context: :personal
+- *1
+- *2
+- *3
+- *4
+- *5
+- *6
+- *7
+- *8
+- *9
+- *10
+- *11
+- *12
+- *13
+- *14
+- *15
+- *16
+- *17
+- *18
+- *19
+- *20
+- *21
+- *22
+- *23
+- *24
+- *25
+- *26
+- *27
+- *28
+- *29
+- *30
+- *31
+- *32
+- *33
+- *34
+- *35
+- *36
+- &37 !ruby/object:Task
+  title: "(extb-log) decide how to store logging info/journal info."
+  notes:
+  - - 2020-07-31 17:22:31.973096319 -05:00
+    - Task reviewed.
+  - - 2020-07-31 17:20:45.575091836 -05:00
+    - 'Created: (extb-log) decide how to store logging info/journal info.'
+  created: 2020-07-31 17:20:45.575110822 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 17:22:31.973064009 -05:00
+  action_context: :computer
+  life_context: :personal
+- &38 !ruby/object:Task
+  title: "(sarah-walk) create a habit of getting up at 0700 daily, and second habit
+    of getting to bed by 21:45."
+  notes:
+  - - 2020-08-02 15:18:18.006056718 -05:00
+    - Task reviewed.
+  - - 2020-07-31 17:56:51.619209109 -05:00
+    - 'Created: (sarah-walk) create a habit of getting up at 0700 daily, and second
+      habit of getting to bed by 21:45.'
+  created: 2020-07-31 17:56:51.619227413 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:18.006022094 -05:00
+  action_context: :computer
+  life_context: :personal
+- &39 !ruby/object:Task
+  title: "(proj-color) decide if want to go forward with color coding projects based
+    on last reviewed."
+  notes:
+  - - 2020-08-02 15:18:27.005570580 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:06:38.324189084 -05:00
+    - 'Created: (proj-color) decide if want to go forward with color coding projects
+      based on last reviewed.'
+  created: 2020-07-31 18:06:38.324206777 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:27.005523001 -05:00
+  action_context: :computer
+  life_context: :personal
+- &40 !ruby/object:Task
+  title: "(extb-rlwrap) google this about rlwrap"
+  notes:
+  - - 2020-07-31 18:07:03.943987131 -05:00
+    - Task reviewed.
+  - - 2020-07-15 12:03:15.406852514 -05:00
+    - 'Created: google this about rlwrap'
+  created: 2020-07-15 12:03:15.406872268 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:07:03.943933139 -05:00
+  action_context: computer
+  life_context: :job
+- &41 !ruby/object:Task
+  title: "(extb-help) sit down and write up a brief guide to common workflows"
+  notes:
+  - - 2020-08-02 15:18:30.099268835 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:07:26.903374318 -05:00
+    - 'Created: (extb-help) sit down and write up a brief guide to common workflows'
+  created: 2020-07-31 18:07:26.903391739 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:30.099224776 -05:00
+  action_context: :computer
+  life_context: :personal
+- &42 !ruby/object:Task
+  title: "(extb-subt) think about and decide if want to ilst number of subtasks when
+    viewing projects"
+  notes:
+  - - 2020-08-02 15:18:37.928391845 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:07:46.841363299 -05:00
+    - 'Created: (extb-subt) think about and decide if want to ilst number of subtasks
+      when viewing projects'
+  created: 2020-07-31 18:07:46.841380759 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 15:18:37.928360505 -05:00
+  action_context: :computer
+  life_context: :personal
+- &43 !ruby/object:Task
+  title: "(extb) decide on this/compare to existing specs: review projects weekly,
+    focus monthly, goals quartely, and the oldest 5 s/m each week!"
+  notes:
+  - - 2020-07-26 22:30:27.325610794 -05:00
+    - Task reviewed.
+  - - 2020-07-17 14:19:40.316227104 -05:00
+    - 'Created: on this/compare to existing specs: review projects weekly, focus monthly,
+      goals quartely, and the oldest 5 s/m each week!'
+  created: 2020-07-17 14:19:40.316255573 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-26 22:30:27.325561469 -05:00
+  action_context: :computer
+  life_context: :personal
+- &44 !ruby/object:Task
+  title: "(extb) decide & document decision regarding not having due dates in extbrain;
+    that's what your calendar is for. But this means no tickler function? Is this
+    an overreaction to the overwhlem I have in RTM?"
+  notes:
+  - - 2020-07-26 22:30:34.366046093 -05:00
+    - Task reviewed.
+  - - 2020-07-17 14:33:35.450079255 -05:00
+    - 'Created: decide & document decision regarding not having due dates in extbrain;
+      that''s what your calendar is for. But this means no tickler function? Is this
+      an overreaction to the overwhlem I have in RTM?'
+  created: 2020-07-17 14:33:35.450105120 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-26 22:30:34.366007533 -05:00
+  action_context: :computer
+  life_context: :personal
+- &45 !ruby/object:Task
+  title: "(extb) consider/decide on a 'next'/sequential vs parallel option for tasking
+    in extbrain. See some existing software for examples, and consider a use case
+    of someone who has hundreds of next actions and needs to filter the list to what
+    is 'next' rather than what is possible, although I'm not sure that jives with
+    GTD."
+  notes:
+  - - 2020-07-17 14:36:15.143650177 -05:00
+    - 'Created: consider/decide on a ''next''/sequential vs parallel option for tasking
+      in extbrain. See some existing software for examples, and consider a use case
+      of someone who has hundreds of next actions and needs to filter the list to
+      what is ''next'' rather than what is possible, although I''m not sure that jives
+      with GTD.'
+  created: 2020-07-17 14:36:15.143672027 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- &46 !ruby/object:Task
+  title: "(extb) research/try high quality ssh / mosh apps for android to use extbrain
+    remotely/on the go."
+  notes:
+  - - 2020-07-31 18:23:05.135224063 -05:00
+    - Task reviewed.
+  - - 2020-07-17 15:06:13.459444319 -05:00
+    - 'Created: research/try high quality ssh / mosh apps for android to use extbrain
+      remotely/on the go.'
+  created: 2020-07-17 15:06:13.459473589 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:23:05.135023638 -05:00
+  action_context: :computer
+  life_context: :personal
+- &47 !ruby/object:Task
+  title: "(extb) I've said no to this in the past, and I still am hesitant, but consider
+    color-coding for different action contexts on a given project. perhaps: s/m: dark
+    grey, computer: light pink/red, waiting: light green, etc. with a goal of being
+    able to quickly ascertain what's what at a glance. And underline project name
+    at the top"
+  notes:
+  - - 2020-07-31 20:10:22.642107980 -05:00
+    - moved from computer to s/m maybe manually
+  - - 2020-07-31 18:25:22.642107980 -05:00
+    - 'maaaybe
+
+      '
+  - - 2020-07-18 22:01:47.107108803 -05:00
+    - 'Created: I''ve said no to this in the past, and I still am hesitant, but consider
+      color-coding for different action contexts on a given project. perhaps: s/m:
+      dark grey, computer: light pink/red, waiting: light green, etc. with a goal
+      of being able to quickly ascertain what''s what at a glance.'
+  created: 2020-07-18 22:01:47.107126642 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- &48 !ruby/object:Task
+  title: "(extb) make 'e' edit instead of exit maybe"
+  notes:
+  - - 2020-07-18 22:16:12.623552408 -05:00
+    - 'Created: make ''e'' edit instead of exit maybe'
+  created: 2020-07-18 22:16:12.623582158 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- &49 !ruby/object:Task
+  title: "(extb) task_list to allow the user to select from one of the tasks to view
+    it using .view_task, which also shows notes. the 'v' command should also allow
+    this, search for a task by name and then show it once only one task narrowed to"
+  notes:
+  - - 2020-07-31 18:29:30.386332446 -05:00
+    - Task reviewed.
+  - - 2020-07-19 23:51:10.453522098 -05:00
+    - 'Created: task_list to allow the user to select from one of the tasks to view
+      it using .view_task, which also shows notes. the ''v'' command should also allow
+      this, search for a task by name and then show it once only one task narrowed
+      to'
+  created: 2020-07-19 23:51:10.453556498 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:29:30.386300532 -05:00
+  action_context: :computer
+  life_context: :personal
+- &50 !ruby/object:Task
+  title: "(extb) create the 'tac' command for when you've created a task in the wrong
+    action context. same as plc."
+  notes:
+  - - 2020-07-31 18:29:34.958558348 -05:00
+    - Task reviewed.
+  - - 2020-07-19 23:52:02.891417026 -05:00
+    - 'Created: creat the ''tac'' command for when you''ve created a task in the wrong
+      action context. same as plc.'
+  created: 2020-07-19 23:52:02.891433474 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 18:29:34.958515952 -05:00
+  action_context: :computer
+  life_context: :personal
+- &51 !ruby/object:Task
+  title: "(extb) list agenda 'foo'  grabs all tasks with  'foo' in them and filters
+    to agendas and waiting  and then sorts by agenda then waiting"
+  notes:
+  - - 2020-07-31 20:12:03.203205563 -05:00
+    - Task reviewed.
+  - - 2020-07-31 18:39:08.857773287 -05:00
+    - 'maybe
+
+      '
+  - - 2020-07-19 23:54:20.735547122 -05:00
+    - 'Created: list agenda ''foo''  grabs all tasks with  ''foo'' in them and filters
+      to agendas and waiting  and then sorts by agenda then waiting'
+  created: 2020-07-19 23:54:20.735571486 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:12:03.203162923 -05:00
+  action_context: :computer
+  life_context: :personal
+- &52 !ruby/object:Task
+  title: "(extb) undo for renames and psm"
+  notes:
+  - - 2020-07-31 19:21:53.773254607 -05:00
+    - Task reviewed.
+  - - 2020-07-19 23:54:59.964784736 -05:00
+    - 'Created: undo for renames and psm'
+  created: 2020-07-19 23:54:59.964808863 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:21:53.773219737 -05:00
+  action_context: :computer
+  life_context: :personal
+- &53 !ruby/object:Task
+  title: "(extb) enable changing the keyword of a project after creation"
+  notes:
+  - - 2020-07-31 19:22:07.994878047 -05:00
+    - Task reviewed.
+  - - 2020-07-20 08:27:19.633233930 -05:00
+    - 'Created: enable changing the keyword of a project after creation'
+  created: 2020-07-20 08:27:19.633251586 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:22:07.994847831 -05:00
+  action_context: :computer
+  life_context: :personal
+- &54 !ruby/object:Task
+  title: "(extb) enable 'p help' to give the proper usage of p"
+  notes:
+  - - 2020-07-31 19:22:33.831497208 -05:00
+    - Task reviewed.
+  - - 2020-07-20 08:29:26.674098056 -05:00
+    - 'Created: enable ''p help'' to give the proper usage of p'
+  created: 2020-07-20 08:29:26.674114886 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:22:33.831456039 -05:00
+  action_context: :computer
+  life_context: :personal
+- &55 !ruby/object:Task
+  title: "(extb) chunk task listing w/n projects into 80 character limit and indent
+    by 4 spaces"
+  notes:
+  - - 2020-07-31 19:23:53.442581697 -05:00
+    - Task reviewed.
+  - - 2020-07-20 10:02:54.818381847 -05:00
+    - 'Created: chunk task listing w/n projects into 80 character limit and indent
+      by 4 spaces'
+  created: 2020-07-20 10:02:54.818399075 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:23:53.442534890 -05:00
+  action_context: :computer
+  life_context: :personal
+- &56 !ruby/object:Task
+  title: "(extb) create an added today query"
+  notes:
+  - - 2020-07-31 19:23:55.656929107 -05:00
+    - Task reviewed.
+  - - 2020-07-20 10:52:18.153030192 -05:00
+    - 'Created: create an added today query'
+  created: 2020-07-20 10:52:18.153047591 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 19:23:55.656881100 -05:00
+  action_context: :computer
+  life_context: :personal
+- &57 !ruby/object:Task
+  title: "(extb) implement a way to change the keyword of a project if created wrong.
+    say pk current new"
+  notes:
+  - - 2020-07-31 20:43:15.609800263 -05:00
+    - Task reviewed.
+  - - 2020-07-21 10:45:57.625671765 -05:00
+    - 'Created: implement a way to change the keyword of a project if created wrong.
+      say pk current new'
+  created: 2020-07-21 10:45:57.625687399 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:43:15.609763495 -05:00
+  action_context: :computer
+  life_context: :personal
+- &58 !ruby/object:Task
+  title: "(extb) implement a tutorial for first run, p, c, d, com, etc. that runs
+    IF there are no save files"
+  notes:
+  - - 2020-07-31 20:47:57.841393443 -05:00
+    - Task reviewed.
+  - - 2020-07-22 17:22:37.698493271 -05:00
+    - |-
+      Updated title:
+       old: implement a tutorial for first run, p, c, d, com, etc.
+       new: implement a tutorial for first run, p, c, d, com, etc. that runs IF there are no save files
+  - - 2020-07-22 17:21:56.888708642 -05:00
+    - 'Created: implement a tutorial for first run, p, c, d, com, etc.'
+  created: 2020-07-22 17:21:56.888728636 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:47:57.841351047 -05:00
+  action_context: :computer
+  life_context: :personal
+- &59 !ruby/object:Task
+  title: "(extb) update the add note method to make it obvious when the user is being
+    prompetd for input by adding >> prompt."
+  notes:
+  - - 2020-07-31 20:48:11.677950750 -05:00
+    - Task reviewed.
+  - - 2020-07-23 09:50:35.436081181 -05:00
+    - 'Created: update the add note method to make it obvious when the user is being
+      prompetd for input by adding >> prompt.'
+  created: 2020-07-23 09:50:35.436112645 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:48:11.677906102 -05:00
+  action_context: :computer
+  life_context: :personal
+- &60 !ruby/object:Task
+  title: "(extb) create 'tac' to change action context on a task"
+  notes:
+  - - 2020-07-31 20:48:53.250199114 -05:00
+    - Task reviewed.
+  - - 2020-07-27 13:03:03.158599013 -05:00
+    - 'Created: (extb) create ''tac'' to change action context on a task'
+  created: 2020-07-27 13:03:03.158625967 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-07-31 20:48:53.250154094 -05:00
+  action_context: :computer
+  life_context: :personal
+- &61 !ruby/object:Task
+  title: "(pt: extb) add a search option to wr instead"
+  notes:
+  - - 2020-08-01 14:55:13.006565862 -05:00
+    - Task reviewed.
+  - - 2020-07-31 19:55:44.903163817 -05:00
+    - 'Created: (pt: extb) add a search option to wr instead'
+  created: 2020-07-31 19:55:44.903181787 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-01 14:55:13.006529154 -05:00
+  action_context: :computer
+  life_context: :personal
+- &62 !ruby/object:Task
+  title: "(pt: extb) when viewing tasks - to_s - show the number of notes as a number
+    or none if no notes eg '{2} task name'"
+  notes:
+  - - 2020-08-01 14:55:22.274862704 -05:00
+    - Task reviewed.
+  - - 2020-07-31 19:56:24.631190444 -05:00
+    - 'Created: (pt: extb) when viewing tasks - to_s - show the number of notes as
+      a number or none if no notes eg ''{2} task name'''
+  created: 2020-07-31 19:56:24.631215921 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-01 14:55:22.274829404 -05:00
+  action_context: :computer
+  life_context: :personal
+- &63 !ruby/object:Task
+  title: "(blog) patook review"
+  notes:
+  - - 2020-08-02 14:02:48.659471834 -05:00
+    - Task reviewed.
+  - - 2020-07-29 17:41:27.714802761 -05:00
+    - 'Created: (blog) patook review'
+  created: 2020-07-29 17:41:27.714829411 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:02:48.659416721 -05:00
+  action_context: :computer
+  life_context: :personal
+- &64 !ruby/object:Task
+  title: "(blog) write.as review - feel free to contact me, and also see what this
+    blog is on in 10 years"
+  notes:
+  - - 2020-08-02 14:02:50.628671834 -05:00
+    - Task reviewed.
+  - - 2020-08-01 13:24:43.980462104 -05:00
+    - |
+      Also note that I've used wordpress for years, and stil support clients doing it, and also tried:
+      hugo
+      jekyell
+      ghost
+      ec.
+      etc.
+      and wriet.as is still my reccommendation for 90% of cases
+      the other 10% involving needing a CRM, billing, or something fancier than a blog.
+  - - 2020-07-29 17:41:50.743409383 -05:00
+    - 'Created: (blog) write.as review - feel free to contact me, and also see what
+      this blog is on in 10 years'
+  created: 2020-07-29 17:41:50.743436343 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:02:50.628641854 -05:00
+  action_context: :computer
+  life_context: :personal
+- &65 !ruby/object:Task
+  title: "(blog) hey.com review"
+  notes:
+  - - 2020-08-02 14:02:51.807204667 -05:00
+    - Task reviewed.
+  - - 2020-07-29 17:47:07.999906635 -05:00
+    - 'Created: (blog) hey.com review'
+  created: 2020-07-29 17:47:07.999940131 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:02:51.807173387 -05:00
+  action_context: :computer
+  life_context: :personal
+- &66 !ruby/object:Task
+  title: "(pt: blog) write.as - why no ssl at www.theselfupgrade.com?"
+  notes:
+  - - 2020-08-02 14:09:41.263740401 -05:00
+    - Task reviewed.
+  - - 2020-08-01 14:53:48.489721661 -05:00
+    - 'Created: (pt: blog) write.as - why no ssl at www.theselfupgrade.com?'
+  created: 2020-08-01 14:53:48.489751674 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:09:41.263690332 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &67 !ruby/object:Task
+  title: "(pt: blog) matt/cj - GDPR compliance around email subscriptions?"
+  notes:
+  - - 2020-08-02 14:09:45.960172826 -05:00
+    - Task reviewed.
+  - - 2020-08-01 15:42:12.857926922 -05:00
+    - 'Created: (pt: blog) matt/cj - GDPR compliance around email subscriptions?'
+  created: 2020-08-01 15:42:12.857955172 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:09:45.960127259 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &68 !ruby/object:Task
+  title: "(pt: blog) decide if I should run my own email list on TheSelfUpgrade. As
+    sweet as write.as is, I perfer having control. Of course, offering both is an
+    option too."
+  notes:
+  - - 2020-08-02 14:09:53.245622154 -05:00
+    - Task reviewed.
+  - - 2020-08-01 15:43:15.126333400 -05:00
+    - 'Created: (pt: blog) decide if I should run my own email list on TheSelfUpgrade.
+      As sweet as write.as is, I perfer having control. Of course, offering both is
+      an option too.'
+  created: 2020-08-01 15:43:15.126372919 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:09:53.245575357 -05:00
+  action_context: :computer
+  life_context: :personal
+- &69 !ruby/object:Task
+  title: "(fence) D&N tell us when they're coming out, they will give one week notice,
+    called 7/24, 8 wk behind, started 6/22, so likely end of August"
+  notes:
+  - - 2020-08-02 14:12:38.399180972 -05:00
+    - Task reviewed.
+  - - 2020-07-24 11:34:33.725960766 -05:00
+    - 'Created: D&N tell us when they''re coming out, they will give one week notice,
+      called 7/24, 8 wk behind, started 6/22, so likely end of August'
+  created: 2020-07-24 11:34:33.725985890 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:12:38.399134275 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &70 !ruby/object:Task
+  title: "(survey) MMS tell us when they are coming out to survey, likely first week
+    of august. bring abstract copy back with them at that time."
+  notes:
+  - - 2020-08-02 14:12:54.393801026 -05:00
+    - Task reviewed.
+  - - 2020-07-24 11:36:10.285950544 -05:00
+    - 'Created: MMS tell us when they are coming out to survey, likely first week
+      of august. bring abstract copy back with them at that time.'
+  created: 2020-07-24 11:36:10.285967591 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:12:54.393765573 -05:00
+  action_context: :waiting
+  life_context: :personal
+- &71 !ruby/object:Task
+  title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
+    one article to write as and see how it goes. write.as/thenickmay"
+  notes:
+  - - 2020-08-02 14:37:17.182736033 -05:00
+    - Task reviewed.
+  - - 2020-08-02 14:37:16.008926010 -05:00
+    - Task reviewed.
+  - - 2020-08-02 14:36:43.861154001 -05:00
+    - Task reviewed.
+  - - 2020-08-01 12:48:48.860981347 -05:00
+    - 'I think this is a good idea, but I''m a little worried about write.as'' uptime...
+      OTOH I''ve had more issues with not having the site updated than I have with
+      uptime. I could totally use uptime robot to asuage me
+
+      '
+  - - 2020-08-01 12:04:54.606355634 -05:00
+    - 'Created: (pt: thenickmay) the markdown source for thenickmay and try porting
+      one article to write as and see how it goes. write.as/thenickmay'
+  created: 2020-08-01 12:04:54.606381904 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:37:17.182705032 -05:00
+  action_context: :computer
+  life_context: :personal
+- &72 !ruby/object:Task
+  title: "(pt: cngo) ask charles if there's a grade level that's too high when using
+    hemmingwrite?"
+  notes:
+  - - 2020-08-02 14:38:30.473261912 -05:00
+    - Task reviewed.
+  - - 2020-08-01 17:06:02.013855781 -05:00
+    - 'Created: (pt: cngo) ask charles if there''s a grade level that''s too high
+      when using hemmingwrite?'
+  created: 2020-08-01 17:06:02.013875086 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-02 14:38:30.473209899 -05:00
+  action_context: :computer
+  life_context: :personal
+- *37
+- *38
+- *39
+- *40
+- *41
+- *42
+- *43
+- *44
+- *45
+- *46
+- *47
+- *48
+- *49
+- *50
+- *51
+- *52
+- *53
+- *54
+- *55
+- *56
+- *57
+- *58
+- *59
+- *60
+- *61
+- *62
+- *63
+- *64
+- *65
+- *66
+- *67
+- *68
+- *69
+- *70
+- *71
+- *72
