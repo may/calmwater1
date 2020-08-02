@@ -1,8 +1,8 @@
 # Created: 2020-06-06
-# Revised: 2020-07-22
+# Revised: 2020-08-02
 $log_command_usage_locally = true
 $data_file_command_usage = "#{Dir.home}/extbrain/extbrain_command_usage.yaml"
-
+$save_file_last_weekly_review_done = "#{Dir.home}/extbrain/extbrain_last_weekly_review.yaml"
 
 # Disable this if you don't work 8-5, or don't find automatic contexts useful. It's also adjustable, below.
 $time_sensitive_life_context = true 

@@ -33,6 +33,25 @@ class ExtbrainData
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
     puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_job_projects} job projects. Total: #{number_of_projects + number_of_tasks}."
+    print "Last weekly review: "
+    if $last_weekly_review_done
+      days = Time.now.yday - $last_weekly_review_done.yday
+      if days > 0
+        puts "#{days} days ago."
+      else
+        puts $last_weekly_review_done.strftime($time_formatting_string)
+        puts "Happy New Year(ish)! Start fresh with a weekly review, using the friendly 'wr' command."
+        puts "The 'wr' command will only prompt you for things that /need/ review."
+        puts
+        puts
+        puts
+        puts "Plus running it will fix this edge case where I can't be arsed/don't know how to fix my algorithm around Time.now.yday."
+        puts
+        puts "But, in an effort to be useful, the last date of the weekly review was: #{$last_weekly_review_done.strftime($time_formatting_string)}"
+      end 
+    else
+      puts "NEVER! That's bad. Use the 'wr' command to fix."
+    end
   end
 
   ## COUNTS
@@ -48,7 +67,7 @@ class ExtbrainData
     # Points to @tasks to get the full count, regardless of life context.
     # Assumes the code that removes/archives the completed or deleted tasks
     # continues to operate sucessfully on each save.
-    tasks_all = @tasks
+    tasks_all = @tasks.dup
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
     tasks_all.count
@@ -317,15 +336,18 @@ class ExtbrainData
       puts "File not found: #{$save_file_tasks}."
       puts ' If this is your first run, or you have no tasks, you can ignore this message.'
     end
+    if File.exist?($save_file_last_weekly_review_done)
+      $last_weekly_review_done = YAML.load(File.read($save_file_last_weekly_review_done))
+    end
     puts "loaded."
   end
 
   # We save freqeuntly, and clear_lock being true means it's the final save of the session.
   def save_data(clear_lock=nil)
     if Process.pid == File.open($lockfile, &:gets).to_i
-      if clear_lock
+      if clear_lock # only be chatty if closing program, otherwise save silently each time
         print "Archiving completed and deleted tasks & projects..."
-        # If you ever edit this code, be sure to use @projects & @tasks; projects/tasks already exclude completed/deleted.
+        # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
         p = @projects.filter { |project| (project.completed? or project.deleted?) }
         unless p.empty?
           File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
@@ -339,16 +361,23 @@ class ExtbrainData
         end
         puts "archival complete."
       end
-      print "Saving file..." if clear_lock # only be chatty if closing program, otherwise save silently each time
+      print "Saving file..." if clear_lock 
       print 'habits...' if clear_lock
       File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
       print 'projects...' if clear_lock
       File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
       print 'tasks...' if clear_lock
       File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
-      puts "saved!" if clear_lock
+
+      # if saving on exit
       if clear_lock
+        if $last_weekly_review_done
+          File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
+          puts 'weekly review status...'
+        end
         File.delete($lockfile)
+        puts "saved!" if clear_lock
+
       end 
     else
       puts "Can't get lock, unable to save."

@@ -537,4 +537,6 @@ def weekly_review
 #  do_until_done('Review your waiting folder in your email.')
 
   review_need_reviewed
+  puts "Weekly review done, congrats!"
+  $last_weekly_review_done = Time.now
 end

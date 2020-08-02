@@ -199,6 +199,7 @@ end
 
 def random_tip
   # todo stop once the create date of the first project is > 200 days from now.
+  puts 'Tip of the day:'
   print ' '
   puts $tips.sample
 end 
