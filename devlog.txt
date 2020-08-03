@@ -2,6 +2,10 @@
 
 Decisions made to date. Add new at top.
 
+2020-08-03:
+
+Weekly Review specifically *ignores* life context. You want to have *everything* reviewed, not half of your life.
+
 2020-05-29:
 NOT using Scheme.
 NOT using Common Lisp.
