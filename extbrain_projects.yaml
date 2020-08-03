@@ -1816,6 +1816,8 @@
 - !ruby/object:Project
   title: do whatever charles needs, and get closer to FIRE goal.
   notes:
+  - - 2020-08-02 18:37:37.318872594 -05:00
+    - "Updated psm:\n old: \n new: Nick's goal for 2020, effective 2020-08-22:"
   - - 2020-08-02 14:38:32.166202529 -05:00
     - Project reviewed.
   - - 2020-08-01 17:05:47.079274493 -05:00
@@ -1827,7 +1829,7 @@
   keyword: :cngo
   life_context: :personal
   tags: []
-  psm: ''
+  psm: 'Nick''s goal for 2020, effective 2020-08-22:'
   tasks:
   - !ruby/object:Task
     title: "(pt: cngo) ask charles if there's a grade level that's too high when using
@@ -1843,4 +1845,15 @@
     deleted:
     last_reviewed: 2020-08-02 14:38:30.473209899 -05:00
     action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: cngo) charles - need time tracking spreadsheet still?"
+    notes:
+    - - 2020-08-02 21:46:19.097370283 -05:00
+      - 'Created: (pt: cngo) charles - need time tracking spreadsheet still?'
+    created: 2020-08-02 21:46:19.097399669 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
     life_context: :personal

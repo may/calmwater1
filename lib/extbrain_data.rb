@@ -36,8 +36,17 @@ class ExtbrainData
     print "Last weekly review: "
     if $last_weekly_review_done
       days = Time.now.yday - $last_weekly_review_done.yday
-      if days > 0
+      if days >= 0
+        case 
+        when days < 4
+          print `tput setaf 2` # green
+        when days < 7
+          print `tput setaf 3` # yellow
+        when days > 8 
+          print `tput setaf 1` # red
+        end
         puts "#{days} days ago."
+        print `tput sgr0` # reset colors
       else
         puts $last_weekly_review_done.strftime($time_formatting_string)
         puts "Happy New Year(ish)! Start fresh with a weekly review, using the friendly 'wr' command."
