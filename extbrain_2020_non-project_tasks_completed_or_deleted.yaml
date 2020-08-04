@@ -219,3 +219,17 @@
   last_reviewed:
   action_context: :testing
   life_context: :personal
+---
+- !ruby/object:Task
+  title: paul - setup hard stops for last week's stuff, send me pkg.
+  notes:
+  - - 2020-08-03 16:57:36.479551098 -05:00
+    - Task completed.
+  - - 2020-08-03 13:53:09.041324335 -05:00
+    - 'Created: paul - setup hard stops for last week''s stuff, send me pkg.'
+  created: 2020-08-03 13:53:09.041366234 -05:00
+  completed: 2020-08-03 16:57:36.479522815 -05:00
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job

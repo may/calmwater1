@@ -1399,3 +1399,16 @@
   last_reviewed: 2020-08-02 14:38:30.473209899 -05:00
   action_context: :computer
   life_context: :personal
+- !ruby/object:Task
+  title: Wait Sarah hello fresh decision, plan was for her to do the cooking this
+    time for me to do the cleanup
+  notes:
+  - - 2020-08-03 11:11:18.884754038 -05:00
+    - 'Created: Wait Sarah hello fresh decision, plan was for her to do the cooking
+      this time for me to do the cleanup'
+  created: 2020-08-03 11:11:18.884772442 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :personal

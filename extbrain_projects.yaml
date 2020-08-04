@@ -1532,6 +1532,10 @@
 - !ruby/object:Project
   title: Epic upgrade to May 2020, on 10/10/2020.
   notes:
+  - - 2020-08-03 13:39:28.508154995 -05:00
+    - 'Nathanael wants app testing scripts updated, and tested. on cal.
+
+      '
   - - 2020-08-02 15:20:59.592243111 -05:00
     - Project reviewed.
   - - 2020-07-27 13:00:50.564902256 -05:00
@@ -1554,13 +1558,15 @@
     title: "(upgrade) last 3 nova notes, follow-up or just complete them for now,
       create esc to track those barcode ones?"
     notes:
+    - - 2020-08-03 13:34:59.701268637 -05:00
+      - Task completed.
     - - 2020-08-02 15:20:51.917054086 -05:00
       - Task reviewed.
     - - 2020-07-27 13:02:16.012897707 -05:00
       - 'Created: (upgrade) last 3 nova notes, follow-up or just complete them for
         now, create esc to track those barcode ones?'
     created: 2020-07-27 13:02:16.012915187 -05:00
-    completed:
+    completed: 2020-08-03 13:34:59.701242357 -05:00
     deleted:
     last_reviewed: 2020-08-02 15:20:51.917006614 -05:00
     action_context: :job
@@ -1637,6 +1643,37 @@
     completed:
     deleted:
     last_reviewed: 2020-08-02 15:20:58.124766502 -05:00
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: upgrade) Nathanael wants app testing scripts updated and tested.
+      on cal for 8/7, 8/21, 9/4"
+    notes:
+    - - 2020-08-03 13:49:48.546232965 -05:00
+      - |-
+        Updated title:
+         old: (pt: upgrade) Nathanael wants app testing scripts updated and tested. on cal for 8/7.
+         new: (pt: upgrade) Nathanael wants app testing scripts updated and tested. on cal for 8/7, 8/21, 9/4
+    - - 2020-08-03 13:39:50.031701151 -05:00
+      - 'Created: (pt: upgrade) Nathanael wants app testing scripts updated and tested.
+        on cal for 8/7.'
+    created: 2020-08-03 13:39:50.031719479 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: upgrade) Once hear from Teresa which Integrated Testing scripts need
+      updated, update/signoff."
+    notes:
+    - - 2020-08-03 13:40:19.391278665 -05:00
+      - 'Created: (pt: upgrade) Once hear from Teresa which Integrated Testing scripts
+        need updated, update/signoff.'
+    created: 2020-08-03 13:40:19.391295053 -05:00
+    completed:
+    deleted:
+    last_reviewed:
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -1852,6 +1889,121 @@
     - - 2020-08-02 21:46:19.097370283 -05:00
       - 'Created: (pt: cngo) charles - need time tracking spreadsheet still?'
     created: 2020-08-02 21:46:19.097399669 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+- !ruby/object:Project
+  title: final ensure tip sheet sent to keri for 8/11 golive, and what's new done
+    for 8/11 golive
+  notes:
+  - - 2020-08-04 07:39:14.203930331 -05:00
+    - 'Created: final ensure tip sheet sent to keri for 8/11 golive, and what''s new
+      done for 8/11 golive'
+  created: 2020-08-04 07:39:14.203959676 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :uicc
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(pt: uicc) keri - link/document title for uicc clinical guidelines"
+    notes:
+    - - 2020-08-04 07:39:37.421440685 -05:00
+      - 'Created: (pt: uicc) keri - link/document title for uicc clinical guidelines'
+    created: 2020-08-04 07:39:37.421467795 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: uicc) scott - final tip sheet w/ updated screenshot"
+    notes:
+    - - 2020-08-04 07:39:46.427848614 -05:00
+      - 'Created: (pt: uicc) scott - final tip sheet w/ updated screenshot'
+    created: 2020-08-04 07:39:46.427865400 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+- !ruby/object:Project
+  title: drg los column updated on unit manager, storyboard, and patient lists for
+    8/18 golive, build done 8/6
+  notes:
+  - - 2020-08-04 08:07:44.293659609 -05:00
+    - 'Created: drg los column updated on unit manager, storyboard, and patient lists
+      for 8/18 golive, build done 8/6'
+  created: 2020-08-04 08:07:44.293683413 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :los
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(pt: los) kasie could you draft a blurb for loss New, since you have the
+      most experience with these column differences and got the approvals? Then send
+      it back to the group and anyone who needs changes can weigh in for the specifics
+      of their application."
+    notes:
+    - - 2020-08-04 08:08:26.758577712 -05:00
+      - 'Created: (pt: los) kasie could you draft a blurb for loss New, since you
+        have the most experience with these column differences and got the approvals?
+        Then send it back to the group and anyone who needs changes can weigh in for
+        the specifics of their application.'
+    created: 2020-08-04 08:08:26.758595140 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: los) kasie - email screenshots"
+    notes:
+    - - 2020-08-04 08:08:39.265505128 -05:00
+      - 'Created: (pt: los) kasie - email screenshots'
+    created: 2020-08-04 08:08:39.265523110 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: los) todd - email screenshots"
+    notes:
+    - - 2020-08-04 08:08:44.197860435 -05:00
+      - 'Created: (pt: los) todd - email screenshots'
+    created: 2020-08-04 08:08:44.197887658 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: los) kathy - email screenshots"
+    notes:
+    - - 2020-08-04 08:08:49.735338547 -05:00
+      - 'Created: (pt: los) kathy - email screenshots'
+    created: 2020-08-04 08:08:49.735355259 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(pt: los) paul - email screenshots"
+    notes:
+    - - 2020-08-04 08:08:55.291983096 -05:00
+      - 'Created: (pt: los) paul - email screenshots'
+    created: 2020-08-04 08:08:55.292000494 -05:00
     completed:
     deleted:
     last_reviewed:

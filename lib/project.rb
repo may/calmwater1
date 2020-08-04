@@ -58,7 +58,8 @@ class Project < CommonProjectTask
     # And as those tasks get completed and new ones added it will mitigate itself.
     # It's still a hack, but it's better than nothing right now.
     # see: controller.rb/project_keyword
-    title = "(pt: #{keyword}) #{title}" # Hard code
+    #    title = "(pt: #{keyword}) #{title}" # Hard code, v1
+    title = "(proj: #{keyword}) #{title}" # Hard code, v2
     task = Task.new(title, action_context, @life_context)
     @tasks << task
     task
