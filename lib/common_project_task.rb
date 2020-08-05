@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-25
+# Revised: 2020-08-04
 # Used by Projects and Tasks.
 
 class CommonProjectTask
@@ -14,7 +14,7 @@ class CommonProjectTask
     end
   end
 
-  attr_accessor_with_logging :title, :life_context
+  attr_accessor_with_logging :title
   attr_reader :notes, :created, :completed, :deleted, :last_reviewed
 
   def initialize(title,life_context)

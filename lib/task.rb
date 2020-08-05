@@ -1,10 +1,11 @@
 # Created: 2020-05-30
-# Revised: 2020-08-02
+# Revised: 2020-08-04
 
 require_relative 'common_project_task'
 
 class Task < CommonProjectTask
   attr_reader :action_context
+  attr_accessor_with_logging :life_context
   
   def initialize(title, action_context, life_context = :personal)
     super(title, life_context)

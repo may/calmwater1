@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-07-31
+# Revised: 2020-08-04
 
 require_relative 'common_project_task'
 
@@ -7,7 +7,7 @@ require_relative 'common_project_task'
 
 class Project < CommonProjectTask
   attr_accessor_with_logging :keyword, :psm
-  attr_reader :tags
+  attr_reader :tags, :life_context
 
   def initialize(title, keyword, life_context = :personal)  # Project
     super(title, life_context)
@@ -75,6 +75,12 @@ class Project < CommonProjectTask
 
   # def remove_task(task) ? If you need to move a task from project A to project B..
   # what about an explicit move command instead? Let the data layer handle the mucking about.
+
+  def life_context=(new_life_context)
+    add_note("Updated life_context:\n old: #{@life_context}\n new: #{new_life_context.to_sym}")
+    @life_context = new_life_context.to_sym
+    @tasks.each { |t| t.life_context = new_life_context.to_sym }
+  end 
   
   def complete_task(task)
   

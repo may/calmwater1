@@ -791,10 +791,57 @@
     last_reviewed: 2020-08-01 14:55:22.274829404 -05:00
     action_context: :computer
     life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) implement pn functionality since  a tip exists about it?"
+    notes:
+    - - 2020-08-04 08:24:18.554565146 -05:00
+      - 'Created: (proj: extb) implement pn functionality since  a tip exists about
+        it?'
+    created: 2020-08-04 08:24:18.554583692 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) ensure that when you switch life context on a project, it
+      also switches it for subtasks"
+    notes:
+    - - 2020-08-04 09:07:21.684821977 -05:00
+      - Task completed.
+    - - 2020-08-04 08:36:59.471898585 -05:00
+      - 'Created: (proj: extb) ensure that when you switch life context on a project,
+        it also switches it for subtasks'
+    created: 2020-08-04 08:36:59.471926895 -05:00
+    completed: 2020-08-04 09:07:21.684792052 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: implement Leave of Abscence for Psych, by manaaging work, doing the implementation/build,
     leading the meetings.
   notes:
+  - - 2020-08-04 08:50:46.674926668 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: job
+  - - 2020-08-04 08:49:11.398787194 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
+  - - 2020-08-04 08:42:49.558511757 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: job
+  - - 2020-08-04 08:42:27.776073880 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
   - - 2020-08-02 15:19:51.986933936 -05:00
     - Project reviewed.
   - - 2020-07-20 09:43:43.663179420 -05:00
@@ -813,6 +860,16 @@
     title: "(loa) paul - change setting so patient goes ed expected when going on
       LOA, else Nick can do it."
     notes:
+    - - 2020-08-04 08:50:46.674974573 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.398832678 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:00.848592339 -05:00
       - Task completed.
     - - 2020-07-20 09:44:08.757848341 -05:00
@@ -827,6 +884,16 @@
   - !ruby/object:Task
     title: "(loa) contact john beyer re: who to include for LOA meetings?"
     notes:
+    - - 2020-08-04 08:50:46.675005660 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.398865356 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-07-20 09:45:42.920940372 -05:00
       - Task deleted.
     - - 2020-07-20 09:45:24.904818953 -05:00
@@ -840,6 +907,16 @@
   - !ruby/object:Task
     title: "(loa) contact john beyer re: who to include for LOA meetings?"
     notes:
+    - - 2020-08-04 08:50:46.675042457 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.398894541 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-07-20 09:50:38.617806830 -05:00
       - Task deleted.
     - - 2020-07-20 09:45:49.594873388 -05:00
@@ -853,6 +930,16 @@
   - !ruby/object:Task
     title: "(loa) contact john beyer re: who to include for LOA meetings?"
     notes:
+    - - 2020-08-04 08:50:46.675084237 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.398927349 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:05.039229206 -05:00
       - Task reviewed.
     - - 2020-07-20 09:50:50.864730536 -05:00
@@ -867,6 +954,16 @@
     title: "(loa) cancel 8/3 meeting LOA meeting per Heather to make space for upgrade,
       ok by me"
     notes:
+    - - 2020-08-04 08:50:46.675112367 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.398957746 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-07-24 10:28:51.511412055 -05:00
       - Task completed.
     - - 2020-07-20 09:56:29.647425341 -05:00
@@ -881,6 +978,16 @@
   - !ruby/object:Task
     title: "(loa) add S hacker to loa meeting recurrance"
     notes:
+    - - 2020-08-04 08:50:46.675140741 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.398985753 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:06.031269269 -05:00
       - Task reviewed.
     - - 2020-07-20 09:56:39.989202041 -05:00
@@ -895,6 +1002,16 @@
     title: "(loa) add to agenda for 7/30 meeting with psych docs - do they want to
       see patients who are on LOA on your lists while on LOA?"
     notes:
+    - - 2020-08-04 08:50:46.675169407 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.399013521 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:38.461455516 -05:00
       - Task reviewed.
     - - 2020-07-20 09:57:30.776017658 -05:00
@@ -911,6 +1028,16 @@
       paul b, jake c re: legal status + current psych workflows around keeping the
       legal status across discharge/LOA."
     notes:
+    - - 2020-08-04 08:50:46.675197655 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.399040177 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:45.019879048 -05:00
       - Task reviewed.
     - - 2020-07-20 10:00:12.167277958 -05:00
@@ -927,6 +1054,16 @@
     title: "(loa) grab notest from 2020-07-20-loa meeting in H: and send out, and
       update to onenote as well"
     notes:
+    - - 2020-08-04 08:50:46.675226688 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.399067004 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:46.961768420 -05:00
       - Task reviewed.
     - - 2020-07-20 10:02:13.970921352 -05:00
@@ -941,6 +1078,16 @@
   - !ruby/object:Task
     title: "(loa) extend loa testing meeting series to 1.5 hours"
     notes:
+    - - 2020-08-04 08:50:46.675262776 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 08:49:11.399094070 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
     - - 2020-08-02 15:19:49.177670754 -05:00
       - Task reviewed.
     - - 2020-07-20 10:10:43.933555513 -05:00
@@ -1211,7 +1358,20 @@
   life_context: :job
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: edd) paul implementing discharge milestones etc, with help from
+      Epic where needed, per spec from Densie 2020-08-04"
+    notes:
+    - - 2020-08-05 12:37:02.278058697 -05:00
+      - 'Created: (proj: edd) paul implementing discharge milestones etc, with help
+        from Epic where needed, per spec from Densie 2020-08-04'
+    created: 2020-08-05 12:37:02.278083914 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: ED priority levels in Transfer Center. P3 and P4 now eligible for financial/social
     screening.
@@ -1259,12 +1419,14 @@
   - !ruby/object:Task
     title: "(edpri) sarah h create esc"
     notes:
+    - - 2020-08-04 09:02:58.190205009 -05:00
+      - Task completed.
     - - 2020-08-02 15:20:13.067701690 -05:00
       - Task reviewed.
     - - 2020-07-23 12:28:08.036280119 -05:00
       - 'Created: sarah h create esc'
     created: 2020-07-23 12:28:08.036296115 -05:00
-    completed:
+    completed: 2020-08-04 09:02:58.190180942 -05:00
     deleted:
     last_reviewed: 2020-08-02 15:20:13.067653155 -05:00
     action_context: :waiting
@@ -1294,20 +1456,56 @@
     title: "(fence) D&N tell us when they're coming out, they will give one week notice,
       called 7/24, 8 wk behind, started 6/22, so likely end of August"
     notes:
+    - - 2020-08-05 12:48:44.453927236 -05:00
+      - Task completed.
     - - 2020-08-02 14:12:38.399180972 -05:00
       - Task reviewed.
     - - 2020-07-24 11:34:33.725960766 -05:00
       - 'Created: D&N tell us when they''re coming out, they will give one week notice,
         called 7/24, 8 wk behind, started 6/22, so likely end of August'
     created: 2020-07-24 11:34:33.725985890 -05:00
-    completed:
+    completed: 2020-08-05 12:48:44.453771003 -05:00
     deleted:
     last_reviewed: 2020-08-02 14:12:38.399134275 -05:00
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: fence) D&N call us a week ahead of time, can tell them if we aren't
+      ready."
+    notes:
+    - - 2020-08-05 12:47:19.803888836 -05:00
+      - Task completed.
+    - - 2020-08-05 12:47:06.697431099 -05:00
+      - 'Created: (proj: fence) D&N call us a week ahead of time, can tell them if
+        we aren''t ready.'
+    created: 2020-08-05 12:47:06.697469945 -05:00
+    completed: 2020-08-05 12:47:19.803847080 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: fence) D&N call us a week ahead of time, can tell them if we aren't
+      ready due to survey."
+    notes:
+    - - 2020-08-05 12:48:53.456614067 -05:00
+      - Task deleted.
+    - - 2020-08-05 12:47:12.841277163 -05:00
+      - 'Created: (proj: fence) D&N call us a week ahead of time, can tell them if
+        we aren''t ready due to survey.'
+    created: 2020-08-05 12:47:12.841295523 -05:00
+    completed:
+    deleted: 2020-08-05 12:48:53.456584541 -05:00
+    last_reviewed:
     action_context: :waiting
     life_context: :personal
 - !ruby/object:Project
   title: MMS come out and do a survey of our property lines
   notes:
+  - - 2020-08-05 12:45:03.691884985 -05:00
+    - Project UNdeleted.
+  - - 2020-08-05 12:44:25.402919290 -05:00
+    - Project deleted.
   - - 2020-08-02 14:12:56.317619331 -05:00
     - Project reviewed.
   - - 2020-07-24 11:35:30.303819876 -05:00
@@ -1330,6 +1528,8 @@
     title: "(survey) MMS tell us when they are coming out to survey, likely first
       week of august. bring abstract copy back with them at that time."
     notes:
+    - - 2020-08-05 12:44:01.530126675 -05:00
+      - Task deleted.
     - - 2020-08-02 14:12:54.393801026 -05:00
       - Task reviewed.
     - - 2020-07-24 11:36:10.285950544 -05:00
@@ -1337,8 +1537,21 @@
         of august. bring abstract copy back with them at that time.'
     created: 2020-07-24 11:36:10.285967591 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-05 12:44:01.529963013 -05:00
     last_reviewed: 2020-08-02 14:12:54.393765573 -05:00
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: survey) mms come out friday 8/7 or maybe monday 8/10. put abstract
+      in mailbox."
+    notes:
+    - - 2020-08-05 12:45:50.855532118 -05:00
+      - 'Created: (proj: survey) mms come out friday 8/7 or maybe monday 8/10. put
+        abstract in mailbox.'
+    created: 2020-08-05 12:45:50.855551820 -05:00
+    completed:
+    deleted:
+    last_reviewed:
     action_context: :waiting
     life_context: :personal
 - !ruby/object:Project
@@ -1676,6 +1889,30 @@
     last_reviewed:
     action_context: :waiting
     life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) paul - event management users affected?"
+    notes:
+    - - 2020-08-05 10:51:48.320547742 -05:00
+      - Task completed.
+    - - 2020-08-05 10:50:44.677701976 -05:00
+      - 'Created: (proj: upgrade) paul - event management users affected?'
+    created: 2020-08-05 10:50:44.677721627 -05:00
+    completed: 2020-08-05 10:51:48.320510493 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) alex - event management tab?"
+    notes:
+    - - 2020-08-05 11:40:15.816430988 -05:00
+      - 'Created: (proj: upgrade) alex - event management tab?'
+    created: 2020-08-05 11:40:15.816495561 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: 833159 Confidential inpatient admissions should be visible to outpatient
     nurses
@@ -1851,8 +2088,14 @@
   psm: ''
   tasks: []
 - !ruby/object:Project
-  title: do whatever charles needs, and get closer to FIRE goal.
+  title: do whatever Charles Ngo needs, use him to learn online writing, editing,
+    running a brand (for my own authorship ongoing), and get closer to FIRE goals.
   notes:
+  - - 2020-08-05 12:39:34.236821591 -05:00
+    - |-
+      Updated title:
+       old: do whatever charles needs, and get closer to FIRE goal.
+       new: do whatever Charles Ngo needs, use him to learn online writing, editing, running a brand (for my own authorship ongoing), and get closer to FIRE goals.
   - - 2020-08-02 18:37:37.318872594 -05:00
     - "Updated psm:\n old: \n new: Nick's goal for 2020, effective 2020-08-22:"
   - - 2020-08-02 14:38:32.166202529 -05:00
@@ -1894,116 +2137,37 @@
     last_reviewed:
     action_context: :waiting
     life_context: :personal
-- !ruby/object:Project
-  title: final ensure tip sheet sent to keri for 8/11 golive, and what's new done
-    for 8/11 golive
-  notes:
-  - - 2020-08-04 07:39:14.203930331 -05:00
-    - 'Created: final ensure tip sheet sent to keri for 8/11 golive, and what''s new
-      done for 8/11 golive'
-  created: 2020-08-04 07:39:14.203959676 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  keyword: :uicc
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks:
   - !ruby/object:Task
-    title: "(pt: uicc) keri - link/document title for uicc clinical guidelines"
+    title: '(proj: cngo) I see I have a task in Notion called "Import Training Documents
+      into Notion" that was due 7/31. I don''t know of any training documents. Can
+      you clarify what you want here, please? Does this still need to happen ASAP?
+      Do you want me to import my checklist and notes for editing & formatting your
+      blog posts and newsletters into Notion? I was planning to put that in the wiki
+      and clean it up a lot.'
     notes:
-    - - 2020-08-04 07:39:37.421440685 -05:00
-      - 'Created: (pt: uicc) keri - link/document title for uicc clinical guidelines'
-    created: 2020-08-04 07:39:37.421467795 -05:00
+    - - 2020-08-04 19:34:06.470167422 -05:00
+      - 'Created: (proj: cngo) I see I have a task in Notion called "Import Training
+        Documents into Notion" that was due 7/31. I don''t know of any training documents.
+        Can you clarify what you want here, please? Does this still need to happen
+        ASAP? Do you want me to import my checklist and notes for editing & formatting
+        your blog posts and newsletters into Notion? I was planning to put that in
+        the wiki and clean it up a lot.'
+    created: 2020-08-04 19:34:06.470189855 -05:00
     completed:
     deleted:
     last_reviewed:
     action_context: :waiting
     life_context: :personal
   - !ruby/object:Task
-    title: "(pt: uicc) scott - final tip sheet w/ updated screenshot"
+    title: "(proj: cngo) New process for shorter blog post emails: format the first
+      paragraph, or format the first section? First section = all the text from the
+      start to the first H1."
     notes:
-    - - 2020-08-04 07:39:46.427848614 -05:00
-      - 'Created: (pt: uicc) scott - final tip sheet w/ updated screenshot'
-    created: 2020-08-04 07:39:46.427865400 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :personal
-- !ruby/object:Project
-  title: drg los column updated on unit manager, storyboard, and patient lists for
-    8/18 golive, build done 8/6
-  notes:
-  - - 2020-08-04 08:07:44.293659609 -05:00
-    - 'Created: drg los column updated on unit manager, storyboard, and patient lists
-      for 8/18 golive, build done 8/6'
-  created: 2020-08-04 08:07:44.293683413 -05:00
-  completed:
-  deleted:
-  last_reviewed:
-  keyword: :los
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: "(pt: los) kasie could you draft a blurb for loss New, since you have the
-      most experience with these column differences and got the approvals? Then send
-      it back to the group and anyone who needs changes can weigh in for the specifics
-      of their application."
-    notes:
-    - - 2020-08-04 08:08:26.758577712 -05:00
-      - 'Created: (pt: los) kasie could you draft a blurb for loss New, since you
-        have the most experience with these column differences and got the approvals?
-        Then send it back to the group and anyone who needs changes can weigh in for
-        the specifics of their application.'
-    created: 2020-08-04 08:08:26.758595140 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :personal
-  - !ruby/object:Task
-    title: "(pt: los) kasie - email screenshots"
-    notes:
-    - - 2020-08-04 08:08:39.265505128 -05:00
-      - 'Created: (pt: los) kasie - email screenshots'
-    created: 2020-08-04 08:08:39.265523110 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :personal
-  - !ruby/object:Task
-    title: "(pt: los) todd - email screenshots"
-    notes:
-    - - 2020-08-04 08:08:44.197860435 -05:00
-      - 'Created: (pt: los) todd - email screenshots'
-    created: 2020-08-04 08:08:44.197887658 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :personal
-  - !ruby/object:Task
-    title: "(pt: los) kathy - email screenshots"
-    notes:
-    - - 2020-08-04 08:08:49.735338547 -05:00
-      - 'Created: (pt: los) kathy - email screenshots'
-    created: 2020-08-04 08:08:49.735355259 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: :waiting
-    life_context: :personal
-  - !ruby/object:Task
-    title: "(pt: los) paul - email screenshots"
-    notes:
-    - - 2020-08-04 08:08:55.291983096 -05:00
-      - 'Created: (pt: los) paul - email screenshots'
-    created: 2020-08-04 08:08:55.292000494 -05:00
+    - - 2020-08-04 19:40:58.603114277 -05:00
+      - 'Created: (proj: cngo) New process for shorter blog post emails: format the
+        first paragraph, or format the first section? First section = all the text
+        from the start to the first H1.'
+    created: 2020-08-04 19:40:58.603147775 -05:00
     completed:
     deleted:
     last_reviewed:

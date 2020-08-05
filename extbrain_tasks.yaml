@@ -751,21 +751,6 @@
   action_context: :waiting
   life_context: :personal
 - &34 !ruby/object:Task
-  title: "(survey) MMS tell us when they are coming out to survey, likely first week
-    of august. bring abstract copy back with them at that time."
-  notes:
-  - - 2020-08-02 14:12:54.393801026 -05:00
-    - Task reviewed.
-  - - 2020-07-24 11:36:10.285950544 -05:00
-    - 'Created: MMS tell us when they are coming out to survey, likely first week
-      of august. bring abstract copy back with them at that time.'
-  created: 2020-07-24 11:36:10.285967591 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-08-02 14:12:54.393765573 -05:00
-  action_context: :waiting
-  life_context: :personal
-- &35 !ruby/object:Task
   title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
     one article to write as and see how it goes. write.as/thenickmay"
   notes:
@@ -790,7 +775,7 @@
   last_reviewed: 2020-08-02 14:37:17.182705032 -05:00
   action_context: :computer
   life_context: :personal
-- &36 !ruby/object:Task
+- &35 !ruby/object:Task
   title: "(pt: cngo) ask charles if there's a grade level that's too high when using
     hemmingwrite?"
   notes:
@@ -840,7 +825,6 @@
 - *33
 - *34
 - *35
-- *36
 - !ruby/object:Task
   title: "(extb-log) decide how to store logging info/journal info."
   notes:
@@ -1345,21 +1329,6 @@
   action_context: :waiting
   life_context: :personal
 - !ruby/object:Task
-  title: "(survey) MMS tell us when they are coming out to survey, likely first week
-    of august. bring abstract copy back with them at that time."
-  notes:
-  - - 2020-08-02 14:12:54.393801026 -05:00
-    - Task reviewed.
-  - - 2020-07-24 11:36:10.285950544 -05:00
-    - 'Created: MMS tell us when they are coming out to survey, likely first week
-      of august. bring abstract copy back with them at that time.'
-  created: 2020-07-24 11:36:10.285967591 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-08-02 14:12:54.393765573 -05:00
-  action_context: :waiting
-  life_context: :personal
-- !ruby/object:Task
   title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
     one article to write as and see how it goes. write.as/thenickmay"
   notes:
@@ -1412,3 +1381,14 @@
   last_reviewed:
   action_context: :waiting
   life_context: :personal
+- !ruby/object:Task
+  title: sarah reschedule foot podiostrst appt that was scheduled 8/4.
+  notes:
+  - - 2020-08-04 16:03:21.060363278 -05:00
+    - 'Created: sarah reschedule foot podiostrst appt that was scheduled 8/4.'
+  created: 2020-08-04 16:03:21.060379789 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job
