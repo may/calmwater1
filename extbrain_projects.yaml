@@ -201,6 +201,8 @@
   title: create a logging/journal functionality in extbrain to use 'l' and timestamp
     plus info. for taking notes of things. tags too?
   notes:
+  - - 2020-08-07 17:27:34.283245239 -05:00
+    - Project reviewed.
   - - 2020-07-31 17:22:52.213996940 -05:00
     - Project reviewed.
   - - 2020-07-28 13:04:40.944387970 -05:00
@@ -219,7 +221,7 @@
   created: 2020-06-16 14:57:45.718115953 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-07-31 17:22:52.213949793 -05:00
+  last_reviewed: 2020-08-07 17:27:34.283054813 -05:00
   keyword: :extb-log
   life_context: :personal
   tags: []
@@ -228,6 +230,11 @@
   - !ruby/object:Task
     title: "(extb-log) decide how to store logging info/journal info."
     notes:
+    - - 2020-08-07 17:08:54.966611706 -05:00
+      - |
+        next action is decide how to store logging info/journal info.
+        I think a blog would work better.
+        moving to s/m
     - - 2020-07-31 17:22:31.973096319 -05:00
       - Task reviewed.
     - - 2020-07-31 17:20:45.575091836 -05:00
@@ -242,6 +249,8 @@
   title: Ensure sarah starts an early morning (anytime before 9am) walking habit per
     Lynda 2020-06-16
   notes:
+  - - 2020-08-07 17:27:44.305869632 -05:00
+    - Project reviewed.
   - - 2020-07-31 18:04:37.060611329 -05:00
     - Project reviewed.
   - - 2020-07-31 17:24:39.219190465 -05:00
@@ -257,7 +266,7 @@
   created: 2020-06-16 16:48:35.739306876 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-07-31 18:04:37.060406469 -05:00
+  last_reviewed: 2020-08-07 17:27:44.305837442 -05:00
   keyword: :sarah-walk
   life_context: :personal
   tags: []
@@ -267,6 +276,8 @@
     title: "(sarah-walk) create a habit of getting up at 0700 daily, and second habit
       of getting to bed by 21:45."
     notes:
+    - - 2020-08-07 17:27:42.381987598 -05:00
+      - Task reviewed.
     - - 2020-08-02 15:18:18.006056718 -05:00
       - Task reviewed.
     - - 2020-07-31 17:56:51.619209109 -05:00
@@ -275,50 +286,20 @@
     created: 2020-07-31 17:56:51.619227413 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 15:18:18.006022094 -05:00
+    last_reviewed: 2020-08-07 17:27:42.381922962 -05:00
     action_context: :computer
     life_context: :personal
 - !ruby/object:Project
-  title: create a feature in extbrain to color code projects based on last reviewed;
-    >7 days is yellow, >14 days is red.
+  title: figure out how to fix delete key for rlwrap in extbrain, confirm home/end
+    work ok on linux (ok putty 2020-08-07)
   notes:
-  - - 2020-07-31 18:06:53.778468073 -05:00
+  - - 2020-08-07 17:30:41.914998116 -05:00
     - Project reviewed.
-  - - 2020-07-28 12:57:13.755336284 -05:00
+  - - 2020-08-07 17:30:39.876943622 -05:00
     - |-
-      Updated life_context:
-       old: job
-       new: personal
-  - - 2020-06-16 16:50:38.458137759 -05:00
-    - 'Created: create a feature in extbrain to color code projects based on last
-      reviewed; >7 days is yellow, >14 days is red.'
-  created: 2020-06-16 16:50:38.458140869 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-07-31 18:06:53.778423527 -05:00
-  keyword: :proj-color
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: "(proj-color) decide if want to go forward with color coding projects based
-      on last reviewed."
-    notes:
-    - - 2020-08-02 15:18:27.005570580 -05:00
-      - Task reviewed.
-    - - 2020-07-31 18:06:38.324189084 -05:00
-      - 'Created: (proj-color) decide if want to go forward with color coding projects
-        based on last reviewed.'
-    created: 2020-07-31 18:06:38.324206777 -05:00
-    completed:
-    deleted:
-    last_reviewed: 2020-08-02 15:18:27.005523001 -05:00
-    action_context: :computer
-    life_context: :personal
-- !ruby/object:Project
-  title: figure out how to make rlwrap home end work in extbrain
-  notes:
+      Updated title:
+       old: figure out how to make rlwrap home end work in extbrain
+       new: figure out how to fix delete key for rlwrap in extbrain, confirm home/end work ok on linux (ok putty 2020-08-07)
   - - 2020-07-31 18:07:05.078924973 -05:00
     - Project reviewed.
   - - 2020-07-27 10:51:01.590951808 -05:00
@@ -331,7 +312,7 @@
   created: 2020-06-25 09:12:34.856945827 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-07-31 18:07:05.078890952 -05:00
+  last_reviewed: 2020-08-07 17:30:41.914949859 -05:00
   keyword: :extb-rlwrap
   life_context: :personal
   tags: []
@@ -340,6 +321,8 @@
   - !ruby/object:Task
     title: "(extb-rlwrap) google this about rlwrap"
     notes:
+    - - 2020-08-07 17:30:12.736601108 -05:00
+      - Task reviewed.
     - - 2020-07-31 18:07:03.943987131 -05:00
       - Task reviewed.
     - - 2020-07-15 12:03:15.406852514 -05:00
@@ -347,13 +330,20 @@
     created: 2020-07-15 12:03:15.406872268 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 18:07:03.943933139 -05:00
+    last_reviewed: 2020-08-07 17:30:12.736428401 -05:00
     action_context: computer
     life_context: :job
 - !ruby/object:Project
-  title: implement help for users so people like your software and you can remember
-    how to use it yourself
+  title: implement help for users so people like your software, to ensure the user
+    interface is consistant and you can remember all the features yourself
   notes:
+  - - 2020-08-07 17:32:20.644189798 -05:00
+    - Project reviewed.
+  - - 2020-08-07 17:32:17.509258206 -05:00
+    - |-
+      Updated title:
+       old: implement help for users so people like your software and you can remember how to use it yourself
+       new: implement help for users so people like your software, to ensure the user interface is consistant and you can remember all the features yourself
   - - 2020-07-31 18:07:33.064862340 -05:00
     - Project reviewed.
   - - 2020-07-27 10:51:07.792325400 -05:00
@@ -371,7 +361,7 @@
   created: 2020-06-25 16:28:33.932279051 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-07-31 18:07:33.064817021 -05:00
+  last_reviewed: 2020-08-07 17:32:20.644141805 -05:00
   keyword: :extb-help
   life_context: :personal
   tags: []
@@ -380,6 +370,8 @@
   - !ruby/object:Task
     title: "(extb-help) sit down and write up a brief guide to common workflows"
     notes:
+    - - 2020-08-07 17:30:53.338910255 -05:00
+      - Task reviewed.
     - - 2020-08-02 15:18:30.099268835 -05:00
       - Task reviewed.
     - - 2020-07-31 18:07:26.903374318 -05:00
@@ -387,12 +379,14 @@
     created: 2020-07-31 18:07:26.903391739 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 15:18:30.099224776 -05:00
+    last_reviewed: 2020-08-07 17:30:53.338861028 -05:00
     action_context: :computer
     life_context: :personal
 - !ruby/object:Project
   title: consider listing number of subtasks when viewing projects
   notes:
+  - - 2020-08-07 17:32:48.328343004 -05:00
+    - Project reviewed.
   - - 2020-07-31 18:07:49.765946885 -05:00
     - Project reviewed.
   - - 2020-07-27 10:51:15.432209643 -05:00
@@ -409,7 +403,7 @@
   created: 2020-07-03 15:01:52.728147901 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-07-31 18:07:49.765899792 -05:00
+  last_reviewed: 2020-08-07 17:32:48.328301708 -05:00
   keyword: :extb-subt
   life_context: :personal
   tags: []
@@ -419,6 +413,8 @@
     title: "(extb-subt) think about and decide if want to ilst number of subtasks
       when viewing projects"
     notes:
+    - - 2020-08-07 17:32:45.945977703 -05:00
+      - Task reviewed.
     - - 2020-08-02 15:18:37.928391845 -05:00
       - Task reviewed.
     - - 2020-07-31 18:07:46.841363299 -05:00
@@ -427,7 +423,7 @@
     created: 2020-07-31 18:07:46.841380759 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 15:18:37.928360505 -05:00
+    last_reviewed: 2020-08-07 17:32:45.945913221 -05:00
     action_context: :computer
     life_context: :personal
 - !ruby/object:Project
@@ -435,6 +431,8 @@
     and simple and highly searchable rememberthemilk alternative in plain text command
     line (extbrain = external brain, and extra brain to augment mine)'
   notes:
+  - - 2020-08-07 17:37:54.099411489 -05:00
+    - Project reviewed.
   - - 2020-08-01 14:55:33.399999094 -05:00
     - Project reviewed.
   - - 2020-07-20 22:19:31.784923571 -05:00
@@ -455,7 +453,7 @@
   created: 2020-07-17 13:01:07.009716961 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-01 14:55:33.399948974 -05:00
+  last_reviewed: 2020-08-07 17:37:54.099377855 -05:00
   keyword: :extb
   life_context: :personal
   tags: []
@@ -465,6 +463,12 @@
     title: "(extb) decide on this/compare to existing specs: review projects weekly,
       focus monthly, goals quartely, and the oldest 5 s/m each week!"
     notes:
+    - - 2020-08-07 17:34:24.650497169 -05:00
+      - Task reviewed.
+    - - 2020-08-07 17:33:07.818911159 -05:00
+      - 'sounds good to me
+
+        '
     - - 2020-07-26 22:30:27.325610794 -05:00
       - Task reviewed.
     - - 2020-07-17 14:19:40.316227104 -05:00
@@ -473,7 +477,7 @@
     created: 2020-07-17 14:19:40.316255573 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-26 22:30:27.325561469 -05:00
+    last_reviewed: 2020-08-07 17:34:24.650463126 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -481,6 +485,8 @@
       that's what your calendar is for. But this means no tickler function? Is this
       an overreaction to the overwhlem I have in RTM?"
     notes:
+    - - 2020-08-07 17:33:34.481332511 -05:00
+      - Task reviewed.
     - - 2020-07-26 22:30:34.366046093 -05:00
       - Task reviewed.
     - - 2020-07-17 14:33:35.450079255 -05:00
@@ -490,7 +496,7 @@
     created: 2020-07-17 14:33:35.450105120 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-26 22:30:34.366007533 -05:00
+    last_reviewed: 2020-08-07 17:33:34.481299178 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -533,6 +539,8 @@
     title: "(extb) research/try high quality ssh / mosh apps for android to use extbrain
       remotely/on the go."
     notes:
+    - - 2020-08-07 17:33:36.732469704 -05:00
+      - Task reviewed.
     - - 2020-07-31 18:23:05.135224063 -05:00
       - Task reviewed.
     - - 2020-07-17 15:06:13.459444319 -05:00
@@ -541,7 +549,7 @@
     created: 2020-07-17 15:06:13.459473589 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 18:23:05.135023638 -05:00
+    last_reviewed: 2020-08-07 17:33:36.732433173 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -602,6 +610,8 @@
       allow this, search for a task by name and then show it once only one task narrowed
       to"
     notes:
+    - - 2020-08-07 17:33:47.703457112 -05:00
+      - Task reviewed.
     - - 2020-07-31 18:29:30.386332446 -05:00
       - Task reviewed.
     - - 2020-07-19 23:51:10.453522098 -05:00
@@ -612,22 +622,26 @@
     created: 2020-07-19 23:51:10.453556498 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 18:29:30.386300532 -05:00
+    last_reviewed: 2020-08-07 17:33:47.703424516 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(extb) create the 'tac' command for when you've created a task in the
       wrong action context. same as plc."
     notes:
+    - - 2020-08-07 17:36:51.752496505 -05:00
+      - Task completed.
+    - - 2020-08-07 17:33:54.245064755 -05:00
+      - Task reviewed.
     - - 2020-07-31 18:29:34.958558348 -05:00
       - Task reviewed.
     - - 2020-07-19 23:52:02.891417026 -05:00
       - 'Created: creat the ''tac'' command for when you''ve created a task in the
         wrong action context. same as plc.'
     created: 2020-07-19 23:52:02.891433474 -05:00
-    completed:
+    completed: 2020-08-07 17:36:51.752470205 -05:00
     deleted:
-    last_reviewed: 2020-07-31 18:29:34.958515952 -05:00
+    last_reviewed: 2020-08-07 17:33:54.245019168 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -649,6 +663,8 @@
     title: "(extb) list agenda 'foo'  grabs all tasks with  'foo' in them and filters
       to agendas and waiting  and then sorts by agenda then waiting"
     notes:
+    - - 2020-08-07 17:34:00.490717472 -05:00
+      - Task reviewed.
     - - 2020-07-31 20:12:03.203205563 -05:00
       - Task reviewed.
     - - 2020-07-31 18:39:08.857773287 -05:00
@@ -661,7 +677,7 @@
     created: 2020-07-19 23:54:20.735571486 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 20:12:03.203162923 -05:00
+    last_reviewed: 2020-08-07 17:34:00.490686014 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -680,6 +696,8 @@
   - !ruby/object:Task
     title: "(extb) undo for renames and psm"
     notes:
+    - - 2020-08-07 17:34:02.334122265 -05:00
+      - Task reviewed.
     - - 2020-07-31 19:21:53.773254607 -05:00
       - Task reviewed.
     - - 2020-07-19 23:54:59.964784736 -05:00
@@ -687,18 +705,20 @@
     created: 2020-07-19 23:54:59.964808863 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 19:21:53.773219737 -05:00
+    last_reviewed: 2020-08-07 17:34:02.334076224 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(extb) enable changing the keyword of a project after creation"
     notes:
+    - - 2020-08-07 17:34:29.268494379 -05:00
+      - Task completed.
     - - 2020-07-31 19:22:07.994878047 -05:00
       - Task reviewed.
     - - 2020-07-20 08:27:19.633233930 -05:00
       - 'Created: enable changing the keyword of a project after creation'
     created: 2020-07-20 08:27:19.633251586 -05:00
-    completed:
+    completed: 2020-08-07 17:34:29.268450924 -05:00
     deleted:
     last_reviewed: 2020-07-31 19:22:07.994847831 -05:00
     action_context: :computer
@@ -706,6 +726,8 @@
   - !ruby/object:Task
     title: "(extb) enable 'p help' to give the proper usage of p"
     notes:
+    - - 2020-08-07 17:34:34.687058482 -05:00
+      - Task reviewed.
     - - 2020-07-31 19:22:33.831497208 -05:00
       - Task reviewed.
     - - 2020-07-20 08:29:26.674098056 -05:00
@@ -713,13 +735,15 @@
     created: 2020-07-20 08:29:26.674114886 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 19:22:33.831456039 -05:00
+    last_reviewed: 2020-08-07 17:34:34.687011639 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(extb) chunk task listing w/n projects into 80 character limit and indent
       by 4 spaces"
     notes:
+    - - 2020-08-07 17:34:45.143884468 -05:00
+      - Task reviewed.
     - - 2020-07-31 19:23:53.442581697 -05:00
       - Task reviewed.
     - - 2020-07-20 10:02:54.818381847 -05:00
@@ -728,12 +752,14 @@
     created: 2020-07-20 10:02:54.818399075 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 19:23:53.442534890 -05:00
+    last_reviewed: 2020-08-07 17:34:45.143853040 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(extb) create an added today query"
     notes:
+    - - 2020-08-07 17:35:16.033358614 -05:00
+      - Task reviewed.
     - - 2020-07-31 19:23:55.656929107 -05:00
       - Task reviewed.
     - - 2020-07-20 10:52:18.153030192 -05:00
@@ -741,7 +767,7 @@
     created: 2020-07-20 10:52:18.153047591 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 19:23:55.656881100 -05:00
+    last_reviewed: 2020-08-07 17:35:16.033312404 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -802,13 +828,15 @@
     title: "(extb) implement a way to change the keyword of a project if created wrong.
       say pk current new"
     notes:
+    - - 2020-08-07 17:35:21.620296653 -05:00
+      - Task completed.
     - - 2020-07-31 20:43:15.609800263 -05:00
       - Task reviewed.
     - - 2020-07-21 10:45:57.625671765 -05:00
       - 'Created: implement a way to change the keyword of a project if created wrong.
         say pk current new'
     created: 2020-07-21 10:45:57.625687399 -05:00
-    completed:
+    completed: 2020-08-07 17:35:21.620267941 -05:00
     deleted:
     last_reviewed: 2020-07-31 20:43:15.609763495 -05:00
     action_context: :computer
@@ -830,6 +858,8 @@
     title: "(extb) implement a tutorial for first run, p, c, d, com, etc. that runs
       IF there are no save files"
     notes:
+    - - 2020-08-07 17:35:27.356309249 -05:00
+      - Task reviewed.
     - - 2020-07-31 20:47:57.841393443 -05:00
       - Task reviewed.
     - - 2020-07-22 17:22:37.698493271 -05:00
@@ -842,13 +872,15 @@
     created: 2020-07-22 17:21:56.888728636 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 20:47:57.841351047 -05:00
+    last_reviewed: 2020-08-07 17:35:27.356268726 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(extb) update the add note method to make it obvious when the user is
       being prompetd for input by adding >> prompt."
     notes:
+    - - 2020-08-07 17:35:35.463080657 -05:00
+      - Task reviewed.
     - - 2020-07-31 20:48:11.677950750 -05:00
       - Task reviewed.
     - - 2020-07-23 09:50:35.436081181 -05:00
@@ -857,7 +889,7 @@
     created: 2020-07-23 09:50:35.436112645 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-07-31 20:48:11.677906102 -05:00
+    last_reviewed: 2020-08-07 17:35:35.463048523 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -903,12 +935,14 @@
   - !ruby/object:Task
     title: "(extb) create 'tac' to change action context on a task"
     notes:
+    - - 2020-08-07 17:36:46.722842179 -05:00
+      - Task completed.
     - - 2020-07-31 20:48:53.250199114 -05:00
       - Task reviewed.
     - - 2020-07-27 13:03:03.158599013 -05:00
       - 'Created: (extb) create ''tac'' to change action context on a task'
     created: 2020-07-27 13:03:03.158625967 -05:00
-    completed:
+    completed: 2020-08-07 17:36:46.722802167 -05:00
     deleted:
     last_reviewed: 2020-07-31 20:48:53.250154094 -05:00
     action_context: :computer
@@ -916,6 +950,8 @@
   - !ruby/object:Task
     title: "(pt: extb) add a search option to wr instead"
     notes:
+    - - 2020-08-07 17:37:23.858907469 -05:00
+      - Task reviewed.
     - - 2020-08-01 14:55:13.006565862 -05:00
       - Task reviewed.
     - - 2020-07-31 19:55:44.903163817 -05:00
@@ -923,13 +959,15 @@
     created: 2020-07-31 19:55:44.903181787 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-01 14:55:13.006529154 -05:00
+    last_reviewed: 2020-08-07 17:37:23.858873975 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(pt: extb) when viewing tasks - to_s - show the number of notes as a number
       or none if no notes eg '{2} task name'"
     notes:
+    - - 2020-08-07 17:37:38.571772785 -05:00
+      - Task reviewed.
     - - 2020-08-01 14:55:22.274862704 -05:00
       - Task reviewed.
     - - 2020-07-31 19:56:24.631190444 -05:00
@@ -938,19 +976,21 @@
     created: 2020-07-31 19:56:24.631215921 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-01 14:55:22.274829404 -05:00
+    last_reviewed: 2020-08-07 17:37:38.571740907 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(proj: extb) implement pn functionality since  a tip exists about it?"
     notes:
+    - - 2020-08-07 17:37:44.194940638 -05:00
+      - Task reviewed.
     - - 2020-08-04 08:24:18.554565146 -05:00
       - 'Created: (proj: extb) implement pn functionality since  a tip exists about
         it?'
     created: 2020-08-04 08:24:18.554583692 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:37:44.194888332 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -1397,6 +1437,8 @@
     title: "(blog) write.as review - feel free to contact me, and also see what this
       blog is on in 10 years"
     notes:
+    - - 2020-08-07 17:36:43.298743149 -05:00
+      - Task completed.
     - - 2020-08-02 14:02:50.628671834 -05:00
       - Task reviewed.
     - - 2020-08-01 13:24:43.980462104 -05:00
@@ -1413,7 +1455,7 @@
       - 'Created: (blog) write.as review - feel free to contact me, and also see what
         this blog is on in 10 years'
     created: 2020-07-29 17:41:50.743436343 -05:00
-    completed:
+    completed: 2020-08-07 17:36:43.298716021 -05:00
     deleted:
     last_reviewed: 2020-08-02 14:02:50.628641854 -05:00
     action_context: :computer

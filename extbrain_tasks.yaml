@@ -434,21 +434,6 @@
   action_context: :computer
   life_context: :personal
 - &14 !ruby/object:Task
-  title: "(extb) create the 'tac' command for when you've created a task in the wrong
-    action context. same as plc."
-  notes:
-  - - 2020-07-31 18:29:34.958558348 -05:00
-    - Task reviewed.
-  - - 2020-07-19 23:52:02.891417026 -05:00
-    - 'Created: creat the ''tac'' command for when you''ve created a task in the wrong
-      action context. same as plc.'
-  created: 2020-07-19 23:52:02.891433474 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-07-31 18:29:34.958515952 -05:00
-  action_context: :computer
-  life_context: :personal
-- &15 !ruby/object:Task
   title: "(extb) list agenda 'foo'  grabs all tasks with  'foo' in them and filters
     to agendas and waiting  and then sorts by agenda then waiting"
   notes:
@@ -467,7 +452,7 @@
   last_reviewed: 2020-07-31 20:12:03.203162923 -05:00
   action_context: :computer
   life_context: :personal
-- &16 !ruby/object:Task
+- &15 !ruby/object:Task
   title: "(extb) undo for renames and psm"
   notes:
   - - 2020-07-31 19:21:53.773254607 -05:00
@@ -480,7 +465,7 @@
   last_reviewed: 2020-07-31 19:21:53.773219737 -05:00
   action_context: :computer
   life_context: :personal
-- &17 !ruby/object:Task
+- &16 !ruby/object:Task
   title: "(extb) enable changing the keyword of a project after creation"
   notes:
   - - 2020-07-31 19:22:07.994878047 -05:00
@@ -493,7 +478,7 @@
   last_reviewed: 2020-07-31 19:22:07.994847831 -05:00
   action_context: :computer
   life_context: :personal
-- &18 !ruby/object:Task
+- &17 !ruby/object:Task
   title: "(extb) enable 'p help' to give the proper usage of p"
   notes:
   - - 2020-07-31 19:22:33.831497208 -05:00
@@ -506,7 +491,7 @@
   last_reviewed: 2020-07-31 19:22:33.831456039 -05:00
   action_context: :computer
   life_context: :personal
-- &19 !ruby/object:Task
+- &18 !ruby/object:Task
   title: "(extb) chunk task listing w/n projects into 80 character limit and indent
     by 4 spaces"
   notes:
@@ -521,7 +506,7 @@
   last_reviewed: 2020-07-31 19:23:53.442534890 -05:00
   action_context: :computer
   life_context: :personal
-- &20 !ruby/object:Task
+- &19 !ruby/object:Task
   title: "(extb) create an added today query"
   notes:
   - - 2020-07-31 19:23:55.656929107 -05:00
@@ -534,7 +519,7 @@
   last_reviewed: 2020-07-31 19:23:55.656881100 -05:00
   action_context: :computer
   life_context: :personal
-- &21 !ruby/object:Task
+- &20 !ruby/object:Task
   title: "(extb) implement a way to change the keyword of a project if created wrong.
     say pk current new"
   notes:
@@ -549,7 +534,7 @@
   last_reviewed: 2020-07-31 20:43:15.609763495 -05:00
   action_context: :computer
   life_context: :personal
-- &22 !ruby/object:Task
+- &21 !ruby/object:Task
   title: "(extb) implement a tutorial for first run, p, c, d, com, etc. that runs
     IF there are no save files"
   notes:
@@ -568,7 +553,7 @@
   last_reviewed: 2020-07-31 20:47:57.841351047 -05:00
   action_context: :computer
   life_context: :personal
-- &23 !ruby/object:Task
+- &22 !ruby/object:Task
   title: "(extb) update the add note method to make it obvious when the user is being
     prompetd for input by adding >> prompt."
   notes:
@@ -583,20 +568,7 @@
   last_reviewed: 2020-07-31 20:48:11.677906102 -05:00
   action_context: :computer
   life_context: :personal
-- &24 !ruby/object:Task
-  title: "(extb) create 'tac' to change action context on a task"
-  notes:
-  - - 2020-07-31 20:48:53.250199114 -05:00
-    - Task reviewed.
-  - - 2020-07-27 13:03:03.158599013 -05:00
-    - 'Created: (extb) create ''tac'' to change action context on a task'
-  created: 2020-07-27 13:03:03.158625967 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-07-31 20:48:53.250154094 -05:00
-  action_context: :computer
-  life_context: :personal
-- &25 !ruby/object:Task
+- &23 !ruby/object:Task
   title: "(pt: extb) add a search option to wr instead"
   notes:
   - - 2020-08-01 14:55:13.006565862 -05:00
@@ -609,7 +581,7 @@
   last_reviewed: 2020-08-01 14:55:13.006529154 -05:00
   action_context: :computer
   life_context: :personal
-- &26 !ruby/object:Task
+- &24 !ruby/object:Task
   title: "(pt: extb) when viewing tasks - to_s - show the number of notes as a number
     or none if no notes eg '{2} task name'"
   notes:
@@ -624,7 +596,7 @@
   last_reviewed: 2020-08-01 14:55:22.274829404 -05:00
   action_context: :computer
   life_context: :personal
-- &27 !ruby/object:Task
+- &25 !ruby/object:Task
   title: "(blog) patook review"
   notes:
   - - 2020-08-02 14:02:48.659471834 -05:00
@@ -637,32 +609,7 @@
   last_reviewed: 2020-08-02 14:02:48.659416721 -05:00
   action_context: :computer
   life_context: :personal
-- &28 !ruby/object:Task
-  title: "(blog) write.as review - feel free to contact me, and also see what this
-    blog is on in 10 years"
-  notes:
-  - - 2020-08-02 14:02:50.628671834 -05:00
-    - Task reviewed.
-  - - 2020-08-01 13:24:43.980462104 -05:00
-    - |
-      Also note that I've used wordpress for years, and stil support clients doing it, and also tried:
-      hugo
-      jekyell
-      ghost
-      ec.
-      etc.
-      and wriet.as is still my reccommendation for 90% of cases
-      the other 10% involving needing a CRM, billing, or something fancier than a blog.
-  - - 2020-07-29 17:41:50.743409383 -05:00
-    - 'Created: (blog) write.as review - feel free to contact me, and also see what
-      this blog is on in 10 years'
-  created: 2020-07-29 17:41:50.743436343 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-08-02 14:02:50.628641854 -05:00
-  action_context: :computer
-  life_context: :personal
-- &29 !ruby/object:Task
+- &26 !ruby/object:Task
   title: "(blog) hey.com review"
   notes:
   - - 2020-08-02 14:02:51.807204667 -05:00
@@ -675,7 +622,7 @@
   last_reviewed: 2020-08-02 14:02:51.807173387 -05:00
   action_context: :computer
   life_context: :personal
-- &30 !ruby/object:Task
+- &27 !ruby/object:Task
   title: "(pt: blog) write.as - why no ssl at www.theselfupgrade.com?"
   notes:
   - - 2020-08-02 14:09:41.263740401 -05:00
@@ -688,7 +635,7 @@
   last_reviewed: 2020-08-02 14:09:41.263690332 -05:00
   action_context: :waiting
   life_context: :personal
-- &31 !ruby/object:Task
+- &28 !ruby/object:Task
   title: "(pt: blog) matt/cj - GDPR compliance around email subscriptions?"
   notes:
   - - 2020-08-02 14:09:45.960172826 -05:00
@@ -701,7 +648,7 @@
   last_reviewed: 2020-08-02 14:09:45.960127259 -05:00
   action_context: :waiting
   life_context: :personal
-- &32 !ruby/object:Task
+- &29 !ruby/object:Task
   title: "(pt: blog) decide if I should run my own email list on TheSelfUpgrade. As
     sweet as write.as is, I perfer having control. Of course, offering both is an
     option too."
@@ -718,7 +665,7 @@
   last_reviewed: 2020-08-02 14:09:53.245575357 -05:00
   action_context: :computer
   life_context: :personal
-- &33 !ruby/object:Task
+- &30 !ruby/object:Task
   title: "(fence) D&N tell us when they're coming out, they will give one week notice,
     called 7/24, 8 wk behind, started 6/22, so likely end of August"
   notes:
@@ -733,7 +680,7 @@
   last_reviewed: 2020-08-02 14:12:38.399134275 -05:00
   action_context: :waiting
   life_context: :personal
-- &34 !ruby/object:Task
+- &31 !ruby/object:Task
   title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
     one article to write as and see how it goes. write.as/thenickmay"
   notes:
@@ -758,7 +705,7 @@
   last_reviewed: 2020-08-02 14:37:17.182705032 -05:00
   action_context: :computer
   life_context: :personal
-- &35 !ruby/object:Task
+- &32 !ruby/object:Task
   title: "(pt: cngo) ask charles if there's a grade level that's too high when using
     hemmingwrite?"
   notes:
@@ -805,9 +752,6 @@
 - *30
 - *31
 - *32
-- *33
-- *34
-- *35
 - !ruby/object:Task
   title: "(extb-log) decide how to store logging info/journal info."
   notes:
@@ -1159,19 +1103,6 @@
   completed:
   deleted:
   last_reviewed: 2020-07-31 20:48:11.677906102 -05:00
-  action_context: :computer
-  life_context: :personal
-- !ruby/object:Task
-  title: "(extb) create 'tac' to change action context on a task"
-  notes:
-  - - 2020-07-31 20:48:53.250199114 -05:00
-    - Task reviewed.
-  - - 2020-07-27 13:03:03.158599013 -05:00
-    - 'Created: (extb) create ''tac'' to change action context on a task'
-  created: 2020-07-27 13:03:03.158625967 -05:00
-  completed:
-  deleted:
-  last_reviewed: 2020-07-31 20:48:53.250154094 -05:00
   action_context: :computer
   life_context: :personal
 - !ruby/object:Task
