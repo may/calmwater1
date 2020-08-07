@@ -230,7 +230,7 @@
   last_reviewed:
   action_context: :someday/maybe
   life_context: :personal
-- &1 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb-log) decide how to store logging info/journal info."
   notes:
   - - 2020-07-31 17:22:31.973096319 -05:00
@@ -243,7 +243,7 @@
   last_reviewed: 2020-07-31 17:22:31.973064009 -05:00
   action_context: :computer
   life_context: :personal
-- &2 !ruby/object:Task
+- !ruby/object:Task
   title: "(sarah-walk) create a habit of getting up at 0700 daily, and second habit
     of getting to bed by 21:45."
   notes:
@@ -258,7 +258,7 @@
   last_reviewed: 2020-08-02 15:18:18.006022094 -05:00
   action_context: :computer
   life_context: :personal
-- &3 !ruby/object:Task
+- !ruby/object:Task
   title: "(proj-color) decide if want to go forward with color coding projects based
     on last reviewed."
   notes:
@@ -273,7 +273,7 @@
   last_reviewed: 2020-08-02 15:18:27.005523001 -05:00
   action_context: :computer
   life_context: :personal
-- &4 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb-rlwrap) google this about rlwrap"
   notes:
   - - 2020-07-31 18:07:03.943987131 -05:00
@@ -286,7 +286,7 @@
   last_reviewed: 2020-07-31 18:07:03.943933139 -05:00
   action_context: computer
   life_context: :job
-- &5 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb-help) sit down and write up a brief guide to common workflows"
   notes:
   - - 2020-08-02 15:18:30.099268835 -05:00
@@ -299,7 +299,7 @@
   last_reviewed: 2020-08-02 15:18:30.099224776 -05:00
   action_context: :computer
   life_context: :personal
-- &6 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb-subt) think about and decide if want to ilst number of subtasks when
     viewing projects"
   notes:
@@ -314,7 +314,7 @@
   last_reviewed: 2020-08-02 15:18:37.928360505 -05:00
   action_context: :computer
   life_context: :personal
-- &7 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) decide on this/compare to existing specs: review projects weekly,
     focus monthly, goals quartely, and the oldest 5 s/m each week!"
   notes:
@@ -329,7 +329,7 @@
   last_reviewed: 2020-07-26 22:30:27.325561469 -05:00
   action_context: :computer
   life_context: :personal
-- &8 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) decide & document decision regarding not having due dates in extbrain;
     that's what your calendar is for. But this means no tickler function? Is this
     an overreaction to the overwhlem I have in RTM?"
@@ -346,7 +346,7 @@
   last_reviewed: 2020-07-26 22:30:34.366007533 -05:00
   action_context: :computer
   life_context: :personal
-- &9 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) consider/decide on a 'next'/sequential vs parallel option for tasking
     in extbrain. See some existing software for examples, and consider a use case
     of someone who has hundreds of next actions and needs to filter the list to what
@@ -365,7 +365,7 @@
   last_reviewed:
   action_context: :someday/maybe
   life_context: :personal
-- &10 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) research/try high quality ssh / mosh apps for android to use extbrain
     remotely/on the go."
   notes:
@@ -380,7 +380,7 @@
   last_reviewed: 2020-07-31 18:23:05.135023638 -05:00
   action_context: :computer
   life_context: :personal
-- &11 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) I've said no to this in the past, and I still am hesitant, but consider
     color-coding for different action contexts on a given project. perhaps: s/m: dark
     grey, computer: light pink/red, waiting: light green, etc. with a goal of being
@@ -404,7 +404,7 @@
   last_reviewed:
   action_context: :someday/maybe
   life_context: :personal
-- &12 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) make 'e' edit instead of exit maybe"
   notes:
   - - 2020-07-18 22:16:12.623552408 -05:00
@@ -415,7 +415,7 @@
   last_reviewed:
   action_context: :someday/maybe
   life_context: :personal
-- &13 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) task_list to allow the user to select from one of the tasks to view
     it using .view_task, which also shows notes. the 'v' command should also allow
     this, search for a task by name and then show it once only one task narrowed to"
@@ -433,7 +433,7 @@
   last_reviewed: 2020-07-31 18:29:30.386300532 -05:00
   action_context: :computer
   life_context: :personal
-- &14 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) list agenda 'foo'  grabs all tasks with  'foo' in them and filters
     to agendas and waiting  and then sorts by agenda then waiting"
   notes:
@@ -452,7 +452,7 @@
   last_reviewed: 2020-07-31 20:12:03.203162923 -05:00
   action_context: :computer
   life_context: :personal
-- &15 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) undo for renames and psm"
   notes:
   - - 2020-07-31 19:21:53.773254607 -05:00
@@ -465,7 +465,7 @@
   last_reviewed: 2020-07-31 19:21:53.773219737 -05:00
   action_context: :computer
   life_context: :personal
-- &16 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) enable changing the keyword of a project after creation"
   notes:
   - - 2020-07-31 19:22:07.994878047 -05:00
@@ -478,7 +478,7 @@
   last_reviewed: 2020-07-31 19:22:07.994847831 -05:00
   action_context: :computer
   life_context: :personal
-- &17 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) enable 'p help' to give the proper usage of p"
   notes:
   - - 2020-07-31 19:22:33.831497208 -05:00
@@ -491,7 +491,7 @@
   last_reviewed: 2020-07-31 19:22:33.831456039 -05:00
   action_context: :computer
   life_context: :personal
-- &18 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) chunk task listing w/n projects into 80 character limit and indent
     by 4 spaces"
   notes:
@@ -506,7 +506,7 @@
   last_reviewed: 2020-07-31 19:23:53.442534890 -05:00
   action_context: :computer
   life_context: :personal
-- &19 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) create an added today query"
   notes:
   - - 2020-07-31 19:23:55.656929107 -05:00
@@ -519,7 +519,7 @@
   last_reviewed: 2020-07-31 19:23:55.656881100 -05:00
   action_context: :computer
   life_context: :personal
-- &20 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) implement a way to change the keyword of a project if created wrong.
     say pk current new"
   notes:
@@ -534,7 +534,7 @@
   last_reviewed: 2020-07-31 20:43:15.609763495 -05:00
   action_context: :computer
   life_context: :personal
-- &21 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) implement a tutorial for first run, p, c, d, com, etc. that runs
     IF there are no save files"
   notes:
@@ -553,7 +553,7 @@
   last_reviewed: 2020-07-31 20:47:57.841351047 -05:00
   action_context: :computer
   life_context: :personal
-- &22 !ruby/object:Task
+- !ruby/object:Task
   title: "(extb) update the add note method to make it obvious when the user is being
     prompetd for input by adding >> prompt."
   notes:
@@ -568,7 +568,7 @@
   last_reviewed: 2020-07-31 20:48:11.677906102 -05:00
   action_context: :computer
   life_context: :personal
-- &23 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: extb) add a search option to wr instead"
   notes:
   - - 2020-08-01 14:55:13.006565862 -05:00
@@ -581,7 +581,7 @@
   last_reviewed: 2020-08-01 14:55:13.006529154 -05:00
   action_context: :computer
   life_context: :personal
-- &24 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: extb) when viewing tasks - to_s - show the number of notes as a number
     or none if no notes eg '{2} task name'"
   notes:
@@ -596,7 +596,7 @@
   last_reviewed: 2020-08-01 14:55:22.274829404 -05:00
   action_context: :computer
   life_context: :personal
-- &25 !ruby/object:Task
+- !ruby/object:Task
   title: "(blog) patook review"
   notes:
   - - 2020-08-02 14:02:48.659471834 -05:00
@@ -609,7 +609,7 @@
   last_reviewed: 2020-08-02 14:02:48.659416721 -05:00
   action_context: :computer
   life_context: :personal
-- &26 !ruby/object:Task
+- !ruby/object:Task
   title: "(blog) hey.com review"
   notes:
   - - 2020-08-02 14:02:51.807204667 -05:00
@@ -622,7 +622,7 @@
   last_reviewed: 2020-08-02 14:02:51.807173387 -05:00
   action_context: :computer
   life_context: :personal
-- &27 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: blog) write.as - why no ssl at www.theselfupgrade.com?"
   notes:
   - - 2020-08-02 14:09:41.263740401 -05:00
@@ -635,7 +635,7 @@
   last_reviewed: 2020-08-02 14:09:41.263690332 -05:00
   action_context: :waiting
   life_context: :personal
-- &28 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: blog) matt/cj - GDPR compliance around email subscriptions?"
   notes:
   - - 2020-08-02 14:09:45.960172826 -05:00
@@ -648,7 +648,7 @@
   last_reviewed: 2020-08-02 14:09:45.960127259 -05:00
   action_context: :waiting
   life_context: :personal
-- &29 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: blog) decide if I should run my own email list on TheSelfUpgrade. As
     sweet as write.as is, I perfer having control. Of course, offering both is an
     option too."
@@ -665,7 +665,7 @@
   last_reviewed: 2020-08-02 14:09:53.245575357 -05:00
   action_context: :computer
   life_context: :personal
-- &30 !ruby/object:Task
+- !ruby/object:Task
   title: "(fence) D&N tell us when they're coming out, they will give one week notice,
     called 7/24, 8 wk behind, started 6/22, so likely end of August"
   notes:
@@ -680,7 +680,7 @@
   last_reviewed: 2020-08-02 14:12:38.399134275 -05:00
   action_context: :waiting
   life_context: :personal
-- &31 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
     one article to write as and see how it goes. write.as/thenickmay"
   notes:
@@ -705,7 +705,7 @@
   last_reviewed: 2020-08-02 14:37:17.182705032 -05:00
   action_context: :computer
   life_context: :personal
-- &32 !ruby/object:Task
+- !ruby/object:Task
   title: "(pt: cngo) ask charles if there's a grade level that's too high when using
     hemmingwrite?"
   notes:
@@ -720,38 +720,6 @@
   last_reviewed: 2020-08-02 14:38:30.473209899 -05:00
   action_context: :computer
   life_context: :personal
-- *1
-- *2
-- *3
-- *4
-- *5
-- *6
-- *7
-- *8
-- *9
-- *10
-- *11
-- *12
-- *13
-- *14
-- *15
-- *16
-- *17
-- *18
-- *19
-- *20
-- *21
-- *22
-- *23
-- *24
-- *25
-- *26
-- *27
-- *28
-- *29
-- *30
-- *31
-- *32
 - !ruby/object:Task
   title: "(extb-log) decide how to store logging info/journal info."
   notes:
