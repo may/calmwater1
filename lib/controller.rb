@@ -503,9 +503,10 @@ def review_and_maybe_edit(object)
   end # task & action == s/m
 end # def
 
+# 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
 def not_recently_reviewed(object)
-  the_7_days_ago_timestamp = Time.now.to_i - 7*24*60*60
-  (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_7_days_ago_timestamp)
+  the_5_days_ago_timestamp = Time.now.to_i - 5*24*60*60
+  (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_5_days_ago_timestamp)
 end 
 
 def review_projects_and_subtasks(projects)

@@ -50,97 +50,117 @@
   - !ruby/object:Task
     title: "(proj: cms-notify) alex determine opt in opt out for providers"
     notes:
+    - - 2020-08-07 17:00:51.076864396 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:15:35.347669438 -05:00
       - 'Created: (proj: cms-notify) alex determine opt in opt out for providers'
     created: 2020-08-07 11:15:35.347685508 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:00:51.076818529 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) complience kiley decide how much we need to implement
       these."
     notes:
+    - - 2020-08-07 17:00:54.040391673 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:18:27.254170901 -05:00
       - 'Created: (proj: cms-notify) complience kiley decide how much we need to implement
         these.'
     created: 2020-08-07 11:18:27.254201025 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:00:54.040346586 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) alex search of how much we can send / are sending notifications
       to pcp"
     notes:
+    - - 2020-08-07 17:01:06.221337154 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:18:45.342806461 -05:00
       - 'Created: (proj: cms-notify) alex search of how much we can send / are sending
         notifications to pcp'
     created: 2020-08-07 11:18:45.342831940 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:01:06.221304211 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) tom and setphanie who isn't participtaaing in patient
       ping"
     notes:
+    - - 2020-08-07 17:01:11.101622104 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:22:46.623483079 -05:00
       - 'Created: (proj: cms-notify) tom and setphanie who isn''t participtaaing in
         patient ping'
     created: 2020-08-07 11:22:46.623516606 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:01:11.101591542 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) alex run search and share w/ sherlock of how much we
       can send / are sending notifications to pcp"
     notes:
+    - - 2020-08-07 17:01:20.213833703 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:28:34.485233401 -05:00
       - 'Created: (proj: cms-notify) alex run search and share w/ sherlock of how
         much we can send / are sending notifications to pcp'
     created: 2020-08-07 11:28:34.485273505 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:01:20.213779860 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) alex - any dashboards on how well other instutions
       of our size/dollars are implementing this."
     notes:
+    - - 2020-08-07 17:01:23.921607971 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:32:01.173970410 -05:00
       - 'Created: (proj: cms-notify) alex - any dashboards on how well other instutions
         of our size/dollars are implementing this.'
     created: 2020-08-07 11:32:01.174021120 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:01:23.921550375 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) jessie/alex - how do we handle a pcp who admits a patient
       themselves?"
     notes:
+    - - 2020-08-07 17:01:25.596621034 -05:00
+      - Task reviewed.
     - - 2020-08-07 11:38:06.475558844 -05:00
       - 'Created: (proj: cms-notify) jessie/alex - how do we handle a pcp who admits
         a patient themselves?'
     created: 2020-08-07 11:38:06.475584514 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:01:25.596549598 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
-    title: "(proj: cms-notify) karmen - going forward I would like to request a project
-      manager and engagement from leadership to form a core team around this project,
-      since this is bigger than HCIS"
+    title: karmen - who is going to own this going forward per bring these to you
+      next time? also get us a pm?
     notes:
+    - - 2020-08-07 17:01:58.116591321 -05:00
+      - Task reviewed.
+    - - 2020-08-07 17:01:55.466133773 -05:00
+      - |-
+        Updated title:
+         old: (proj: cms-notify) karmen - going forward I would like to request a project manager and engagement from leadership to form a core team around this project, since this is bigger than HCIS
+         new: karmen - who is going to own this going forward per bring these to you next time? also get us a pm?
     - - 2020-08-07 12:53:56.828869448 -05:00
       - 'Created: (proj: cms-notify) karmen - going forward I would like to request
         a project manager and engagement from leadership to form a core team around
@@ -148,29 +168,33 @@
     created: 2020-08-07 12:53:56.828905289 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:01:58.116553998 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) meeting 8/17 hcis and epic"
     notes:
+    - - 2020-08-07 17:02:00.524535606 -05:00
+      - Task reviewed.
     - - 2020-08-07 12:57:51.586222227 -05:00
       - 'Created: (proj: cms-notify) meeting 8/17 hcis and epic'
     created: 2020-08-07 12:57:51.586282637 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:02:00.524496529 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) meeting 9/2 hcis and compliance and epic"
     notes:
+    - - 2020-08-07 17:02:01.122646736 -05:00
+      - Task reviewed.
     - - 2020-08-07 12:58:02.778875949 -05:00
       - 'Created: (proj: cms-notify) meeting 9/2 hcis and compliance and epic'
     created: 2020-08-07 12:58:02.778891854 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:02:01.122614162 -05:00
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -1514,13 +1538,15 @@
     title: "(proj: edd) paul implementing discharge milestones etc, with help from
       Epic where needed, per spec from Densie 2020-08-04"
     notes:
+    - - 2020-08-07 17:02:07.512964667 -05:00
+      - Task reviewed.
     - - 2020-08-05 12:37:02.278058697 -05:00
       - 'Created: (proj: edd) paul implementing discharge milestones etc, with help
         from Epic where needed, per spec from Densie 2020-08-04'
     created: 2020-08-05 12:37:02.278083914 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:02:07.512932817 -05:00
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -1586,13 +1612,15 @@
     title: "(proj: edpri) jacob - get switching code working by 8/18, or sooner. will
       push back golive if needed. cannot go live w/ this manual."
     notes:
+    - - 2020-08-07 17:02:12.920654483 -05:00
+      - Task reviewed.
     - - 2020-08-07 14:54:59.419864115 -05:00
       - 'Created: (proj: edpri) jacob - get switching code working by 8/18, or sooner.
         will push back golive if needed. cannot go live w/ this manual.'
     created: 2020-08-07 14:54:59.419894722 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:02:12.920621561 -05:00
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -2023,9 +2051,16 @@
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
-    title: "(pt: upgrade) Nathanael wants app testing scripts updated and tested.
-      on cal for 8/7, 8/21, 9/4"
+    title: "(pt: upgrade) paul upgrade app scripts and test them. on cal to meet about
+      8/21 and 9/4 and 9/18"
     notes:
+    - - 2020-08-07 17:04:45.547301548 -05:00
+      - Task reviewed.
+    - - 2020-08-07 17:04:40.873506152 -05:00
+      - |-
+        Updated title:
+         old: (pt: upgrade) Nathanael wants app testing scripts updated and tested. on cal for 8/7, 8/21, 9/4
+         new: (pt: upgrade) paul upgrade app scripts and test them. on cal to meet about 8/21 and 9/4 and 9/18
     - - 2020-08-03 13:49:48.546232965 -05:00
       - |-
         Updated title:
@@ -2037,20 +2072,22 @@
     created: 2020-08-03 13:39:50.031719479 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:04:45.547268660 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(pt: upgrade) Once hear from Teresa which Integrated Testing scripts need
       updated, update/signoff."
     notes:
+    - - 2020-08-07 17:04:53.066915540 -05:00
+      - Task reviewed.
     - - 2020-08-03 13:40:19.391278665 -05:00
       - 'Created: (pt: upgrade) Once hear from Teresa which Integrated Testing scripts
         need updated, update/signoff.'
     created: 2020-08-03 13:40:19.391295053 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:04:53.066882018 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
@@ -2069,12 +2106,14 @@
   - !ruby/object:Task
     title: "(proj: upgrade) alex - event management tab?"
     notes:
+    - - 2020-08-07 17:05:00.866395212 -05:00
+      - Task reviewed.
     - - 2020-08-05 11:40:15.816430988 -05:00
       - 'Created: (proj: upgrade) alex - event management tab?'
     created: 2020-08-05 11:40:15.816495561 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:05:00.866361754 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
@@ -2097,10 +2136,12 @@
   - !ruby/object:Task
     title: "(proj: upgrade) paul upgrade app scripts"
     notes:
+    - - 2020-08-07 17:05:14.042907886 -05:00
+      - Task completed.
     - - 2020-08-07 10:08:01.434212476 -05:00
       - 'Created: (proj: upgrade) paul upgrade app scripts'
     created: 2020-08-07 10:08:01.434237832 -05:00
-    completed:
+    completed: 2020-08-07 17:05:14.042879312 -05:00
     deleted:
     last_reviewed:
     action_context: :waiting
@@ -2108,12 +2149,14 @@
   - !ruby/object:Task
     title: "(proj: upgrade) sarah healy and bed blocks round two"
     notes:
+    - - 2020-08-07 17:05:18.897600115 -05:00
+      - Task reviewed.
     - - 2020-08-07 15:24:30.723936258 -05:00
       - 'Created: (proj: upgrade) sarah healy and bed blocks round two'
     created: 2020-08-07 15:24:30.723952622 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:05:18.897568987 -05:00
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -2379,6 +2422,8 @@
 - !ruby/object:Project
   title: ensure psych preeassignment golive goes smoothly 9/1
   notes:
+  - - 2020-08-07 16:57:48.605718154 -05:00
+    - Project reviewed.
   - - 2020-08-07 16:45:43.473551657 -05:00
     - |-
       Updated title:
@@ -2389,7 +2434,7 @@
   created: 2020-08-06 12:59:12.393685766 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-07 16:57:48.605671654 -05:00
   keyword: :psych
   life_context: :job
   tags: []
@@ -2473,22 +2518,26 @@
   - !ruby/object:Task
     title: "(proj: psych) meeting 8/11 atc and psych walkthrough"
     notes:
+    - - 2020-08-07 16:57:04.185444010 -05:00
+      - Task reviewed.
     - - 2020-08-07 16:52:32.188063211 -05:00
       - 'Created: (proj: psych) meeting 8/11 atc and psych walkthrough'
     created: 2020-08-07 16:52:32.188093505 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 16:57:04.185411342 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: psych) meeting 8/11 atc and psych"
     notes:
+    - - 2020-08-07 16:57:06.511725580 -05:00
+      - Task deleted.
     - - 2020-08-07 16:55:16.371944056 -05:00
       - 'Created: (proj: psych) meeting 8/11 atc and psych'
     created: 2020-08-07 16:55:16.371978359 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-07 16:57:06.511696070 -05:00
     last_reviewed:
     action_context: :waiting
     life_context: :job
@@ -2496,13 +2545,15 @@
   title: find a cheap/free/free for one software to automate testing of our guis as
     a proof of concept.
   notes:
+  - - 2020-08-07 17:00:15.821955598 -05:00
+    - Project reviewed.
   - - 2020-08-07 09:11:16.250102128 -05:00
     - 'Created: find a cheap/free/free for one software to automate testing of our
       guis as a proof of concept.'
   created: 2020-08-07 09:11:16.250127801 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-07 17:00:15.821888819 -05:00
   keyword: :atest
   life_context: :job
   tags: []
@@ -2511,11 +2562,15 @@
   - !ruby/object:Task
     title: "(proj: atest) calendar time created for sept 2nd"
     notes:
+    - - 2020-08-07 17:00:13.660384907 -05:00
+      - Task reviewed.
+    - - 2020-08-07 17:00:09.239195663 -05:00
+      - Task reviewed.
     - - 2020-08-07 09:16:16.445352427 -05:00
       - 'Created: (proj: atest) calendar time created for sept 2nd'
     created: 2020-08-07 09:16:16.445385591 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 17:00:13.660354475 -05:00
     action_context: :waiting
     life_context: :job

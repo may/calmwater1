@@ -1367,12 +1367,14 @@
 - !ruby/object:Task
   title: sarah reschedule foot podiostrst appt that was scheduled 8/4.
   notes:
+  - - 2020-08-07 17:00:20.087435633 -05:00
+    - Task reviewed.
   - - 2020-08-04 16:03:21.060363278 -05:00
     - 'Created: sarah reschedule foot podiostrst appt that was scheduled 8/4.'
   created: 2020-08-04 16:03:21.060379789 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-07 17:00:20.087332981 -05:00
   action_context: :waiting
   life_context: :job
 - !ruby/object:Task
@@ -1401,49 +1403,40 @@
   title: paul make changes, paul send me package - remove Triage NICU from Transfer
     Center?
   notes:
+  - - 2020-08-07 17:00:30.270767682 -05:00
+    - Task reviewed.
   - - 2020-08-06 12:40:36.184927972 -05:00
     - 'Created: paul make changes, paul send me package - remove Triage NICU from
       Transfer Center?'
   created: 2020-08-06 12:40:36.184946894 -05:00
   completed:
   deleted:
-  last_reviewed:
-  action_context: :waiting
-  life_context: :job
-- !ruby/object:Task
-  title: paul remove med psych from list of hard stops for psych additional information
-    per 8/6 adt meeting, he knows what to do.
-  notes:
-  - - 2020-08-07 16:56:28.208024377 -05:00
-    - Task completed.
-  - - 2020-08-06 12:58:09.929247676 -05:00
-    - 'Created: paul remove med psych from list of hard stops for psych additional
-      information per 8/6 adt meeting, he knows what to do.'
-  created: 2020-08-06 12:58:09.929281130 -05:00
-  completed: 2020-08-07 16:56:28.207973722 -05:00
-  deleted:
-  last_reviewed:
-  action_context: :waiting
-  life_context: :job
-- !ruby/object:Task
-  title: meeting
-  notes:
-  - - 2020-08-07 16:49:27.975632996 -05:00
-    - 'Created: meeting'
-  created: 2020-08-07 16:49:27.975662015 -05:00
-  completed:
-  deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-07 17:00:30.270719818 -05:00
   action_context: :waiting
   life_context: :job
 - !ruby/object:Task
   title: sarah healy hard stop med psych move tuesday?
   notes:
+  - - 2020-08-07 17:00:40.983958534 -05:00
+    - Task reviewed.
   - - 2020-08-07 16:56:40.265247253 -05:00
     - 'Created: sarah healy hard stop med psych move tuesday?'
   created: 2020-08-07 16:56:40.265328145 -05:00
   completed:
   deleted:
-  last_reviewed:
+  last_reviewed: 2020-08-07 17:00:40.983908414 -05:00
+  action_context: :waiting
+  life_context: :job
+- !ruby/object:Task
+  title: scott final tipsheet and also quick ref for dr tate and liggins
+  notes:
+  - - 2020-08-07 17:00:44.135118024 -05:00
+    - Task reviewed.
+  - - 2020-08-07 16:57:46.792360619 -05:00
+    - 'Created: scott final tipsheet and also quick ref for dr tate and liggins'
+  created: 2020-08-07 16:57:46.792388702 -05:00
+  completed:
+  deleted:
+  last_reviewed: 2020-08-07 17:00:44.135072844 -05:00
   action_context: :waiting
   life_context: :job
