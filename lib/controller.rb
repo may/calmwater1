@@ -423,12 +423,15 @@ def review_and_maybe_edit(object)
         puts " 'j contents of task' - create an adhoc task in the job action context"
         puts " 'w contents of task' - create an adhoc task in the waiting action context"
       when 'pt'
-        if object.is_a?(Project) # add to current project
-          project_task(object.keyword, keyword + ' ' + content)
-        else
-          puts "Error: can't add a project task to something that isn't a Project. During the Weekly Review, the 'pt' command only operates on the current project."
-          review_and_maybe_edit(object)
-        end
+        # TODO remove this and any other code that assumes current objecT? 2020-08-07 
+        #if object.is_a?(Project) # add to current project
+          # includes project keyword by default, but that increases firction
+          #          project_task(object.keyword, keyword + ' ' + content)
+          project_task(keyword, content)
+#        else
+#          puts "Error: can't add a project task to something that isn't a Project. During the Weekly Review, the 'pt' command only operates on the current project."
+#          review_and_maybe_edit(object)
+#        end
       when 'co'
         view_or_add_task('computer', keyword, content)
       when 'j'
@@ -489,6 +492,9 @@ def review_and_maybe_edit(object)
         if action_verb != 'reviewed'
           take_edit_action(action_verb, object)
           puts
+          if action_verb == 'rename' # if we're renaming, don't advance to the next
+            review_and_maybe_edit(object)        
+          end 
         end 
       else
         review_and_maybe_edit(object)        

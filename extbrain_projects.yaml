@@ -47,6 +47,132 @@
     last_reviewed: 2020-08-02 15:18:51.027362036 -05:00
     action_context: :waiting
     life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) alex determine opt in opt out for providers"
+    notes:
+    - - 2020-08-07 11:15:35.347669438 -05:00
+      - 'Created: (proj: cms-notify) alex determine opt in opt out for providers'
+    created: 2020-08-07 11:15:35.347685508 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) complience kiley decide how much we need to implement
+      these."
+    notes:
+    - - 2020-08-07 11:18:27.254170901 -05:00
+      - 'Created: (proj: cms-notify) complience kiley decide how much we need to implement
+        these.'
+    created: 2020-08-07 11:18:27.254201025 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) alex search of how much we can send / are sending notifications
+      to pcp"
+    notes:
+    - - 2020-08-07 11:18:45.342806461 -05:00
+      - 'Created: (proj: cms-notify) alex search of how much we can send / are sending
+        notifications to pcp'
+    created: 2020-08-07 11:18:45.342831940 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) tom and setphanie who isn't participtaaing in patient
+      ping"
+    notes:
+    - - 2020-08-07 11:22:46.623483079 -05:00
+      - 'Created: (proj: cms-notify) tom and setphanie who isn''t participtaaing in
+        patient ping'
+    created: 2020-08-07 11:22:46.623516606 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) alex run search and share w/ sherlock of how much we
+      can send / are sending notifications to pcp"
+    notes:
+    - - 2020-08-07 11:28:34.485233401 -05:00
+      - 'Created: (proj: cms-notify) alex run search and share w/ sherlock of how
+        much we can send / are sending notifications to pcp'
+    created: 2020-08-07 11:28:34.485273505 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) alex - any dashboards on how well other instutions
+      of our size/dollars are implementing this."
+    notes:
+    - - 2020-08-07 11:32:01.173970410 -05:00
+      - 'Created: (proj: cms-notify) alex - any dashboards on how well other instutions
+        of our size/dollars are implementing this.'
+    created: 2020-08-07 11:32:01.174021120 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) jessie/alex - how do we handle a pcp who admits a patient
+      themselves?"
+    notes:
+    - - 2020-08-07 11:38:06.475558844 -05:00
+      - 'Created: (proj: cms-notify) jessie/alex - how do we handle a pcp who admits
+        a patient themselves?'
+    created: 2020-08-07 11:38:06.475584514 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) karmen - going forward I would like to request a project
+      manager and engagement from leadership to form a core team around this project,
+      since this is bigger than HCIS"
+    notes:
+    - - 2020-08-07 12:53:56.828869448 -05:00
+      - 'Created: (proj: cms-notify) karmen - going forward I would like to request
+        a project manager and engagement from leadership to form a core team around
+        this project, since this is bigger than HCIS'
+    created: 2020-08-07 12:53:56.828905289 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) meeting 8/17 hcis and epic"
+    notes:
+    - - 2020-08-07 12:57:51.586222227 -05:00
+      - 'Created: (proj: cms-notify) meeting 8/17 hcis and epic'
+    created: 2020-08-07 12:57:51.586282637 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) meeting 9/2 hcis and compliance and epic"
+    notes:
+    - - 2020-08-07 12:58:02.778875949 -05:00
+      - 'Created: (proj: cms-notify) meeting 9/2 hcis and compliance and epic'
+    created: 2020-08-07 12:58:02.778891854 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: create a logging/journal functionality in extbrain to use 'l' and timestamp
     plus info. for taking notes of things. tags too?
@@ -818,6 +944,31 @@
     last_reviewed:
     action_context: :computer
     life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) 'a foo' grabs all tasks with 'foo' in them and filters to
+      agendas and waiting, and then sorts by agendas then waiting."
+    notes:
+    - - 2020-08-05 21:30:45.227395238 -05:00
+      - 'Created: (proj: extb) ''a foo'' grabs all tasks with ''foo'' in them and
+        filters to agendas and waiting, and then sorts by agendas then waiting.'
+    created: 2020-08-05 21:30:45.227432161 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :someday/maybe
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) enable 'yesterday' habit tracking functionality for wc command"
+    notes:
+    - - 2020-08-07 08:09:05.918082036 -05:00
+      - 'Created: (proj: extb) enable ''yesterday'' habit tracking functionality for
+        wc command'
+    created: 2020-08-07 08:09:05.918101673 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :someday/maybe
+    life_context: :personal
 - !ruby/object:Project
   title: implement Leave of Abscence for Psych, by manaaging work, doing the implementation/build,
     leading the meetings.
@@ -1431,6 +1582,19 @@
     last_reviewed: 2020-08-02 15:20:13.067653155 -05:00
     action_context: :waiting
     life_context: :job
+  - !ruby/object:Task
+    title: "(proj: edpri) jacob - get switching code working by 8/18, or sooner. will
+      push back golive if needed. cannot go live w/ this manual."
+    notes:
+    - - 2020-08-07 14:54:59.419864115 -05:00
+      - 'Created: (proj: edpri) jacob - get switching code working by 8/18, or sooner.
+        will push back golive if needed. cannot go live w/ this manual.'
+    created: 2020-08-07 14:54:59.419894722 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: Ensure fence is replaced this summer since it is falling down.
   notes:
@@ -1913,6 +2077,45 @@
     last_reviewed:
     action_context: :waiting
     life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) brent - bed blocks confirm OK for CC sites, should have
+      it to me second week of august. next core team meeting 8/19 or third wed of
+      sept."
+    notes:
+    - - 2020-08-07 15:24:19.154175417 -05:00
+      - Task completed.
+    - - 2020-08-07 09:30:19.332865438 -05:00
+      - 'Created: (proj: upgrade) brent - bed blocks confirm OK for CC sites, should
+        have it to me second week of august. next core team meeting 8/19 or third
+        wed of sept.'
+    created: 2020-08-07 09:30:19.332908824 -05:00
+    completed: 2020-08-07 15:24:19.154154153 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) paul upgrade app scripts"
+    notes:
+    - - 2020-08-07 10:08:01.434212476 -05:00
+      - 'Created: (proj: upgrade) paul upgrade app scripts'
+    created: 2020-08-07 10:08:01.434237832 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) sarah healy and bed blocks round two"
+    notes:
+    - - 2020-08-07 15:24:30.723936258 -05:00
+      - 'Created: (proj: upgrade) sarah healy and bed blocks round two'
+    created: 2020-08-07 15:24:30.723952622 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: 833159 Confidential inpatient admissions should be visible to outpatient
     nurses
@@ -2173,3 +2376,146 @@
     last_reviewed:
     action_context: :waiting
     life_context: :personal
+- !ruby/object:Project
+  title: ensure psych preeassignment golive goes smoothly 9/1
+  notes:
+  - - 2020-08-07 16:45:43.473551657 -05:00
+    - |-
+      Updated title:
+       old: ensure psych preassignment goes smotohly
+       new: ensure psych preeassignment golive goes smoothly 9/1
+  - - 2020-08-06 12:59:12.393666861 -05:00
+    - 'Created: ensure psych preassignment goes smotohly'
+  created: 2020-08-06 12:59:12.393685766 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :psych
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: psych) to email/send invite to Nick & Paul time(s) and particpants,
+      and we will demo to ATC."
+    notes:
+    - - 2020-08-07 16:32:08.083323984 -05:00
+      - Task deleted.
+    - - 2020-08-06 12:59:21.576881810 -05:00
+      - 'Created: (proj: psych) to email/send invite to Nick & Paul time(s) and particpants,
+        and we will demo to ATC.'
+    created: 2020-08-06 12:59:21.576907629 -05:00
+    completed:
+    deleted: 2020-08-07 16:32:08.083268957 -05:00
+    last_reviewed:
+    action_context: :Mark
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: psych) to get Dr. Liggins et. al. and ATC in a meeting to walk
+      through the entire process end-to-end: ATC preassignment, Psych triage and the
+      case where a patient is prassigned to PSY WAITING and, after hours, when ATC
+      needs to put them up to a unit."
+    notes:
+    - - 2020-08-07 16:32:27.688255925 -05:00
+      - Task deleted.
+    - - 2020-08-06 12:59:44.830607437 -05:00
+      - 'Created: (proj: psych) to get Dr. Liggins et. al. and ATC in a meeting to
+        walk through the entire process end-to-end: ATC preassignment, Psych triage
+        and the case where a patient is prassigned to PSY WAITING and, after hours,
+        when ATC needs to put them up to a unit.'
+    created: 2020-08-06 12:59:44.830623473 -05:00
+    completed:
+    deleted: 2020-08-07 16:32:27.688221185 -05:00
+    last_reviewed:
+    action_context: :Scott
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: psych) - psych & Transfer Center: 2 questions"
+    notes:
+    - - 2020-08-06 13:05:17.696750673 -05:00
+      - Task completed.
+    - - 2020-08-06 13:05:09.997882791 -05:00
+      - 'Created: (proj: psych) - psych & Transfer Center: 2 questions'
+    created: 2020-08-06 13:05:09.997918811 -05:00
+    completed: 2020-08-06 13:05:17.696727223 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :mark
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: psych) mark - psych & Transfer Center: 2 questions"
+    notes:
+    - - 2020-08-07 16:33:40.048020653 -05:00
+      - Task reviewed.
+    - - 2020-08-06 13:05:28.909313840 -05:00
+      - 'Created: (proj: psych) mark - psych & Transfer Center: 2 questions'
+    created: 2020-08-06 13:05:28.909331645 -05:00
+    completed:
+    deleted:
+    last_reviewed: 2020-08-07 16:33:40.047857236 -05:00
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: psych) w meeting 8/11 atc and psych walkthrough"
+    notes:
+    - - 2020-08-07 16:52:27.513349425 -05:00
+      - Task deleted.
+    - - 2020-08-07 16:52:25.002269115 -05:00
+      - Task deleted.
+    - - 2020-08-07 16:49:59.362864697 -05:00
+      - 'Created: (proj: psych) w meeting 8/11 atc and psych walkthrough'
+    created: 2020-08-07 16:49:59.362892027 -05:00
+    completed:
+    deleted: 2020-08-07 16:52:27.513307182 -05:00
+    last_reviewed:
+    action_context: :psych
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: psych) meeting 8/11 atc and psych walkthrough"
+    notes:
+    - - 2020-08-07 16:52:32.188063211 -05:00
+      - 'Created: (proj: psych) meeting 8/11 atc and psych walkthrough'
+    created: 2020-08-07 16:52:32.188093505 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: psych) meeting 8/11 atc and psych"
+    notes:
+    - - 2020-08-07 16:55:16.371944056 -05:00
+      - 'Created: (proj: psych) meeting 8/11 atc and psych'
+    created: 2020-08-07 16:55:16.371978359 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: find a cheap/free/free for one software to automate testing of our guis as
+    a proof of concept.
+  notes:
+  - - 2020-08-07 09:11:16.250102128 -05:00
+    - 'Created: find a cheap/free/free for one software to automate testing of our
+      guis as a proof of concept.'
+  created: 2020-08-07 09:11:16.250127801 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :atest
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: atest) calendar time created for sept 2nd"
+    notes:
+    - - 2020-08-07 09:16:16.445352427 -05:00
+      - 'Created: (proj: atest) calendar time created for sept 2nd'
+    created: 2020-08-07 09:16:16.445385591 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
