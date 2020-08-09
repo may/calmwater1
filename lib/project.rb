@@ -95,12 +95,30 @@ class Project < CommonProjectTask
     view_project
     self.view_notes
   end
+
+  # try the elegent red only option, else redline the whole thing=>less crusty code
+  def puts_project
+    if @tasks.count == 0
+      if $color_only
+        print `tput setaf 1` # red
+      end 
+      print "[#{@tasks.count}!]"
+    else
+      print "[#{@tasks.count}]"
+    end # tasks == 0
+    puts " (#{@keyword}) #{@title}"
+    if $color_only
+      print `tput sgr0` # reset colors
+    end
+  end 
   
   def to_s
     if @tags.empty?
-      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
+    #      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
+          "[#{@tasks.count}] (#{@keyword}) #{@title}"
     else
-      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
+      #      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
+      "[#{@tasks.count}] (#{@keyword}) {#{@tags}} #{@title}"
     end 
   end 
 end

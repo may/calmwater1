@@ -205,12 +205,11 @@ class ExtbrainData
     else
       proj = projects # consider projects.dup if you use sort!
     end 
-    # Group by tags.
-    # TODO as of 2020-08-09, not using tags, so skip this
-    #    proj.sort { |a, b| a.tags <=> b.tags }
-    # 2020-08-09 add this instead
+    ## Group by tags.
+    ## TODO as of 2020-08-09, not using tags, so skip this
+    ##    proj.sort { |a, b| a.tags <=> b.tags }
     proj = proj.sort { |a, b| a.keyword <=> b.keyword }
-    proj.each { |p| puts p }
+    proj.each { |p| p.puts_project }
     puts "No projects, yet. Add one with 'p keyword title of your project'" if proj.empty?
   end 
   

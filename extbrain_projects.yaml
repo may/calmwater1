@@ -2022,7 +2022,18 @@
   life_context: :job
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: infs2) on calendar for maybe 8/12 or thereabouts"
+    notes:
+    - - 2020-08-09 16:26:32.673826880 -05:00
+      - 'Created: (proj: infs2) on calendar for maybe 8/12 or thereabouts'
+    created: 2020-08-09 16:26:32.673955316 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: Epic upgrade to May 2020, on 10/10/2020.
   notes:
