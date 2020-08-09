@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-02
+# Revised: 2020-08-07
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -515,7 +515,9 @@ def review_projects_and_subtasks(projects)
     puts "Reviewing project: #{p.keyword}"
     subtasks_to_review = p.tasks.filter { |t| not_recently_reviewed(t) }
     if subtasks_to_review.empty? and p.tasks.empty?
+      print `tput setaf 1` # red
       puts "    No subtasks! Need to define next action/waiting for this project."
+      print `tput sgr0` # reset colors
     else
       puts "    #{p}"
       subtasks_to_review.each { |t| review_and_maybe_edit(t) }      
@@ -534,6 +536,13 @@ end
 
 # A checklist that requires explict checking to get past each step.
 def weekly_review
+  def list_duplicates(array)
+    duplicates = array.select { |e| array.count(e) > 1 }
+    duplicates.uniq
+  end
+
+  list_duplicates($data.tasks)
+  
   def do_until_done(review_step_text)
     print review_step_text
     until (gets.strip == 'done')

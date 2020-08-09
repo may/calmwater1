@@ -230,6 +230,8 @@
   - !ruby/object:Task
     title: "(extb-log) decide how to store logging info/journal info."
     notes:
+    - - 2020-08-09 14:50:41.825529831 -05:00
+      - Task deleted.
     - - 2020-08-07 17:08:54.966611706 -05:00
       - |
         next action is decide how to store logging info/journal info.
@@ -241,7 +243,7 @@
       - 'Created: (extb-log) decide how to store logging info/journal info.'
     created: 2020-07-31 17:20:45.575110822 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-09 14:50:41.825493445 -05:00
     last_reviewed: 2020-07-31 17:22:31.973064009 -05:00
     action_context: :computer
     life_context: :personal
@@ -629,8 +631,6 @@
     title: "(extb) create the 'tac' command for when you've created a task in the
       wrong action context. same as plc."
     notes:
-    - - 2020-08-07 17:36:51.752496505 -05:00
-      - Task completed.
     - - 2020-08-07 17:33:54.245064755 -05:00
       - Task reviewed.
     - - 2020-07-31 18:29:34.958558348 -05:00
@@ -639,7 +639,7 @@
       - 'Created: creat the ''tac'' command for when you''ve created a task in the
         wrong action context. same as plc.'
     created: 2020-07-19 23:52:02.891433474 -05:00
-    completed: 2020-08-07 17:36:51.752470205 -05:00
+    completed:
     deleted:
     last_reviewed: 2020-08-07 17:33:54.245019168 -05:00
     action_context: :computer
@@ -1322,6 +1322,8 @@
   title: blogging at theselfupgrade.com for fun, to express myself, and help others
     get better.
   notes:
+  - - 2020-08-07 18:12:51.020401892 -05:00
+    - Project reviewed.
   - - 2020-08-02 14:12:11.173845055 -05:00
     - Project reviewed.
   - - 2020-07-20 22:17:44.664411564 -05:00
@@ -1330,7 +1332,7 @@
   created: 2020-07-20 22:17:44.664439604 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:12:11.173795143 -05:00
+  last_reviewed: 2020-08-07 18:12:51.020353042 -05:00
   keyword: :blog
   life_context: :personal
   tags: []
@@ -1410,6 +1412,8 @@
   - !ruby/object:Task
     title: "(blog) patook review"
     notes:
+    - - 2020-08-07 18:12:33.863385429 -05:00
+      - Task reviewed.
     - - 2020-08-02 14:02:48.659471834 -05:00
       - Task reviewed.
     - - 2020-07-29 17:41:27.714802761 -05:00
@@ -1417,7 +1421,7 @@
     created: 2020-07-29 17:41:27.714829411 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 14:02:48.659416721 -05:00
+    last_reviewed: 2020-08-07 18:12:33.863335206 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
@@ -1463,6 +1467,8 @@
   - !ruby/object:Task
     title: "(blog) hey.com review"
     notes:
+    - - 2020-08-07 18:12:34.927448446 -05:00
+      - Task reviewed.
     - - 2020-08-02 14:02:51.807204667 -05:00
       - Task reviewed.
     - - 2020-07-29 17:47:07.999906635 -05:00
@@ -1470,18 +1476,20 @@
     created: 2020-07-29 17:47:07.999940131 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 14:02:51.807173387 -05:00
+    last_reviewed: 2020-08-07 18:12:34.927398489 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(pt: blog) write.as - why no ssl at www.theselfupgrade.com?"
     notes:
+    - - 2020-08-07 18:12:40.965996335 -05:00
+      - Task completed.
     - - 2020-08-02 14:09:41.263740401 -05:00
       - Task reviewed.
     - - 2020-08-01 14:53:48.489721661 -05:00
       - 'Created: (pt: blog) write.as - why no ssl at www.theselfupgrade.com?'
     created: 2020-08-01 14:53:48.489751674 -05:00
-    completed:
+    completed: 2020-08-07 18:12:40.965951688 -05:00
     deleted:
     last_reviewed: 2020-08-02 14:09:41.263690332 -05:00
     action_context: :waiting
@@ -1489,12 +1497,14 @@
   - !ruby/object:Task
     title: "(pt: blog) matt/cj - GDPR compliance around email subscriptions?"
     notes:
+    - - 2020-08-07 18:12:42.205183156 -05:00
+      - Task completed.
     - - 2020-08-02 14:09:45.960172826 -05:00
       - Task reviewed.
     - - 2020-08-01 15:42:12.857926922 -05:00
       - 'Created: (pt: blog) matt/cj - GDPR compliance around email subscriptions?'
     created: 2020-08-01 15:42:12.857955172 -05:00
-    completed:
+    completed: 2020-08-07 18:12:42.205134897 -05:00
     deleted:
     last_reviewed: 2020-08-02 14:09:45.960127259 -05:00
     action_context: :waiting
@@ -1504,6 +1514,8 @@
       As sweet as write.as is, I perfer having control. Of course, offering both is
       an option too."
     notes:
+    - - 2020-08-07 18:12:46.340051614 -05:00
+      - Task reviewed.
     - - 2020-08-02 14:09:53.245622154 -05:00
       - Task reviewed.
     - - 2020-08-01 15:43:15.126333400 -05:00
@@ -1513,7 +1525,7 @@
     created: 2020-08-01 15:43:15.126372919 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 14:09:53.245575357 -05:00
+    last_reviewed: 2020-08-07 18:12:46.340008512 -05:00
     action_context: :computer
     life_context: :personal
 - !ruby/object:Project
@@ -1668,6 +1680,8 @@
 - !ruby/object:Project
   title: Ensure fence is replaced this summer since it is falling down.
   notes:
+  - - 2020-08-07 18:12:52.924479104 -05:00
+    - Project reviewed.
   - - 2020-08-02 14:12:41.411299446 -05:00
     - Project reviewed.
   - - 2020-07-24 11:33:41.581238807 -05:00
@@ -1680,7 +1694,7 @@
   created: 2020-07-24 11:33:34.695675005 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:12:41.411263972 -05:00
+  last_reviewed: 2020-08-07 18:12:52.924447827 -05:00
   keyword: :fence
   life_context: :personal
   tags: []
@@ -1733,9 +1747,26 @@
     last_reviewed:
     action_context: :waiting
     life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: fence) kip confrim coming 8/13 or later, or let me know when they
+      are coming"
+    notes:
+    - - 2020-08-09 14:55:56.374423379 -05:00
+      - Task reviewed.
+    - - 2020-08-07 18:14:35.024887079 -05:00
+      - 'Created: (proj: fence) kip confrim coming 8/13 or later, or let me know when
+        they are coming'
+    created: 2020-08-07 18:14:35.024904957 -05:00
+    completed:
+    deleted:
+    last_reviewed: 2020-08-09 14:55:56.374243861 -05:00
+    action_context: :waiting
+    life_context: :personal
 - !ruby/object:Project
   title: MMS come out and do a survey of our property lines
   notes:
+  - - 2020-08-07 18:15:00.178134562 -05:00
+    - Project reviewed.
   - - 2020-08-05 12:45:03.691884985 -05:00
     - Project UNdeleted.
   - - 2020-08-05 12:44:25.402919290 -05:00
@@ -1752,7 +1783,7 @@
   created: 2020-07-24 11:35:23.300270897 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:12:56.317587708 -05:00
+  last_reviewed: 2020-08-07 18:15:00.178102857 -05:00
   keyword: :survey
   life_context: :personal
   tags: []
@@ -1779,13 +1810,29 @@
     title: "(proj: survey) mms come out friday 8/7 or maybe monday 8/10. put abstract
       in mailbox."
     notes:
+    - - 2020-08-07 18:14:43.390051173 -05:00
+      - Task completed.
     - - 2020-08-05 12:45:50.855532118 -05:00
       - 'Created: (proj: survey) mms come out friday 8/7 or maybe monday 8/10. put
         abstract in mailbox.'
     created: 2020-08-05 12:45:50.855551820 -05:00
-    completed:
+    completed: 2020-08-07 18:14:43.390009423 -05:00
     deleted:
     last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: survey) mms finish survey, put pins in, mark corners, bill us"
+    notes:
+    - - 2020-08-09 14:57:41.708811414 -05:00
+      - Task reviewed.
+    - - 2020-08-07 18:14:56.738077765 -05:00
+      - 'Created: (proj: survey) mms finish survey, put pins in, mark corners, bill
+        us'
+    created: 2020-08-07 18:14:56.738095191 -05:00
+    completed:
+    deleted:
+    last_reviewed: 2020-08-09 14:57:41.708747731 -05:00
     action_context: :waiting
     life_context: :personal
 - !ruby/object:Project
@@ -2294,6 +2341,8 @@
   title: Change it so that psm only looks at projects when selecting, no need to look
     at tasks.
   notes:
+  - - 2020-08-07 18:15:04.231440319 -05:00
+    - Project reviewed.
   - - 2020-08-02 14:18:11.267452197 -05:00
     - Project reviewed.
   - - 2020-07-29 15:23:44.480666008 -05:00
@@ -2302,7 +2351,7 @@
   created: 2020-07-29 15:23:44.480683758 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:18:11.267404832 -05:00
+  last_reviewed: 2020-08-07 18:15:04.231409293 -05:00
   keyword: :extb-psm
   life_context: :personal
   tags: []
@@ -2311,6 +2360,8 @@
 - !ruby/object:Project
   title: switch thenickmay over to write.as to allow easier updating
   notes:
+  - - 2020-08-07 18:18:11.495324853 -05:00
+    - Project reviewed.
   - - 2020-08-02 14:37:55.018544018 -05:00
     - Project reviewed.
   - - 2020-08-01 12:04:04.665698863 -05:00
@@ -2328,7 +2379,7 @@
   created: 2020-08-01 12:03:28.197224209 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:37:55.018500610 -05:00
+  last_reviewed: 2020-08-07 18:18:11.495276225 -05:00
   keyword: :thenickmay
   life_context: :personal
   tags: []
@@ -2338,6 +2389,8 @@
     title: "(pt: thenickmay) find the markdown source for thenickmay and try porting
       one article to write as and see how it goes. write.as/thenickmay"
     notes:
+    - - 2020-08-07 18:18:10.777026558 -05:00
+      - Task reviewed.
     - - 2020-08-02 14:37:17.182736033 -05:00
       - Task reviewed.
     - - 2020-08-02 14:37:16.008926010 -05:00
@@ -2356,12 +2409,14 @@
     created: 2020-08-01 12:04:54.606381904 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 14:37:17.182705032 -05:00
+    last_reviewed: 2020-08-07 18:18:10.776978048 -05:00
     action_context: :computer
     life_context: :personal
 - !ruby/object:Project
   title: move rowen grey website from weebly to write.as by November 1st, 2020.
   notes:
+  - - 2020-08-07 18:19:43.269853298 -05:00
+    - Project reviewed.
   - - 2020-08-02 14:37:57.502090154 -05:00
     - Project reviewed.
   - - 2020-08-01 15:05:09.991944441 -05:00
@@ -2369,16 +2424,33 @@
   created: 2020-08-01 15:05:09.991980329 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:37:57.502059119 -05:00
+  last_reviewed: 2020-08-07 18:19:43.269806436 -05:00
   keyword: :rgweb
   life_context: :personal
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: rgweb) try to replicate books page of rg.com on a new write.as
+      site"
+    notes:
+    - - 2020-08-09 14:58:41.895277846 -05:00
+      - Task reviewed.
+    - - 2020-08-07 18:18:40.940619613 -05:00
+      - 'Created: (proj: rgweb) try to replicate books page of rg.com on a new write.as
+        site'
+    created: 2020-08-07 18:18:40.940648409 -05:00
+    completed:
+    deleted:
+    last_reviewed: 2020-08-09 14:58:41.895224567 -05:00
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: do whatever Charles Ngo needs, use him to learn online writing, editing,
     running a brand (for my own authorship ongoing), and get closer to FIRE goals.
   notes:
+  - - 2020-08-07 18:20:10.190367476 -05:00
+    - Project reviewed.
   - - 2020-08-05 12:39:34.236821591 -05:00
     - |-
       Updated title:
@@ -2393,7 +2465,7 @@
   created: 2020-08-01 17:05:47.079302803 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 14:38:32.166156059 -05:00
+  last_reviewed: 2020-08-07 18:20:10.190334934 -05:00
   keyword: :cngo
   life_context: :personal
   tags: []
@@ -2403,6 +2475,8 @@
     title: "(pt: cngo) ask charles if there's a grade level that's too high when using
       hemmingwrite?"
     notes:
+    - - 2020-08-07 18:19:50.427811590 -05:00
+      - Task reviewed.
     - - 2020-08-02 14:38:30.473261912 -05:00
       - Task reviewed.
     - - 2020-08-01 17:06:02.013855781 -05:00
@@ -2411,18 +2485,20 @@
     created: 2020-08-01 17:06:02.013875086 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-02 14:38:30.473209899 -05:00
+    last_reviewed: 2020-08-07 18:19:50.427748850 -05:00
     action_context: :computer
     life_context: :personal
   - !ruby/object:Task
     title: "(pt: cngo) charles - need time tracking spreadsheet still?"
     notes:
+    - - 2020-08-07 18:19:53.186166682 -05:00
+      - Task reviewed.
     - - 2020-08-02 21:46:19.097370283 -05:00
       - 'Created: (pt: cngo) charles - need time tracking spreadsheet still?'
     created: 2020-08-02 21:46:19.097399669 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 18:19:53.186120295 -05:00
     action_context: :waiting
     life_context: :personal
   - !ruby/object:Task
@@ -2433,6 +2509,8 @@
       blog posts and newsletters into Notion? I was planning to put that in the wiki
       and clean it up a lot.'
     notes:
+    - - 2020-08-07 18:19:58.168816682 -05:00
+      - Task reviewed.
     - - 2020-08-04 19:34:06.470167422 -05:00
       - 'Created: (proj: cngo) I see I have a task in Notion called "Import Training
         Documents into Notion" that was due 7/31. I don''t know of any training documents.
@@ -2443,7 +2521,7 @@
     created: 2020-08-04 19:34:06.470189855 -05:00
     completed:
     deleted:
-    last_reviewed:
+    last_reviewed: 2020-08-07 18:19:58.168784524 -05:00
     action_context: :waiting
     life_context: :personal
   - !ruby/object:Task
@@ -2451,12 +2529,14 @@
       paragraph, or format the first section? First section = all the text from the
       start to the first H1."
     notes:
+    - - 2020-08-07 18:20:03.275933512 -05:00
+      - Task completed.
     - - 2020-08-04 19:40:58.603114277 -05:00
       - 'Created: (proj: cngo) New process for shorter blog post emails: format the
         first paragraph, or format the first section? First section = all the text
         from the start to the first H1.'
     created: 2020-08-04 19:40:58.603147775 -05:00
-    completed:
+    completed: 2020-08-07 18:20:03.275904378 -05:00
     deleted:
     last_reviewed:
     action_context: :waiting
