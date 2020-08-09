@@ -101,15 +101,15 @@ class Project < CommonProjectTask
     if @tasks.count == 0
       if $color_only
         print `tput setaf 1` # red
+        print "[#{@tasks.count}]"
+      else
+        print "[#{@tasks.count}!]"
       end 
-      print "[#{@tasks.count}!]"
     else
       print "[#{@tasks.count}]"
     end # tasks == 0
     puts " (#{@keyword}) #{@title}"
-    if $color_only
-      print `tput sgr0` # reset colors
-    end
+    print `tput sgr0` if $color_only # reset colors
   end 
   
   def to_s

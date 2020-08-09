@@ -39,14 +39,14 @@ class ExtbrainData
       if days >= 0
         case 
         when days < 4
-          print `tput setaf 2` # green
+          print `tput setaf 2` if $color_only # green
         when days < 7
-          print `tput setaf 3` # yellow
+          print `tput setaf 3` if $color_only # yellow
         when days > 8 
-          print `tput setaf 1` # red
+          print `tput setaf 1` if $color_only # red
         end
         puts "#{days} days ago."
-        print `tput sgr0` # reset colors
+        print `tput sgr0` if $color_only # reset colors
       else
         puts $last_weekly_review_done.strftime($time_formatting_string)
         puts "Happy New Year(ish)! Start fresh with a weekly review, using the friendly 'wr' command."
