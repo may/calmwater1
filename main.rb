@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-02
+# Revised: 2020-08-09
 
 
 # todo d for delete
@@ -103,7 +103,7 @@ def dispatch_user_input(input_string)
       system('clear')
     when 'context'
       change_life_context(keyword)
-    when 'co', 'lc', 'comp', 'computer'
+    when 'co', 'lc', 'comp', 'computer', 'pc'
       view_or_add_task('computer', keyword, content)
     when 'c', 'com', 'complete', 'finish', 'done'
       edit_project_or_task('complete', keyword, content)
