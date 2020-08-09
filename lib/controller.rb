@@ -515,9 +515,13 @@ def review_projects_and_subtasks(projects)
     puts "Reviewing project: #{p.keyword}"
     subtasks_to_review = p.tasks.filter { |t| not_recently_reviewed(t) }
     if subtasks_to_review.empty? and p.tasks.empty?
-      print `tput setaf 1` # red
+      if $color_only
+        print `tput setaf 1` # red
+      end 
       puts "    No subtasks! Need to define next action/waiting for this project."
-      print `tput sgr0` # reset colors
+      if $color_only
+        print `tput sgr0` # reset colors
+      end 
     else
       puts "    #{p}"
       subtasks_to_review.each { |t| review_and_maybe_edit(t) }      

@@ -1,6 +1,6 @@
 ---
-p: 23
-e: 20
+p: 26
+e: 21
 h: 16
 s: 10
 contex: 1
@@ -8,9 +8,9 @@ context: 9
 pt: 24
 w: 10
 c: 15
-clear: 1
+clear: 2
 wr: 17
 pk: 1
 ! '': 1
 co: 1
-pc: 1
+pc: 3

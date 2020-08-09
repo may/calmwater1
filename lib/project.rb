@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-08-04
+# Revised: 2020-08-09
 
 require_relative 'common_project_task'
 
@@ -97,10 +97,18 @@ class Project < CommonProjectTask
   end
   
   def to_s
+    if @tasks.count == 0
+      if $color_only
+        print `tput setaf 1` # red
+      end
+      task_count
+      if $color_only
+        print `tput sgr0` # reset colors
+      end 
     if @tags.empty?
-      "(#{@keyword}) [#{@life_context}] #{@title}"
+      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
     else
-      "(#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
+      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
     end 
   end 
 end
