@@ -536,13 +536,6 @@ end
 
 # A checklist that requires explict checking to get past each step.
 def weekly_review
-  def list_duplicates(array)
-    duplicates = array.select { |e| array.count(e) > 1 }
-    duplicates.uniq
-  end
-
-  list_duplicates($data.tasks)
-  
   def do_until_done(review_step_text)
     print review_step_text
     until (gets.strip == 'done')
