@@ -203,10 +203,13 @@ class ExtbrainData
       life_context = life_context.to_sym
       proj = projects.filter { |p| p.life_context == life_context.to_sym }
     else
-      proj = projects
+      proj = projects # consider projects.dup if you use sort!
     end 
     # Group by tags.
-    proj.sort { |a, b| a.tags <=> b.tags }
+    # TODO as of 2020-08-09, not using tags, so skip this
+    #    proj.sort { |a, b| a.tags <=> b.tags }
+    # 2020-08-09 add this instead
+    proj = proj.sort { |a, b| a.keyword <=> b.keyword }
     proj.each { |p| puts p }
     puts "No projects, yet. Add one with 'p keyword title of your project'" if proj.empty?
   end 

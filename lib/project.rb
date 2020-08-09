@@ -97,14 +97,6 @@ class Project < CommonProjectTask
   end
   
   def to_s
-    if @tasks.count == 0
-      if $color_only
-        print `tput setaf 1` # red
-      end
-      task_count
-      if $color_only
-        print `tput sgr0` # reset colors
-      end 
     if @tags.empty?
       "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
     else
