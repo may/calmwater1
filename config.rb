@@ -16,7 +16,7 @@ $archive_file_projects = "extbrain_#{Time.now.year}_projects_completed_or_delete
 $archive_file_tasks = "extbrain_#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
 
 
-$color_only = false # If perfer b&w, if colorblind, or if using Windows, set this to false.
+$color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 

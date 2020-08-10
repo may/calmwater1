@@ -1033,6 +1033,32 @@
     last_reviewed:
     action_context: :someday/maybe
     life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) testing co extb"
+    notes:
+    - - 2020-08-09 20:59:57.735962058 -05:00
+      - Task deleted.
+    - - 2020-08-09 20:59:08.247118911 -05:00
+      - 'Created: (proj: extb) testing co extb'
+    created: 2020-08-09 20:59:08.247146011 -05:00
+    completed:
+    deleted: 2020-08-09 20:59:57.735936060 -05:00
+    last_reviewed:
+    action_context: :co
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) testing co extb"
+    notes:
+    - - 2020-08-09 21:00:36.326759554 -05:00
+      - Task deleted.
+    - - 2020-08-09 21:00:21.373100641 -05:00
+      - 'Created: (proj: extb) testing co extb'
+    created: 2020-08-09 21:00:21.373128877 -05:00
+    completed:
+    deleted: 2020-08-09 21:00:36.326717441 -05:00
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: implement Leave of Abscence for Psych, by manaaging work, doing the implementation/build,
     leading the meetings.
@@ -2707,3 +2733,32 @@
     last_reviewed: 2020-08-07 17:00:13.660354475 -05:00
     action_context: :waiting
     life_context: :job
+- !ruby/object:Project
+  title: Cleaning out Remember The Milk (RTM) and deliberately processing every item
+    that I think is still valid. Either delete, retype into extbrain, put on work
+    calendar, or put on personal calendar.
+  notes:
+  - - 2020-08-09 20:58:22.533012944 -05:00
+    - 'Created: Cleaning out Remember The Milk (RTM) and deliberately processing every
+      item that I think is still valid. Either delete, retype into extbrain, put on
+      work calendar, or put on personal calendar.'
+  created: 2020-08-09 20:58:22.533048929 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :nortm
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: nortm) grab a task in RTM, delete or process it."
+    notes:
+    - - 2020-08-09 20:58:49.127066380 -05:00
+      - 'Created: (proj: nortm) grab a task in RTM, delete or process it.'
+    created: 2020-08-09 20:58:49.127093225 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal

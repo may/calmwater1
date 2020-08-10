@@ -107,7 +107,7 @@ def dispatch_user_input(input_string)
       view_or_add_task('computer', keyword, content)
     when 'c', 'com', 'complete', 'finish', 'done'
       edit_project_or_task('complete', keyword, content)
-    when 'd', 'del', 'delete', 'remove'
+    when 'd', 'del', 'delete', 'remove', 'rm'
       edit_project_or_task('delete', keyword, content)
     when 'e', 'exit', 'q'
       exit

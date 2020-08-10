@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-04
+# Revised: 2020-08-09
 
 require_relative 'common_project_task'
 
@@ -10,7 +10,7 @@ class Task < CommonProjectTask
   def initialize(title, action_context, life_context = :personal)
     super(title, life_context)
     case action_context
-      when 'c', 'com', 'comp'
+      when 'c', 'co', 'com', 'comp'
         action_context = 'computer'
       when 'j', 'jo', 'job'
         action_context = 'job'

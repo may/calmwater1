@@ -65,11 +65,6 @@ class Project < CommonProjectTask
     task
   end
 
-
-  def task_count
-    @tasks.count
-  end 
-
 #  def delete_task(task)
 #  end
 
@@ -98,15 +93,15 @@ class Project < CommonProjectTask
 
   # try the elegent red only option, else redline the whole thing=>less crusty code
   def puts_project
-    if @tasks.count == 0
+    if tasks.count == 0
       if $color_only
         print `tput setaf 1` # red
-        print "[#{@tasks.count}]"
+        print "[#{tasks.count}]"
       else
-        print "[#{@tasks.count}!]"
+        print "[#{tasks.count}!]"
       end 
     else
-      print "[#{@tasks.count}]"
+      print "[#{tasks.count}]"
     end # tasks == 0
     puts " (#{@keyword}) #{@title}"
     print `tput sgr0` if $color_only # reset colors
@@ -114,11 +109,11 @@ class Project < CommonProjectTask
   
   def to_s
     if @tags.empty?
-    #      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
-          "[#{@tasks.count}] (#{@keyword}) #{@title}"
+      # "{#{tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
+      "[#{tasks.count}] (#{@keyword}) #{@title}"
     else
-      #      "{#{@tasks.count}} (#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
-      "[#{@tasks.count}] (#{@keyword}) {#{@tags}} #{@title}"
+      # "{#{tasks.count}} (#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
+      "[#{tasks.count}] (#{@keyword}) {#{@tags}} #{@title}"
     end 
   end 
 end
