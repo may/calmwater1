@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2020-08-09
+# Revised: 2020-08-13
 $log_command_usage_locally = true
 $data_file_command_usage = "#{Dir.home}/extbrain/extbrain_command_usage.yaml"
 $save_file_last_weekly_review_done = "#{Dir.home}/extbrain/extbrain_last_weekly_review.yaml"
@@ -12,8 +12,8 @@ $save_file_projects = "#{Dir.home}/extbrain/extbrain_projects.yaml"
 $save_file_tasks = "#{Dir.home}/extbrain/extbrain_tasks.yaml"
 $lockfile = "#{Dir.home}/extbrain/lockfile-extbrain.txt" # unix/linux/osx only?
 
-$archive_file_projects = "extbrain_#{Time.now.year}_projects_completed_or_deleted.yaml"
-$archive_file_tasks = "extbrain_#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
+$archive_file_projects = "#{Dir.home}/extbrain/extbrain_#{Time.now.year}_projects_completed_or_deleted.yaml"
+$archive_file_tasks = "#{Dir.home}/extbrain/extbrain_#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
 
 
 $color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.

@@ -1,348 +1,282 @@
 ---
 - !ruby/object:Project
-  title: testing extbrain test project
+  title: drg los column updated on unit manager, storyboard, and patient lists for
+    8/18 golive, build done 8/6
   notes:
-  - - 2020-07-04 13:27:23.407786500 -05:00
+  - - 2020-08-04 15:42:10.974120466 -05:00
     - Project completed.
-  - - 2020-07-03 21:57:16.726470209 -05:00
-    - Project completed.
-  - - 2020-07-03 21:57:13.051268051 -05:00
-    - Project completed.
-  - - 2020-06-15 12:31:09.495965346 -05:00
-    - 'Created: testing extbrain test project'
-  created: 2020-06-15 12:31:09.495969946 -05:00
-  completed: 2020-07-04 13:27:23.407743831 -05:00
+  - - 2020-08-04 09:05:23.388891659 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: job
+  - - 2020-08-04 09:04:47.246494044 -05:00
+    - |-
+      Updated life_context:
+       old: job
+       new: personal
+  - - 2020-08-04 08:23:04.290597187 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: job
+  - - 2020-08-04 08:07:44.293659609 -05:00
+    - 'Created: drg los column updated on unit manager, storyboard, and patient lists
+      for 8/18 golive, build done 8/6'
+  created: 2020-08-04 08:07:44.293683413 -05:00
+  completed: 2020-08-04 15:42:10.974094103 -05:00
   deleted:
   last_reviewed:
-  keyword: :test
-  life_context: :work
-  tags: []
-  psm: ''
-  tasks: []
-- !ruby/object:Project
-  title: 819878 - move new preadmission report to prd
-  notes:
-  - - 2020-07-03 22:24:50.493460478 -05:00
-    - Project completed.
-  - - 2020-06-25 16:22:28.381000989 -05:00
-    - 'Created: 819878 - move new preadmission report to prd'
-  created: 2020-06-25 16:22:28.381021070 -05:00
-  completed: 2020-07-03 22:24:50.493413393 -05:00
-  deleted:
-  last_reviewed:
-  keyword: :socscreen
-  life_context: :work
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: testing tasks
-    notes:
-    - - 2020-07-03 13:34:42.635353973 -05:00
-      - 'Created: testing tasks'
-    created: 2020-07-03 13:34:42.635374727 -05:00
-    completed:
-    deleted:
-    last_reviewed:
-    action_context: computer
-    life_context: :work
-- !ruby/object:Project
-  title: testing deletion
-  notes:
-  - - 2020-07-04 13:44:58.252774861 -05:00
-    - 'Created: testing deletion'
-  created: 2020-07-04 13:44:58.252792984 -05:00
-  completed:
-  deleted: 2020-07-04 13:46:58.252792984 -05:00
-  last_reviewed:
-  keyword: :testing
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
-- !ruby/object:Project
-  title: testing some shit
-  notes:
-  - - 2020-07-15 21:19:22.421480261 -05:00
-    - Project completed.
-  - - 2020-07-15 21:03:55.479419043 -05:00
-    - 'Created: testing some shit'
-  created: 2020-07-15 21:03:55.479447748 -05:00
-  completed: 2020-07-15 21:19:22.421440147 -05:00
-  deleted:
-  last_reviewed:
-  keyword: :testing-proj
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
-- !ruby/object:Project
-  title: testing
-  notes:
-  - - 2020-07-19 12:25:02.039489808 -05:00
-    - Project deleted.
-  - - 2020-07-19 10:13:56.669798146 -05:00
-    - |-
-      Updated title:
-       old: more testing satnehuasntohu
-       new: testing
-  - - 2020-07-18 22:40:44.471642032 -05:00
-    - |-
-      Updated psm:
-       old: snhsnthsnth
-       new: psm testpthdnthdnthd
-  - - 2020-07-18 22:40:21.339818155 -05:00
-    - |-
-      Updated psm:
-       old: e
-       new: snhsnthsnth
-  - - 2020-07-18 22:40:10.326497968 -05:00
-    - |-
-      Updated psm:
-       old: Here is some psm for testp
-       new: e
-  - - 2020-07-18 22:38:24.825942870 -05:00
-    - "Updated psm:\n old: \n new: Here is some psm for testp"
-  - - 2020-07-18 22:19:07.057247776 -05:00
-    - |-
-      Updated title:
-       old: testing project testing bah
-       new: more testing satnehuasntohu
-  - - 2020-07-18 22:17:49.895779029 -05:00
-    - |-
-      Updated title:
-       old: test project
-       new: testing project testing bah
-  - - 2020-07-18 19:27:43.447129995 -05:00
-    - 'Created: test project'
-  created: 2020-07-18 19:27:43.447155818 -05:00
-  completed:
-  deleted: 2020-07-19 12:25:02.039462032 -05:00
-  last_reviewed:
-  keyword: :testp
-  life_context: :personal
-  tags: []
-  psm: psm testpthdnthdnthd
-  tasks:
-  - !ruby/object:Task
-    title: make 'e' edit instead of exit maybe
-    notes:
-    - - 2020-07-19 12:11:15.039276239 -05:00
-      - Task completed.
-    - - 2020-07-19 12:05:17.780093848 -05:00
-      - Task completed.
-    - - 2020-07-18 22:17:19.221479372 -05:00
-      - 'Created: make ''e'' edit instead of exit maybe'
-    created: 2020-07-18 22:17:19.221515202 -05:00
-    completed: 2020-07-19 12:11:15.039214770 -05:00
-    deleted:
-    last_reviewed:
-    action_context: :someday/maybe
-    life_context: :personal
-
----
-- !ruby/object:Project
-  title: test project
-  notes:
-  - - 2020-07-19 22:03:50.785911599 -05:00
-    - Project completed.
-  - - 2020-07-19 12:27:53.496614023 -05:00
-    - Project UNdeleted.
-  - - 2020-07-19 12:27:45.722690775 -05:00
-    - Project deleted.
-  - - 2020-07-19 12:26:54.466708338 -05:00
-    - Project UNdeleted.
-  - - 2020-07-19 12:26:53.270258555 -05:00
-    - Project deleted.
-  - - 2020-07-18 19:27:26.405433586 -05:00
-    - Project deleted.
-  - - 2020-07-18 19:27:24.584350234 -05:00
-    - 'Created: test project'
-  created: 2020-07-18 19:27:24.584378667 -05:00
-  completed: 2020-07-19 22:03:50.785883929 -05:00
-  deleted:
-  last_reviewed:
-  keyword: :testp
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
----
-- !ruby/object:Project
-  title: test project
-  notes:
-  - - 2020-07-19 22:22:29.155754351 -05:00
-    - Project completed.
-  - - 2020-07-19 22:12:03.600611132 -05:00
-    - aeuau
-  - - 2020-07-19 22:11:53.999848546 -05:00
-    - sntaeuhaosnuthaoeusntaoheunsatoeuhaoenstuha
-  - - 2020-07-18 19:27:47.737614922 -05:00
-    - 'Created: test project'
-  created: 2020-07-18 19:27:47.737631252 -05:00
-  completed: 2020-07-19 22:22:29.155712634 -05:00
-  deleted:
-  last_reviewed:
-  keyword: :testp2
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
----
-- !ruby/object:Project
-  title: implement ADT orders before August 2020 version, eg April 2021 date.
-  notes:
-  - - 2020-07-28 12:58:21.549208285 -05:00
-    - Project deleted.
-  - - 2020-07-20 08:41:37.857718035 -05:00
-    - 'Created: implement ADT orders before August 2020 version, eg April 2021 date.'
-  created: 2020-07-20 08:41:37.857749684 -05:00
-  completed:
-  deleted: 2020-07-28 12:58:21.549179867 -05:00
-  last_reviewed:
-  keyword: :adt-orders
+  keyword: :los
   life_context: :job
   tags: []
   psm: ''
   tasks:
   - !ruby/object:Task
-    title: "(adt-orders) Alex - setup meeting with Kevin C and Paul and I for September
-      2020"
+    title: "(pt: los) kasie could you draft a blurb for loss New, since you have the
+      most experience with these column differences and got the approvals? Then send
+      it back to the group and anyone who needs changes can weigh in for the specifics
+      of their application."
     notes:
-    - - 2020-07-20 08:41:58.110445171 -05:00
-      - 'Created: Alex - setup meeting with Kevin C and Paul and I for September 2020'
-    created: 2020-07-20 08:41:58.110469693 -05:00
-    completed:
+    - - 2020-08-04 11:47:23.638611479 -05:00
+      - Task completed.
+    - - 2020-08-04 09:05:23.388930955 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 09:04:47.246531338 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
+    - - 2020-08-04 08:08:26.758577712 -05:00
+      - 'Created: (pt: los) kasie could you draft a blurb for loss New, since you
+        have the most experience with these column differences and got the approvals?
+        Then send it back to the group and anyone who needs changes can weigh in for
+        the specifics of their application.'
+    created: 2020-08-04 08:08:26.758595140 -05:00
+    completed: 2020-08-04 11:47:23.638582440 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: los) kasie - email screenshots"
+    notes:
+    - - 2020-08-04 11:47:25.318104911 -05:00
+      - Task completed.
+    - - 2020-08-04 09:05:23.388962825 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 09:04:47.246569438 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
+    - - 2020-08-04 08:08:39.265505128 -05:00
+      - 'Created: (pt: los) kasie - email screenshots'
+    created: 2020-08-04 08:08:39.265523110 -05:00
+    completed: 2020-08-04 11:47:25.318070725 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: los) todd - email screenshots"
+    notes:
+    - - 2020-08-04 12:30:25.200743263 -05:00
+      - Task completed.
+    - - 2020-08-04 09:05:23.388993835 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 09:04:47.246594996 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
+    - - 2020-08-04 08:08:44.197860435 -05:00
+      - 'Created: (pt: los) todd - email screenshots'
+    created: 2020-08-04 08:08:44.197887658 -05:00
+    completed: 2020-08-04 12:30:25.200674908 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: los) kathy - email screenshots"
+    notes:
+    - - 2020-08-04 09:05:23.389023252 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 09:04:47.246619770 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
+    - - 2020-08-04 08:52:10.561650314 -05:00
+      - Task completed.
+    - - 2020-08-04 08:08:49.735338547 -05:00
+      - 'Created: (pt: los) kathy - email screenshots'
+    created: 2020-08-04 08:08:49.735355259 -05:00
+    completed: 2020-08-04 08:52:10.561608918 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: los) paul - email screenshots"
+    notes:
+    - - 2020-08-04 11:47:30.690630943 -05:00
+      - Task completed.
+    - - 2020-08-04 09:05:23.389051015 -05:00
+      - |-
+        Updated life_context:
+         old: personal
+         new: job
+    - - 2020-08-04 09:04:47.248688312 -05:00
+      - |-
+        Updated life_context:
+         old: job
+         new: personal
+    - - 2020-08-04 08:08:55.291983096 -05:00
+      - 'Created: (pt: los) paul - email screenshots'
+    created: 2020-08-04 08:08:55.292000494 -05:00
+    completed: 2020-08-04 11:47:30.690608229 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: los) once todd emails screenshots, email all ot teresa or put in
+      one note if she perfers"
+    notes:
+    - - 2020-08-04 12:39:20.579871273 -05:00
+      - Task completed.
+    - - 2020-08-04 11:48:00.228695062 -05:00
+      - 'Created: (proj: los) once todd emails screenshots, email all ot teresa or
+        put in one note if she perfers'
+    created: 2020-08-04 11:48:00.228717492 -05:00
+    completed: 2020-08-04 12:39:20.579849931 -05:00
     deleted:
     last_reviewed:
     action_context: :waiting
     life_context: :job
 ---
 - !ruby/object:Project
-  title: create functionality to make plc keyword context work in extbrain
+  title: final ensure tip sheet sent to keri for 8/11 golive, and what's new done
+    for 8/11 golive
   notes:
-  - - 2020-07-28 13:11:29.704923343 -05:00
+  - - 2020-08-05 10:50:17.395144211 -05:00
     - Project completed.
-  - - 2020-07-28 13:11:12.555168890 -05:00
+  - - 2020-08-04 08:22:48.182952373 -05:00
+    - |-
+      Updated life_context:
+       old: personal
+       new: job
+  - - 2020-08-04 07:39:14.203930331 -05:00
+    - 'Created: final ensure tip sheet sent to keri for 8/11 golive, and what''s new
+      done for 8/11 golive'
+  created: 2020-08-04 07:39:14.203959676 -05:00
+  completed: 2020-08-05 10:50:17.395118254 -05:00
+  deleted:
+  last_reviewed:
+  keyword: :uicc
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(pt: uicc) keri - link/document title for uicc clinical guidelines"
+    notes:
+    - - 2020-08-05 10:50:15.710579894 -05:00
+      - Task completed.
+    - - 2020-08-04 07:39:37.421440685 -05:00
+      - 'Created: (pt: uicc) keri - link/document title for uicc clinical guidelines'
+    created: 2020-08-04 07:39:37.421467795 -05:00
+    completed: 2020-08-05 10:50:15.710554477 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(pt: uicc) scott - final tip sheet w/ updated screenshot"
+    notes:
+    - - 2020-08-04 09:00:33.130085583 -05:00
+      - Task completed.
+    - - 2020-08-04 07:39:46.427848614 -05:00
+      - 'Created: (pt: uicc) scott - final tip sheet w/ updated screenshot'
+    created: 2020-08-04 07:39:46.427865400 -05:00
+    completed: 2020-08-04 09:00:33.130031240 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+---
+- !ruby/object:Project
+  title: create a feature in extbrain to color code projects based on last reviewed;
+    >7 days is yellow, >14 days is red.
+  notes:
+  - - 2020-08-07 17:28:26.767199311 -05:00
+    - Project deleted.
+  - - 2020-07-31 18:06:53.778468073 -05:00
+    - Project reviewed.
+  - - 2020-07-28 12:57:13.755336284 -05:00
     - |-
       Updated life_context:
        old: job
        new: personal
-  - - 2020-06-16 14:58:38.546488016 -05:00
-    - 'Created: create functionality to make plc keyword context work in extbrain'
-  created: 2020-06-16 14:58:38.546491497 -05:00
-  completed: 2020-07-28 13:11:29.704896327 -05:00
-  deleted:
-  last_reviewed:
-  keyword: :plc
+  - - 2020-06-16 16:50:38.458137759 -05:00
+    - 'Created: create a feature in extbrain to color code projects based on last
+      reviewed; >7 days is yellow, >14 days is red.'
+  created: 2020-06-16 16:50:38.458140869 -05:00
+  completed:
+  deleted: 2020-08-07 17:28:26.767153578 -05:00
+  last_reviewed: 2020-07-31 18:06:53.778423527 -05:00
+  keyword: :proj-color
   life_context: :personal
   tags: []
   psm: ''
   tasks:
   - !ruby/object:Task
-    title: testing computer context
+    title: "(proj-color) decide if want to go forward with color coding projects based
+      on last reviewed."
     notes:
-    - - 2020-07-15 21:18:59.410043127 -05:00
+    - - 2020-08-07 17:28:23.632003433 -05:00
       - Task deleted.
-    - - 2020-07-15 21:08:00.186399224 -05:00
-      - Task completed.
-    - - 2020-07-15 21:06:16.381356268 -05:00
-      - Task completed.
-    - - 2020-07-15 15:31:24.880925934 -05:00
-      - 'Created: testing computer context'
-    created: 2020-07-15 15:31:24.880963539 -05:00
+    - - 2020-08-02 15:18:27.005570580 -05:00
+      - Task reviewed.
+    - - 2020-07-31 18:06:38.324189084 -05:00
+      - 'Created: (proj-color) decide if want to go forward with color coding projects
+        based on last reviewed.'
+    created: 2020-07-31 18:06:38.324206777 -05:00
     completed:
-    deleted: 2020-07-15 21:18:59.409998787 -05:00
-    last_reviewed:
-    action_context: :computer
-    life_context: :job
----
-- !ruby/object:Project
-  title: ensure extbrain highlights projects WITHOUT next actions in red
-  notes:
-  - - 2020-08-02 14:18:07.056878895 -05:00
-    - Project deleted.
-  - - 2020-08-02 14:14:01.806608887 -05:00
-    - 'I''m not sure generically highlighting when a given project has no next actions
-      - presumably while I''m looking at other things - is really that helpful. may
-      be more of a distraction. I do have a check in place for the weekly review to
-      highlight anyone who doesn''t so that should be enough.
-
-      '
-  - - 2020-07-26 14:54:03.785176909 -05:00
-    - 'Created: ensure extbrain highlights projects WITHOUT next actions in red'
-  created: 2020-07-26 14:54:03.785205502 -05:00
-  completed:
-  deleted: 2020-08-02 14:18:07.056833561 -05:00
-  last_reviewed:
-  keyword: :extb-wr
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
----
-- !ruby/object:Project
-  title: adding a project in the middle
-  notes:
-  - - 2020-08-02 14:19:54.685764788 -05:00
-    - Project deleted.
-  - - 2020-08-02 14:19:03.019355237 -05:00
-    - Project UNdeleted.
-  - - 2020-08-02 14:18:58.534363209 -05:00
-    - Project deleted.
-  - - 2020-07-31 17:11:56.309156564 -05:00
-    - 'Created: adding a project in the middle'
-  created: 2020-07-31 17:11:56.309191168 -05:00
-  completed:
-  deleted: 2020-08-02 14:19:54.685719651 -05:00
-  last_reviewed:
-  keyword: :testing
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
----
-- !ruby/object:Project
-  title: testing new p
-  notes:
-  - - 2020-08-02 14:40:54.576242004 -05:00
-    - Project deleted.
-  - - 2020-08-02 14:32:47.755401038 -05:00
-    - 'Created: testing new p'
-  created: 2020-08-02 14:32:47.755421801 -05:00
-  completed:
-  deleted: 2020-08-02 14:40:54.576212876 -05:00
-  last_reviewed:
-  keyword: :newp
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks: []
----
-- !ruby/object:Project
-  title: test project
-  notes:
-  - - 2020-08-02 15:12:08.387227411 -05:00
-    - Project deleted.
-  - - 2020-08-02 15:11:43.596734473 -05:00
-    - 'Created: test project'
-  created: 2020-08-02 15:11:43.596770405 -05:00
-  completed:
-  deleted: 2020-08-02 15:12:08.387182512 -05:00
-  last_reviewed:
-  keyword: :testp
-  life_context: :personal
-  tags: []
-  psm: ''
-  tasks:
-  - !ruby/object:Task
-    title: "(pt: testp) testingcontenthere"
-    notes:
-    - - 2020-08-02 15:11:55.479475912 -05:00
-      - 'Created: (pt: testp) testingcontenthere'
-    created: 2020-08-02 15:11:55.479502799 -05:00
-    completed:
-    deleted:
-    last_reviewed:
+    deleted: 2020-08-07 17:28:23.631966121 -05:00
+    last_reviewed: 2020-08-02 15:18:27.005523001 -05:00
     action_context: :computer
     life_context: :personal
+---
+- !ruby/object:Project
+  title: Cleaning out Remember The Milk (RTM) and deliberately processing every item
+    that I think is still valid.
+  notes:
+  - - 2020-08-09 20:46:51.257352923 -05:00
+    - Project deleted.
+  - - 2020-08-09 20:46:39.664576387 -05:00
+    - 'Created: Cleaning out Remember The Milk (RTM) and deliberately processing every
+      item that I think is still valid.'
+  created: 2020-08-09 20:46:39.664638994 -05:00
+  completed:
+  deleted: 2020-08-09 20:46:51.257313460 -05:00
+  last_reviewed:
+  keyword: :nortm
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []

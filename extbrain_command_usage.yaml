@@ -1,18 +1,25 @@
 ---
-p: 49
-e: 42
+p: 72
+e: 45
 h: 16
-s: 10
+s: 11
 contex: 1
-context: 11
-pt: 28
-w: 10
-c: 15
-clear: 2
+context: 18
+pt: 51
+w: 14
+c: 17
+clear: 10
 wr: 17
 pk: 1
-! '': 1
-co: 1
+! '': 2
+co: 2
 pc: 3
-d: 2
-rm: 3
+d: 7
+rm: 6
+j: 5
+r: 4
+del: 5
+k: 1
+t: 1
+exit: 2
+undo: 1

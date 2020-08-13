@@ -101,7 +101,7 @@ def dispatch_user_input(input_string)
       enable_writing_mode
     when 'clear'
       system('clear')
-    when 'context'
+    when 'context', 'cd'
       change_life_context(keyword)
     when 'co', 'lc', 'comp', 'computer', 'pc'
       view_or_add_task('computer', keyword, content)
