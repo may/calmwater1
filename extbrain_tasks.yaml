@@ -603,3 +603,14 @@
   last_reviewed:
   action_context: :waiting
   life_context: :job
+- !ruby/object:Task
+  title: Ensure I do my part of yard work.
+  notes:
+  - - 2020-08-14 12:48:37.332831828 -05:00
+    - 'Created: Ensure I do my part of yard work.'
+  created: 2020-08-14 12:48:37.332851382 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :focus/resp
+  life_context: :personal

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-09
+# Revised: 2020-08-14
 
 
 # todo d for delete
@@ -111,6 +111,8 @@ def dispatch_user_input(input_string)
       edit_project_or_task('delete', keyword, content)
     when 'e', 'exit', 'q'
       exit
+    when 'f', 'fr', 'aof', 'aofr', 'afr', 'focus', 'resp'
+      view_or_add_task('focus/resp', keyword, content)
     when 'h', 'habit'
       habit_input(keyword, content)
     when 'ho', 'home', 'house', 'apartment', 'dorm', 'rv'

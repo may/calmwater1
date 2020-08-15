@@ -1,5 +1,11 @@
 Created: 2020-05-30
-Revised: 2020-07-19
+Revised: 2020-08-14
+
+notes:
+ review projects and tasks every 5-7 days
+ review areas of focus/resp every 30 days.
+ 
+
 
 Requirements:
  ruby 2.6.3 or greater

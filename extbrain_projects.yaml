@@ -3,6 +3,8 @@
   title: implement by 4/2021 with pm and compliance and rest of HCIS. CMS Patient
     Event Notifications Strategy
   notes:
+  - - 2020-08-14 12:48:17.357700669 -05:00
+    - Project reviewed.
   - - 2020-08-02 15:18:52.875894569 -05:00
     - Project reviewed.
   - - 2020-07-20 08:26:57.099715307 -05:00
@@ -11,7 +13,7 @@
   created: 2020-07-20 08:26:57.099733137 -05:00
   completed:
   deleted:
-  last_reviewed: 2020-08-02 15:18:52.875845073 -05:00
+  last_reviewed: 2020-08-14 12:48:17.357669816 -05:00
   keyword: :cms-notify
   life_context: :job
   tags: []
@@ -37,19 +39,23 @@
   - !ruby/object:Task
     title: "(cms-notify) meeting schd for 8/7"
     notes:
+    - - 2020-08-14 12:47:41.732140762 -05:00
+      - Task deleted.
     - - 2020-08-02 15:18:51.027401612 -05:00
       - Task reviewed.
     - - 2020-07-24 15:59:06.773524687 -05:00
       - 'Created: meeting schd for 8/7'
     created: 2020-07-24 15:59:06.773548924 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-14 12:47:41.732085438 -05:00
     last_reviewed: 2020-08-02 15:18:51.027362036 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) alex determine opt in opt out for providers"
     notes:
+    - - 2020-08-14 12:47:44.895788543 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:00:51.076864396 -05:00
       - Task reviewed.
     - - 2020-08-07 11:15:35.347669438 -05:00
@@ -57,13 +63,15 @@
     created: 2020-08-07 11:15:35.347685508 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:00:51.076818529 -05:00
+    last_reviewed: 2020-08-14 12:47:44.895755060 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) complience kiley decide how much we need to implement
       these."
     notes:
+    - - 2020-08-14 12:47:47.312508002 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:00:54.040391673 -05:00
       - Task reviewed.
     - - 2020-08-07 11:18:27.254170901 -05:00
@@ -72,13 +80,15 @@
     created: 2020-08-07 11:18:27.254201025 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:00:54.040346586 -05:00
+    last_reviewed: 2020-08-14 12:47:47.312462879 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) alex search of how much we can send / are sending notifications
       to pcp"
     notes:
+    - - 2020-08-14 12:47:52.886185734 -05:00
+      - Task deleted.
     - - 2020-08-07 17:01:06.221337154 -05:00
       - Task reviewed.
     - - 2020-08-07 11:18:45.342806461 -05:00
@@ -86,7 +96,7 @@
         notifications to pcp'
     created: 2020-08-07 11:18:45.342831940 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-14 12:47:52.886142804 -05:00
     last_reviewed: 2020-08-07 17:01:06.221304211 -05:00
     action_context: :waiting
     life_context: :job
@@ -94,6 +104,8 @@
     title: "(proj: cms-notify) tom and setphanie who isn't participtaaing in patient
       ping"
     notes:
+    - - 2020-08-14 12:47:55.181921735 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:01:11.101622104 -05:00
       - Task reviewed.
     - - 2020-08-07 11:22:46.623483079 -05:00
@@ -102,13 +114,15 @@
     created: 2020-08-07 11:22:46.623516606 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:01:11.101591542 -05:00
+    last_reviewed: 2020-08-14 12:47:55.181874762 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) alex run search and share w/ sherlock of how much we
       can send / are sending notifications to pcp"
     notes:
+    - - 2020-08-14 12:47:58.258899287 -05:00
+      - Task deleted.
     - - 2020-08-07 17:01:20.213833703 -05:00
       - Task reviewed.
     - - 2020-08-07 11:28:34.485233401 -05:00
@@ -116,7 +130,7 @@
         much we can send / are sending notifications to pcp'
     created: 2020-08-07 11:28:34.485273505 -05:00
     completed:
-    deleted:
+    deleted: 2020-08-14 12:47:58.258863693 -05:00
     last_reviewed: 2020-08-07 17:01:20.213779860 -05:00
     action_context: :waiting
     life_context: :job
@@ -124,6 +138,8 @@
     title: "(proj: cms-notify) alex - any dashboards on how well other instutions
       of our size/dollars are implementing this."
     notes:
+    - - 2020-08-14 12:48:01.579929065 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:01:23.921607971 -05:00
       - Task reviewed.
     - - 2020-08-07 11:32:01.173970410 -05:00
@@ -132,13 +148,15 @@
     created: 2020-08-07 11:32:01.174021120 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:01:23.921550375 -05:00
+    last_reviewed: 2020-08-14 12:48:01.579883225 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) jessie/alex - how do we handle a pcp who admits a patient
       themselves?"
     notes:
+    - - 2020-08-14 12:48:03.698437137 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:01:25.596621034 -05:00
       - Task reviewed.
     - - 2020-08-07 11:38:06.475558844 -05:00
@@ -147,13 +165,15 @@
     created: 2020-08-07 11:38:06.475584514 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:01:25.596549598 -05:00
+    last_reviewed: 2020-08-14 12:48:03.698391480 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: karmen - who is going to own this going forward per bring these to you
       next time? also get us a pm?
     notes:
+    - - 2020-08-14 12:48:06.215328882 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:01:58.116591321 -05:00
       - Task reviewed.
     - - 2020-08-07 17:01:55.466133773 -05:00
@@ -168,12 +188,14 @@
     created: 2020-08-07 12:53:56.828905289 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:01:58.116553998 -05:00
+    last_reviewed: 2020-08-14 12:48:06.215296404 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) meeting 8/17 hcis and epic"
     notes:
+    - - 2020-08-14 12:48:10.476758113 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:02:00.524535606 -05:00
       - Task reviewed.
     - - 2020-08-07 12:57:51.586222227 -05:00
@@ -181,12 +203,14 @@
     created: 2020-08-07 12:57:51.586282637 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:02:00.524496529 -05:00
+    last_reviewed: 2020-08-14 12:48:10.476725298 -05:00
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
     title: "(proj: cms-notify) meeting 9/2 hcis and compliance and epic"
     notes:
+    - - 2020-08-14 12:48:13.480364200 -05:00
+      - Task reviewed.
     - - 2020-08-07 17:02:01.122646736 -05:00
       - Task reviewed.
     - - 2020-08-07 12:58:02.778875949 -05:00
@@ -194,7 +218,7 @@
     created: 2020-08-07 12:58:02.778891854 -05:00
     completed:
     deleted:
-    last_reviewed: 2020-08-07 17:02:01.122614162 -05:00
+    last_reviewed: 2020-08-14 12:48:13.480323440 -05:00
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -1882,15 +1906,28 @@
     title: "(proj: fence) kip confrim coming 8/13 or later, or let me know when they
       are coming"
     notes:
+    - - 2020-08-14 13:10:56.830563519 -05:00
+      - Task completed.
     - - 2020-08-09 14:55:56.374423379 -05:00
       - Task reviewed.
     - - 2020-08-07 18:14:35.024887079 -05:00
       - 'Created: (proj: fence) kip confrim coming 8/13 or later, or let me know when
         they are coming'
     created: 2020-08-07 18:14:35.024904957 -05:00
-    completed:
+    completed: 2020-08-14 13:10:56.830534901 -05:00
     deleted:
     last_reviewed: 2020-08-09 14:55:56.374243861 -05:00
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: fence) kip come and install fence wed 8/19 and thurs 8/20"
+    notes:
+    - - 2020-08-14 13:11:28.180922677 -05:00
+      - 'Created: (proj: fence) kip come and install fence wed 8/19 and thurs 8/20'
+    created: 2020-08-14 13:11:28.180938641 -05:00
+    completed:
+    deleted:
+    last_reviewed:
     action_context: :waiting
     life_context: :personal
 - !ruby/object:Project
@@ -1955,15 +1992,28 @@
   - !ruby/object:Task
     title: "(proj: survey) mms finish survey, put pins in, mark corners, bill us"
     notes:
+    - - 2020-08-14 13:15:05.082351604 -05:00
+      - Task completed.
     - - 2020-08-09 14:57:41.708811414 -05:00
       - Task reviewed.
     - - 2020-08-07 18:14:56.738077765 -05:00
       - 'Created: (proj: survey) mms finish survey, put pins in, mark corners, bill
         us'
     created: 2020-08-07 18:14:56.738095191 -05:00
-    completed:
+    completed: 2020-08-14 13:15:05.082323518 -05:00
     deleted:
     last_reviewed: 2020-08-09 14:57:41.708747731 -05:00
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: survey) bill me for survey"
+    notes:
+    - - 2020-08-14 13:15:18.206370219 -05:00
+      - 'Created: (proj: survey) bill me for survey'
+    created: 2020-08-14 13:15:18.206390431 -05:00
+    completed:
+    deleted:
+    last_reviewed:
     action_context: :waiting
     life_context: :personal
 - !ruby/object:Project
@@ -2503,7 +2553,20 @@
   life_context: :personal
   tags: []
   psm: ''
-  tasks: []
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: extb-psm) Change it so that psm only looks at projects when selecting,
+      no need to look at tasks"
+    notes:
+    - - 2020-08-13 14:19:45.764507707 -05:00
+      - 'Created: (proj: extb-psm) Change it so that psm only looks at projects when
+        selecting, no need to look at tasks'
+    created: 2020-08-13 14:19:45.764540729 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: switch thenickmay over to write.as to allow easier updating
   notes:
@@ -3177,3 +3240,43 @@
     last_reviewed:
     action_context: :job
     life_context: :job
+- !ruby/object:Project
+  title: handle the carpenter ants in the shed, on the fence and hopefully not in
+    the house
+  notes:
+  - - 2020-08-13 13:38:27.779814546 -05:00
+    - 'Created: handle the carpenter ants in the shed, on the fence and hopefully
+      not in the house'
+  created: 2020-08-13 13:38:27.779834576 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :ants
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: ants) find and call a pest control company re carpenter ants, fallback
+      is AAA pest services or whatever"
+    notes:
+    - - 2020-08-13 13:38:51.974737408 -05:00
+      - 'Created: (proj: ants) find and call a pest control company re carpenter ants,
+        fallback is AAA pest services or whatever'
+    created: 2020-08-13 13:38:51.974754210 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: ants) d&r come tuesday and spray/investigate for 185"
+    notes:
+    - - 2020-08-14 13:01:19.948327685 -05:00
+      - 'Created: (proj: ants) d&r come tuesday and spray/investigate for 185'
+    created: 2020-08-14 13:01:19.948352981 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal

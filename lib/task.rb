@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-09
+# Revised: 2020-08-14
 
 require_relative 'common_project_task'
 
@@ -10,18 +10,20 @@ class Task < CommonProjectTask
   def initialize(title, action_context, life_context = :personal)
     super(title, life_context)
     case action_context
-      when 'c', 'co', 'com', 'comp'
-        action_context = 'computer'
-      when 'j', 'jo', 'job'
-        action_context = 'job'
-      when 'jc', 'job-computer'
-        action_context = 'job-computer'
-      when 's/m', 'sm', 's', 'm'
-        action_context = 'someday/maybe' # not really an action context, but potentially useful
-      when 'w', 'wai', 'wait'
-        action_context = 'waiting'
-      else
-        # leave action context unchanged
+    when 'f', 'fr', 'aof', 'aofr', 'afr', 'focus', 'resp'
+      action_context = 'focus/resp'
+    when 'c', 'co', 'com', 'comp'
+      action_context = 'computer'
+    when 'j', 'jo', 'job'
+      action_context = 'job'
+    when 'jc', 'job-computer'
+      action_context = 'job-computer'
+    when 's/m', 'sm', 's', 'm'
+      action_context = 'someday/maybe' # not really an action context, but potentially useful
+    when 'w', 'wai', 'wait'
+      action_context = 'waiting'
+    else
+      # leave action context unchanged
     end
     @action_context = action_context.to_sym
   end

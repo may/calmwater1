@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-07
+# Revised: 2020-08-14
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -506,7 +506,12 @@ end # def
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
 def not_recently_reviewed(object)
   the_5_days_ago_timestamp = Time.now.to_i - 5*24*60*60
-  (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_5_days_ago_timestamp)
+  the_30_days_ago_timestamp = the_5_days_ago_timestamp * 6
+  if object.is_a? Task and object.action_context == 'focus/resp'.to_sym
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_30_days_ago_timestamp)
+  else
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_5_days_ago_timestamp)
+  end
 end 
 
 def review_projects_and_subtasks(projects)
