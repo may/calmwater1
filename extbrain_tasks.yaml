@@ -614,3 +614,14 @@
   last_reviewed:
   action_context: :focus/resp
   life_context: :personal
+- !ruby/object:Task
+  title: read How To Have a Good Day
+  notes:
+  - - 2020-08-15 14:26:34.225414436 -05:00
+    - 'Created: read How To Have a Good Day'
+  created: 2020-08-15 14:26:34.225430698 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :kindle
+  life_context: :personal

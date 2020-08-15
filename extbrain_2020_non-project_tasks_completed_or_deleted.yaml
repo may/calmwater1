@@ -204,3 +204,19 @@
   last_reviewed: 2020-07-31 20:48:53.250154094 -05:00
   action_context: :computer
   life_context: :personal
+---
+- !ruby/object:Task
+  title: extb exclude s/m tasks from weekly review AND include 5 of them (oldest last
+    review, ideally, else random) in the WR each week.
+  notes:
+  - - 2020-08-15 14:25:22.924634365 -05:00
+    - Task deleted.
+  - - 2020-08-15 14:25:12.077737302 -05:00
+    - 'Created: extb exclude s/m tasks from weekly review AND include 5 of them (oldest
+      last review, ideally, else random) in the WR each week.'
+  created: 2020-08-15 14:25:12.077765295 -05:00
+  completed:
+  deleted: 2020-08-15 14:25:22.924597622 -05:00
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal

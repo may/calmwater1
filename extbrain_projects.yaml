@@ -1132,6 +1132,19 @@
     last_reviewed:
     action_context: :computer
     life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) exclude s/m tasks from weekly review AND include 5 of them
+      (oldest last review, ideally, else random) in the WR each week."
+    notes:
+    - - 2020-08-15 14:25:31.527626857 -05:00
+      - 'Created: (proj: extb) exclude s/m tasks from weekly review AND include 5
+        of them (oldest last review, ideally, else random) in the WR each week.'
+    created: 2020-08-15 14:25:31.527652461 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: implement Leave of Abscence for Psych, by manaaging work, doing the implementation/build,
     leading the meetings.

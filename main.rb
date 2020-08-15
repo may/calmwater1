@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-14
+# Revised: 2020-08-15
 
 
 # todo d for delete
@@ -117,6 +117,8 @@ def dispatch_user_input(input_string)
       habit_input(keyword, content)
     when 'ho', 'home', 'house', 'apartment', 'dorm', 'rv'
       view_or_add_task('home', keyword, content)
+    when 'k', 'ki', 'kin', 'kindle', 'read', 'book'
+      view_or_add_task('kindle', keyword, content)
     when 'lt', 'list-tasks'
       task_list(keyword)
     when 'lw'
