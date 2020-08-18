@@ -158,6 +158,8 @@ def dispatch_user_input(input_string)
       edit_project_or_task('rename', keyword, content)
     when 's', 'search'
       search(keyword, content)
+    when 'sm', 's/m', 'some', 'someday', 'may', 'maybe', 'someday/maybe'
+      view_or_add_task('sm', keyword, content)
     when 't', 'task'
       task_input(keyword, content)
     when 'undo'

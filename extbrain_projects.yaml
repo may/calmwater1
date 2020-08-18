@@ -172,6 +172,8 @@
     title: karmen - who is going to own this going forward per bring these to you
       next time? also get us a pm?
     notes:
+    - - 2020-08-18 08:26:59.638297797 -05:00
+      - Task completed.
     - - 2020-08-14 12:48:06.215328882 -05:00
       - Task reviewed.
     - - 2020-08-07 17:01:58.116591321 -05:00
@@ -186,7 +188,7 @@
         a project manager and engagement from leadership to form a core team around
         this project, since this is bigger than HCIS'
     created: 2020-08-07 12:53:56.828905289 -05:00
-    completed:
+    completed: 2020-08-18 08:26:59.638266415 -05:00
     deleted:
     last_reviewed: 2020-08-14 12:48:06.215296404 -05:00
     action_context: :waiting
@@ -194,6 +196,8 @@
   - !ruby/object:Task
     title: "(proj: cms-notify) meeting 8/17 hcis and epic"
     notes:
+    - - 2020-08-17 08:07:53.435097679 -05:00
+      - Task completed.
     - - 2020-08-14 12:48:10.476758113 -05:00
       - Task reviewed.
     - - 2020-08-07 17:02:00.524535606 -05:00
@@ -201,7 +205,7 @@
     - - 2020-08-07 12:57:51.586222227 -05:00
       - 'Created: (proj: cms-notify) meeting 8/17 hcis and epic'
     created: 2020-08-07 12:57:51.586282637 -05:00
-    completed:
+    completed: 2020-08-17 08:07:53.435073165 -05:00
     deleted:
     last_reviewed: 2020-08-14 12:48:10.476725298 -05:00
     action_context: :waiting
@@ -209,6 +213,8 @@
   - !ruby/object:Task
     title: "(proj: cms-notify) meeting 9/2 hcis and compliance and epic"
     notes:
+    - - 2020-08-17 08:07:55.886175912 -05:00
+      - Task completed.
     - - 2020-08-14 12:48:13.480364200 -05:00
       - Task reviewed.
     - - 2020-08-07 17:02:01.122646736 -05:00
@@ -216,9 +222,37 @@
     - - 2020-08-07 12:58:02.778875949 -05:00
       - 'Created: (proj: cms-notify) meeting 9/2 hcis and compliance and epic'
     created: 2020-08-07 12:58:02.778891854 -05:00
-    completed:
+    completed: 2020-08-17 08:07:55.886152302 -05:00
     deleted:
     last_reviewed: 2020-08-14 12:48:13.480323440 -05:00
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) Karmen - I'll wait to hear from you on next steps regarding
+      Compliance owning this.I"
+    notes:
+    - - 2020-08-17 08:08:44.792805546 -05:00
+      - Task completed.
+    - - 2020-08-17 08:07:42.381033938 -05:00
+      - 'Created: (proj: cms-notify) Karmen - I''ll wait to hear from you on next
+        steps regarding Compliance owning this.I'
+    created: 2020-08-17 08:07:42.381053266 -05:00
+    completed: 2020-08-17 08:08:44.792783559 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: cms-notify) karmen project initation, get a PM, and (if possible
+      for Nick to do so), include Peggy O'Neal"
+    notes:
+    - - 2020-08-18 08:20:23.134468742 -05:00
+      - 'Created: (proj: cms-notify) karmen project initation, get a PM, and (if possible
+        for Nick to do so), include Peggy O''Neal'
+    created: 2020-08-18 08:20:23.134488958 -05:00
+    completed:
+    deleted:
+    last_reviewed:
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -1140,6 +1174,44 @@
       - 'Created: (proj: extb) exclude s/m tasks from weekly review AND include 5
         of them (oldest last review, ideally, else random) in the WR each week.'
     created: 2020-08-15 14:25:31.527652461 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) - decide if 'home' is a synonom for personal context when
+      switching contexts?"
+    notes:
+    - - 2020-08-15 14:32:09.234209974 -05:00
+      - 'Created: (proj: extb) - decide if ''home'' is a synonom for personal context
+        when switching contexts?'
+    created: 2020-08-15 14:32:09.234226590 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) test what happens if time sensitive life conetxt is false"
+    notes:
+    - - 2020-08-16 19:15:26.558757852 -05:00
+      - 'Created: (proj: extb) test what happens if time sensitive life conetxt is
+        false'
+    created: 2020-08-16 19:15:26.558775632 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: extb) decide if internet context is valid, and setup i shortcut
+      for creating tasks and viewing tasks there"
+    notes:
+    - - 2020-08-16 19:17:13.677983480 -05:00
+      - 'Created: (proj: extb) decide if internet context is valid, and setup i shortcut
+        for creating tasks and viewing tasks there'
+    created: 2020-08-16 19:17:13.678008944 -05:00
     completed:
     deleted:
     last_reviewed:
@@ -2196,6 +2268,17 @@
     last_reviewed:
     action_context: :waiting
     life_context: :job
+  - !ruby/object:Task
+    title: "(proj: vascaccess) scheduled 8/24 to work on"
+    notes:
+    - - 2020-08-17 14:41:47.784567240 -05:00
+      - 'Created: (proj: vascaccess) scheduled 8/24 to work on'
+    created: 2020-08-17 14:41:47.784583360 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
 - !ruby/object:Project
   title: 840659 rewrite infection screening rules to be one or two and much more streamlined
   notes:
@@ -2333,6 +2416,8 @@
     title: scott leeman upload final slides by august 14th, pinged 2020-07-29&30 to
       clarify.
     notes:
+    - - 2020-08-17 13:13:40.171870506 -05:00
+      - Task completed.
     - - 2020-08-02 15:20:58.124812785 -05:00
       - Task reviewed.
     - - 2020-07-30 08:19:02.544223568 -05:00
@@ -2344,7 +2429,7 @@
       - 'Created: (upgrade) scott leeman upload final slides by august 7th. pinged
         2020-07-29 to clarify.'
     created: 2020-07-29 10:17:45.956928267 -05:00
-    completed:
+    completed: 2020-08-17 13:13:40.171840810 -05:00
     deleted:
     last_reviewed: 2020-08-02 15:20:58.124766502 -05:00
     action_context: :waiting
@@ -2405,12 +2490,14 @@
   - !ruby/object:Task
     title: "(proj: upgrade) alex - event management tab?"
     notes:
+    - - 2020-08-17 13:16:03.357158293 -05:00
+      - Task completed.
     - - 2020-08-07 17:05:00.866395212 -05:00
       - Task reviewed.
     - - 2020-08-05 11:40:15.816430988 -05:00
       - 'Created: (proj: upgrade) alex - event management tab?'
     created: 2020-08-05 11:40:15.816495561 -05:00
-    completed:
+    completed: 2020-08-17 13:16:03.357118393 -05:00
     deleted:
     last_reviewed: 2020-08-07 17:05:00.866361754 -05:00
     action_context: :waiting
@@ -2457,6 +2544,45 @@
     deleted:
     last_reviewed: 2020-08-07 17:05:18.897568987 -05:00
     action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) meet 8/21 and confirm core scripts still good (I think
+      so, but double check)"
+    notes:
+    - - 2020-08-17 13:39:43.384931441 -05:00
+      - 'Created: (proj: upgrade) meet 8/21 and confirm core scripts still good (I
+        think so, but double check)'
+    created: 2020-08-17 13:39:43.384949147 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) sarah healy bed blocks final version icons/text"
+    notes:
+    - - 2020-08-17 13:41:11.196517222 -05:00
+      - Task deleted.
+    - - 2020-08-17 13:40:47.730679105 -05:00
+      - 'Created: (proj: upgrade) sarah healy bed blocks final version icons/text'
+    created: 2020-08-17 13:40:47.730695337 -05:00
+    completed:
+    deleted: 2020-08-17 13:41:11.196489654 -05:00
+    last_reviewed:
+    action_context: :-
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: upgrade) sarah healy bed blocks final version icons/text"
+    notes:
+    - - 2020-08-17 13:41:34.782665300 -05:00
+      - Task deleted.
+    - - 2020-08-17 13:41:00.928767209 -05:00
+      - 'Created: (proj: upgrade) sarah healy bed blocks final version icons/text'
+    created: 2020-08-17 13:41:00.928783899 -05:00
+    completed:
+    deleted: 2020-08-17 13:41:34.782640202 -05:00
+    last_reviewed:
+    action_context: :-
     life_context: :job
 - !ruby/object:Project
   title: 833159 Confidential inpatient admissions should be visible to outpatient
@@ -2920,10 +3046,15 @@
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
-  title: Cleaning out Remember The Milk (RTM) and deliberately processing every item
-    that I think is still valid. Either delete, retype into extbrain, put on work
-    calendar, or put on personal calendar.
+  title: Cleaning out Remember The Milk (RTM) by March 1, 2021. Habit in place to
+    deliberately process every item that I think is still valid. Either delete, retype
+    into extbrain, put on work calendar, or put on personal calendar.
   notes:
+  - - 2020-08-16 19:13:29.531694130 -05:00
+    - |-
+      Updated title:
+       old: Cleaning out Remember The Milk (RTM) and deliberately processing every item that I think is still valid. Either delete, retype into extbrain, put on work calendar, or put on personal calendar.
+       new: Cleaning out Remember The Milk (RTM) by March 1, 2021. Habit in place to deliberately process every item that I think is still valid. Either delete, retype into extbrain, put on work calendar, or put on personal calendar.
   - - 2020-08-09 20:58:22.533012944 -05:00
     - 'Created: Cleaning out Remember The Milk (RTM) and deliberately processing every
       item that I think is still valid. Either delete, retype into extbrain, put on
@@ -2938,8 +3069,13 @@
   psm: ''
   tasks:
   - !ruby/object:Task
-    title: "(proj: nortm) grab a task in RTM, delete or process it."
+    title: grab a task in RTM, delet it, or process it into extbrain.
     notes:
+    - - 2020-08-16 13:35:08.014462187 -05:00
+      - |-
+        Updated title:
+         old: (proj: nortm) grab a task in RTM, delete or process it.
+         new: grab a task in RTM, delet it, or process it into extbrain.
     - - 2020-08-09 20:58:49.127066380 -05:00
       - 'Created: (proj: nortm) grab a task in RTM, delete or process it.'
     created: 2020-08-09 20:58:49.127093225 -05:00
@@ -3078,8 +3214,14 @@
     action_context: :computer
     life_context: :personal
 - !ruby/object:Project
-  title: researching, buying a digital piano
+  title: re-learning to play the piano for fun, self-expressiveness, and to teach
+    myself that I can Get Better!
   notes:
+  - - 2020-08-16 19:14:21.465737459 -05:00
+    - |-
+      Updated title:
+       old: researching, buying a digital piano
+       new: re-learning to play the piano for fun, self-expressiveness, and to teach myself that I can Get Better!
   - - 2020-08-09 22:20:38.323869429 -05:00
     - 'Created: researching, buying a digital piano'
   created: 2020-08-09 22:20:38.323885623 -05:00
@@ -3107,10 +3249,12 @@
   - !ruby/object:Task
     title: "(proj: dp) piano reviews, save money"
     notes:
+    - - 2020-08-16 19:17:19.680735942 -05:00
+      - Task completed.
     - - 2020-08-09 22:21:02.671509098 -05:00
       - 'Created: (proj: dp) piano reviews, save money'
     created: 2020-08-09 22:21:02.671533975 -05:00
-    completed:
+    completed: 2020-08-16 19:17:19.680710818 -05:00
     deleted:
     last_reviewed:
     action_context: :internet

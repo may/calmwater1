@@ -625,3 +625,120 @@
   last_reviewed:
   action_context: :kindle
   life_context: :personal
+- !ruby/object:Task
+  title: "(emailed 2020-05-11: if you have time, please make notes on this sherlock)
+    Nick to talk to Nathanael - which metrics are affected here? 4945269 / Patient
+    Flow Pulse Dashboard Requested Enhancements"
+  notes:
+  - - 2020-08-15 14:31:24.360387229 -05:00
+    - 'Created: (emailed 2020-05-11: if you have time, please make notes on this sherlock)
+      Nick to talk to Nathanael - which metrics are affected here? 4945269 / Patient
+      Flow Pulse Dashboard Requested Enhancements'
+  created: 2020-08-15 14:31:24.360405299 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job
+- !ruby/object:Task
+  title: ask sarah or google - what's a daily face moisturizer I should use with light
+    spf in it?
+  notes:
+  - - 2020-08-15 14:35:36.216820612 -05:00
+    - 'Created: ask sarah or google - what''s a daily face moisturizer I should use
+      with light spf in it?'
+  created: 2020-08-15 14:35:36.216846778 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- !ruby/object:Task
+  title: 'listen to any of these owned Audible books or buy on Kindle: wired for story,
+    how to do nothing (resisting the attention economy), the great reversal, the code
+    of capital, the passion economy, narrative economics'
+  notes:
+  - - 2020-08-15 14:39:11.299378838 -05:00
+    - 'Created: listen to any of these owned Audible books or buy on Kindle: wired
+      for story, how to do nothing (resisting the attention economy), the great reversal,
+      the code of capital, the passion economy, narrative economics'
+  created: 2020-08-15 14:39:11.299404712 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- !ruby/object:Task
+  title: 'read ADD-Friendly Ways to Organize Your Life: Strategies that Work from
+    an Acclaimed Professional Organizer and a Renowned ADD Clinician Kindle Edition'
+  notes:
+  - - 2020-08-15 15:11:15.461429896 -05:00
+    - 'Created: read ADD-Friendly Ways to Organize Your Life: Strategies that Work
+      from an Acclaimed Professional Organizer and a Renowned ADD Clinician Kindle
+      Edition'
+  created: 2020-08-15 15:11:15.461469938 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :kindle
+  life_context: :personal
+- !ruby/object:Task
+  title: change pcloud password, update on phone and zbox.
+  notes:
+  - - 2020-08-16 13:47:45.782343348 -05:00
+    - 'Created: change pcloud password, update on phone and zbox.'
+  created: 2020-08-16 13:47:45.782372373 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal
+- !ruby/object:Task
+  title: change spideroak password, update on zbox and inspire
+  notes:
+  - - 2020-08-16 13:47:59.599964184 -05:00
+    - 'Created: change spideroak password, update on zbox and inspire'
+  created: 2020-08-16 13:47:59.599989764 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :computer
+  life_context: :personal
+- !ruby/object:Task
+  title: 'buy and read: Become a Successful Indie Author: Work Toward Your Writing
+    Dream Craig Martelle'
+  notes:
+  - - 2020-08-16 20:27:46.769184061 -05:00
+    - 'Created: buy and read: Become a Successful Indie Author: Work Toward Your Writing
+      Dream Craig Martelle'
+  created: 2020-08-16 20:27:46.769213944 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- !ruby/object:Task
+  title: read this https://www.wimarys.com/sony-a5100-settings-tips-and-tricks/
+  notes:
+  - - 2020-08-16 20:43:53.679330285 -05:00
+    - 'Created: read this https://www.wimarys.com/sony-a5100-settings-tips-and-tricks/'
+  created: 2020-08-16 20:43:53.679404331 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :someday/maybe
+  life_context: :personal
+- !ruby/object:Task
+  title: paul code stemi rule update for REF, send me package. see email 'Code Stemi
+    training envionment issue' since I couldn't find build book to do this myself
+  notes:
+  - - 2020-08-17 13:27:03.975841930 -05:00
+    - 'Created: paul code stemi rule update for REF, send me package. see email ''Code
+      Stemi training envionment issue'' since I couldn''t find build book to do this
+      myself'
+  created: 2020-08-17 13:27:03.975910069 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  action_context: :waiting
+  life_context: :job

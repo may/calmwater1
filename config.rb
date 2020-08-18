@@ -1,6 +1,6 @@
 # Created: 2020-06-06
 # Revised: 2020-08-13
-$log_command_usage_locally = true
+$log_command_usage_locally = false
 $data_file_command_usage = "#{Dir.home}/extbrain/extbrain_command_usage.yaml"
 $save_file_last_weekly_review_done = "#{Dir.home}/extbrain/extbrain_last_weekly_review.yaml"
 
