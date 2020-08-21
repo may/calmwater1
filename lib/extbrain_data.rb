@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-02
+# Revised: 2020-08-21
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -42,7 +42,7 @@ class ExtbrainData
           print `tput setaf 2` if $color_only # green
         when days < 7
           print `tput setaf 3` if $color_only # yellow
-        when days > 8 
+        when days >= 7 
           print `tput setaf 1` if $color_only # red
         end
         puts "#{days} days ago."
