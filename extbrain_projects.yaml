@@ -1725,6 +1725,21 @@
     last_reviewed:
     action_context: :computer
     life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: blog) write a blog post review of freewrite, including the top
+      3 keyboard shortcuts you need to know - newbackspace delete word, special l
+      for light, and ???"
+    notes:
+    - - 2020-08-18 20:40:08.311740423 -05:00
+      - 'Created: (proj: blog) write a blog post review of freewrite, including the
+        top 3 keyboard shortcuts you need to know - newbackspace delete word, special
+        l for light, and ???'
+    created: 2020-08-18 20:40:08.311799125 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :computer
+    life_context: :personal
 - !ruby/object:Project
   title: ensure that how to delete an epic level lock is documented in SOS and the
     helpdesk can do it w/o paging the access team
@@ -1906,15 +1921,28 @@
     title: "(proj: edpri) jacob - get switching code working by 8/18, or sooner. will
       push back golive if needed. cannot go live w/ this manual."
     notes:
+    - - 2020-08-18 12:22:49.081862623 -05:00
+      - Task completed.
     - - 2020-08-07 17:02:12.920654483 -05:00
       - Task reviewed.
     - - 2020-08-07 14:54:59.419864115 -05:00
       - 'Created: (proj: edpri) jacob - get switching code working by 8/18, or sooner.
         will push back golive if needed. cannot go live w/ this manual.'
     created: 2020-08-07 14:54:59.419894722 -05:00
-    completed:
+    completed: 2020-08-18 12:22:49.081834127 -05:00
     deleted:
     last_reviewed: 2020-08-07 17:02:12.920621561 -05:00
+    action_context: :waiting
+    life_context: :job
+  - !ruby/object:Task
+    title: "(proj: edpri) mark/sarah test, then golive 8/25"
+    notes:
+    - - 2020-08-18 12:22:59.662106984 -05:00
+      - 'Created: (proj: edpri) mark/sarah test, then golive 8/25'
+    created: 2020-08-18 12:22:59.662125030 -05:00
+    completed:
+    deleted:
+    last_reviewed:
     action_context: :waiting
     life_context: :job
 - !ruby/object:Project
@@ -2007,9 +2035,24 @@
   - !ruby/object:Task
     title: "(proj: fence) kip come and install fence wed 8/19 and thurs 8/20"
     notes:
+    - - 2020-08-18 16:31:07.587562642 -05:00
+      - Task completed.
     - - 2020-08-14 13:11:28.180922677 -05:00
       - 'Created: (proj: fence) kip come and install fence wed 8/19 and thurs 8/20'
     created: 2020-08-14 13:11:28.180938641 -05:00
+    completed: 2020-08-18 16:31:07.587541101 -05:00
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: "(proj: fence) kip come back week of the 24th or so and finish double siding
+      the fence."
+    notes:
+    - - 2020-08-18 16:31:03.476214796 -05:00
+      - 'Created: (proj: fence) kip come back week of the 24th or so and finish double
+        siding the fence.'
+    created: 2020-08-18 16:31:03.476238450 -05:00
     completed:
     deleted:
     last_reviewed:
@@ -2533,8 +2576,14 @@
     action_context: :waiting
     life_context: :job
   - !ruby/object:Task
-    title: "(proj: upgrade) sarah healy and bed blocks round two"
+    title: sarah healy and bed blocks round two, AND THEN UPDATE UPGRADE SLIDES or
+      REMOVE that slide
     notes:
+    - - 2020-08-19 14:19:55.108099640 -05:00
+      - |-
+        Updated title:
+         old: (proj: upgrade) sarah healy and bed blocks round two
+         new: sarah healy and bed blocks round two, AND THEN UPDATE UPGRADE SLIDES or REMOVE that slide
     - - 2020-08-07 17:05:18.897600115 -05:00
       - Task reviewed.
     - - 2020-08-07 15:24:30.723936258 -05:00
@@ -3432,6 +3481,161 @@
     - - 2020-08-14 13:01:19.948327685 -05:00
       - 'Created: (proj: ants) d&r come tuesday and spray/investigate for 185'
     created: 2020-08-14 13:01:19.948352981 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+- !ruby/object:Project
+  title: 640607 Duplicate encounters
+  notes:
+  - - 2020-08-18 14:29:16.139433343 -05:00
+    - 'use d ^%ZGD  to view ^ZADTLOG
+
+      '
+  - - 2020-08-18 14:27:33.403152125 -05:00
+    - |-
+      Updated title:
+       old: 640607 Multiple admissions on one patient on one day; discover why & handle 'um encounters'  .. duplicate encounters dups um
+       new: 640607 Duplicate encounters
+  - - 2020-08-18 14:26:45.309299747 -05:00
+    - 'Created: 640607 Multiple admissions on one patient on one day; discover why
+      & handle ''um encounters''  .. duplicate encounters dups um'
+  created: 2020-08-18 14:26:45.309325526 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :pfs-dup
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: pfs-dup) meeting 8/25 w/ leadership/stakeholders"
+    notes:
+    - - 2020-08-18 14:30:25.620304544 -05:00
+      - 'Created: (proj: pfs-dup) meeting 8/25 w/ leadership/stakeholders'
+    created: 2020-08-18 14:30:25.620320674 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: centurylink fix the internet ASAP else we DIY and fuck them.
+  notes:
+  - - 2020-08-18 20:08:07.628289418 -05:00
+    - 'Created: centurylink fix the internet ASAP else we DIY and fuck them.'
+  created: 2020-08-18 20:08:07.628346758 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :internet
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: internet) century link escalation fix internet ASAP, emailed today"
+    notes:
+    - - 2020-08-18 20:08:21.557965823 -05:00
+      - 'Created: (proj: internet) century link escalation fix internet ASAP, emailed
+        today'
+    created: 2020-08-18 20:08:21.557986939 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+  - !ruby/object:Task
+    title: not showing in 'where's my technician' but century link come out and fix
+      on 8/25. escalated to their escalation team as well.
+    notes:
+    - - 2020-08-19 09:06:05.140981057 -05:00
+      - |-
+        Updated title:
+         old: (proj: internet) century link come out 8/25 tues if not ASAP to fix internet
+         new: not showing in 'where's my technician' but century link come out and fix on 8/25. escalated to their escalation team as well.
+    - - 2020-08-18 20:08:32.689276996 -05:00
+      - 'Created: (proj: internet) century link come out 8/25 tues if not ASAP to
+        fix internet'
+    created: 2020-08-18 20:08:32.689293612 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :personal
+- !ruby/object:Project
+  title: Nick's 2020 performance review, in Spring 2021. See also notes in h/docs/hr
+    stuff/2020 eval, spring 2021/nick may
+  notes:
+  - - 2020-08-19 14:21:33.386062043 -05:00
+    - |-
+      Updated keyword:
+       old: pr2021
+       new: pr2020
+  - - 2020-08-19 09:15:02.460190514 -05:00
+    - |-
+      Updated title:
+       old: notes for nick's performance review spring 2021
+       new: Nick's 2020 performance review, in Spring 2021. See also notes in h/docs/hr stuff/2020 eval, spring 2021/nick may
+  - - 2020-08-19 09:09:40.848703925 -05:00
+    - |
+      Nata needs to pull out of GC some because of Cadence needs.
+      When Nata has ben out, fantastic job of covering by Nick.
+      No doubt Nick can manage project very well.
+      Patient flow, may need to lean on nick more still.
+      New projects suresh ... nick drive projects... escalate issues to Nata as needed.
+
+      Team structure, discussed Nick straight up report to Karmen temporarliy, but Nata says maybe that's not needed. Karmen already has so much going on and so many reports.
+      Karmen impressed by Nick.
+      Nick own meetings [for Pt. flow etc]
+      Nick + Paul efficient.
+      Nata thank Nick while out.... and I interrputed him but he was happy when I covered.
+  - - 2020-08-19 09:07:34.753866269 -05:00
+    - 'Created: notes for nick''s performance review spring 2021'
+  created: 2020-08-19 09:07:34.753880735 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :pr2020
+  life_context: :job
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: pr2020) start writing up my review in december"
+    notes:
+    - - 2020-08-19 14:21:50.808950824 -05:00
+      - 'Created: (proj: pr2020) start writing up my review in december'
+    created: 2020-08-19 14:21:50.808976554 -05:00
+    completed:
+    deleted:
+    last_reviewed:
+    action_context: :waiting
+    life_context: :job
+- !ruby/object:Project
+  title: get lola's microchip updated with our contact info
+  notes:
+  - - 2020-08-19 14:20:54.131010290 -05:00
+    - 'Created: get lola''s microchip updated with our contact info'
+  created: 2020-08-19 14:20:54.131035811 -05:00
+  completed:
+  deleted:
+  last_reviewed:
+  keyword: :lola
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks:
+  - !ruby/object:Task
+    title: "(proj: lola) sarah contact vet for letter to send to chip company since
+      we have no adoption paperwork"
+    notes:
+    - - 2020-08-19 14:21:07.493326998 -05:00
+      - 'Created: (proj: lola) sarah contact vet for letter to send to chip company
+        since we have no adoption paperwork'
+    created: 2020-08-19 14:21:07.493352562 -05:00
     completed:
     deleted:
     last_reviewed:

@@ -280,3 +280,20 @@
   tags: []
   psm: ''
   tasks: []
+---
+- !ruby/object:Project
+  title: lola's microchip updated with our contact info
+  notes:
+  - - 2020-08-19 14:20:47.117434662 -05:00
+    - Project deleted.
+  - - 2020-08-19 14:20:38.499109302 -05:00
+    - 'Created: lola''s microchip updated with our contact info'
+  created: 2020-08-19 14:20:38.499162675 -05:00
+  completed:
+  deleted: 2020-08-19 14:20:47.117396433 -05:00
+  last_reviewed:
+  keyword: :get
+  life_context: :personal
+  tags: []
+  psm: ''
+  tasks: []

@@ -1,6 +1,7 @@
 # Created: 2020-06-06
-# Revised: 2020-08-13
+# Revised: 2020-08-20
 $log_command_usage_locally = false
+$save_file_in_subdirectory = "" # set to "/extbrain" if you want it to live in there
 $data_file_command_usage = "#{Dir.home}/extbrain/extbrain_command_usage.yaml"
 $save_file_last_weekly_review_done = "#{Dir.home}/extbrain/extbrain_last_weekly_review.yaml"
 
