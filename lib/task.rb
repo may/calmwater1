@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-14
+# Revised: 2020-08-22
 
 require_relative 'common_project_task'
 
@@ -14,6 +14,8 @@ class Task < CommonProjectTask
       action_context = 'focus/resp'
     when 'c', 'co', 'com', 'comp'
       action_context = 'computer'
+    when 'g', 'go', 'goa', 'goal', 'goals'
+      action_context = 'goals'
     when 'j', 'jo', 'job'
       action_context = 'job'
     when 'jc', 'job-computer'

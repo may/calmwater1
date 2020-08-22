@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-15
+# Revised: 2020-08-22
 
 
 # todo d for delete
@@ -113,6 +113,8 @@ def dispatch_user_input(input_string)
       exit
     when 'f', 'fr', 'aof', 'aofr', 'afr', 'focus', 'resp'
       view_or_add_task('focus/resp', keyword, content)
+    when 'g', 'go', 'goa', 'goal', 'goals'
+      view_or_add_task('goals', keyword, content)
     when 'h', 'habit'
       habit_input(keyword, content)
     when 'ho', 'home', 'house', 'apartment', 'dorm', 'rv'
@@ -159,7 +161,7 @@ def dispatch_user_input(input_string)
     when 's', 'search'
       search(keyword, content)
     when 'sm', 's/m', 'some', 'someday', 'may', 'maybe', 'someday/maybe'
-      view_or_add_task('sm', keyword, content)
+      view_or_add_task('someday/maybe', keyword, content)
     when 't', 'task'
       task_input(keyword, content)
     when 'undo'
