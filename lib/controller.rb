@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-14
+# Revised: 2020-08-23
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -502,15 +502,10 @@ end # def
 # 
 def not_recently_reviewed(object)
   one_day_in_seconds = 86400 # 24 * 60 * 60
-puts   the_5_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 5 
-puts   the_30_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 30 
-puts  the_90_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 90
-puts  the_180_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 180
-puts Time.at(the_5_days_ago_timestamp)
-puts Time.at(the_30_days_ago_timestamp)
-puts Time.at(the_90_days_ago_timestamp)
-puts Time.at(the_180_days_ago_timestamp)
-sleep 20
+  the_5_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 5 
+  the_30_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 30 
+  the_90_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 90
+  the_180_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 180
   if object.is_a? Task and object.action_context == 'someday/maybe'.to_sym 
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_180_days_ago_timestamp)
   elsif object.is_a? Task and object.action_context == 'goals'.to_sym 
