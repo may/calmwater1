@@ -423,15 +423,7 @@ def review_and_maybe_edit(object)
         puts " 'j contents of task' - create an adhoc task in the job action context"
         puts " 'w contents of task' - create an adhoc task in the waiting action context"
       when 'pt'
-        # TODO remove this and any other code that assumes current objecT? 2020-08-07 
-        #if object.is_a?(Project) # add to current project
-          # includes project keyword by default, but that increases firction
-          #          project_task(object.keyword, keyword + ' ' + content)
           project_task(keyword, content)
-#        else
-#          puts "Error: can't add a project task to something that isn't a Project. During the Weekly Review, the 'pt' command only operates on the current project."
-#          review_and_maybe_edit(object)
-#        end
       when 'co'
         view_or_add_task('computer', keyword, content)
       when 'j'
@@ -449,9 +441,8 @@ def review_and_maybe_edit(object)
       when 'p'
         project_input(keyword, content)
       when 'w'
+        # Note, 2020-08-23: we are explicitly not making 'w' add a waiting to the current project. This is to ensure consistancy with how 'w' typically works.
         view_or_add_task('waiting', keyword, content)
-      # TODO pt  or t eg to add a ne wawiting taskask a
-        # todo pt, t, (w)aiting, (c)compuuter, (j)job
       when 'e', 'exit','q', 'quit'
         exit # we at least want exit rather than ctrl-c, since that doesn't store history of completed/deleted
         # exit may be enough, sure it'd be nice to get out of the weekly review
@@ -510,10 +501,16 @@ end # def
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
 # 
 def not_recently_reviewed(object)
-  the_5_days_ago_timestamp = Time.now.to_i - 5*24*60*60
-  the_30_days_ago_timestamp = the_5_days_ago_timestamp * 6
-  the_90_days_ago_timestamp = the_30_days_ago_timestamp * 3
-  the_180_days_ago_timestamp = the_90_days_ago_timestamp * 2
+  one_day_in_seconds = 86400 # 24 * 60 * 60
+puts   the_5_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 5 
+puts   the_30_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 30 
+puts  the_90_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 90
+puts  the_180_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 180
+puts Time.at(the_5_days_ago_timestamp)
+puts Time.at(the_30_days_ago_timestamp)
+puts Time.at(the_90_days_ago_timestamp)
+puts Time.at(the_180_days_ago_timestamp)
+sleep 20
   if object.is_a? Task and object.action_context == 'someday/maybe'.to_sym 
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_180_days_ago_timestamp)
   elsif object.is_a? Task and object.action_context == 'goals'.to_sym 
