@@ -542,6 +542,27 @@ def review_need_reviewed
   projects = $data.projects.filter {|p| not_recently_reviewed(p) }
   review_projects_and_subtasks(projects)
   tasks = $data.tasks.filter {|t| not_recently_reviewed(t) }
+  tasks_bkup = tasks.dup
+  puts tasks.count
+  s_m_count = 0
+  tasks.delete_if do |t|
+    if t.action_context == 'someday/maybe'.to_sym
+      s_m_count += 1
+      s_m_count > 5
+    end # if
+  end # do
+  puts tasks.count
+  sleep 5
+  tasks_bkup = tasks_bkup - tasks
+  puts tasks_bkup.count
+  sleep 5
+  tasks_bkup.each do |t|
+    puts t
+    sleep 1
+  end
+    
+  # todo limit s/m to 5/weekly review
+  # todo tasks.each = if s/m add 1 to counter, until 5, then remove!
   tasks.each { |t| review_and_maybe_edit(t) }
 end 
 
