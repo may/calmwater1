@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-23
+# Revised: 2020-08-30
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -373,125 +373,124 @@ def review_and_maybe_edit(object)
   action_verb = nil
   #  system('clear')
   10.times do puts end 
-  unless object.is_a? Task and object.action_context == 'someday/maybe'.to_sym
-    if object.is_a? Project
-      print '      Project: '  
+
+  if object.is_a? Project
+    print '      Project: '  
+  else
+    print '        Task: '
+  end
+  puts object
+  print '>> '
+  input_string = gets.rstrip!
+  three_pieces = input_string.split(' ',3)
+  command = three_pieces[0]
+  keyword = three_pieces[1]
+  content = three_pieces[2]
+  
+  # ENTER or space to go to next item, eg return from this function, after setting reviewed date
+  if command.nil?
+    object.reviewed
+    if object.is_a?(Project)
+      puts "    Project (#{object.keyword}) marked as reviewed."
     else
-      print '        Task: '
+      puts "      #{object.class} marked as reviewed."
     end
-    puts object
-    print '>> '
-    input_string = gets.rstrip!
-    three_pieces = input_string.split(' ',3)
-    command = three_pieces[0]
-    keyword = three_pieces[1]
-    content = three_pieces[2]
-    
-    # ENTER or space to go to next item, eg return from this function, after setting reviewed date
-    if command.nil?
-      object.reviewed
-      if object.is_a?(Project)
-        puts "    Project (#{object.keyword}) marked as reviewed."
+    action_verb = "reviewed"
+  else
+    case command
+    # keep these in sync with main.rb as best you can
+    # last synced: 2020-07-26
+    # TODO INSTEAD make this a fuction that's called from here and main.rb
+    # something like 'core_editing'
+    when '?', 'help', 'wtf', 'fuck'
+      puts "Here's what you can do:"
+      puts ' Press ENTER to mark the item as reviewed and move onto the next one.'
+      puts ' This is the most common thing you will do 90%+ of the time.'
+      puts " Marking something as reviewed means you've thought about it, and the current status or state of the task/project is correct."
+      puts
+      puts 'You can also do one of these against the current item: '
+      #        puts " 'co' or 'com' - complete"
+      puts " 'c' or 'com' - complete"
+      puts " 'd' - delete'"
+      puts " 'an' or 'n' - add note'"
+      puts " 'r' - rename" 
+      puts " 'psm' 'epsm' - edit project support material"
+      puts " 'pt action_context <contents of task>' - add a project task to the current project"
+      puts
+      puts "Additionally, you can use these commands in this context:"
+      puts " 't action_context contents of task' - create a adhoc task"
+      puts " 'co contents of task' - create an adhoc task in the computer action context"
+      puts " 'j contents of task' - create an adhoc task in the job action context"
+      puts " 'w contents of task' - create an adhoc task in the waiting action context"
+    when 'pt'
+      project_task(keyword, content)
+    when 'co'
+      view_or_add_task('computer', keyword, content)
+    when 'j'
+      view_or_add_task('job', keyword, content)
+    when 'pc' # pc 'whatever you need to do at your computer'
+      project_task_maybe(object, 'computer', keyword, content)
+    when 'pj' # pj 'whatever you need to do at your job'
+      project_task_maybe(object, 'job', keyword, content)
+    when 'pw' # pw 'whatever you are waiting on'
+      project_task_maybe(object, 'waiting', keyword, content)
+    when 's', 'search'
+      search(keyword, content)
+    when 't'
+      task_input(keyword, content)
+    when 'p'
+      project_input(keyword, content)
+    when 'w'
+      # Note, 2020-08-23: we are explicitly not making 'w' add a waiting to the current project. This is to ensure consistancy with how 'w' typically works.
+      view_or_add_task('waiting', keyword, content)
+    when 'e', 'exit','q', 'quit'
+      exit # we at least want exit rather than ctrl-c, since that doesn't store history of completed/deleted
+    # exit may be enough, sure it'd be nice to get out of the weekly review
+    # overall and back to the main prompt, but exiting out of the entire program
+    # seems reasonable to me, esp. now that the weekly review subprompt does so much of what the main prompt does
+    # also we don't *really* want to encourage people to leave this wr process,
+    # esp since they can still create tasks and projects in here
+    # TODO MAYBE 
+    # next time you look at htis code
+    # add this to all of your blocks, expanding them to do/end
+    # and reset this variable at end of weekly_review method
+    # break if $quit_weekly_review
+    #      puts "Leaving weekly review..."
+    #     $quit_weekly_review = true
+    when 'n', 'an', 'add-note', 'note'
+      action_verb = 'add_note'
+    when 'c', 'com', 'complete', 'finish', 'done'
+      action_verb = 'complete'
+    when 'd', 'delete', 'remove'
+      action_verb = 'delete'
+    when 'psm', 'edit-psm', 'epsm'
+      action_verb = 'edit_psm'
+    when 'r', 'rename', 'retitle'
+      action_verb = 'rename'
+    when 'undo'
+      if $undo
+        $undo[0].send($undo[1])
+        puts 'Undo performed. Specifically did this: '
+        puts "object: #{$undo[0]}"
+        puts "action: #{$undo[1]}"
       else
-        puts "      #{object.class} marked as reviewed."
+        puts '$undo variable not set, nothing to undo?'
       end
-      action_verb = "reviewed"
     else
-      case command
-      # keep these in sync with main.rb as best you can
-      # last synced: 2020-07-26
-      # TODO INSTEAD make this a fuction that's called from here and main.rb
-      # something like 'core_editing'
-      when '?', 'help', 'wtf', 'fuck'
-        puts "Here's what you can do:"
-        puts ' Press ENTER to mark the item as reviewed and move onto the next one.'
-        puts ' This is the most common thing you will do 90%+ of the time.'
-        puts " Marking something as reviewed means you've thought about it, and the current status or state of the task/project is correct."
+      puts 'Input unrecognized. Skipping..' # should probably not skip TODO, should loop
+    end
+    if action_verb
+      if action_verb != 'reviewed'
+        take_edit_action(action_verb, object)
         puts
-        puts 'You can also do one of these against the current item: '
-        #        puts " 'co' or 'com' - complete"
-        puts " 'c' or 'com' - complete"
-        puts " 'd' - delete'"
-        puts " 'an' or 'n' - add note'"
-        puts " 'r' - rename" 
-        puts " 'psm' 'epsm' - edit project support material"
-        puts " 'pt action_context <contents of task>' - add a project task to the current project"
-        puts
-        puts "Additionally, you can use these commands in this context:"
-        puts " 't action_context contents of task' - create a adhoc task"
-        puts " 'co contents of task' - create an adhoc task in the computer action context"
-        puts " 'j contents of task' - create an adhoc task in the job action context"
-        puts " 'w contents of task' - create an adhoc task in the waiting action context"
-      when 'pt'
-          project_task(keyword, content)
-      when 'co'
-        view_or_add_task('computer', keyword, content)
-      when 'j'
-        view_or_add_task('job', keyword, content)
-      when 'pc' # pc 'whatever you need to do at your computer'
-        project_task_maybe(object, 'computer', keyword, content)
-      when 'pj' # pj 'whatever you need to do at your job'
-        project_task_maybe(object, 'job', keyword, content)
-      when 'pw' # pw 'whatever you are waiting on'
-        project_task_maybe(object, 'waiting', keyword, content)
-      when 's', 'search'
-        search(keyword, content)
-      when 't'
-        task_input(keyword, content)
-      when 'p'
-        project_input(keyword, content)
-      when 'w'
-        # Note, 2020-08-23: we are explicitly not making 'w' add a waiting to the current project. This is to ensure consistancy with how 'w' typically works.
-        view_or_add_task('waiting', keyword, content)
-      when 'e', 'exit','q', 'quit'
-        exit # we at least want exit rather than ctrl-c, since that doesn't store history of completed/deleted
-        # exit may be enough, sure it'd be nice to get out of the weekly review
-      # overall and back to the main prompt, but exiting out of the entire program
-      # seems reasonable to me, esp. now that the weekly review subprompt does so much of what the main prompt does
-      # also we don't *really* want to encourage people to leave this wr process,
-        # esp since they can still create tasks and projects in here
-        # TODO MAYBE 
-      # next time you look at htis code
-      # add this to all of your blocks, expanding them to do/end
-      # and reset this variable at end of weekly_review method
-      # break if $quit_weekly_review
-      #      puts "Leaving weekly review..."
-      #     $quit_weekly_review = true
-      when 'n', 'an', 'add-note', 'note'
-        action_verb = 'add_note'
-      when 'c', 'com', 'complete', 'finish', 'done'
-        action_verb = 'complete'
-      when 'd', 'delete', 'remove'
-        action_verb = 'delete'
-      when 'psm', 'edit-psm', 'epsm'
-        action_verb = 'edit_psm'
-      when 'r', 'rename', 'retitle'
-        action_verb = 'rename'
-      when 'undo'
-        if $undo
-          $undo[0].send($undo[1])
-          puts 'Undo performed. Specifically did this: '
-          puts "object: #{$undo[0]}"
-          puts "action: #{$undo[1]}"
-        else
-          puts '$undo variable not set, nothing to undo?'
-        end
-      else
-        puts 'Input unrecognized. Skipping..' # should probably not skip TODO, should loop
-      end
-      if action_verb
-        if action_verb != 'reviewed'
-          take_edit_action(action_verb, object)
-          puts
-          if action_verb == 'rename' # if we're renaming, don't advance to the next
-            review_and_maybe_edit(object)        
-          end 
+        if action_verb == 'rename' # if we're renaming, don't advance to the next
+          review_and_maybe_edit(object)        
         end 
-      else
-        review_and_maybe_edit(object)        
-      end
-    end # action.empty?
-  end # task & action == s/m
+      end 
+    else
+      review_and_maybe_edit(object)        
+    end
+  end # action.empty?
 end # def
 
 # Review all projects and tasks weekly.
@@ -542,8 +541,6 @@ def review_need_reviewed
   projects = $data.projects.filter {|p| not_recently_reviewed(p) }
   review_projects_and_subtasks(projects)
   tasks = $data.tasks.filter {|t| not_recently_reviewed(t) }
-  tasks_bkup = tasks.dup
-  puts tasks.count
   s_m_count = 0
   tasks.delete_if do |t|
     if t.action_context == 'someday/maybe'.to_sym
@@ -551,18 +548,6 @@ def review_need_reviewed
       s_m_count > 5
     end # if
   end # do
-  puts tasks.count
-  sleep 5
-  tasks_bkup = tasks_bkup - tasks
-  puts tasks_bkup.count
-  sleep 5
-  tasks_bkup.each do |t|
-    puts t
-    sleep 1
-  end
-    
-  # todo limit s/m to 5/weekly review
-  # todo tasks.each = if s/m add 1 to counter, until 5, then remove!
   tasks.each { |t| review_and_maybe_edit(t) }
 end 
 
