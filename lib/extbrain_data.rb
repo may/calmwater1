@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-21
+# Revised: 2020-09-11
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -143,11 +143,16 @@ class ExtbrainData
     tasks.filter { |task| task.title.downcase.include?(search_string.downcase) }
   end
   
-  def list_tasks(action_context = nil)
-    if action_context
-      tsk = tasks.filter { |t| t.action_context == action_context.to_sym }
+  def list_tasks(action_context = nil, keyword = nil)
+    if keyword
+      list_task_tasks = find_tasks(keyword)
     else
-      tsk = tasks
+      list_task_tasks = tasks
+    end 
+    if action_context
+      tsk = list_task_tasks.filter { |t| t.action_context == action_context.to_sym }
+    else
+      tsk = list_task_tasks
     end
     # sort by oldest on top. no .modified, so use .creation.
     # oldest on top to try to avoid procrastionation.

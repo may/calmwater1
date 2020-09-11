@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-30
+# Revised: 2020-09-11
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -7,10 +7,12 @@ require_relative 'extbrain_data.rb'
 require_relative 'writing_mode.rb'
 
 def view_or_add_task(action_context, keyword, content)
+  
   if keyword and content
     task_input(action_context, keyword + ' ' + content)
   elsif keyword
-    task_input(action_context, keyword)
+  # task_input(action_context, keyword)
+    task_list(action_context, keyword) # can no longer add one-word tasks
   else
     task_list(action_context)
   end
@@ -97,10 +99,11 @@ end # def
 
 # TASKS
 
-def task_list(keyword = nil)
-  if keyword
-    # keyword is really action_context
-    $data.list_tasks(keyword)
+def task_list(action_context = nil, keyword = nil)
+  if keyword and action_context
+    $data.list_tasks(action_context, keyword)
+  elsif action_context
+    $data.list_tasks(action_context)
   else
     $data.list_tasks
   end
