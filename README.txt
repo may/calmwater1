@@ -52,6 +52,10 @@ in general, the undo command is available for some actions such as completion, d
 # ADVANCED
 w what you are waiting on
 w  (no arguments, works like lw)
+w <one word search> - eg 'w bob' - show everything I'm waiting on Bob to do.
+
+context <contextname> - change from job to personal context or other defined context. cd <contextname> also works
+
 
 
 # Testing

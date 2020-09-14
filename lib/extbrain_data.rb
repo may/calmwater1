@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-09-11
+# Revised: 2020-09-14
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -13,7 +13,6 @@ require_relative '../config.rb'
 ## .update_task(replaced task object)
 ## .delete_task(sets deleted flag on that task object)
 ## .find_project
-
 
 
 # you searched: andrew
@@ -32,7 +31,7 @@ class ExtbrainData
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
-    puts "#{number_of_projects} projects, #{number_of_tasks} tasks, and #{number_of_job_projects} job projects. Total: #{number_of_projects + number_of_tasks}."
+    puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects, #{number_of_job_projects} job projects, and #{number_of_tasks} tasks."
     print "Last weekly review: "
     if $last_weekly_review_done
       days = Time.now.yday - $last_weekly_review_done.yday
