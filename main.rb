@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-08-22
+# Revised: 2020-09-29
 
 
 # todo d for delete
@@ -215,7 +215,7 @@ end
 
 
 # todo once more beyond testing make date fixed
-puts "Welcome to extbrain, version 0.5 (\"user acceptance testing\"), #{Time.now.strftime('%Y-%m-%d')}"
+puts "Welcome to extbrain, version 0.6 (\"seems to be working\"), #{Time.now.strftime('%Y-%m-%d')}"
 startup
 random_tip
 command_loop
