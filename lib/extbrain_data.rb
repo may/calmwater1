@@ -330,15 +330,11 @@ class ExtbrainData
       $lockfile_pid = File.read($lockfile).to_i
       if $take_over_lock
         puts "Taking over existing lock..."
-        puts "process still exists, should get something here"
-        p (Process.getpgid($lockfile_pid) rescue nil)
         Process.kill('TERM',$lockfile_pid)
-        p (Process.getpgid($lockfile_pid) rescue nil)
         while (Process.getpgid($lockfile_pid) rescue nil)
-          puts "Waiting on first process to exit."
+          puts "Waiting on first process to exit..."
           sleep 0.5
         end
-        puts 'got past loop'
         $lockfile_locked = false # reset flag so we can save changes on exit
       else # if no takeover
         exit
