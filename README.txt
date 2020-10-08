@@ -14,10 +14,15 @@ Optional:
  rlwrap
  tput (if not, or if using Windows, set $color_only to false in config.rb)
       https://command-not-found.com/tput
+      
 
 Using:
  rlwrap ruby main.rb
  or, if on Windows: ruby main.rb
+
+# won't work under windows
+- color coding of output
+- opening a second instance of extbrain on the same machine (eg server) will just exit, instead of gracefully shutting down the first process
 
 # todo some documentation
 

@@ -215,7 +215,7 @@ end
 
 
 # todo once more beyond testing make date fixed
-puts "Welcome to extbrain, version 0.6 (\"seems to be working\"), #{Time.now.strftime('%Y-%m-%d')}"
+puts "Welcome to extbrain, version 0.7 (\"seems to be working well\"), #{Time.now.strftime('%Y-%m-%d')}"
 startup
 random_tip
 command_loop
