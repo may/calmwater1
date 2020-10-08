@@ -64,7 +64,7 @@ def command_loop
   while true
     $writing_mode ? print("wm> ") : print("> ")
     input = gets
-    # TODO try $data.load_data BEFORE modyiftgin state.
+    # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
     dispatch_user_input(input)
     $data.save_data # disable this if it gets slow, but then you could lose data if session killed

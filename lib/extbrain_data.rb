@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-09-14
+# Revised: 2020-10-07
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -327,11 +327,26 @@ class ExtbrainData
   def load_data
     if File.exist?($lockfile)
       $lockfile_locked = true
-      exit
-    else
-      puts "Locking..."
-      File.open($lockfile, 'w') {|f| f.write(Process.pid) }
-    end
+      $lockfile_pid = File.read($lockfile).to_i
+      if $take_over_lock
+        puts "Taking over existing lock..."
+        puts "process still exists, should get something here"
+        p (Process.getpgid($lockfile_pid) rescue nil)
+        Process.kill('TERM',$lockfile_pid)
+        p (Process.getpgid($lockfile_pid) rescue nil)
+        while (Process.getpgid($lockfile_pid) rescue nil)
+          puts "Waiting on first process to exit."
+          sleep 0.5
+        end
+        puts 'got past loop'
+        $lockfile_locked = false # reset flag so we can save changes on exit
+      else # if no takeover
+        exit
+      end # takeover?
+    end # if locked
+    puts "Locking..."
+    # be sure to keep 'w' to overwrite when we are taking over the lock
+    File.open($lockfile, 'w') {|f| f.write(Process.pid) } 
     print "Loading files..."
     if File.exist?($save_file_habits)
       @habits = YAML.load(File.read($save_file_habits))
@@ -375,7 +390,7 @@ class ExtbrainData
           @tasks = @tasks - t # remove completed/deleted
         end
         puts "archival complete."
-      end
+      end # if clear_lock
       print "Saving file..." if clear_lock 
       print 'habits...' if clear_lock
       File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
