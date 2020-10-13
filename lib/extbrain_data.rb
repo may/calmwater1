@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-10-07
+# Revised: 2020-10-08
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -330,11 +330,15 @@ class ExtbrainData
       $lockfile_pid = File.read($lockfile).to_i
       if $take_over_lock
         puts "Taking over existing lock..."
-        Process.kill('TERM',$lockfile_pid)
-        while (Process.getpgid($lockfile_pid) rescue nil)
-          puts "Waiting on first process to exit..."
-          sleep 0.5
-        end
+        begin
+          Process.kill('TERM',$lockfile_pid)
+          while (Process.getpgid($lockfile_pid) rescue nil)
+            puts "Waiting on first process to exit..."
+            sleep 0.5
+          end
+        rescue Errno::ESRCH
+          puts "No process to kill, taking over lock gleefully..."
+        end # begin
         $lockfile_locked = false # reset flag so we can save changes on exit
       else # if no takeover
         exit
