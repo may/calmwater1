@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-10-08
+# Revised: 2020-10-24 
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -32,6 +32,7 @@ class ExtbrainData
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
     puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects, #{number_of_job_projects} job projects, and #{number_of_tasks} tasks."
+    puts " Habits: #{@habits.count}."
     print "Last weekly review: "
     if $last_weekly_review_done
       days = Time.now.yday - $last_weekly_review_done.yday
