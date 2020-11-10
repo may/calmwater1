@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-09-11
+# Revised: 2020-11-10
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -23,6 +23,13 @@ def change_life_context(new_life_context)
     puts "Current context is: #{$life_context}"
     puts "Proper usage: context new_context"
   else
+    # Allow users to use 'home' and 'work' as shorthands for 'personal' and 'job'
+    if new_life_context == "home"
+      new_life_context = "personal"
+    end
+    if new_life_context == "work"
+      new_life_context = "job"
+    end
     $life_context = new_life_context.to_sym
     unless $data.defined_life_contexts.include?($life_context)
       puts "WARNING: the context '#{$life_context}' not used anywhere in your data."

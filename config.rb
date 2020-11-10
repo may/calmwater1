@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2020-10-07
+# Revised: 2020-11-03
 $log_command_usage_locally = false
 $save_file_directory = "" # set to "/extbrain" if you want it to live in there
 $data_file_command_usage = "#{Dir.home}#{$save_file_directory}/extbrain_command_usage.yaml"
@@ -33,7 +33,7 @@ if $time_sensitive_life_context == true
 end
 
 if Time.now.wday.between?(1, 5) and Time.now.hour.between?(8, 16)
-  $take_over_lock = false
+  $take_over_lock = true # set false if you don't wantbetween 8 to 5
 else
   # I opened extbrain while working, walked away, and am now trying to use it remotely from a different computer or another location. 
   $take_over_lock = true
