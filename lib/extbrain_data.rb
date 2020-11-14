@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-10-24 
+# Revised: 2020-11-14
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -264,7 +264,10 @@ class ExtbrainData
   ## HABITS
   
   def list_habits()
+    @habits.sort_by! { |habit| habit.compliance }
+    @habits.reverse!
     @habits.each do |habit|
+      # debug todo remove
       if $color_only
         if habit.completed_today?
           print `tput setaf 2` # instruct linux/unix terminal to go green
