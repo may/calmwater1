@@ -349,6 +349,8 @@ def habit_input(keyword, content)
   elsif content
     if content == 'yesterday'
       puts "Logged completion of #{keyword} habit for yesterday." if $data.complete_habit(keyword, true)
+    elsif content == 'delete'
+      puts "DELETED HABIT #{keyword}" if $data.delete_habit(keyword)
     else
       puts "Habit created: #{keyword}." if $data.new_habit(content, keyword)
     end 
@@ -362,7 +364,6 @@ def habit_input(keyword, content)
     if $data.no_habits?
       puts no_habits
     else
-      #todo list all habits
       $data.list_habits
     end 
   end 

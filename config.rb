@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2020-11-03
+# Revised: 2020-11-14
 $log_command_usage_locally = false
 $save_file_directory = "" # set to "/extbrain" if you want it to live in there
 $data_file_command_usage = "#{Dir.home}#{$save_file_directory}/extbrain_command_usage.yaml"
@@ -15,7 +15,7 @@ $lockfile = "#{Dir.home}#{$save_file_directory}/lockfile-extbrain.txt" # unix/li
 
 $archive_file_projects = "#{Dir.home}#{$save_file_directory}/extbrain_#{Time.now.year}_projects_completed_or_deleted.yaml"
 $archive_file_tasks = "#{Dir.home}#{$save_file_directory}/extbrain_#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
-
+$archive_file_habits = "#{Dir.home}#{$save_file_directory}/extbrain_#{Time.now.year}_habits_deleted.yaml"
 
 $color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
 

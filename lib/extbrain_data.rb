@@ -264,9 +264,11 @@ class ExtbrainData
   ## HABITS
   
   def list_habits()
-    @habits.sort_by! { |habit| habit.compliance }
-    @habits.reverse!
-    @habits.each do |habit|
+    habits = @habits
+    habits.filter { |habit| habit.deleted? }
+    habits.sort_by! { |habit| habit.compliance }
+    habits.reverse! # most compliant at the top of the list
+    habits.each do |habit|
       # debug todo remove
       if $color_only
         if habit.completed_today?
@@ -302,6 +304,18 @@ class ExtbrainData
     success
   end 
 
+  def delete_habit(keyword)
+    h = habit_exist?(keyword)
+    if h
+      h.delete!
+      success = true
+    else
+      puts "No habit found for keyword: #{keyword}. Can't DELETE non-existant habit."
+      success = false
+    end
+    success
+  end
+  
   def no_habits?
     @habits.empty?
   end 
@@ -376,7 +390,7 @@ class ExtbrainData
     puts "loaded."
   end
 
-  # We save freqeuntly, and clear_lock being true means it's the final save of the session.
+  # We save frequently, and clear_lock being true means it's the final save of the session.
   def save_data(clear_lock=nil)
     if Process.pid == File.open($lockfile, &:gets).to_i
       if clear_lock # only be chatty if closing program, otherwise save silently each time
@@ -393,6 +407,13 @@ class ExtbrainData
           File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
           @tasks = @tasks - t # remove completed/deleted
         end
+
+        h = @habits.filter { |habit| habit.deleted? }
+        unless h.empty?
+          File.open($archive_file_habits, 'a') { |f| f.write(YAML.dump(h)) }
+          @habits = @habits - h # remove completed/deleted
+        end
+
         puts "archival complete."
       end # if clear_lock
       print "Saving file..." if clear_lock 

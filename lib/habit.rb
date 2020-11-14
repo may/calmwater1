@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-07-02
+# Revised: 2020-11-14
 
 # TODO BUGFIX - switch from Time to DateTime to allow proper yesterday & two days ago detection
 # across month boundries
@@ -17,6 +17,15 @@ class Habit
     @trigger = trigger
     @completion = Array.new
     @creation = Time.now
+    @deleted = false
+  end
+
+  def deleted?
+    !!@deleted
+  end
+  
+  def delete!
+    @deleted = true
   end
   
   def completed(optional = nil)
