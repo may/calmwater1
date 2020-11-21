@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-11-14
+# Revised: 2020-11-21
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -265,7 +265,7 @@ class ExtbrainData
   
   def list_habits()
     habits = @habits
-    habits.filter { |habit| habit.deleted? }
+    habits = habits.filter { |habit| not habit.deleted? }
     habits.sort_by! { |habit| habit.compliance }
     habits.reverse! # most compliant at the top of the list
     habits.each do |habit|
