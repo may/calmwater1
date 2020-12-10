@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-11-21
+# Revised: 2020-12-10
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -98,7 +98,7 @@ class ExtbrainData
 
   # s string
   # .downcase to ensure case-insensitive search
-  def search(keyword, content, life_context)
+  def search(keyword, content, life_context, projects_only = nil)
     if keyword and content
       string = keyword + ' ' + content
     elsif keyword
@@ -110,8 +110,12 @@ class ExtbrainData
       nil
     elsif t.nil?
       p
+    elsif p.nil? && projects_only
+      [] # empty array
     elsif p.nil?
-      t 
+      t
+    elsif projects_only
+      p
     else
       t + p
     end 
@@ -428,7 +432,7 @@ class ExtbrainData
       if clear_lock
         if $last_weekly_review_done
           File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
-          puts 'weekly review status...'
+          print 'weekly review status...'
         end
         File.delete($lockfile)
         puts "saved!" if clear_lock

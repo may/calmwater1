@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-11-10
+# Revised: 2020-12-10
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -13,6 +13,9 @@ def view_or_add_task(action_context, keyword, content)
   elsif keyword
   # task_input(action_context, keyword)
     task_list(action_context, keyword) # can no longer add one-word tasks
+    ## 2020-12-10 ^ it would be nice to have one word tasks, but honestly I only
+    ## use them for testing. A one word task in the real world isn't sufficently
+    ## actionable.
   else
     task_list(action_context)
   end
@@ -66,7 +69,7 @@ end
 #  'delete'
 #  'edit_psm'
 #  'rename'
-def edit_project_or_task(action_verb, keyword, content)
+def edit_project_or_task(action_verb, keyword, content, projects_only = nil)
   unless keyword
     puts "Need to specify which task or project in order to #{action_verb}."
     puts "For a project, specify a keyword or type a seach term. "
@@ -74,7 +77,7 @@ def edit_project_or_task(action_verb, keyword, content)
     puts "Multi-word searching is supported. TODO."
   else
     object_to_operate_on = nil
-    results = $data.search(keyword, content, $life_context)
+    results = $data.search(keyword, content, $life_context, projects_only)
     if results.empty?
       puts "No results found for query."
     else
@@ -433,6 +436,7 @@ def review_and_maybe_edit(object)
       puts " 'co contents of task' - create an adhoc task in the computer action context"
       puts " 'j contents of task' - create an adhoc task in the job action context"
       puts " 'w contents of task' - create an adhoc task in the waiting action context"
+      puts " 's/m contents of task' - create an adhoc task in the waiting action context"
     when 'pt'
       project_task(keyword, content)
     when 'co'
@@ -447,6 +451,8 @@ def review_and_maybe_edit(object)
       project_task_maybe(object, 'waiting', keyword, content)
     when 's', 'search'
       search(keyword, content)
+    when 'sm', 's/m'
+      view_or_add_task('someday/maybe', keyword, content)
     when 't'
       task_input(keyword, content)
     when 'p'

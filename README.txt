@@ -135,3 +135,10 @@ xh keyword - log habit for today
 xh keyword title - create new habit with keyword and title
 
 
+
+---
+
+If your delete key does not work, try this:
+
+.inputrc
+  "\e[3~": delete-char

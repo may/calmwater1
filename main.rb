@@ -153,7 +153,7 @@ def dispatch_user_input(input_string)
     when 'plc'
       project_life_context(keyword, content)
     when 'psm', 'edit-psm', 'epsm'
-      edit_project_or_task('edit_psm', keyword, content)
+      edit_project_or_task('edit_psm', keyword, content, true) # true = projects_only
     when 'pw' # pw keyword 'whatever I'm waiting on' - create project-specific waiting task
       project_task(keyword, 'waiting ' + content)
     when 'r', 'rename', 'retitle'
