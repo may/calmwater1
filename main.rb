@@ -36,6 +36,7 @@ def startup
 end
 
 at_exit do
+#  system("touch at_exit")
   if $lockfile_locked
     puts "Can't get lock... exiting.."
   else
@@ -46,6 +47,7 @@ at_exit do
         puts usage.to_h
       end
     end
+    system("touch at_exit_save_data")
     $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
   end 
