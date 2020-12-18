@@ -396,7 +396,7 @@ class ExtbrainData
 
   # We save frequently, and clear_lock being true means it's the final save of the session.
   def save_data(clear_lock=nil)
-    if Process.pid == File.open($lockfile, &:gets).to_i
+    if Process.pid == File.open($lockfile, &:gets).to_i # make sure it's our lock, else don't save
       # only be chatty if closing program, otherwise save silently each time
       print "Archiving completed and deleted tasks & projects..." if clear_lock 
       # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
@@ -420,23 +420,32 @@ class ExtbrainData
       puts "archival complete." if clear_lock
       print "Saving file..." if clear_lock 
       print 'habits...' if clear_lock
+      File.open("extbrain_debug_savings_habits", 'w') { |f| f.write("#{Time.now}") }
       File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
+      File.open("extbrain_debug_savings_habits_done", 'w') { |f| f.write("#{Time.now}") }
       print 'projects...' if clear_lock
+ #     system("touch extbrain_debug_started_saving_projects")
       File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
+#      system("touch extbrain_debug_finished_saving_projects")
       print 'tasks...' if clear_lock
+#      system("touch extbrain_debug_started_saving_tasks")
       File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
-
+#      system("touch extbrain_debug_finished_saving_tasks")
       # if saving on exit
       if clear_lock
         if $last_weekly_review_done
           File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
           print 'weekly review status...'
         end # last weekly review done
+        File.open("extbrain_debug_save_data_delete_lockfile", 'w') { "#{Time.now}" }
         File.delete($lockfile)
+        File.open("extbrain_debug_save_data_delete_lockfile_after", 'w') { "#{Time.now}" }
         puts "saved!" if clear_lock
       end # if saving on exit; if clear_lock
     else
       puts "Can't get lock, unable to save."
+      system("touch extbrain_debug_unable_to_get_lock_not_saved") # in case no user there to see termination
     end # if it's our lock
+    
   end 
 end 

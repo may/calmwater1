@@ -28,17 +28,15 @@ p project
 etc. todo help text
 HEREDOC
 
-
-
 def startup
   $data = ExtbrainData.new
   puts "Current life context: #{$life_context}. Change with 'context'"
 end
 
 at_exit do
-#  system("touch at_exit")
   if $lockfile_locked
     puts "Can't get lock... exiting.."
+    system("touch extbrain_debug_at_exit_cant_get_lock") # in case no user to see it; eg ssh session terminated
   else
     if $log_command_usage_locally
       if $command_usage
@@ -47,8 +45,9 @@ at_exit do
         puts usage.to_h
       end
     end
-    system("touch at_exit_save_data")
+    File.open("extbrain_debug_at_exit_save_data", 'w') { |f| f.write("#{Time.now}") }
     $data.save_data(true) # save and clear lock
+    File.open("extbrain_debug_at_exit_save_data_after", 'w') { |f| f.write("#{Time.now}") }
     puts "Thank you for using extbrain. Have a good day!"
   end 
 end
