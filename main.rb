@@ -241,7 +241,7 @@ end
 
 
 # todo once more beyond testing make date fixed
-puts "Welcome to extbrain, version 0.9 (\"only one bug; don't kill me through PuTTY please!"), #{Time.now.strftime('%Y-%m-%d')}"
+puts "Welcome to extbrain, version 0.9 (\"only one bug; don't kill me through PuTTY please!\"), #{Time.now.strftime('%Y-%m-%d')}"
 startup
 # random_tip #annoying, 2020-12-18 
 command_loop
