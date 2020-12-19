@@ -420,26 +420,18 @@ class ExtbrainData
       puts "archival complete." if clear_lock
       print "Saving file..." if clear_lock 
       print 'habits...' if clear_lock
-      File.open("extbrain_debug_savings_habits", 'w') { |f| f.write("#{Time.now}") }
       File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
-      File.open("extbrain_debug_savings_habits_done", 'w') { |f| f.write("#{Time.now}") }
       print 'projects...' if clear_lock
- #     system("touch extbrain_debug_started_saving_projects")
       File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
-#      system("touch extbrain_debug_finished_saving_projects")
       print 'tasks...' if clear_lock
-#      system("touch extbrain_debug_started_saving_tasks")
       File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
-#      system("touch extbrain_debug_finished_saving_tasks")
+      if $last_weekly_review_done
+        File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
+        print 'weekly review status...' if clear_lock
+      end # last weekly review done
       # if saving on exit
       if clear_lock
-        if $last_weekly_review_done
-          File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
-          print 'weekly review status...'
-        end # last weekly review done
-        File.open("extbrain_debug_save_data_delete_lockfile", 'w') { "#{Time.now}" }
         File.delete($lockfile)
-        File.open("extbrain_debug_save_data_delete_lockfile_after", 'w') { "#{Time.now}" }
         puts "saved!" if clear_lock
       end # if saving on exit; if clear_lock
     else

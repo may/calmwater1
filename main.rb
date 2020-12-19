@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-09-29
+# Revised: 2020-12-18
 
 
 # todo d for delete
@@ -46,8 +46,35 @@ at_exit do
       end
     end
     File.open("extbrain_debug_at_exit_save_data", 'w') { |f| f.write("#{Time.now}") }
-    $data.save_data(true) # save and clear lock
-    File.open("extbrain_debug_at_exit_save_data_after", 'w') { |f| f.write("#{Time.now}") }
+    # When killing extbrain running in PuTTY over SSH (not mosh) on my Windows work
+    # laptop over the VPN, by shutting down the laptop the habits file is lost.
+    # Extensive debugging traced it to: unknown factors.
+    # In short, we get to the point where we are starting to save data and then
+    # everything is killed.
+    # The reason the habits file gets wiped is, I believe, simply beause it is the
+    # first thing we try to save.
+    # And when we start saving, the first thing we do is truncate the existing
+    # file to zero, and *then* write data.
+    # For now, 2020-12-17, I'm just going to remove the 'save_data' call in at_exit.
+    # Because everytime you enter data into extbrain it's saved immediately anyway.
+    # But... we need to clear the lock. Frack.
+    # Maybe make a clear_lock function?
+    # Or detach and self-terminate? Hmm.
+    # Honestly, do we *need* to clear the lock? Sure it's nice, but the program
+    # is now robust enough to take over a non-cleared lock instead of blocking.
+    # Yeah, we're no longer blocking on an uncleared lock, so we'll take data
+    # saving and lock clearing out of at_exit, and if it bites us later we can
+    # read this then and decide then haha future self!
+    # The other catch here is we miss the lovely printing of everything we're saving
+    # at time of exit, but oh well. 2020-12-17.
+    # todo detect if on mosh or ssh
+    # 2020-12-18 learned that we don't clear the lock either.
+    #
+    #
+    # Was this:
+    ### $data.save_data(true) # save and clear lock
+    # Is now this:
+    File.delete($lockfile)
     puts "Thank you for using extbrain. Have a good day!"
   end 
 end
