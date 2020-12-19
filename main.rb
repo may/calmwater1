@@ -45,7 +45,6 @@ at_exit do
         puts usage.to_h
       end
     end
-    File.open("extbrain_debug_at_exit_save_data", 'w') { |f| f.write("#{Time.now}") }
     # When killing extbrain running in PuTTY over SSH (not mosh) on my Windows work
     # laptop over the VPN, by shutting down the laptop the habits file is lost.
     # Extensive debugging traced it to: unknown factors.
@@ -69,12 +68,11 @@ at_exit do
     # at time of exit, but oh well. 2020-12-17.
     # todo detect if on mosh or ssh
     # 2020-12-18 learned that we don't clear the lock either.
+    #  so added this     File.delete($lockfile)
     #
-    #
-    # Was this:
-    ### $data.save_data(true) # save and clear lock
-    # Is now this:
-    File.delete($lockfile)
+    # But 2020-12-18, learned that weekly review didn't save if you exited in the middle.
+    # So reverting the code to how it was, AND just not killing putty at work if I can..
+    $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
   end 
 end
@@ -243,8 +241,8 @@ end
 
 
 # todo once more beyond testing make date fixed
-puts "Welcome to extbrain, version 0.8 (\"seems to be working damn well\"), #{Time.now.strftime('%Y-%m-%d')}"
+puts "Welcome to extbrain, version 0.9 (\"only one bug; don't kill me through PuTTY please!"), #{Time.now.strftime('%Y-%m-%d')}"
 startup
-random_tip
+# random_tip #annoying, 2020-12-18 
 command_loop
 

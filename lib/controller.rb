@@ -566,7 +566,7 @@ def review_need_reviewed
     end # if
   end # do
   tasks.each { |t| review_and_maybe_edit(t) }
-end 
+end
 
 
 # A checklist that requires explict checking to get past each step.
