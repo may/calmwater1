@@ -41,6 +41,7 @@ class Habit
     if days == 0
       100
     else
+      #((completion.count / days.to_f)*100) # in case you want to see the raw calculation
       ((completion.count / days.to_f)*100).round
     end
   end

@@ -350,7 +350,7 @@ def habit_input(keyword, content)
   if 'wc' == keyword
     writing_habit_input(keyword, content)
   elsif content
-    if content == 'yesterday'
+    if (content == 'yesterday') or (content == 'y')
       puts "Logged completion of #{keyword} habit for yesterday." if $data.complete_habit(keyword, true)
     elsif content == 'delete'
       puts "DELETED HABIT #{keyword}" if $data.delete_habit(keyword)
