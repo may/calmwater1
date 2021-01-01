@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-12-18
+# Revised: 2020-01-01
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -57,6 +57,10 @@ class ExtbrainData
         puts "Plus running it will fix this edge case where I can't be arsed/don't know how to fix my algorithm around Time.now.yday."
         puts
         puts "But, in an effort to be useful, the last date of the weekly review was: #{$last_weekly_review_done.strftime($time_formatting_string)}"
+        puts
+        puts "Finally, on 2021-01-01 , I learned that this bug around yday also applies to habits."
+        puts "So your habit data will be fucked up today and a little tomorrow; also uses yday. But never fear, no data has been lost; this is all just a display problem, not a data problem."
+        puts
       end 
     else
       puts "NEVER! That's bad. Use the 'wr' command to fix."

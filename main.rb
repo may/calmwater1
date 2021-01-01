@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-12-18
+# Revised: 2021-01-01
 
 
 # todo d for delete
@@ -239,9 +239,8 @@ def random_tip
 end 
 
 
-
-# todo once more beyond testing make date fixed
-puts "Welcome to extbrain, version 0.9 (\"only one bug; don't kill me through PuTTY please!\"), #{Time.now.strftime('%Y-%m-%d')}"
+puts "Welcome to extbrain, version 1.0 (\"only two bugs\"), 2021-01-01"
+#puts "including \"don't kill me through PuTTY please!\" and \"date display issues at New Years\""
 startup
 # random_tip #annoying, 2020-12-18 
 command_loop
