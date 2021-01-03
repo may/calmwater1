@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-01-01
+# Revised: 2021-01-03
 
 
 # todo d for delete
@@ -30,7 +30,8 @@ HEREDOC
 
 def startup
   $data = ExtbrainData.new
-  puts "Current life context: #{$life_context}. Change with 'context'"
+  #  puts "Current life context: #{$life_context}. Change with 'context'"
+  puts "Current life context: #{$life_context}."
 end
 
 at_exit do
