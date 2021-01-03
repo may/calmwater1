@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-11-14
+# Revised: 2021-01-03
 
 # TODO BUGFIX - switch from Time to DateTime to allow proper yesterday & two days ago detection
 # across month boundries
@@ -9,12 +9,12 @@
 # 2020-06-19 can't add a notes field manually in the yaml I learned haha
 
 class Habit
-  attr_reader :title, :keyword, :trigger, :completion
+  attr_reader :title, :keyword, :completion
   
-  def initialize(title, keyword, trigger)
+  def initialize(title, keyword)
     @title = title
     @keyword = keyword
-    @trigger = trigger
+#    @trigger = trigger
     @completion = Array.new
     @creation = Time.now
     @deleted = false

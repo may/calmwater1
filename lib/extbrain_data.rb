@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-01-01
+# Revised: 2021-01-03
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -61,6 +61,8 @@ class ExtbrainData
         puts "Finally, on 2021-01-01 , I learned that this bug around yday also applies to habits."
         puts "So your habit data will be fucked up today and a little tomorrow; also uses yday. But never fear, no data has been lost; this is all just a display problem, not a data problem."
         puts
+        puts
+        puts "On the plus side it's kinda like having a fresh start with your habit data."
       end 
     else
       puts "NEVER! That's bad. Use the 'wr' command to fix."
@@ -338,9 +340,9 @@ class ExtbrainData
       success = nil
     else 
       if writing_habit
-        h = WritingHabit.new(content, keyword, nil)
+        h = WritingHabit.new(content, keyword)
       else
-        h = Habit.new(content, keyword, nil)
+        h = Habit.new(content, keyword)
       end
       @habits << h
       success = true
