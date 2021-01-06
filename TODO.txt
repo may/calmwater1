@@ -1,6 +1,21 @@
 ;; Created: 2020-05-13
-;; Revised: 2020-06-15
+;; Revised: 2021-01-03
 ;; Copyright: Nicholas E. May. All rights reserved.
+
+
+
+
+
+ [someday/maybe] (extb) I've said no to this in the past, and I still am hesitant, but consider color-coding for different action contexts on a given project. perhaps: s/m: dark grey, computer: light pink/red, waiting: light green, etc. with a goal of being able to quickly ascertain what's what at a glance. And underline project name at the top
+  [someday/maybe] (extb) make 'e' edit instead of exit maybe
+   [computer] (extb) task_list to allow the user to select from one of the tasks to view it using .view_task, which also shows notes. the 'v' command should also allow this, search for a task by name and then show it once only one task narrowed to
+    [computer] (extb) create the 'tac' command for when you've created a task in the wrong action context. same as plc.
+     [computer] (extb) confirmed need 4 indent and 80 char limit - chunk task listing w/n projects into 80 character limit and indent by 4 spaces
+      [computer] (extb) create an added today query
+       [computer] (pt: extb) when viewing tasks - to_s - show the number of notes as a number or none if no notes eg '{2} task name'
+        [someday/maybe] (proj: extb) enable 'yesterday' habit tracking functionality for wc command
+	 [computer] (proj: extb) put extbrain on github or on thenickmay? git would let people fork it and stuff but eh. make sure gpl3 it
+	 
 
 
 implement searching archived tasks if needed, eg 'I know I completed something this year...'
@@ -706,3 +721,5 @@ See devlog.txt for details. Add new at top.
 - non-unique keywords
 - projects contain tasks. no subprojects. no subtasks. flat structure.
 - no project status calculated from state of associated/contained tasks
+
+

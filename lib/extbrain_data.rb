@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-01-03
+# Revised: 2021-01-06
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -224,6 +224,8 @@ class ExtbrainData
     ## TODO as of 2020-08-09, not using tags, so skip this
     ##    proj.sort { |a, b| a.tags <=> b.tags }
     proj = proj.sort { |a, b| a.keyword <=> b.keyword }
+    puts "#{proj.count} projects in #{life_context}"
+    puts
     proj.each { |p| p.puts_project }
     puts "No projects, yet. Add one with 'p keyword title of your project'" if proj.empty?
   end 
