@@ -1,5 +1,5 @@
 # Created: 2020-06-11
-# Revised: 2020-06-13
+# Revised: 2021-01-18
 # From extbrain command line, ideally invoke this as:
 # h wc Write every day, one word more than the last day.
 # But do whatever works best for you for a habit title!
@@ -9,8 +9,8 @@
 class WritingHabit < Habit
   attr_reader :average_word_count, :previous_word_count
   
-  def initialize(title, keyword, trigger)
-    super(title, keyword, trigger)
+  def initialize(title, keyword)
+    super(title, keyword)
     @previous_word_count = 0
     @average_word_count = 0
     @word_count_over_time = Array.new

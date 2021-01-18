@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2020-12-10
+# Revised: 2021-01-18
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -349,7 +349,15 @@ def habit_input(keyword, content)
   no_habits = 'No habits. Create one by typing \'h keyword title of your habit\'' 
   if 'wc' == keyword
     writing_habit_input(keyword, content)
+  elsif 'wc2' == keyword
+    writing_habit_input(keyword, content)
   elsif content
+    # Note that it's not easy to make the writing habits respond to 'yesterday'.
+    # Possible, but not easy given how complete_habit is constructed.
+    # So, for now, 2021-01-18, we're just going to treat the fact that you can't 
+    # log a writing habit on any day EXCEPT today as a FEATURE!
+    # Because that really forces you to write *every day*, not just skip a day, 
+    # write a little the next day, and backdate it. Write. Every. day!
     if (content == 'yesterday') or (content == 'y')
       puts "Logged completion of #{keyword} habit for yesterday." if $data.complete_habit(keyword, true)
     elsif content == 'delete'
