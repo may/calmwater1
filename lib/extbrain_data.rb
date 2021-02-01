@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-01-06
+# Revised: 2021-01-28
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -276,6 +276,8 @@ class ExtbrainData
   ## HABITS
   
   def list_habits()
+    puts "The trajectory of your life bends in the direction of your habits. - James Clear"
+    puts
     habits = @habits
     habits = habits.filter { |habit| not habit.deleted? }
     habits.sort_by! { |habit| habit.compliance }

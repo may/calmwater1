@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-01-03
+# Revised: 2021-02-01
 
 
 # todo d for delete
@@ -89,7 +89,7 @@ def command_loop
   end
 
   while true
-    $writing_mode ? print("wm> ") : print("> ")
+    $writing_mode ? print("extbrain-wm> ") : print("extbrain> ")
     input = gets
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
@@ -240,7 +240,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.0 (\"only two bugs\"), 2021-01-01"
+puts "Welcome to extbrain, version 1.1 (\"only two bugs\"), 2021-01-18"
 #puts "including \"don't kill me through PuTTY please!\" and \"date display issues at New Years\""
 startup
 # random_tip #annoying, 2020-12-18 
