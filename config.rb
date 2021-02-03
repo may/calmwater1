@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2020-01-21
+# Revised: 2020-02-03
 $log_command_usage_locally = false
 $save_file_directory = "" # set to "/extbrain" if you want it to live in there
 $data_file_command_usage = "#{Dir.home}#{$save_file_directory}/extbrain_command_usage.yaml"
@@ -33,3 +33,9 @@ if $time_sensitive_life_context == true
 end
 
 $take_over_lock = true
+
+# for writing habits, calculate average word count for *evey* day since the habit
+# was created, not just the days you wrote. Can be toggled back and forth if needed.
+# Setting to true provides a more accurate picture of how much you *actually* write,
+# instead of just counting the 'good' days where you write.
+$use_zero_day_average = true 

@@ -240,7 +240,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.1 (\"only two bugs\"), 2021-01-18"
+puts "Welcome to extbrain, version 1.2 (\"only two bugs, several features\"), 2021-02-03"
 #puts "including \"don't kill me through PuTTY please!\" and \"date display issues at New Years\""
 startup
 # random_tip #annoying, 2020-12-18 

@@ -1,5 +1,5 @@
 # Created: 2020-06-11
-# Revised: 2021-01-18
+# Revised: 2021-02-03
 # From extbrain command line, ideally invoke this as:
 # h wc Write every day, one word more than the last day.
 # But do whatever works best for you for a habit title!
@@ -31,7 +31,14 @@ class WritingHabit < Habit
   end
   
   def update_average
-    @average_word_count = (@word_count_over_time.sum { |wc_pair| wc_pair.first })/@word_count_over_time.count
+    # Zero refers to days you didn't write, eg your word count was zero.
+    if $use_zero_day_average
+      seconds_since_creation = Time.now - @creation
+      days_since_creation = seconds_since_creation / (24 * 60 * 60)
+      @average_word_count = (@word_count_over_time.sum { |wc_pair| wc_pair.first })/days_since_creation.round
+    else
+      @average_word_count = (@word_count_over_time.sum { |wc_pair| wc_pair.first })/@word_count_over_time.count
+    end
   end
 
   # Eg when the writer wants to know how much they wrote today!
@@ -42,15 +49,11 @@ class WritingHabit < Habit
   def to_s
     # Write every day, one word more than the last day (on average).
     # Credit jamesclear.com/measure-backward
+    next_session = @average_word_count + 1
     if $color_only # let color coding in extbrain_data handle last completed
-      # 1.0
-      #  "(#{keyword}) [#{compliance}%] {Next session: #{@average_word_count}+1=#{@average_word_count+1}} #{title}"
-      next_session = @average_word_count + 1
-    "(#{keyword}) [#{compliance}%] {Next session: #{next_session}, #{@previous_word_count + next_session} total} #{title}"
+      "(#{keyword}) [#{compliance}%] {Next session: #{next_session}, #{@previous_word_count + next_session} total} #{title}"
     else
-      # 1.0
-      # "(#{keyword}) [#{compliance}%] (#{last_completed}) {Next session: #{@average_word_count}+1=#{@average_word_count+1}} #{title}"
+      "(#{keyword}) [#{compliance}%] (#{last_completed}) {Next session: #{next_session}, #{@previous_word_count + next_session} total} #{title}"
     end 
   end 
-  
 end
