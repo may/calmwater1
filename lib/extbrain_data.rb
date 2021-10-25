@@ -204,7 +204,8 @@ class ExtbrainData
       projs
     end
   end
-  
+
+  # TODO make this look at tasks too, since you might have only tasks but not any projects.
   def defined_life_contexts
     p = @projects.uniq { |proj| proj.life_context }    
     life_contexts = p.collect { |proj| proj.life_context }
