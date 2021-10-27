@@ -15,13 +15,22 @@ Revised: 2020-08-14
 ## Install
 
    0. Software is still under active development and I forgot to use a branch, so likely broken. (10/26/2021)
-   1. [Download](https://github.com/may/extbrain/archive/refs/heads/trunk.zip)
+   1. [Download](https://github.com/may/extbrain/archive/refs/heads/trunk.zip).
    2. Open a terminal and unzip extbrain-trunk.zip, presumably in your Downloads folder.
    3. ```ruby Downloads/extbrain-trunk/main.rb```
    
 ## Using:
    * ```rlwrap ruby main.rb```
    * or, if on Windows: ```ruby main.rb```
+
+## TODO design principles
+
+   * Never lose data. 
+   * Never lock you in; your data is yours and human-readable.
+   * Fast; capture your thoughts, update your status, etc. -- quickly.
+   * Stays out of your way, but keeps your data at you fingerprints.
+   * Pure GTD; no tweaks or additions like priorities. No cruft.
+   * Supports habit tracking? (But not part of GTD core functionality)
 
 ## TODO the rest of this README
 

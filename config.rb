@@ -1,27 +1,26 @@
 # Created: 2020-06-06
-# Revised: 2020-02-03
+# Revised: 2021-10-26
 $log_command_usage_locally = true 
-$save_file_directory = "#{Dir.home}/.extbrain/"
-$data_file_command_usage = "#{$save_directory}extbrain_command_usage.yaml"
-$save_file_last_weekly_review_done = "#{Dir.home}#{$save_directory}/extbrain_last_weekly_review.yaml"
+$save_directory = "#{Dir.home}/.extbrain"
+$data_file_command_usage = "#{$save_directory}/command_usage.yaml"
+$save_file_last_weekly_review_done = "#{$save_directory}/last_wr.yaml"
 
-# Disable this if you don't work 8-5, or don't find automatic contexts useful. It's also adjustable, below.
-$time_sensitive_life_context = true
-# unix/linux/osx only w/ home
-$save_file_habits = "#{Dir.home}#{$save_directory}/extbrain_habits.yaml"
-$save_file_projects = "#{D ter
-ir.home}#{$save_directory}/extbrain_projects.yaml"
+$save_file_habits = "#{$save_directory}/habits.yaml"
+$save_file_projects = "#{$save_directory}/projects.yaml"
 
-$save_file_tasks = "#{Dir.home}#{$save_directory}/extbrain_tasks.yaml"
-$lockfile = "#{Dir.home}#{$save_directory}/lockfile-extbrain.txt" # unix/linux/osx only?
+$save_file_tasks = "#{$save_directory}/tasks.yaml"
+$lockfile = "#{$save_directory}/lockfile.txt" 
 
-$archive_file_projects = "#{Dir.home}#{$save_directory}/extbrain_#{Time.now.year}_projects_completed_or_deleted.yaml"
-$archive_file_tasks = "#{Dir.home}#{$save_directory}/extbrain_#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
-$archive_file_habits = "#{Dir.home}#{$save_directory}/extbrain_#{Time.now.year}_habits_deleted.yaml"
+$archive_file_projects = "#{$save_directory}/#{Time.now.year}_projects_completed_or_deleted.yaml"
+$archive_file_tasks = "#{$save_directory}/#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
+$archive_file_habits = "#{$save_directory}/extbrain_#{Time.now.year}_habits_deleted.yaml"
 
 $color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
+
+# Enable this if you want automatic context switching between work/home.
+$time_sensitive_life_context = false
 
 # This is only evaluated on inital launch of the program.
 # May need to have it reevaluated hourly if long-running process on a single remote machine.
@@ -34,6 +33,9 @@ if $time_sensitive_life_context == true
   end
 end
 
+
+# If true, running a second session of extbrain on the same computer
+# will kill the first session.
 $take_over_lock = true
 
 # for writing habits, calculate average word count for *evey* day since the habit

@@ -358,6 +358,9 @@ class ExtbrainData
   ## SAVING AND LOADING DATA
   
   def load_data
+    # ensure save directory exists
+    Dir.mkdir($save_directory) unless Dir.exist?($save_directory)
+
     # Handle multiple instances of extbrain, i.e. if you left it
     # running on your single server from a different client (eg laptop vs desktop)
     if File.exist?($lockfile)
