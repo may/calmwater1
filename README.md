@@ -3,22 +3,27 @@ Created: 2020-05-30
 Revised: 2020-08-14
 --->
 
-# extbrain: a fast, command-line, GTD tool that holds you to account
+### extbrain: a fast, command-line, GTD tool that holds you to account
 
-## Requirements:
+#### Requirements:
  ruby 2.6.3 or greater
 
-## Reccommended, but entirely optional:
-    * [tput](https://command-not-found.com/tput) (if you don't have this set $color_only to false in config.rb)
-      
-  * [rlwrap](https://command-not-found.com/rlwrap)
+#### Reccommended, but entirely optional:
+   * [tput](https://command-not-found.com/tput) (if you don't have this set $color_only to false in config.rb)
+   * [rlwrap](https://command-not-found.com/rlwrap)
 
-## Using:
-    * ```rlwrap ruby main.rb```
-    * or, if on Windows: ```ruby main.rb```
+#### Install
 
- 
+   0. Software is still under active development and I forgot to use a branch, so likely broken. (10/26/2021)
+   1. [Download](https://github.com/may/extbrain/archive/refs/heads/trunk.zip)
+   2. Open a terminal and unzip extbrain-trunk.zip, presumably in your Downloads folder.
+   3. ```ruby Downloads/extbrain-trunk/main.rb```
+   
+#### Using:
+   * ```rlwrap ruby main.rb```
+   * or, if on Windows: ```ruby main.rb```
 
+### TODO the rest of this README
 
       
 
