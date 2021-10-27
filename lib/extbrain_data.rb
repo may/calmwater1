@@ -358,6 +358,8 @@ class ExtbrainData
   ## SAVING AND LOADING DATA
   
   def load_data
+    # Handle multiple instances of extbrain, i.e. if you left it
+    # running on your single server from a different client (eg laptop vs desktop)
     if File.exist?($lockfile)
       $lockfile_locked = true
       $lockfile_pid = File.read($lockfile).to_i
@@ -407,48 +409,52 @@ class ExtbrainData
 
   # We save frequently, and clear_lock being true means it's the final save of the session.
   def save_data(clear_lock=nil)
-    if Process.pid == File.open($lockfile, &:gets).to_i # make sure it's our lock, else don't save
-      # only be chatty if closing program, otherwise save silently each time
-      print "Archiving completed and deleted tasks & projects..." if clear_lock 
-      # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
-      p = @projects.filter { |project| (project.completed? or project.deleted?) }
-      unless p.empty?
-        File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
-        @projects = @projects - p # remove completed/deleted
-      end
-      
-      t = @tasks.filter { |task| (task.completed? or task.deleted?) }
-      unless t.empty?
-        File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
-        @tasks = @tasks - t # remove completed/deleted
-      end
-
-      h = @habits.filter { |habit| habit.deleted? }
-      unless h.empty?
-        File.open($archive_file_habits, 'a') { |f| f.write(YAML.dump(h)) }
-        @habits = @habits - h # remove completed/deleted
-      end
-      puts "archival complete." if clear_lock
-      print "Saving file..." if clear_lock 
-      print 'habits...' if clear_lock
-      File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
-      print 'projects...' if clear_lock
-      File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
-      print 'tasks...' if clear_lock
-      File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
-      if $last_weekly_review_done
-        File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
-        print 'weekly review status...' if clear_lock
-      end # last weekly review done
-      # if saving on exit
-      if clear_lock
-        File.delete($lockfile)
-        puts "saved!" if clear_lock
-      end # if saving on exit; if clear_lock
+    # ensure save directory exists
+    unless Dir.exist?($save_directory)
+      Dir.mkdir($save_directory)
     else
-      puts "Can't get lock, unable to save."
-      system("touch extbrain_debug_unable_to_get_lock_not_saved") # in case no user there to see termination
-    end # if it's our lock
-    
-  end 
-end 
+      if Process.pid == File.open($lockfile, &:gets).to_i # make sure it's our lock, else don't save
+        # only be chatty if closing program, otherwise save silently each time
+        print "Archiving completed and deleted tasks & projects..." if clear_lock 
+        # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
+        p = @projects.filter { |project| (project.completed? or project.deleted?) }
+        unless p.empty?
+          File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
+          @projects = @projects - p # remove completed/deleted
+        end
+        
+        t = @tasks.filter { |task| (task.completed? or task.deleted?) }
+        unless t.empty?
+          File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
+          @tasks = @tasks - t # remove completed/deleted
+        end
+
+        h = @habits.filter { |habit| habit.deleted? }
+        unless h.empty?
+          File.open($archive_file_habits, 'a') { |f| f.write(YAML.dump(h)) }
+          @habits = @habits - h # remove completed/deleted
+        end
+        puts "archival complete." if clear_lock
+        print "Saving file..." if clear_lock 
+        print 'habits...' if clear_lock
+        File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
+        print 'projects...' if clear_lock
+        File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
+        print 'tasks...' if clear_lock
+        File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
+        if $last_weekly_review_done
+          File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
+          print 'weekly review status...' if clear_lock
+        end # last weekly review done
+        # if saving on exit
+        if clear_lock
+          File.delete($lockfile)
+          puts "saved!" if clear_lock
+        end # if saving on exit; if clear_lock
+      else
+        puts "Can't get lock, unable to save."
+        system("touch extbrain_debug_unable_to_get_lock_not_saved") # in case no user there to see termination
+      end # if it's our lock
+    end
+  end
+end
