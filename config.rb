@@ -1,20 +1,15 @@
 # Created: 2020-06-06
-# Revised: 2021-10-26
+# Revised: 2021-10-27
 $log_command_usage_locally = true 
 $save_directory = "#{Dir.home}/.extbrain"
 $data_file_command_usage = "#{$save_directory}/command_usage.yaml"
-$save_file_last_weekly_review_done = "#{$save_directory}/last_wr.yaml"
 
-$save_file_habits = "#{$save_directory}/habits.yaml"
-$save_file_projects = "#{$save_directory}/projects.yaml"
-
-$save_file_tasks = "#{$save_directory}/tasks.yaml"
+$save_file = "#{$save_directory}/extbrain.yaml"
 $lockfile = "#{$save_directory}/lockfile.txt" 
 
-$archive_file_projects = "#{$save_directory}/#{Time.now.year}_projects_completed_or_deleted.yaml"
-$archive_file_tasks = "#{$save_directory}/#{Time.now.year}_non-project_tasks_completed_or_deleted.yaml"
-$archive_file_habits = "#{$save_directory}/extbrain_#{Time.now.year}_habits_deleted.yaml"
+$archive_file = "#{$save_directory}/#{Time.now.year}_extbrain_completed_or_deleted.yaml"
 
+# TODO rename to $color ? 10/27
 $color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."

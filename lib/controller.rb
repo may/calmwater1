@@ -590,5 +590,5 @@ def weekly_review
 
   review_need_reviewed
   puts "Weekly review done, congrats!"
-  $last_weekly_review_done = Time.now
+  $last_weekly_review = Time.now
 end

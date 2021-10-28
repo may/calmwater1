@@ -23,7 +23,7 @@ require_relative '../config.rb'
 
 
 class ExtbrainData
-#  attr_reader :projects
+  #  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
     # todo
@@ -34,8 +34,8 @@ class ExtbrainData
     puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects, #{number_of_job_projects} job projects, and #{number_of_tasks} tasks."
     puts " Habits: #{@habits.count}."
     print "Last weekly review: "
-    if $last_weekly_review_done
-      days = Time.now.yday - $last_weekly_review_done.yday
+    if $last_weekly_review
+      days = Time.now.yday - $last_weekly_review.yday
       if days >= 0
         case 
         when days < 4
@@ -48,7 +48,7 @@ class ExtbrainData
         puts "#{days} days ago."
         print `tput sgr0` if $color_only # reset colors
       else
-        puts $last_weekly_review_done.strftime($time_formatting_string)
+        puts $last_weekly_review.strftime($time_formatting_string)
         puts "Happy New Year(ish)! Start fresh with a weekly review, using the friendly 'wr' command."
         puts "The 'wr' command will only prompt you for things that /need/ review."
         puts
@@ -56,7 +56,7 @@ class ExtbrainData
         puts
         puts "Plus running it will fix this edge case where I can't be arsed/don't know how to fix my algorithm around Time.now.yday."
         puts
-        puts "But, in an effort to be useful, the last date of the weekly review was: #{$last_weekly_review_done.strftime($time_formatting_string)}"
+        puts "But, in an effort to be useful, the last date of the weekly review was: #{$last_weekly_review.strftime($time_formatting_string)}"
         puts
         puts "Finally, on 2021-01-01 , I learned that this bug around yday also applies to habits."
         puts "So your habit data will be fucked up today and a little tomorrow; also uses yday. But never fear, no data has been lost; this is all just a display problem, not a data problem."
@@ -65,7 +65,8 @@ class ExtbrainData
         puts "On the plus side it's kinda like having a fresh start with your habit data."
       end 
     else
-      puts "NEVER! That's bad. Use the 'wr' command to fix."
+#      puts "NEVER! That's bad. Use the 'wr' command to fix."
+      puts "No weekly review yet. Use 'wr' to fix this!"
     end
   end
 
@@ -361,8 +362,7 @@ class ExtbrainData
     # ensure save directory exists
     Dir.mkdir($save_directory) unless Dir.exist?($save_directory)
 
-    # Handle multiple instances of extbrain, i.e. if you left it
-    # running on your single server from a different client (eg laptop vs desktop)
+    # Handle multiple instances of extbrain
     if File.exist?($lockfile)
       $lockfile_locked = true
       $lockfile_pid = File.read($lockfile).to_i
@@ -376,8 +376,9 @@ class ExtbrainData
           end
         rescue Errno::ESRCH
           puts "No process to kill, taking over lock gleefully..."
-        end # begin
-        $lockfile_locked = false # reset flag so we can save changes on exit
+        end
+        # reset flag so we can save changes on exit
+        $lockfile_locked = false
       else # if no takeover
         exit
       end # takeover?
@@ -386,78 +387,62 @@ class ExtbrainData
     # be sure to keep 'w' to overwrite when we are taking over the lock
     File.open($lockfile, 'w') {|f| f.write(Process.pid) } 
     print "Loading files..."
-    if File.exist?($save_file_habits)
-      @habits = YAML.load(File.read($save_file_habits))
+    
+    if File.exist?($save_file)
+      all_four = YAML.load(File.read($save_file))
+      $last_weekly_review = all_four.pop
+      @habits = all_four.pop
+      @tasks = all_four.pop
+      @projects = all_four.pop
+      puts "loaded."
     else
-      puts "File not found: #{$save_file_habits}."
-      puts ' If this is your first run, or you have no habits yet, you can ignore this message.'
+      puts
+      puts " File not found: #{$save_file}."
+      puts ' If this is your first run you can ignore this message. Welcome!'
     end
-    if File.exist?($save_file_projects)
-      @projects = YAML.load(File.read($save_file_projects))
-    else
-      puts "File not found: #{$save_file_projects}."
-      puts ' If this is your first run, or you have no projects yet, you can ignore this message.'
-    end
-    if File.exist?($save_file_tasks)
-      @tasks = YAML.load(File.read($save_file_tasks))
-    else
-      puts "File not found: #{$save_file_tasks}."
-      puts ' If this is your first run, or you have no tasks, you can ignore this message.'
-    end
-    if File.exist?($save_file_last_weekly_review_done)
-      $last_weekly_review_done = YAML.load(File.read($save_file_last_weekly_review_done))
-    end
-    puts "loaded."
   end
 
-  # We save frequently, and clear_lock being true means it's the final save of the session.
-  def save_data(clear_lock=nil)
+  # We save frequently.
+  # We tell the user what we're doing if it's the final save of the session.
+  # unlock == true means final save.
+  def save_data(unlock=nil)
     # ensure save directory exists
-    unless Dir.exist?($save_directory)
-      Dir.mkdir($save_directory)
-    else
-      if Process.pid == File.open($lockfile, &:gets).to_i # make sure it's our lock, else don't save
-        # only be chatty if closing program, otherwise save silently each time
-        print "Archiving completed and deleted tasks & projects..." if clear_lock 
-        # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
-        p = @projects.filter { |project| (project.completed? or project.deleted?) }
-        unless p.empty?
-          File.open($archive_file_projects, 'a') { |f| f.write(YAML.dump(p)) }
-          @projects = @projects - p # remove completed/deleted
-        end
-        
-        t = @tasks.filter { |task| (task.completed? or task.deleted?) }
-        unless t.empty?
-          File.open($archive_file_tasks, 'a') { |f| f.write(YAML.dump(t)) }
-          @tasks = @tasks - t # remove completed/deleted
-        end
+    Dir.mkdir($save_directory) unless Dir.exist?($save_directory)
+    # make sure it's our lock, else don't save
+    if Process.pid == File.open($lockfile, &:gets).to_i
+      print "Archiving completed and deleted tasks & projects..." if unlock 
+      # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
+      to_archive = Array.new
+      p = @projects.filter { |project| (project.completed? or project.deleted?) }
+      to_archive << p unless p.empty?
+      t = @tasks.filter { |task| (task.completed? or task.deleted?) }
+      to_archive << t unless t.empty? 
+      h = @habits.filter { |habit| habit.deleted? }
+      to_archive << h unless h.empty? 
+      # TODO s/m make $last_weekly_review not be a global
+      to_archive << $last_weekly_review
+      
+      unless to_archive.empty?
+        File.open($archive_file, 'a') { |f| f.write(YAML.dump(to_archive)) }
+        @projects = @projects - p # remove completed/deleted
+        @tasks = @tasks - t # remove completed/deleted
+        @habits = @habits - h # remove completed/deleted
+        puts "archival complete." if unlock
+      end
 
-        h = @habits.filter { |habit| habit.deleted? }
-        unless h.empty?
-          File.open($archive_file_habits, 'a') { |f| f.write(YAML.dump(h)) }
-          @habits = @habits - h # remove completed/deleted
-        end
-        puts "archival complete." if clear_lock
-        print "Saving file..." if clear_lock 
-        print 'habits...' if clear_lock
-        File.open($save_file_habits, 'w') { |f| f.write(YAML.dump(@habits)) }
-        print 'projects...' if clear_lock
-        File.open($save_file_projects, 'w') { |f| f.write(YAML.dump(@projects)) }
-        print 'tasks...' if clear_lock
-        File.open($save_file_tasks, 'w') { |f| f.write(YAML.dump(@tasks)) }
-        if $last_weekly_review_done
-          File.open($save_file_last_weekly_review_done, 'w') { |f| f.write(YAML.dump($last_weekly_review_done)) }
-          print 'weekly review status...' if clear_lock
-        end # last weekly review done
-        # if saving on exit
-        if clear_lock
-          File.delete($lockfile)
-          puts "saved!" if clear_lock
-        end # if saving on exit; if clear_lock
-      else
-        puts "Can't get lock, unable to save."
-        system("touch extbrain_debug_unable_to_get_lock_not_saved") # in case no user there to see termination
-      end # if it's our lock
-    end
+      all_four = [@projects, @tasks, @habits, $last_weekly_review]
+      print "Saving file..." if unlock 
+      File.open($save_file, 'w') { |f| f.write(YAML.dump(all_four)) } 
+      
+      # if saving on exit
+      if unlock
+        File.delete($lockfile)
+        puts "saved!" if unlock
+      end # if saving on exit; if unlock
+    else
+      puts "Can't get lock, unable to save."
+      system("touch extbrain_debug_unable_to_get_lock_not_saved") # in case no user there to see termination
+    end # if it's our lock
   end
 end
+
