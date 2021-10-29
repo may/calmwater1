@@ -1,12 +1,12 @@
 <!---
 Created: 2020-05-30
-Revised: 2020-08-14
+Revised: 2021-10-28
 --->
 
 ## extbrain: a fast, command-line, GTD tool that holds you to account
 
 ## Requirements:
- ruby 2.6.3 or greater
+   * ruby 2.6.3 or greater
 
 ## Reccommended, but entirely optional:
    * [tput](https://command-not-found.com/tput) (if you don't have this set $color_only to false in config.rb)
@@ -53,7 +53,6 @@ h keyword delete - delete a habit
 # PROJECTS
 p keyword string - creates project with keyword and title of string
 pt keyword action_context string - creates a task within project specified by keyword with specified title of string with action context of action_context
-plc keyword new_life_context - change life context eg from work to personal
 
 # TASKS
 t - lists tasks
@@ -98,9 +97,6 @@ alias extbrain='rlwrap ruby ~/extbrain/main.rb'
 # COMMAND STRUCTURE
 
 ## OTHER
-lc - display current life context and available options (searches all projects and makes list of life contexts)
-        @projects.unique { |p| p.life_context }    
-lc life_context - set current life context globally, such as work home etc.
 s search_keyword - look for keyword, else search all titles for search_keyword, across projects and tasks
 #f - add a note that followed up with person we're waiting on
 ##aw - swap a task from action to waiting or vice versa?
@@ -138,12 +134,11 @@ printing some kind of short uid instead of a custom numbered menu might be easie
 
 
 ## PROJECTS
-p [optional: life_context] or lp - list projects for the current or given life context
+p or lp - list projects for the current or given life context
 p all - list all projects regardless of life context
 p keyword - view project with keyword
 p keyword title - create project with keyword and title 
 tag keyword - add tags to project?
-plc keyword life_context - edit life context (home, work, etc.)
 pt keyword action_context task - add a task to project with keyword in action_context with a title of task #pt stands for project task
 ## HABITS
 xh - list habits

@@ -1,14 +1,13 @@
 # Created: 2020-05-30
-# Revised: 2020-08-22
+# Revised: 2021-10-28
 
 require_relative 'common_project_task'
 
 class Task < CommonProjectTask
   attr_reader :action_context
-  attr_accessor_with_logging :life_context
   
-  def initialize(title, action_context, life_context = :personal)
-    super(title, life_context)
+  def initialize(title, action_context)
+    super(title)
     case action_context
     when 'f', 'fr', 'aof', 'aofr', 'afr', 'focus', 'resp'
       action_context = 'focus/resp'
@@ -34,20 +33,12 @@ class Task < CommonProjectTask
   # needed in list_tasks in extbrain_data
   # might even remove this if b/c it's annoying but we'll see
   # was surpsied to find it  2020-07-15 
-  def to_s(inside_project = true)
-    if inside_project # project already has life context
-      if action_context == 'waiting'.to_sym
-        "[#{action_context}: #{created.strftime($time_formatting_string)}] #{@title}"
-      else
-        "[#{action_context}] #{@title}"
-      end
+  def to_s
+    if action_context == 'waiting'.to_sym
+      "[#{action_context}: #{created.strftime($time_formatting_string)}] #{@title}"
     else
-      if action_context == 'waiting'.to_sym
-        "{#{life_context}} [@#{action_context}: #{created.strftime($time_formatting_string)}] #{@title}"
-      else
-        "{#{life_context}} [@#{action_context}] #{@title}"
-      end
-    end 
+      "[#{action_context}] #{@title}"
+    end
   end
 
   def view_task

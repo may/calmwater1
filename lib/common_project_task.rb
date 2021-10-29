@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-08-04
+# Revised: 2021-10-28
 # Used by Projects and Tasks.
 
 class CommonProjectTask
@@ -17,9 +17,8 @@ class CommonProjectTask
   attr_accessor_with_logging :title
   attr_reader :notes, :created, :completed, :deleted, :last_reviewed
 
-  def initialize(title,life_context)
+  def initialize(title)
     @title = title
-    @life_context = life_context.to_sym 
     @notes = Array.new
     add_note("Created: #{title}")
     @created = Time.now

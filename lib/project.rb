@@ -1,5 +1,5 @@
 # Created: 2020-05-28
-# Revised: 2020-08-09
+# Revised: 2021-10-28
 
 require_relative 'common_project_task'
 
@@ -7,10 +7,10 @@ require_relative 'common_project_task'
 
 class Project < CommonProjectTask
   attr_accessor_with_logging :keyword, :psm
-  attr_reader :tags, :life_context
+  attr_reader :tags
 
-  def initialize(title, keyword, life_context = :personal)  # Project
-    super(title, life_context)
+  def initialize(title, keyword)
+    super(title)
     @keyword = keyword.to_sym
     @tags = Array.new
     @psm = ""
@@ -60,7 +60,7 @@ class Project < CommonProjectTask
     # see: controller.rb/project_keyword
     #    title = "(pt: #{keyword}) #{title}" # Hard code, v1
     title = "(proj: #{keyword}) #{title}" # Hard code, v2
-    task = Task.new(title, action_context, @life_context)
+    task = Task.new(title, action_context)
     @tasks << task
     task
   end
@@ -70,20 +70,17 @@ class Project < CommonProjectTask
 
   # def remove_task(task) ? If you need to move a task from project A to project B..
   # what about an explicit move command instead? Let the data layer handle the mucking about.
-
-  def life_context=(new_life_context)
-    add_note("Updated life_context:\n old: #{@life_context}\n new: #{new_life_context.to_sym}")
-    @life_context = new_life_context.to_sym
-    @tasks.each { |t| t.life_context = new_life_context.to_sym }
-  end 
+ 
   
   def complete_task(task)
-  
+    puts 'So we never implemented lib/project.rb - complete_task ?'
+    puts 'More concerningly, am I not completing tasks? Or just never called?'
+    puts 'TODO investigate 2021-10-28'
   end
 
   def view_project
     puts self # use to_s
-    tasks.each { |t| puts " #{t.to_s(true)}" }
+    tasks.each { |t| puts t } 
   end 
 
   def view_project_and_notes
@@ -109,10 +106,8 @@ class Project < CommonProjectTask
   
   def to_s
     if @tags.empty?
-      # "{#{tasks.count}} (#{@keyword}) [#{@life_context}] #{@title}"
       "[#{tasks.count}] (#{@keyword}) #{@title}"
     else
-      # "{#{tasks.count}} (#{@keyword}) [#{@life_context}] {#{@tags}} #{@title}"
       "[#{tasks.count}] (#{@keyword}) {#{@tags}} #{@title}"
     end 
   end 

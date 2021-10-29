@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-02-01
+# Revised: 2021-10-28
 
 
 # todo d for delete
@@ -30,8 +30,6 @@ HEREDOC
 
 def startup
   $data = ExtbrainData.new
-  #  puts "Current life context: #{$life_context}. Change with 'context'"
-  #  puts "Current life context: #{$life_context}."
 end
 
 at_exit do
@@ -119,8 +117,6 @@ def dispatch_user_input(input_string)
     # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
     # TODO plc keyword context edit context
     #   # lpw or wp = work projects
-  # lph = home projects
-  # lpp = personal projects
   # li / lm = list info (or metadata) with optional keyword for specific project
 
 
@@ -128,8 +124,6 @@ def dispatch_user_input(input_string)
       enable_writing_mode
     when 'clear'
       system('clear')
-    when 'context', 'cd'
-      change_life_context(keyword)
     when 'co', 'lc', 'comp', 'computer', 'pc'
       view_or_add_task('computer', keyword, content)
     when 'c', 'com', 'complete', 'finish', 'done'
@@ -157,12 +151,6 @@ def dispatch_user_input(input_string)
     when 'jc', 'ljc'
       view_or_add_task('job-computer', keyword, content)
     when 'lp'
-      if $time_sensitive_life_context
-        $data.list_projects($life_context)
-      else
-        $data.list_projects
-      end
-    when 'pa', 'lpa' # list all, regardless of life_context
       $data.list_projects
     when 'lpj'
       project_input('job', nil)
@@ -177,8 +165,6 @@ def dispatch_user_input(input_string)
       find_and_show_project(keyword, true)
     when 'pt', 'project-task'
       project_task(keyword, content)
-    when 'plc'
-      project_life_context(keyword, content)
     when 'psm', 'edit-psm', 'epsm'
       edit_project_or_task('edit_psm', keyword, content, true) # true = projects_only
     when 'pw' # pw keyword 'whatever I'm waiting on' - create project-specific waiting task

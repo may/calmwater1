@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-10-27
+# Revised: 2021-10-28
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -31,7 +31,7 @@ class ExtbrainData
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
-    puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects, #{number_of_job_projects} job projects, and #{number_of_tasks} tasks."
+    puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects and #{number_of_tasks} tasks."
     puts " Habits: #{@habits.count}."
     print "Last weekly review: "
     if $last_weekly_review
@@ -89,23 +89,11 @@ class ExtbrainData
     tasks_all.count
   end
   
-  def number_of_job_projects
-    # Needs to be @projects, and the newer remove-completed/deleted-on-save code should
-    # ensure the number is correct without filtering for completed/deleted.
-    @projects.filter { |p| p.life_context == 'job'.to_sym }.count
-  end 
-
   ## SEARCHING
-
-  def filter_to_life_context(array, life_context_desired)
-    unless array.nil?
-      array = array.filter { |t_or_p| t_or_p.life_context == life_context_desired }
-    end 
-  end 
 
   # s string
   # .downcase to ensure case-insensitive search
-  def search(keyword, content, life_context, projects_only = nil)
+  def search(keyword, content, projects_only = nil)
     if keyword and content
       string = keyword + ' ' + content
     elsif keyword
@@ -140,11 +128,10 @@ class ExtbrainData
     tasks_all = @tasks.filter { |task| not (task.completed? or task.deleted?) }
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
-    tasks_all = filter_to_life_context(tasks_all, $life_context)
   end
   
-  def new_task(title, action_context, life_context)
-    task = Task.new(title, action_context, life_context)
+  def new_task(title, action_context)
+    task = Task.new(title, action_context)
     @tasks << task
     task
   end 
@@ -179,7 +166,6 @@ class ExtbrainData
 
   def projects
     p = @projects.filter { |project| not (project.completed? or project.deleted?) }
-    p = filter_to_life_context(p, $life_context)
   end
 
   # TODO filter for completed/deleted
@@ -206,30 +192,19 @@ class ExtbrainData
     end
   end
 
-  # TODO make this look at tasks too, since you might have only tasks but not any projects.
-  def defined_life_contexts
-    p = @projects.uniq { |proj| proj.life_context }    
-    life_contexts = p.collect { |proj| proj.life_context }
-    life_contexts
-  end
-
-  # todo use projects to filter out completed/deleted
-  # ^ I think that is done, as of 7/15 but leave this until 8/1 unless you explicityl test
-  def list_projects(life_context = nil)
-    if life_context
-      life_context = life_context.to_sym
-      proj = projects.filter { |p| p.life_context == life_context.to_sym }
+  def list_projects
+    proj = projects # consider projects.dup if you use sort!
+    unless proj.empty?
+      ## Group by tags.
+      ## TODO as of 2020-08-09, not using tags, so skip this
+      ##    proj.sort { |a, b| a.tags <=> b.tags }
+      proj = proj.sort { |a, b| a.keyword <=> b.keyword }
+      puts "#{proj.count} projects:"
+      puts
+      proj.each { |p| p.puts_project }
     else
-      proj = projects # consider projects.dup if you use sort!
-    end 
-    ## Group by tags.
-    ## TODO as of 2020-08-09, not using tags, so skip this
-    ##    proj.sort { |a, b| a.tags <=> b.tags }
-    proj = proj.sort { |a, b| a.keyword <=> b.keyword }
-    puts "#{proj.count} projects in #{life_context}"
-    puts
-    proj.each { |p| p.puts_project }
-    puts "No projects, yet. Add one with 'p keyword title of your project'" if proj.empty?
+      puts "No projects, yet. Add one with 'p keyword title of your project'"
+    end
   end 
   
   # # TODO decide if color coding useful for projects
@@ -239,12 +214,12 @@ class ExtbrainData
   # # red if review date > 14 days
   
 
-  def new_project(title, keyword, life_context)
+  def new_project(title, keyword)
     if project_exist?(keyword)
       puts "Project exists with that keyword: #{keyword}. Try again."
       success = nil
     else
-      project = Project.new(title, keyword, life_context)
+      project = Project.new(title, keyword)
       @projects << project
       success = true
     end

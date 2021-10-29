@@ -1,5 +1,5 @@
 # Created: 2020-05-29
-# Revised: 2020-05-30
+# Revised: 2021-10-28
 
 require_relative '../lib/project.rb'
 
@@ -36,22 +36,6 @@ class ProjectTest < Minitest::Test
     assert_equal(@now.to_i,@test_project.notes.last.first.to_i)
   end
 
-  def test_project_life_context
-    assert_equal(:family,@test_project.life_context)
-    @test_project.life_context = :work
-    assert_equal(:work,@test_project.life_context)
-    assert_equal("Updated life_context:\n old: family\n new: work",@test_project.notes.first.last)
-    # I don't like having the underscore in life_context when writing to
-    # something the user may see, but updating this should be rare enough
-    # that I can live with it. Plus less code = better, and I don't want to
-    # create a specific handler just for this.
-  end
-  
-  def test_project_without_life_context
-    p2 = Project.new("some title", "some keyword but no life context you notice")
-    assert_equal(:personal,p2.life_context)
-  end
-  
   def test_project_tags_is_array
     assert_equal([],@test_project.tags)
   end

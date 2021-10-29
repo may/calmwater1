@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-01-18
+# Revised: 2021-10-28
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -20,29 +20,6 @@ def view_or_add_task(action_context, keyword, content)
     task_list(action_context)
   end
 end
-
-def change_life_context(new_life_context)
-  if new_life_context.nil?
-    puts "Current context is: #{$life_context}"
-    puts "Proper usage: context new_context"
-  else
-    # Allow users to use 'home' and 'work' as shorthands for 'personal' and 'job'
-    if new_life_context == "home"
-      new_life_context = "personal"
-    end
-    if new_life_context == "work"
-      new_life_context = "job"
-    end
-    $life_context = new_life_context.to_sym
-    unless $data.defined_life_contexts.include?($life_context)
-      puts "WARNING: the context '#{$life_context}' not used anywhere in your data."
-      puts "This is OK if you're starting a new life context or know what you're doing."
-      puts 
-      puts "Otherwise, please call 'context' again and use one of thes contexts: "
-      $data.defined_life_contexts.each {|lc| puts "  #{lc}" }
-    end
-  end
-end 
 
 def take_edit_action(action_verb, object_to_operate_on)
   if object_to_operate_on # check for nil
@@ -77,7 +54,7 @@ def edit_project_or_task(action_verb, keyword, content, projects_only = nil)
     puts "Multi-word searching is supported. TODO."
   else
     object_to_operate_on = nil
-    results = $data.search(keyword, content, $life_context, projects_only)
+    results = $data.search(keyword, content, projects_only)
     if results.empty?
       puts "No results found for query."
     else
@@ -122,7 +99,7 @@ end
 def task_input(task_action_context,task_body)
   if task_action_context
     if task_body
-      puts $data.new_task(task_body,task_action_context,$life_context)
+      puts $data.new_task(task_body,task_action_context)
     else
       task_list(task_action_context)
     end
@@ -135,8 +112,6 @@ def task_input(task_action_context,task_body)
   # t foo = create task w/ content foo
   # pt is how you create a project task
   # ^todo make this print whenever you have less than 10 tasks
-#  new_task(title, action_context, life_context)
-#        if $data.new_project(content, keyword, $life_context)
 end
 
 # SOME EDITING FUNCTIONS
@@ -231,19 +206,6 @@ def project_keyword(keyword, new_keyword)
   end
 end
 
-# plc
-def project_life_context(keyword, new_life_context)
-  if keyword.nil? or new_life_context.nil?
-    puts "Proper usage: plc keyword new_life_context"
-  else
-    if p = $data.project_exist?(keyword)
-      p.life_context = new_life_context.to_sym
-    else
-      puts "No project found with keyword: #{keyword}. Unable to update life context."
-    end
-  end
-end
-
 ### PROJECTS
 
 def find_and_show_project(keyword, show_notes = false)
@@ -278,7 +240,7 @@ def project_task(keyword, content)
 end 
 
 def project_input(keyword, content)
-  # p [optional: life_context] or lp - list projects for the current or given life context
+  # p or lp - list projects
   # p keyword - view project with keyword
   # p keyword title - create project with keyword and title 
 
@@ -289,32 +251,23 @@ def project_input(keyword, content)
   # 'p keyword some project' # creates some project w/ keyword of keyword
   if keyword
     if content
-      if $data.new_project(content, keyword, $life_context)
+      if $data.new_project(content, keyword)
         print "Project created: "
         puts $data.project_exist?(keyword)
         if $data.projects.count < 10 # todo ideally have proper accessor for # of projects
-          puts "Change project context with 'plc keyword context') or see config.rb for automatic settings." 
         end
       end
-    else # just a keyword
-      if $data.defined_life_contexts.include?(keyword.to_sym)
-        $data.list_projects(keyword) # life context
-      else # just a project keyword, not a life context
-        find_and_show_project(keyword)
-      end
-    end # content
+    else # just a project keyword
+      find_and_show_project(keyword)
+    end
   else # no keyword or content
-    if $time_sensitive_life_context
-      $data.list_projects($life_context)
-    else
-      $data.list_projects
-    end #time_sensitive
+    $data.list_projects
   end #keyword
 end # def
 
 def search(keyword, content)
   if keyword
-    results = $data.search(keyword, content, $life_context)
+    results = $data.search(keyword, content)
     if results 
       results.each { |p_or_t| puts p_or_t }
     else
