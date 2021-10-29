@@ -71,13 +71,6 @@ class Project < CommonProjectTask
   # def remove_task(task) ? If you need to move a task from project A to project B..
   # what about an explicit move command instead? Let the data layer handle the mucking about.
  
-  
-  def complete_task(task)
-    puts 'So we never implemented lib/project.rb - complete_task ?'
-    puts 'More concerningly, am I not completing tasks? Or just never called?'
-    puts 'TODO investigate 2021-10-28'
-  end
-
   def view_project
     puts self # use to_s
     tasks.each { |t| puts t } 
