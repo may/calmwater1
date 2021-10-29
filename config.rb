@@ -2,12 +2,13 @@
 # Revised: 2021-10-27
 $log_command_usage_locally = true 
 $save_directory = "#{Dir.home}/.extbrain"
-$data_file_command_usage = "#{$save_directory}/command_usage.yaml"
-
 $save_file = "#{$save_directory}/extbrain.yaml"
 $lockfile = "#{$save_directory}/lockfile.txt" 
 
 $archive_file = "#{$save_directory}/#{Time.now.year}_extbrain_completed_or_deleted.yaml"
+
+$data_file_command_usage = "#{$save_directory}/command_usage.yaml"
+
 
 # TODO rename to $color ? 10/27
 $color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
