@@ -9,7 +9,8 @@ Revised: 2021-10-28
    * ruby 2.6.3 or greater
 
 ## Reccommended, but entirely optional:
-   * [tput](https://command-not-found.com/tput) (if you don't have this set $color_only to false in config.rb)
+   * tput (if you don't have this set $color_only to false in config.rb)
+   ** `apt install libncurses5' on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
    * [rlwrap](https://command-not-found.com/rlwrap)
 
 ## Install
