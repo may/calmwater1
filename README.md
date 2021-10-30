@@ -10,7 +10,7 @@ Revised: 2021-10-28
 
 ## Reccommended, but entirely optional:
    * tput (if you don't have this set $color_only to false in config.rb)
-   ** `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
+     * `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
    * [rlwrap](https://command-not-found.com/rlwrap)
 
 ## Install
