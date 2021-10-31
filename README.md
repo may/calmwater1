@@ -15,7 +15,7 @@ Revised: 2021-10-31
 
 ## Install
 
-   1. [Download](https://github.com/may/extbrain/archive/refs/heads/trunk.zip).
+   1. [Download](https://github.com/may/extbrain/archive/refs/tags/1.3.zip).
    2. Open a terminal and unzip extbrain-trunk.zip, presumably in your Downloads folder.
    3. ```ruby Downloads/extbrain-trunk/main.rb```
    
