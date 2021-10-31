@@ -1,13 +1,11 @@
 # Created: 2020-05-30
-# Revised: 2021-10-28
+# Revised: 2021-10-31
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
-require_relative 'writing_mode.rb'
 
 def view_or_add_task(action_context, keyword, content)
-  
   if keyword and content
     task_input(action_context, keyword + ' ' + content)
   elsif keyword
@@ -346,8 +344,11 @@ def review_and_maybe_edit(object)
   end #project_task_maybe
 
   action_verb = nil
-  #  system('clear')
-  10.times do puts end 
+  if RUBY_PLATFORM.include?('mingw') # windows 10 via rubyinstaller
+    30.times do puts end
+  else
+    system('clear')
+  end
 
   if object.is_a? Project
     print '      Project: '  
@@ -538,6 +539,14 @@ def weekly_review
       print review_step_text
     end
   end
+  puts "Type 'done' when you've completed each of these fully."
+  puts $custom_inboxes
+  $custom_inboxes.each { |inbox| do_until_done(inbox) }
+  do_until_done("Review last week's calendar")
+  do_until_done("Review next week's calendar")
+  do_until_done("Review any meeting notes.")
+  do_until_done("Review anything captured on your moblie device")
+
 #  do_until_done('Clarify and organize all of your email.')
 #  do_until_done('Review your waiting folder in your email.')
 

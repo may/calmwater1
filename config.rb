@@ -1,5 +1,15 @@
 # Created: 2020-06-06
-# Revised: 2021-10-30
+# Revised: 2021-10-31
+
+## Weekly review configuration
+
+### Custom inboxes you want to check each week during your weekly review.
+$custom_inboxes = [ "Work email", "Work chat client."] 
+
+
+
+## 
+
 
 ## User options
 
