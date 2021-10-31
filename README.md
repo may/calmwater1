@@ -1,6 +1,6 @@
 <!---
 Created: 2020-05-30
-Revised: 2021-10-28
+Revised: 2021-10-31
 --->
 
 ## extbrain: a fast, command-line, GTD tool that holds you to account
@@ -8,14 +8,13 @@ Revised: 2021-10-28
 ## Requirements:
    * ruby 2.6.3 or greater
 
-## Reccommended, but entirely optional:
+## Recommended, but entirely optional:
    * tput (if you don't have this set $color_only to false in config.rb)
      * `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
    * [rlwrap](https://command-not-found.com/rlwrap)
 
 ## Install
 
-   0. Software is still under active development and I forgot to use a branch, so likely broken. (10/26/2021)
    1. [Download](https://github.com/may/extbrain/archive/refs/heads/trunk.zip).
    2. Open a terminal and unzip extbrain-trunk.zip, presumably in your Downloads folder.
    3. ```ruby Downloads/extbrain-trunk/main.rb```
@@ -24,7 +23,7 @@ Revised: 2021-10-28
    * ```rlwrap ruby main.rb```
    * or, if on Windows: ```ruby main.rb```
 
-## TODO design principles
+## design principles
 
    * Never lose data. 
    * Never lock you in; your data is yours and human-readable.
@@ -32,6 +31,8 @@ Revised: 2021-10-28
    * Stays out of your way, but keeps your data at you fingerprints.
    * Pure GTD; no tweaks or additions like priorities. No cruft.
    * Supports habit tracking? (But not part of GTD core functionality)
+   * Supports you; helps you do your weekly review right and not skip any item
+   * Supports you; alerts you if you're experiencing project creep (coming someday)
 
 ## TODO the rest of this README
 
@@ -60,7 +61,7 @@ t - lists tasks
 t work - list tasks in work action context
 t work call bob re: proposal - create task in work action context with the contents of 'call bob re: proposal'
 
-when creating tasks, can use abbrevations for action contexts such as 'c' for computer, 'w' for waiting, and 's' or 's/m' or 'm' etc. for someday/maybe
+when creating tasks, can use abbreviations for action contexts such as 'c' for computer, 'w' for waiting, and 's' or 's/m' or 'm' etc. for someday/maybe
 
 
 use 't action_context' to list tasks in a given action context, like 't computer' or 't job'
@@ -135,8 +136,7 @@ printing some kind of short uid instead of a custom numbered menu might be easie
 
 
 ## PROJECTS
-p or lp - list projects for the current or given life context
-p all - list all projects regardless of life context
+p or lp - list projects 
 p keyword - view project with keyword
 p keyword title - create project with keyword and title 
 tag keyword - add tags to project?

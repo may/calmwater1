@@ -31,8 +31,10 @@ class ExtbrainData
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
+    # Should printing really be in the data layer?
     puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects and #{number_of_tasks} tasks."
-    puts " Habits: #{@habits.count}."
+    # TODO stats here regarding average and color coding if in DANGER ZONE? 
+#    puts " Habits: #{@habits.count}."
     print "Last weekly review: "
     if $last_weekly_review
       days = Time.now.yday - $last_weekly_review.yday

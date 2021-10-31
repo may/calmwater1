@@ -1,10 +1,9 @@
 # Created: 2020-05-30
-# Revised: 2021-10-28
+# Revised: 2021-10-31
 
 
 # todo d for delete
 # I think r for rename
-# and plc for project life context change
 # the editor is NOT modal
 # so no 'ep' for edit projects where yo uselect a value
 # you have to know what the command is
@@ -119,7 +118,6 @@ def dispatch_user_input(input_string)
     end
     case command
     # TODO TODO pt to add tags to projects, or just replace specify a new space seprated list?
-    # TODO plc keyword context edit context
     #   # lpw or wp = work projects
   # li / lm = list info (or metadata) with optional keyword for specific project
 
@@ -230,7 +228,8 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.2 (\"only two bugs, several features\"), 2021-02-03"
+puts "Welcome to extbrain, version 1.3 (\"hello world\"), 2021-10-31"
+# for the 1.2 release (only two bugs, and several features), the two bugs are: 
 #puts "including \"don't kill me through PuTTY please!\" and \"date display issues at New Years\""
 startup
 # random_tip #annoying, 2020-12-18 
