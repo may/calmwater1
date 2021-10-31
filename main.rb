@@ -37,11 +37,12 @@ at_exit do
     puts "Can't get lock... exiting.."
     File.open("${save_directory}/extbrain_debug_at_exit_cant_get_lock.txt", "w") { "If you see this file, delete it. Then, keep an eye out for ways to reproduce the behavior that created this file. If you can reliably get this file to appear without doing something crazy, open an issue." }
   else
-    if $log_command_usage_locally
+    if $log_command_usage
       if $command_usage
+        File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
+        # implicitly changes this to an array, which we don't want, so don't save this, only print
         usage = $command_usage.sort_by { |key, value| -value }
-        File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump(usage)) }
-        puts usage.to_h
+        puts usage
       end
     end
     # When killing extbrain running in PuTTY over SSH (not mosh) on my Windows work
@@ -78,12 +79,14 @@ end
 
 def command_loop
   $no_operation_count = 0
-  if $log_command_usage_locally
-    if File.exist?($data_file_command_usage)
-      $command_usage = YAML.load(File.read($data_file_command_usage))
-    else
-      $command_usage = Hash.new
-    end
+  if $log_command_usage
+    unless $command_usage
+      if File.exist?($data_file_command_usage)
+        $command_usage = YAML.load(File.read($data_file_command_usage))
+      else
+        $command_usage = Hash.new
+      end
+    end 
   end
 
   while true
@@ -92,6 +95,7 @@ def command_loop
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
     dispatch_user_input(input)
+    # TODO make this configurable; agressively save data vs every 10 operations.. vs 100 vs only on save
     $data.save_data # disable this if it gets slow, but then you could lose data if session killed
   end
 end
@@ -110,7 +114,7 @@ def dispatch_user_input(input_string)
     keyword = three_pieces[1]
     content = three_pieces[2]
 
-    if $log_command_usage_locally
+    if $log_command_usage
       $command_usage[command] = $command_usage[command].to_i + 1 # increment, even if nil
     end
     case command

@@ -1,17 +1,33 @@
 # Created: 2020-06-06
-# Revised: 2021-10-28
-$log_command_usage_locally = true 
+# Revised: 2021-10-30
+
 $save_directory = "#{Dir.home}/.extbrain"
 $save_file = "#{$save_directory}/extbrain.yaml"
 $lockfile = "#{$save_directory}/lockfile.txt" 
 
 $archive_file = "#{$save_directory}/#{Time.now.year}_extbrain_completed_or_deleted.yaml"
 
+$log_command_usage = true
 $data_file_command_usage = "#{$save_directory}/command_usage.yaml"
 
 
+# Sorting - possible values:
+#  :keyword
+#  :creation [i.e. creation date, oldest first; see what you're avoiding
+#             or may be taking awhile]
+#  :modified [i.e. modified date, oldest first; see what you're avoiding]
+$project_sort = :keyword 
+#$project_sort = :creation
+
+# Extbrain uses color to denote when you need to do something or error states.
+# For example, if you have a project with no next action -- it turns red.
+# If you'd rather not have colors, you can turn this off with no (or limited)
+# loss of function; for instance projects with no next action will be listed with !
+# in front of them.
 # TODO rename to $color ? 10/27
-$color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
+$color_only = false # If perfer b&w, if colorblind, or if using Windows, set this to false.
+
+
 
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 

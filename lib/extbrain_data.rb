@@ -198,7 +198,13 @@ class ExtbrainData
       ## Group by tags.
       ## TODO as of 2020-08-09, not using tags, so skip this
       ##    proj.sort { |a, b| a.tags <=> b.tags }
-      proj = proj.sort { |a, b| a.keyword <=> b.keyword }
+      case $project_sort
+      when :keyword
+        proj = proj.sort { |a, b| a.keyword <=> b.keyword }
+      when :creation
+        puts 'got here'
+        proj = proj.sort { |a, b| a.created <=> b.created }
+      end   
       puts "#{proj.count} projects:"
       puts
       proj.each { |p| p.puts_project }
