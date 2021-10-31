@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-10-28
+# Revised: 2021-10-30
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -202,8 +202,10 @@ class ExtbrainData
       when :keyword
         proj = proj.sort { |a, b| a.keyword <=> b.keyword }
       when :creation
-        puts 'got here'
         proj = proj.sort { |a, b| a.created <=> b.created }
+      else
+        # default is keyword sort
+        proj = proj.sort { |a, b| a.keyword <=> b.keyword }
       end   
       puts "#{proj.count} projects:"
       puts

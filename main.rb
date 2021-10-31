@@ -42,7 +42,7 @@ at_exit do
         File.open($data_file_command_usage, 'w') { |f| f.write(YAML.dump($command_usage)) }
         # implicitly changes this to an array, which we don't want, so don't save this, only print
         usage = $command_usage.sort_by { |key, value| -value }
-        puts usage
+        puts usage.to_h
       end
     end
     # When killing extbrain running in PuTTY over SSH (not mosh) on my Windows work

@@ -1,23 +1,8 @@
 # Created: 2020-06-06
 # Revised: 2021-10-30
 
-$save_directory = "#{Dir.home}/.extbrain"
-$save_file = "#{$save_directory}/extbrain.yaml"
-$lockfile = "#{$save_directory}/lockfile.txt" 
+## User options
 
-$archive_file = "#{$save_directory}/#{Time.now.year}_extbrain_completed_or_deleted.yaml"
-
-$log_command_usage = true
-$data_file_command_usage = "#{$save_directory}/command_usage.yaml"
-
-
-# Sorting - possible values:
-#  :keyword
-#  :creation [i.e. creation date, oldest first; see what you're avoiding
-#             or may be taking awhile]
-#  :modified [i.e. modified date, oldest first; see what you're avoiding]
-$project_sort = :keyword 
-#$project_sort = :creation
 
 # Extbrain uses color to denote when you need to do something or error states.
 # For example, if you have a project with no next action -- it turns red.
@@ -28,9 +13,15 @@ $project_sort = :keyword
 $color_only = false # If perfer b&w, if colorblind, or if using Windows, set this to false.
 
 
+# Project list sorting - possible values:
+#  :keyword
+#  :creation [i.e. creation date, oldest first; see what you're avoiding
+#             or may be taking awhile]
+$project_sort = :keyword 
+#$project_sort = :creation
 
+# ISO standard is good, so is human-readable.
 $time_formatting_string = "%Y-%m-%d %H:%M, %A."
-
 
 # If true, running a second session of extbrain on the same computer
 # will kill the first session.
@@ -41,3 +32,21 @@ $take_over_lock = true
 # Setting to true provides a more accurate picture of how much you *actually* write,
 # instead of just counting the 'good' days where you write.
 $use_zero_day_average = true 
+
+
+
+## Developer options
+$log_command_usage = true
+
+## Saving options
+
+$save_directory = "#{Dir.home}/.extbrain"
+$save_file = "#{$save_directory}/extbrain.yaml"
+$lockfile = "#{$save_directory}/lockfile.txt" 
+$archive_file = "#{$save_directory}/#{Time.now.year}_extbrain_completed_or_deleted.yaml"
+
+$data_file_command_usage = "#{$save_directory}/command_usage.yaml"
+
+
+
+
