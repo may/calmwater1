@@ -31,11 +31,32 @@ class ExtbrainData
     @habits = Array.new unless @habits
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
+    @stats = Array.new unless @stats
+    # format of stats:
+    # each entry is an array: date, total all, total proj
+
+    total = number_of_projects + number_of_tasks
+    
+    one_day_in_seconds = 86400 # 24 * 60 * 60
+    three_days_ago = Time.now.to_i - one_day_in_seconds * 3
+
+    # If our most recent timestamp further away than 'three days ago' it's time for another snapshot.
+    if @stats.any? # Handle nil, initial case.
+      if @stats.last.first.to_i < three_days_ago
+        @stats.append([Time.now, total, number_of_projects])
+      end
+    else
+      puts "Initalizing stats..."
+      @stats.append([Time.now, total, number_of_projects])
+    end
+
     # Should printing really be in the data layer?
-    puts " Total: #{number_of_projects + number_of_tasks}. #{number_of_projects} projects and #{number_of_tasks} tasks."
+    puts " Total: #{total}. #{number_of_projects} projects and #{number_of_tasks} tasks."
     # TODO stats here regarding average and color coding if in DANGER ZONE? 
 #    puts " Habits: #{@habits.count}."
     print "Last weekly review: "
+
+
     if $last_weekly_review
       days = Time.now.yday - $last_weekly_review.yday
       if days >= 0
@@ -374,11 +395,14 @@ class ExtbrainData
     print "Loading files..."
     
     if File.exist?($save_file)
-      all_four = YAML.load(File.read($save_file))
-      $last_weekly_review = all_four.pop
-      @habits = all_four.pop
-      @tasks = all_four.pop
-      @projects = all_four.pop
+      all_five = YAML.load(File.read($save_file))
+      # order is critical 
+      @stats = all_five.pop
+      # TODO s/m make $last_weekly_review not be a global
+      $last_weekly_review = all_five.pop
+      @habits = all_five.pop
+      @tasks = all_five.pop
+      @projects = all_five.pop
       puts "loaded."
     else
       puts
@@ -404,8 +428,6 @@ class ExtbrainData
       to_archive << t unless t.empty? 
       h = @habits.filter { |habit| habit.deleted? }
       to_archive << h unless h.empty? 
-      # TODO s/m make $last_weekly_review not be a global
-      to_archive << $last_weekly_review
       
       unless to_archive.empty?
         File.open($archive_file, 'a') { |f| f.write(YAML.dump(to_archive)) }
@@ -415,9 +437,10 @@ class ExtbrainData
         puts "archival complete." if unlock
       end
 
-      all_four = [@projects, @tasks, @habits, $last_weekly_review]
+      # order is critical
+      all_five = [@projects, @tasks, @habits, $last_weekly_review, @stats]
       print "Saving file..." if unlock 
-      File.open($save_file, 'w') { |f| f.write(YAML.dump(all_four)) } 
+      File.open($save_file, 'w') { |f| f.write(YAML.dump(all_five)) } 
       
       # if saving on exit
       if unlock
