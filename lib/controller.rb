@@ -473,8 +473,8 @@ def review_and_maybe_edit(object)
 end # def
 
 # Review all projects and tasks weekly.
+# Review all goals weekly.
 # Review all areas of focus/responsibility monthly.
-# Review all goals quarterly.
 # Review all someday/maybe at least every six months.
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
 # 
@@ -521,6 +521,7 @@ def review_need_reviewed
   review_projects_and_subtasks(projects)
   tasks = $data.tasks.filter {|t| not_recently_reviewed(t) }
   s_m_count = 0
+  # TODO someday scale from 'always 5 s/m tasks' to 10% of current s/m tasks, ensuring review every 10 weeks. 5% is about 3x/year.
   tasks.delete_if do |t|
     if t.action_context == 'someday/maybe'.to_sym
       s_m_count += 1
@@ -535,19 +536,31 @@ end
 def weekly_review
   def do_until_done(review_step_text)
     print review_step_text
-    until (gets.strip == 'done')
-      print review_step_text
+    print ': '
+    input = gets.strip
+    if input == 'exit'
+      exit
+    elsif input != 'done'
+      do_until_done(review_step_text)
     end
   end
-  puts "Type 'done' when you've completed each of these fully."
-  puts $custom_inboxes
-  $custom_inboxes.each { |inbox| do_until_done(inbox) }
+  # todo should probably allow the user to input new tasks here while collecting and stuff.... or release the lock to allow them to use a second instance of extbrain..
+  puts "Type 'done' when you've completed each of these fully. Or 'exit' to quit extbrain entirely."
+  if $custom_inboxes
+    puts "Custom inboxes..."
+    $custom_inboxes.each { |inbox| do_until_done(inbox) }
+  end
+  puts 'Capture'
+#  do_until_done('Clarify and organize all of your email')
+  do_until_done('Review any meeting notes or scribbled notes')
+  do_until_done('Review anything captured on your smartphone/tablet device..pictures, text messages, etc.')
+
+  
   do_until_done("Review last week's calendar")
   do_until_done("Review next week's calendar")
-  do_until_done("Review any meeting notes.")
-  do_until_done("Review anything captured on your moblie device")
 
-#  do_until_done('Clarify and organize all of your email.')
+  
+
 #  do_until_done('Review your waiting folder in your email.')
 
   review_need_reviewed

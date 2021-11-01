@@ -118,7 +118,7 @@ def dispatch_user_input(input_string)
     edit_project_or_task('complete', keyword, content)
   when 'd', 'del', 'delete', 'remove', 'rm'
     edit_project_or_task('delete', keyword, content)
-  when 'e', 'exit', 'q'
+  when 'e', 'exit', 'q', 'quit', 'stop', 'bye'
     exit
   when 'f', 'fr', 'aof', 'aofr', 'afr', 'focus', 'resp'
     view_or_add_task('focus/resp', keyword, content)

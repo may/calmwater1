@@ -4,7 +4,7 @@
 ## Weekly review configuration
 
 ### Custom inboxes you want to check each week during your weekly review.
-$custom_inboxes = [ "Work email", "Work chat client."] 
+$custom_inboxes = [ "Work email", "Work chat client"] 
 
 
 
@@ -20,7 +20,7 @@ $custom_inboxes = [ "Work email", "Work chat client."]
 # loss of function; for instance projects with no next action will be listed with !
 # in front of them.
 # TODO rename to $color ? 10/27
-$color_only = false # If perfer b&w, if colorblind, or if using Windows, set this to false.
+$color_only = true # If perfer b&w, if colorblind, or if using Windows, set this to false.
 
 
 # Project list sorting - possible values:

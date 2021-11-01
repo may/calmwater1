@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-10-30
+# Revised: 2021-10-31
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -145,21 +145,21 @@ class ExtbrainData
   
   def list_tasks(action_context = nil, keyword = nil)
     if keyword
-      list_task_tasks = find_tasks(keyword)
+      tasks_to_display = find_tasks(keyword)
     else
-      list_task_tasks = tasks
+      tasks_to_display = tasks
     end 
     if action_context
-      tsk = list_task_tasks.filter { |t| t.action_context == action_context.to_sym }
+      tsk = tasks_to_display.filter { |t| t.action_context == action_context.to_sym }
     else
-      tsk = list_task_tasks
+      tsk = tasks_to_display
     end
     # sort by oldest on top. no .modified, so use .creation.
     # oldest on top to try to avoid procrastionation.
     # may also TODO try randomize sometimes to avoid me skipping the top 5 tasks everytime I look at the list
     tsk.sort_by! {|t| t.created } 
     tsk.each { |t| puts t }
-    puts "No tasks, yet. Add one with 'pt' or 't':" if tsk.empty?
+    puts "No #{action_context} tasks, yet. Add one with 'pt' or 't':" if tsk.empty?
     puts "Usage: 't action_context title of your task'" if tsk.empty?
   end 
 
