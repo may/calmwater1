@@ -473,7 +473,7 @@ def review_and_maybe_edit(object)
 end # def
 
 # Review all projects and tasks weekly.
-# Review all goals weekly.
+# Review all goals monthly.
 # Review all areas of focus/responsibility monthly.
 # Review all someday/maybe at least every six months.
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
@@ -487,7 +487,7 @@ def not_recently_reviewed(object)
   if object.is_a? Task and object.action_context == 'someday/maybe'.to_sym 
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_180_days_ago_timestamp)
   elsif object.is_a? Task and object.action_context == 'goals'.to_sym 
-    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_90_days_ago_timestamp)
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_30_days_ago_timestamp)
   elsif object.is_a? Task and object.action_context == 'focus/resp'.to_sym
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_30_days_ago_timestamp)
   else
