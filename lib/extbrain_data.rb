@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-10-31
+# Revised: 2021-11-01
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -23,6 +23,8 @@ require_relative '../config.rb'
 
 
 class ExtbrainData
+  attr_reader :stats
+  
   #  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
@@ -35,6 +37,9 @@ class ExtbrainData
     # format of stats:
     # each entry is an array: date, total all, total proj
 
+
+
+    ## STATS
     total = number_of_projects + number_of_tasks
     
     one_day_in_seconds = 86400 # 24 * 60 * 60
@@ -96,17 +101,15 @@ class ExtbrainData
   ## COUNTS
   
   def number_of_projects
-    # Points to @projects to get the full count, regardless of life context.
-    # Assumes the code that removes/archives the completed or deleted projects
-    # continues to operate sucessfully on each save.
-    @projects.count
+    # Assumes the code that removes/archives the completed or deleted
+    # projects continues to operate sucessfully on each save.
+    projects.count
   end
   
   def number_of_tasks
-    # Points to @tasks to get the full count, regardless of life context.
     # Assumes the code that removes/archives the completed or deleted tasks
     # continues to operate sucessfully on each save.
-    tasks_all = @tasks.dup
+    tasks_all = tasks.dup
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
     tasks_all.count

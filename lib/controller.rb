@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-10-31
+# Revised: 2021-11-01
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -566,4 +566,53 @@ def weekly_review
   review_need_reviewed
   puts "Weekly review done, congrats!"
   $last_weekly_review = Time.now
+end
+
+def stats
+# TODO   puts "Reminder to review stats calculation accuracy after you've been using this for two years. 2021-11-01" 
+  
+  # This all feels slightly hacky, but it should get the job done.
+  stats = $data.stats 
+  total_projects = stats.sum { |snapshot| snapshot.last } # grab projects for each snapshot
+  average_projects = total_projects / stats.count
+  current_projects = $data.number_of_projects
+  percent_difference = ((average_projects / current_projects.to_f)*100 - 100).abs
+  puts "Average number of projects: #{average_projects}."
+  puts "Current number of projects: #{current_projects}."
+  if current_projects > average_projects
+    puts "Currently we have more projects than average, by #{percent_difference.to_i}%."
+  else
+    puts "Currently we have fewer projects than average, by #{percent_difference.to_i}%."
+  end
+
+  # TODO some kind of judgement of percent diff - eg 5% is ok, 10% is warning, 15% is serious, and >20% means immediate weekly review! haha
+  
+  # average vs current
+
+=begin
+  # TODO 
+  ## trends
+  one_day_in_seconds = 86400 # 24 * 60 * 60
+  
+  # trend - 2 weeks
+  two_weeks_in_seconds = one_day_in_seconds * 14
+  two_weeks_ago = Time.now.to_i - two_weeks_in_seconds
+  
+  two_weeks = @stats.filter(Time.now )
+
+  
+  # trend - 2 months
+  two_months_in_seconds = two_weeks_in_seconds * 8
+  two_months_ago = Time.now.to_i - two_months_in_seconds
+
+  # trend - 6 months
+  six_months_in_seconds = two_months_in_seconds * 3
+  six_months_ago = Time.now.to_i - six_months_ago_in_seconds
+  
+  two_months = @stats.filter
+  # trend - 2 years
+  two_years_in_seconds = two_months_in_seconds * 12
+  two_years_ago = Time.now.to_i - two_years_in_seconds
+=end  
+
 end
