@@ -46,48 +46,43 @@ Revised: 2021-10-31
 # todo some documentation
 
 # HABITS
-h - to list habits
-h foo - to complete foo for the day
-h foo yesterday - to complete foo for yesterday
-h wc - to create a word count habit
-h wc 500 - to complete the word count goal for today, with a total word count of 500 for the document (the software will calculate today's word count)
-h keyword delete - delete a habit
+* h - to list habits
+* h foo - to complete foo for the day
+* h foo yesterday - to complete foo for yesterday
+* h wc - to create a word count habit
+* h wc 500 - to complete the word count goal for today, with a total word count of 500 for the document (the software will calculate today's word count)
+* h keyword delete - delete a habit
 
 # PROJECTS
-p keyword string - creates project with keyword and title of string
-pt keyword action_context string - creates a task within project specified by keyword with specified title of string with action context of action_context
+* p keyword string - creates project with keyword and title of string
+* pt keyword action_context string - creates a task within project specified by keyword with specified title of string with action context of action_context
 
 # TASKS
-t - lists tasks
-t work - list tasks in work action context
-t work call bob re: proposal - create task in work action context with the contents of 'call bob re: proposal'
+* t - lists tasks
+* t work - list tasks in work action context
+* t work call bob re: proposal - create task in work action context with the contents of 'call bob re: proposal'
+* when creating tasks, can use abbreviations for action contexts such as 'c' for computer, 'w' for waiting, and 's' or 's/m' or 'm' etc. for someday/maybe
 
-when creating tasks, can use abbreviations for action contexts such as 'c' for computer, 'w' for waiting, and 's' or 's/m' or 'm' etc. for someday/maybe
 
+* use 't action_context' to list tasks in a given action context, like 't computer' or 't job'
+* shortcuts available: lc and lj 
 
-use 't action_context' to list tasks in a given action context, like 't computer' or 't job'
-shortcuts available: lc and lj 
+# GENERAL
 
-in general hitting ENTER on a prompt will do nothing and allow you to exit out of that prompt, such as when selecting tasks
+* in general hitting ENTER on a prompt will do nothing and allow you to exit out of that prompt, such as when selecting tasks
 
-in general, the undo command is available for some actions such as completion, deletion and other serious actions
+* in general, the undo command is available for some actions such as completion, deletion and other serious actions
 
 
 # ADVANCED
-w what you are waiting on
-w  (no arguments, works like lw)
-w <one word search> - eg 'w bob' - show everything I'm waiting on Bob to do.
-
-context <contextname> - change from job to personal context or other defined context. cd <contextname> also works
-
+* w what you are waiting on
+* w  (no arguments, works like lw)
+* w <one word search> - eg 'w bob' - show everything I'm waiting on Bob to do.
 
 
 # Testing
-rake test
-test coverage for some underlying data structures, but not for middleware
-
-
-
+* rake test
+* test coverage for some underlying data structures, but not for middleware
 
 
 
@@ -100,16 +95,21 @@ alias extbrain='rlwrap ruby ~/extbrain/main.rb'
 # COMMAND STRUCTURE
 
 ## OTHER
-s search_keyword - look for keyword, else search all titles for search_keyword, across projects and tasks
-#f - add a note that followed up with person we're waiting on
-##aw - swap a task from action to waiting or vice versa?
+* s search_keyword - look for keyword, else search all titles for search_keyword, across projects and tasks
+
+* IGNORE THIS
+** #f - add a note that followed up with person we're waiting on
+** ##aw - swap a task from action to waiting or vice versa?
 
 ## TASKS AND PROJECTS
-c search_keyword - complete task matching search keyword/list tasks 
-d search_keyword - complete task matching search keyword/list tasks 
-n - nottaking TODO FLESHOUT.
-r search_keyword - rename/retitle task or project specified
+* c search_keyword - complete task matching search keyword/list tasks 
+* d search_keyword - complete task matching search keyword/list tasks 
+* n - nottaking TODO FLESHOUT. # not sure this is implemented
+* r search_keyword - rename/retitle task or project specified
 
+# TODO VERIFY THIS
+
+```
 
 ## TASKS
 When a search_keyword is used, the action will be taken on the single
@@ -162,3 +162,6 @@ If your delete key does not work, try this:
 notes:
  review projects and tasks every 5-7 days
  review areas of focus/resp every 30 days.
+
+
+```
