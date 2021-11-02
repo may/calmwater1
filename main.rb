@@ -90,6 +90,10 @@ def command_loop
     input = gets
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
+    unless RUBY_PLATFORM.include?('mingw') # windows 10 via rubyinstaller
+      system('clear')
+    end
+
     dispatch_user_input(input)
     # TODO make this configurable; agressively save data vs every 10 operations.. vs 100 vs only on save
     $data.save_data # disable this if it gets slow, but then you could lose data if session killed
