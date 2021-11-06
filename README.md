@@ -1,17 +1,18 @@
 <!---
 Created: 2020-05-30
-Revised: 2021-10-31
+Revised: 2021-11-06
 --->
 
 ## extbrain: a fast, command-line, GTD tool that holds you to account
-
+ 
 ## Requirements:
-   * ruby 2.6.3 or greater
+   * [Ruby](https://www.ruby-lang.org/) 2.6.3 or greater.
 
 ## Recommended, but entirely optional:
-   * tput (if you don't have this set $color_only to false in config.rb)
+   * tput (if you don't have this, then set $color_only to false in config.rb)
      * `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
    * [rlwrap](https://command-not-found.com/rlwrap)
+   ** Alternatively: use rlfe 
 
 ## Install
 

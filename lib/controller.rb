@@ -473,25 +473,27 @@ def review_and_maybe_edit(object)
 end # def
 
 # Review all projects and tasks weekly.
-# Review all goals monthly.
-# Review all areas of focus/responsibility monthly.
-# Review all someday/maybe at least every six months.
+# Review all areas of focus/responsibility biweekly.
+# Review all goals monthly. # more frequently?
+# Review all someday/maybe at least every 10 weeks.
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
-# 
+# 2021-11-06: now review upto 10% of entire s/m list every week; ensure
+#  keep it fresh and we don't have a giant list of doom.
 def not_recently_reviewed(object)
   one_day_in_seconds = 86400 # 24 * 60 * 60
-  the_5_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 5 
-  the_30_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 30 
-  the_90_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 90
-  the_180_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 180
+  five_days_ago = Time.now.to_i - one_day_in_seconds * 5
+  seven_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 7
+  two_weeks_ago = Time.now.to_i - one_day_in_seconds * 14 
+  a_month_ago = Time.now.to_i - one_day_in_seconds * 30 
+  ten_weeks_ago = Time.now.to_i - one_day_in_seconds * 70
   if object.is_a? Task and object.action_context == 'someday/maybe'.to_sym 
-    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_180_days_ago_timestamp)
-  elsif object.is_a? Task and object.action_context == 'goals'.to_sym 
-    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_30_days_ago_timestamp)
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < ten_weeks_ago)
   elsif object.is_a? Task and object.action_context == 'focus/resp'.to_sym
-    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_30_days_ago_timestamp)
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < two_weeks_aog)
+  elsif object.is_a? Task and object.action_context == 'goals'.to_sym 
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < a_month_ago)
   else
-    (object.last_reviewed == nil) or (object.last_reviewed.to_i < the_5_days_ago_timestamp)
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < five_days_ago)
   end
 end 
 
@@ -520,14 +522,31 @@ def review_need_reviewed
   projects = $data.projects.filter {|p| not_recently_reviewed(p) }
   review_projects_and_subtasks(projects)
   tasks = $data.tasks.filter {|t| not_recently_reviewed(t) }
-  s_m_count = 0
-  # TODO someday scale from 'always 5 s/m tasks' to 10% of current s/m tasks, ensuring review every 10 weeks. 5% is about 3x/year.
+
+  # TODO s/m randomize order of the tasks during weekly review; to prevent
+  # habitual memory formation of 'this task is a no review needed, and
+  # the next is OK too, and this too'. This should be paired, however,
+  # with a new feature to deduplicate/find similar tasks automatically.
+  # Often I'll have an idea and put in several ideas about it and if
+  # they are no longer close together in the data structure (i.e. so I'll
+  # see them together) I might remove all references to them... although
+  # that could be a good thing too, cleaning things up... streamlining..
+
+  # TODO s/m it would be nice if S/M (projects and tasks) were in another
+  # data structure so I could just do
+  #   (need_reviewed($data.s_m)).take(max_sm_for_review)
+  # instead of manually interating. That would also handle the 'how do
+  # we easily turn projects into someday/maybe objects' problem...
+
+  # Don't review more than 10% of our outstanding someday/maybe tasks
+  # even if haven't been reviewed recently. This will also space them out.
+  max_sm_for_review = $data.number_of_someday_maybe * 0.1
   tasks.delete_if do |t|
     if t.action_context == 'someday/maybe'.to_sym
       s_m_count += 1
-      s_m_count > 5
-    end # if
-  end # do
+      s_m_count > max_sm_for_review
+    end
+  end
   tasks.each { |t| review_and_maybe_edit(t) }
 end
 

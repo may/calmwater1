@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-01
+# Revised: 2021-11-06
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -113,6 +113,10 @@ class ExtbrainData
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
     tasks_all.count
+  end
+
+  def number_of_someday_maybe
+    tasks.filter { |t| t.action_context == 'someday/maybe'.to_sym }
   end
   
   ## SEARCHING
