@@ -482,7 +482,6 @@ end # def
 def not_recently_reviewed(object)
   one_day_in_seconds = 86400 # 24 * 60 * 60
   five_days_ago = Time.now.to_i - one_day_in_seconds * 5
-  seven_days_ago_timestamp = Time.now.to_i - one_day_in_seconds * 7
   two_weeks_ago = Time.now.to_i - one_day_in_seconds * 14 
   a_month_ago = Time.now.to_i - one_day_in_seconds * 30 
   ten_weeks_ago = Time.now.to_i - one_day_in_seconds * 70
