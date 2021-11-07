@@ -140,6 +140,8 @@ def dispatch_user_input(input_string)
     search(keyword, content)
   when 'sm', 's/m', 'some', 'someday', 'may', 'maybe', 'someday/maybe'
     view_or_add_task('someday/maybe', keyword, content)
+  when 'ssm'
+    search_someday_maybe(keyword, content)
   when 'stat', 'st', 'stats'
     stats
   when 't', 'task'

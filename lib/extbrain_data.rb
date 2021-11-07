@@ -26,7 +26,6 @@ class ExtbrainData
   #  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
-    puts 'GOTEH ERE'
     # todo
     load_data
     @somedaymaybe = Array.new unless @somedaymaybe
@@ -115,6 +114,7 @@ class ExtbrainData
   
   ## SEARCHING
 
+  # TODO need to handle new s/m 
   # s string
   # .downcase to ensure case-insensitive search
   def search(keyword, content, projects_only = nil)
@@ -140,6 +140,22 @@ class ExtbrainData
     end 
   end
 
+  def search_someday_maybe(keyword, content)
+    # S/M
+    # 2021-11-07: Doing the minimum here to keep myself moving, and if
+    # I find I need more, I can implement the rest properly.
+    # need to search all keyword of projects in @somedaymaybe
+    # need to search all subtasks of projects in @somedaymaybe
+    # need to search all titles of tasks&projects in @somedaymaybe
+    if keyword and content
+      search_string = keyword + content
+    else
+      search_string = keyword
+    end
+    puts 'hot here'
+    @somedaymaybe.filter { |sm| sm.title.downcase.include?(search_string.downcase) }
+  end
+  
   def search_all # including notes, shortcut should be sa
     # should also not filter to life context.. hence 'all'
     # TODO if you implement this, need to account for completed and deleted at least as an option. grabbing those files and reading from disk.

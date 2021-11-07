@@ -52,6 +52,7 @@ extbrain is *minimal* and *opinionated* so we left out several common features o
 <!-- ** No tags? -->
 * No due dates; use your calendar or your phone's reminder function. Otherwise you'll just clutter yourself up with a lot of 'should dos' and watch them pass by, undone. 
 <!-- * the exception to this is the 'remind me randomly of things that are important to me' function, eg, 'I really can write that book' or 'Call your friends'.???? -->
+* No habits; use a habit tracker app.
 
 
 ## TODO the rest of this README

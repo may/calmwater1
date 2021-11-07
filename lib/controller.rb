@@ -269,8 +269,21 @@ def search(keyword, content)
     if results 
       results.each { |p_or_t| puts p_or_t }
     else
-      puts "No results found for query: #{string}."
+      puts "No results found for query: #{keyword content}."
     end 
+  else
+    puts 'Empty query. Try again.'
+  end
+end
+
+def search_someday_maybe(keyword, content)
+  if keyword
+    results = $data.search_someday_maybe(keyword, content)
+    if results 
+      results.each { |sm| puts sm }
+    else
+      puts "No results found for query: #{keyword} #{content}"
+    end
   else
     puts 'Empty query. Try again.'
   end
