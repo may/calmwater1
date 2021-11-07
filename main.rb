@@ -41,33 +41,6 @@ at_exit do
         puts usage.to_h
       end
     end
-    # When killing extbrain running in PuTTY over SSH (not mosh) on my Windows work
-    # laptop over the VPN, by shutting down the laptop the habits file is lost.
-    # Extensive debugging traced it to: unknown factors.
-    # In short, we get to the point where we are starting to save data and then
-    # everything is killed.
-    # The reason the habits file gets wiped is, I believe, simply beause it is the
-    # first thing we try to save.
-    # And when we start saving, the first thing we do is truncate the existing
-    # file to zero, and *then* write data.
-    # For now, 2020-12-17, I'm just going to remove the 'save_data' call in at_exit.
-    # Because everytime you enter data into extbrain it's saved immediately anyway.
-    # But... we need to clear the lock. Frack.
-    # Maybe make a clear_lock function?
-    # Or detach and self-terminate? Hmm.
-    # Honestly, do we *need* to clear the lock? Sure it's nice, but the program
-    # is now robust enough to take over a non-cleared lock instead of blocking.
-    # Yeah, we're no longer blocking on an uncleared lock, so we'll take data
-    # saving and lock clearing out of at_exit, and if it bites us later we can
-    # read this then and decide then haha future self!
-    # The other catch here is we miss the lovely printing of everything we're saving
-    # at time of exit, but oh well. 2020-12-17.
-    # todo detect if on mosh or ssh
-    # 2020-12-18 learned that we don't clear the lock either.
-    #  so added this     File.delete($lockfile)
-    #
-    # But 2020-12-18, learned that weekly review didn't save if you exited in the middle.
-    # So reverting the code to how it was, AND just not killing putty at work if I can..
     $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
   end 
@@ -90,6 +63,8 @@ def command_loop
     input = gets
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
+
+    # Keep the screen minimal and focussed on current work, if we can.
     unless RUBY_PLATFORM.include?('mingw') # windows 10 via rubyinstaller
       system('clear')
     end
@@ -128,9 +103,7 @@ def dispatch_user_input(input_string)
     view_or_add_task('focus/resp', keyword, content)
   when 'g', 'go', 'goa', 'goal', 'goals'
     view_or_add_task('goals', keyword, content)
-  when 'h', 'habit'
-    habit_input(keyword, content)
-  when 'ho', 'home', 'house', 'apartment', 'dorm', 'rv'
+  when 'h', 'home', 'house', 'apartment', 'dorm', 'rv'
     view_or_add_task('home', keyword, content)
   when 'k', 'ki', 'kin', 'kindle', 'read', 'book'
     view_or_add_task('kindle', keyword, content)
@@ -184,7 +157,7 @@ def dispatch_user_input(input_string)
     view_or_add_task('waiting', keyword, content)
   when 'wr', 'weekly review'
     weekly_review
-  when '?', 'help', 'wtf'
+  when '?', 'help', 'wtf', 'fuck', 'damnit', 'damn'
     puts $help_text
   else
     # todo reset no op once the user inputs a command correctly?
@@ -220,7 +193,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.3 (\"hello world\"), 2021-10-31"
+puts "Welcome to extbrain, version 1.4 (\"one file to rule them all\"), 2021-11-07"
 # for the 1.2 release (only two bugs, and several features), the two bugs are: 
 #puts "including \"don't kill me through PuTTY please!\" and \"date display issues at New Years\""
 startup

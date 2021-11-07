@@ -1,12 +1,10 @@
 # Created: 2020-05-30
-# Revised: 2021-11-06
+# Revised: 2021-11-07
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
 require_relative 'project.rb'
 require_relative 'task.rb'
-require_relative 'habit.rb'
-require_relative 'writing_habit.rb'
 require_relative '../config.rb'
 
 ## .find_task
@@ -28,9 +26,10 @@ class ExtbrainData
   #  attr_reader :projects
   # todo accessors? NO, try to encapsulate.
   def initialize()
+    puts 'GOTEH ERE'
     # todo
     load_data
-    @habits = Array.new unless @habits
+    @somedaymaybe = Array.new unless @somedaymaybe
     @projects = Array.new unless @projects
     @tasks = Array.new unless @tasks
     @stats = Array.new unless @stats
@@ -58,7 +57,6 @@ class ExtbrainData
     # Should printing really be in the data layer?
     puts " Total: #{total}. #{number_of_projects} projects and #{number_of_tasks} tasks."
     # TODO stats here regarding average and color coding if in DANGER ZONE? 
-#    puts " Habits: #{@habits.count}."
     print "Last weekly review: "
 
 
@@ -86,11 +84,6 @@ class ExtbrainData
         puts
         puts "But, in an effort to be useful, the last date of the weekly review was: #{$last_weekly_review.strftime($time_formatting_string)}"
         puts
-        puts "Finally, on 2021-01-01 , I learned that this bug around yday also applies to habits."
-        puts "So your habit data will be fucked up today and a little tomorrow; also uses yday. But never fear, no data has been lost; this is all just a display problem, not a data problem."
-        puts
-        puts
-        puts "On the plus side it's kinda like having a fresh start with your habit data."
       end 
     else
 #      puts "NEVER! That's bad. Use the 'wr' command to fix."
@@ -116,6 +109,7 @@ class ExtbrainData
   end
 
   def number_of_someday_maybe
+# TODO    @somedaymaybe.count
     tasks.filter { |t| t.action_context == 'someday/maybe'.to_sym }
   end
   
@@ -246,7 +240,6 @@ class ExtbrainData
   end 
   
   # # TODO decide if color coding useful for projects
-  # # if so steal tput from habits list
   # # ideas include:
   # # yellow if review date > 7 days
   # # red if review date > 14 days
@@ -261,111 +254,6 @@ class ExtbrainData
       @projects << project
       success = true
     end
-    success
-  end
-  
-  def change_context_project(keyword, context)
-    puts "TODO"
-  end 
-
-  ## WRITING HABITS
-  
-  def writing_habit_word_count(keyword)
-    h = habit_exist?(keyword)
-    if h
-      h.latest_word_count
-    else
-      puts "No habit found for keyword: #{keyword}. No word count available." #hopefully never hit this..
-    end 
-  end 
-
-  def writing_habit_average_word_count(keyword)
-    h = habit_exist?(keyword)
-    if h
-      h.average_word_count
-    else
-      puts "No habit found for keyword: #{keyword}. No average word count available." #hopefully not hit this either
-    end 
-  end
-
-  ## HABITS
-  
-  def list_habits()
-    puts "The trajectory of your life bends in the direction of your habits. - James Clear"
-    puts
-    habits = @habits
-    habits = habits.filter { |habit| not habit.deleted? }
-    habits.sort_by! { |habit| habit.compliance }
-    habits.reverse! # most compliant at the top of the list
-    habits.each do |habit|
-      # debug todo remove
-      if $color_only
-        if habit.completed_today?
-          print `tput setaf 2` # instruct linux/unix terminal to go green
-        elsif habit.completed_yesterday?
-          print `tput setaf 4` # instruct linux/unix terminal to go blue
-        elsif habit.completed_two_days_ago?
-          print `tput setaf 3` # instruct linux/unix terminal to go yellow
-        else
-          print `tput setaf 1` # instruct linux/unix terminal to go red
-        end
-      end
-      puts habit.to_s
-      if $color_only
-        print `tput sgr0` # reset colors
-      end
-    end 
-  end 
-
-  def habit_exist?(keyword)
-    @habits.detect { |habit| habit.keyword == keyword }
-  end
-  
-  def complete_habit(keyword, word_count_or_yesterday_flag = nil)
-    h = habit_exist?(keyword)
-    if h
-      h.completed(word_count_or_yesterday_flag)
-      success = true
-    else
-      puts "No habit found for keyword: #{keyword}. Can't complete non-existant habit."
-      success = false
-    end
-    success
-  end 
-
-  def delete_habit(keyword)
-    h = habit_exist?(keyword)
-    if h
-      h.delete!
-      success = true
-    else
-      puts "No habit found for keyword: #{keyword}. Can't DELETE non-existant habit."
-      success = false
-    end
-    success
-  end
-  
-  def no_habits?
-    @habits.empty?
-  end 
-  
-  def new_habit(content, keyword, writing_habit = nil)
-    # todo some kind of checknig to prevent keyword conflicts
-    # eg if it exists do keyword1 then keyword2 etc.
-    # or hardstop
-    # also, todo, make this a generic method across all things
-    if habit_exist?(keyword)
-      puts "Habit exists with that keyword: #{keyword}. Try again."
-      success = nil
-    else 
-      if writing_habit
-        h = WritingHabit.new(content, keyword)
-      else
-        h = Habit.new(content, keyword)
-      end
-      @habits << h
-      success = true
-    end 
     success
   end
 
@@ -407,7 +295,7 @@ class ExtbrainData
       @stats = all_five.pop
       # TODO s/m make $last_weekly_review not be a global
       $last_weekly_review = all_five.pop
-      @habits = all_five.pop
+      @somedaymaybe = all_five.pop
       @tasks = all_five.pop
       @projects = all_five.pop
       puts "loaded."
@@ -433,19 +321,19 @@ class ExtbrainData
       to_archive << p unless p.empty?
       t = @tasks.filter { |task| (task.completed? or task.deleted?) }
       to_archive << t unless t.empty? 
-      h = @habits.filter { |habit| habit.deleted? }
-      to_archive << h unless h.empty? 
+      sm = @somedaymaybe.filter { |sm| sm.deleted? }
+      to_archive << sm unless sm.empty? 
       
       unless to_archive.empty?
         File.open($archive_file, 'a') { |f| f.write(YAML.dump(to_archive)) }
         @projects = @projects - p # remove completed/deleted
         @tasks = @tasks - t # remove completed/deleted
-        @habits = @habits - h # remove completed/deleted
+        @somedaymaybe = @somedaymaybe - sm # remove completed/deleted
         puts "archival complete." if unlock
       end
 
       # order is critical
-      all_five = [@projects, @tasks, @habits, $last_weekly_review, @stats]
+      all_five = [@projects, @tasks, @somedaymaybe, $last_weekly_review, @stats]
       print "Saving file..." if unlock 
       File.open($save_file, 'w') { |f| f.write(YAML.dump(all_five)) } 
       

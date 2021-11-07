@@ -35,7 +35,6 @@ Revised: 2021-11-06
 * Pure Getting Things Done; no tweaks or additions like priorities. No cruft.
 * Everything you need, nothing you don't.
 Minimalist: see below. 
-<!--   * Supports habit tracking? (But not part of GTD core functionality) -->
 
 ## features?
 
@@ -65,13 +64,6 @@ extbrain is *minimal* and *opinionated* so we left out several common features o
 
 # todo some documentation
 
-# HABITS
-* h - to list habits
-* h foo - to complete foo for the day
-* h foo yesterday - to complete foo for yesterday
-* h wc - to create a word count habit
-* h wc 500 - to complete the word count goal for today, with a total word count of 500 for the document (the software will calculate today's word count)
-* h keyword delete - delete a habit
 
 # PROJECTS
 * p keyword string - creates project with keyword and title of string
@@ -162,12 +154,6 @@ p keyword - view project with keyword
 p keyword title - create project with keyword and title 
 tag keyword - add tags to project?
 pt keyword action_context task - add a task to project with keyword in action_context with a title of task #pt stands for project task
-## HABITS
-xh - list habits
-xh keyword - log habit for today
-xh keyword title - create new habit with keyword and title
-
-
 
 ---
 

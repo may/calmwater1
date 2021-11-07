@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-01
+# Revised: 2021-11-07
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -275,61 +275,6 @@ def search(keyword, content)
     puts 'Empty query. Try again.'
   end
 end
-
-
-def writing_habit_input(keyword, content)
-  # h wc 5000
-  if $data.habit_exist?(keyword)
-    if content
-      $data.complete_habit(keyword, content) 
-      puts 'Writing habit completed for today! Go you!'
-      puts "You wrote #{$data.writing_habit_word_count(keyword)} words today! Average: #{$data.writing_habit_average_word_count(keyword)} words."
-      puts
-      tomorrow_goal = $data.writing_habit_average_word_count(keyword) + 1
-      tomorrow_total_goal = content.to_i + tomorrow_goal
-      puts "Tomorrow write: #{tomorrow_goal} words, for a total of #{tomorrow_total_goal}."
-    else
-      puts "Please try again with the current TOTAL word count, eg 'h wc 5000', please"
-    end 
-  else
-    puts "Habit created: #{keyword}." if $data.new_habit(content, keyword, true)
-  end         
-end 
-
-def habit_input(keyword, content)
-  no_habits = 'No habits. Create one by typing \'h keyword title of your habit\'' 
-  if 'wc' == keyword
-    writing_habit_input(keyword, content)
-  elsif 'wc2' == keyword
-    writing_habit_input(keyword, content)
-  elsif content
-    # Note that it's not easy to make the writing habits respond to 'yesterday'.
-    # Possible, but not easy given how complete_habit is constructed.
-    # So, for now, 2021-01-18, we're just going to treat the fact that you can't 
-    # log a writing habit on any day EXCEPT today as a FEATURE!
-    # Because that really forces you to write *every day*, not just skip a day, 
-    # write a little the next day, and backdate it. Write. Every. day!
-    if (content == 'yesterday') or (content == 'y')
-      puts "Logged completion of #{keyword} habit for yesterday." if $data.complete_habit(keyword, true)
-    elsif content == 'delete'
-      puts "DELETED HABIT #{keyword}" if $data.delete_habit(keyword)
-    else
-      puts "Habit created: #{keyword}." if $data.new_habit(content, keyword)
-    end 
-  elsif keyword
-    if $data.no_habits?
-      puts no_habits 
-    else
-      puts "Logged completion of #{keyword} habit for today." if $data.complete_habit(keyword)
-    end 
-  else
-    if $data.no_habits?
-      puts no_habits
-    else
-      $data.list_habits
-    end 
-  end 
-end 
 
 # todo if project, allow adding pt
 # else allow t at any time
