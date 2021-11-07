@@ -33,7 +33,8 @@ Revised: 2021-11-06
 * Fast; capture your thoughts, update your status, etc. -- quickly.
 * Stays out of your way, but keeps your data at you fingerprints.
 * Pure Getting Things Done; no tweaks or additions like priorities. No cruft.
-* Minimalist: see below. 
+* Everything you need, nothing you don't.
+Minimalist: see below. 
 <!--   * Supports habit tracking? (But not part of GTD core functionality) -->
 
 ## features?
@@ -44,13 +45,14 @@ Revised: 2021-11-06
   * Supports you; helps you do your weekly review right and not skip any items, while also preventing overwhlem as best it can
   * Supports you; alerts you if you're experiencing project creep (coming someday)
   
-## non-features
+## non-features; everything you need, nothing you don't.
 
-extbrain is *minimal* and *opinionated* so we left several common features out, by design:
+extbrain is *minimal* and *opinionated* so we left out several common features out, by design:
 
-** No priorities; either it's important enough to be on your current projects list, or it isn't. If you aren't sure, err on putting it on your s/m list.
+* No priorities; either it's important enough to be on your current projects & action lists, or it isn't. If you aren't sure, err on putting it on your someday/maybe list.
 <!-- ** No tags? -->
-** 
+* No due dates; use your calendar or your phone's reminder function. Otherwise you'll just clutter yourself up with a lot of 'should dos' and watch them pass by, undone. 
+<!-- * the exception to this is the 'remind me randomly of things that are important to me' function, eg, 'I really can write that book' or 'Call your friends'.???? -->
 
 
 ## TODO the rest of this README
