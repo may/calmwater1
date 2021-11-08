@@ -1,8 +1,9 @@
 <!---
 Created: 2020-05-30
 Revised: 2021-11-06
---->
+
 ## todo minimilist? or minimal? or some better word
+--->
 ## extbrain: a fast, command-line, GTD tool that holds you to account
  
 ## Requirements:
@@ -17,7 +18,7 @@ Revised: 2021-11-06
 
 ## Install
 
-1. [Download](https://github.com/may/extbrain/archive/refs/tags/1.3.zip).
+1. [Download](https://github.com/may/extbrain/archive/refs/tags/1.4.zip).
 2. Open a terminal and unzip extbrain-trunk.zip, presumably in your Downloads folder.
 3. Install tput (see above) or set $color_only to false in config.rb file.
 4. ```ruby Downloads/extbrain-trunk/main.rb```
