@@ -5,6 +5,22 @@
 require_relative '../config.rb'
 require_relative 'extbrain_data.rb'
 
+def add_or_list_someday_maybe(keyword, content)
+  if keyword and content
+    puts $data.new_somedaymaybe(keyword + ' ' + content)
+  elsif keyword
+    results = $data.search_someday_maybe(keyword)
+    if results.empty?
+      puts 'No results found; no someday/maybe with that search term.'
+    else
+      results.each { |sm| puts sm }
+    end
+  else
+    # no keyword to narrow selection; list everything
+    $data.somedaymaybe.each { |sm| puts sm }
+  end
+end
+
 def view_or_add_task(action_context, keyword, content)
   if keyword and content
     task_input(action_context, keyword + ' ' + content)
@@ -53,6 +69,7 @@ def edit_project_or_task(action_verb, keyword, content, projects_only = nil)
   else
     object_to_operate_on = nil
     results = $data.search(keyword, content, projects_only)
+    results = results + $data.search_someday_maybe(keyword, content) #here
     if results.empty?
       puts "No results found for query."
     else
@@ -263,9 +280,18 @@ def project_input(keyword, content)
   end #keyword
 end # def
 
+def move_someday_maybe(keyword)
+  if keyword
+    $data.move_someday_maybe(keyword)
+  else
+    puts "Need to specify a keyword."
+  end
+end
+
 def search(keyword, content)
   if keyword
     results = $data.search(keyword, content)
+    results = results + $data.search_someday_maybe(keyword, content)
     if results 
       results.each { |p_or_t| puts p_or_t }
     else
@@ -363,6 +389,8 @@ def review_and_maybe_edit(object)
       view_or_add_task('computer', keyword, content)
     when 'j'
       view_or_add_task('job', keyword, content)
+    when 'l', 'm', 'msm', 'move', 'later'
+      move_someday_maybe(keyword)
     when 'pc' # pc 'whatever you need to do at your computer'
       project_task_maybe(object, 'computer', keyword, content)
     when 'pj' # pj 'whatever you need to do at your job'
@@ -437,13 +465,14 @@ end # def
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
 # 2021-11-06: now review upto 10% of entire s/m list every week; ensure
 #  keep it fresh and we don't have a giant list of doom.
-def not_recently_reviewed(object)
+#  see review_need_reviewed
+def not_recently_reviewed(object, somedaymaybe)
   one_day_in_seconds = 86400 # 24 * 60 * 60
   five_days_ago = Time.now.to_i - one_day_in_seconds * 5
   two_weeks_ago = Time.now.to_i - one_day_in_seconds * 14 
   a_month_ago = Time.now.to_i - one_day_in_seconds * 30 
   ten_weeks_ago = Time.now.to_i - one_day_in_seconds * 70
-  if object.is_a? Task and object.action_context == 'someday/maybe'.to_sym 
+  if somedaymaybe
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < ten_weeks_ago)
   elsif object.is_a? Task and object.action_context == 'focus/resp'.to_sym
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < two_weeks_aog)
@@ -479,7 +508,7 @@ def review_need_reviewed
   projects = $data.projects.filter {|p| not_recently_reviewed(p) }
   review_projects_and_subtasks(projects)
   tasks = $data.tasks.filter {|t| not_recently_reviewed(t) }
-
+  tasks.each { |t| review_and_maybe_edit(t) }
   # TODO s/m randomize order of the tasks during weekly review; to prevent
   # habitual memory formation of 'this task is a no review needed, and
   # the next is OK too, and this too'. This should be paired, however,
@@ -498,13 +527,9 @@ def review_need_reviewed
   # Don't review more than 10% of our outstanding someday/maybe tasks
   # even if haven't been reviewed recently. This will also space them out.
   max_sm_for_review = $data.number_of_someday_maybe * 0.1
-  tasks.delete_if do |t|
-    if t.action_context == 'someday/maybe'.to_sym
-      s_m_count += 1
-      s_m_count > max_sm_for_review
-    end
-  end
-  tasks.each { |t| review_and_maybe_edit(t) }
+  somedaymaybe = $data.somedaymaybe.filter { |sm| not_recently_reviewed(sm, true) }
+  somedaymaybe = somedaymaybe.take(max_sm_for_review)
+  somedaymaybe.each { |sm| review_and_maybe_edit(sm) }
 end
 
 
@@ -531,7 +556,6 @@ def weekly_review
   do_until_done('Review any meeting notes or scribbled notes')
   do_until_done('Review anything captured on your smartphone/tablet device..pictures, text messages, etc.')
 
-  
   do_until_done("Review last week's calendar")
   do_until_done("Review next week's calendar")
 

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-10-31
+# Revised: 2021-11-07
 
 
 # todo d for delete
@@ -65,7 +65,9 @@ def command_loop
     # TODO scope lockfile to just save load
 
     # Keep the screen minimal and focussed on current work, if we can.
-    unless RUBY_PLATFORM.include?('mingw') # windows 10 via rubyinstaller
+    if RUBY_PLATFORM.include?('mingw') # windows 10 via rubyinstaller
+      30.times do puts end
+    else
       system('clear')
     end
 
@@ -120,6 +122,9 @@ def dispatch_user_input(input_string)
   when 'lpj'
     project_input('job', nil)
   # TODO when lw work, lcomputer, lerrands, lagenda?
+  when 'l', 'm', 'msm', 'move', 'later'
+    # TODO allow tasks to be 'msm' as well, currently only projects
+    move_someday_maybe(keyword)
   when 'n', 'an', 'add-note', 'note'
     edit_project_or_task('add_note', keyword, content)
   when 'p', 'proj', 'project', 'projects'
@@ -139,8 +144,8 @@ def dispatch_user_input(input_string)
   when 's', 'search'
     search(keyword, content)
   when 'sm', 's/m', 'some', 'someday', 'may', 'maybe', 'someday/maybe'
-    view_or_add_task('someday/maybe', keyword, content)
-  when 'ssm'
+    add_or_list_someday_maybe(keyword, content)
+  when 'ssm' # ONLY search s/m, otherwise normal search gets s/m
     search_someday_maybe(keyword, content)
   when 'stat', 'st', 'stats'
     stats
@@ -179,6 +184,9 @@ def dispatch_user_input(input_string)
       puts no_op_msg
       puts "Maybe take a break?"
     else
+      # For debugging
+#      puts "command was: #{command}."
+      # For users
       puts no_op_msg
     end 
     $no_operation_count += 1
@@ -195,9 +203,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.4 (\"one file to rule them all\"), 2021-11-07"
-# for the 1.2 release (only two bugs, and several features), the two bugs are: 
-#puts "including \"don't kill me through PuTTY please!\" and \"date display issues at New Years\""
+puts "Welcome to extbrain, version 1.4 (\"turbochanged somedaymaybe\"), 2021-11-07"
 startup
 # random_tip #annoying, 2020-12-18 
 command_loop

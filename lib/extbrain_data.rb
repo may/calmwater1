@@ -90,6 +90,23 @@ class ExtbrainData
     end
   end
 
+  ## MOVING
+  # TODO allow tasks to be 'msm' as well, currently only projects 11/2021.
+  def move_someday_maybe(keyword)
+    # TODO make this go for tasks too; will need to search for task, then prompt
+    # the user for which task they want to move.
+    project = project_exist?(keyword)
+    
+    @somedaymaybe << project
+
+    @projects.delete(project) # remove from existing project list
+    msg = "Moved project #{project.keyword} to someday/maybe list!"
+    project.add_note(msg)
+    project.reviewed # moving it counts as reviewing; reset the clock
+    puts msg
+    puts "Full project: #{project}"
+  end
+  
   ## COUNTS
   
   def number_of_projects
@@ -108,8 +125,17 @@ class ExtbrainData
   end
 
   def number_of_someday_maybe
-# TODO    @somedaymaybe.count
-    tasks.filter { |t| t.action_context == 'someday/maybe'.to_sym }
+    @somedaymaybe.count
+  end
+
+  ## SOMEDAY MAYBE
+
+  def somedaymaybe
+    @somedaymaybe.filter { |sm| not (sm.completed? or sm.deleted?) }
+  end
+
+  def new_somedaymaybe(title)
+    new_task(title, 'someday/maybe'.to_sym)
   end
   
   ## SEARCHING
@@ -136,12 +162,17 @@ class ExtbrainData
     elsif projects_only
       p
     else
-      t + p
+      # This used to be t + p; switched 2021-11-07 to p + t to ensure projects always
+      # sort first; if you're searching, you likely want a project more than a task.
+      # This is especially when you're trying to complete a project AND all outstanding
+      # subtasks; you don't want to wade through the subtasks to get to the project--
+      # you just want the project
+      p + t
     end 
   end
 
-  def search_someday_maybe(keyword, content)
-    # S/M
+  def search_someday_maybe(keyword, content = nil)
+    # S/M do more here....
     # 2021-11-07: Doing the minimum here to keep myself moving, and if
     # I find I need more, I can implement the rest properly.
     # need to search all keyword of projects in @somedaymaybe
@@ -152,7 +183,6 @@ class ExtbrainData
     else
       search_string = keyword
     end
-    puts 'hot here'
     @somedaymaybe.filter { |sm| sm.title.downcase.include?(search_string.downcase) }
   end
   
@@ -167,12 +197,17 @@ class ExtbrainData
   def tasks
     tasks_all = @tasks.filter { |task| not (task.completed? or task.deleted?) }
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
+    
     tasks_all.flatten!
   end
   
   def new_task(title, action_context)
     task = Task.new(title, action_context)
-    @tasks << task
+    if task.action_context == 'someday/maybe'.to_sym
+      @somedaymaybe << task # not sure we'll get here but probably will
+    else
+      @tasks << task
+    end
     task
   end 
 
@@ -330,24 +365,27 @@ class ExtbrainData
     Dir.mkdir($save_directory) unless Dir.exist?($save_directory)
     # make sure it's our lock, else don't save
     if Process.pid == File.open($lockfile, &:gets).to_i
-      print "Archiving completed and deleted tasks & projects..." if unlock 
-      # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
-      to_archive = Array.new
-      p = @projects.filter { |project| (project.completed? or project.deleted?) }
-      to_archive << p unless p.empty?
-      t = @tasks.filter { |task| (task.completed? or task.deleted?) }
-      to_archive << t unless t.empty? 
-      sm = @somedaymaybe.filter { |sm| sm.deleted? }
-      to_archive << sm unless sm.empty? 
-      
-      unless to_archive.empty?
-        File.open($archive_file, 'a') { |f| f.write(YAML.dump(to_archive)) }
-        @projects = @projects - p # remove completed/deleted
-        @tasks = @tasks - t # remove completed/deleted
-        @somedaymaybe = @somedaymaybe - sm # remove completed/deleted
-        puts "archival complete." if unlock
+      # since we save on every action, only archive completed/deleted
+      # when we are exciting so that undo still works
+      if unlock 
+        print "Archiving completed and deleted tasks & projects..." if unlock 
+        # If you ever edit this code, be sure to keep using @projects & @tasks; projects/tasks already exclude completed/deleted.
+        to_archive = Array.new
+        p = @projects.filter { |project| (project.completed? or project.deleted?) }
+        to_archive << p unless p.empty?
+        t = @tasks.filter { |task| (task.completed? or task.deleted?) }
+        to_archive << t unless t.empty? 
+        sm = @somedaymaybe.filter { |sm| sm.deleted? }
+        to_archive << sm unless sm.empty? 
+        
+        unless to_archive.empty?
+          File.open($archive_file, 'a') { |f| f.write(YAML.dump(to_archive)) }
+          @projects = @projects - p # remove completed/deleted
+          @tasks = @tasks - t # remove completed/deleted
+          @somedaymaybe = @somedaymaybe - sm # remove completed/deleted
+          puts "archival complete." if unlock
+        end
       end
-
       # order is critical
       all_five = [@projects, @tasks, @somedaymaybe, $last_weekly_review, @stats]
       print "Saving file..." if unlock 
