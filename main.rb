@@ -34,11 +34,11 @@ end
 
 def save_and_exit(signal)
   if signal
-    File.open("${save_directory}/extbrain_killed?", "w") { "Got a signal: #{signal}" }
+    File.open("#{$save_directory}/extbrain_killed?", "w") { "Got a signal: #{signal}" }
   end
   if $lockfile_locked
     puts "Can't get lock... exiting.."
-    File.open("${save_directory}/extbrain_debug_at_exit_cant_get_lock.txt", "w") { "If you see this file, delete it. Then, keep an eye out for ways to reproduce the behavior that created this file. If you can reliably get this file to appear without doing something crazy, open an issue." }
+    File.open("#{$save_directory}/extbrain_debug_at_exit_cant_get_lock.txt", "w") { "If you see this file, delete it. Then, keep an eye out for ways to reproduce the behavior that created this file. If you can reliably get this file to appear without doing something crazy, open an issue." }
   else
     if $log_command_usage
       if $command_usage
