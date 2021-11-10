@@ -213,8 +213,8 @@ end
 puts "Welcome to extbrain, version 1.4 (\"turbochanged somedaymaybe\"), 2021-11-07"
 startup
 # random_tip #annoying, 2020-12-18 
-command_loop
-
+begin
+  command_loop
 rescue SignalException => ex
   save_and_exit(ex)
 end
