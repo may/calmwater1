@@ -1,6 +1,6 @@
 <!---
 Created: 2020-05-30
-Revised: 2021-11-06
+Revised: 2021-11-09
 
 ## todo minimilist? or minimal? or some better word
 --->
@@ -14,7 +14,6 @@ Revised: 2021-11-06
 * tput (if you don't have this, then set $color_only to false in config.rb)
   * `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
 * [rlwrap](https://command-not-found.com/rlwrap)
-  * Alternatively: use rlfe 
 
 ## Install
 
