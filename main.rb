@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-07
+# Revised: 2021-11-09
 
 
 # todo d for delete
@@ -29,6 +29,13 @@ def startup
 end
 
 at_exit do
+  save_and_exit
+end
+
+def save_and_exit(signal)
+  if signal
+    File.open("${save_directory}/extbrain_killed?", "w") { "Got a signal: #{signal}" }
+  end
   if $lockfile_locked
     puts "Can't get lock... exiting.."
     File.open("${save_directory}/extbrain_debug_at_exit_cant_get_lock.txt", "w") { "If you see this file, delete it. Then, keep an eye out for ways to reproduce the behavior that created this file. If you can reliably get this file to appear without doing something crazy, open an issue." }
@@ -43,7 +50,7 @@ at_exit do
     end
     $data.save_data(true) # save and clear lock
     puts "Thank you for using extbrain. Have a good day!"
-  end 
+  end
 end
 
 def command_loop
@@ -208,3 +215,6 @@ startup
 # random_tip #annoying, 2020-12-18 
 command_loop
 
+rescue SignalException => ex
+  save_and_exit(ex)
+end
