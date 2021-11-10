@@ -32,9 +32,9 @@ at_exit do
   save_and_exit
 end
 
-def save_and_exit(signal)
+def save_and_exit(signal = nil)
   if signal
-    File.open("#{$save_directory}/extbrain_killed?", "w") { "Got a signal: #{signal}" }
+    File.open("#{$save_directory}/extbrain_killed", "w") { "Got a signal: #{signal}" }
   end
   if $lockfile_locked
     puts "Can't get lock... exiting.."
