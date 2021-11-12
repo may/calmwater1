@@ -23,8 +23,8 @@ Revised: 2021-11-09
 4. ```ruby Downloads/extbrain-trunk/main.rb```
    
 ## Using:
-* ```rlwrap ruby main.rb```
-* or, if on Windows: ```ruby main.rb```
+
+* ```ruby extbrain/main.rb```
 
 ## design principles
 
