@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-07
+# Revised: 2021-11-11
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -569,8 +569,46 @@ def weekly_review
   $last_weekly_review = Time.now
 end
 
-def stats
-  
+def print_stats
+  number_of_projects = $data.number_of_projects
+  number_of_tasks = $data.number_of_tasks
+  total = number_of_projects + number_of_tasks 
+  puts " Total: #{total}. #{number_of_projects} projects and #{number_of_tasks} tasks."
+  # TODO stats here regarding average and color coding if in DANGER ZONE? [eg you are having too many tasks/projects/not reviewing enough]
+  print "Last weekly review: "
+
+  if $last_weekly_review
+    days = Time.now.yday - $last_weekly_review.yday
+    if days >= 0
+      case 
+      when days < 4
+        print `tput setaf 2` if $color_only # green
+      when days < 7
+        print `tput setaf 3` if $color_only # yellow
+      when days >= 7 
+        print `tput setaf 1` if $color_only # red
+      end
+      puts "#{days} days ago."
+      print `tput sgr0` if $color_only # reset colors
+    else
+      puts $last_weekly_review.strftime($time_formatting_string)
+      puts "Happy New Year(ish)! Start fresh with a weekly review, using the friendly 'wr' command."
+      puts "The 'wr' command will only prompt you for things that /need/ review."
+      puts
+      puts
+      puts
+      puts "Plus running it will fix this edge case where I can't be arsed/don't know how to fix my algorithm around Time.now.yday."
+      puts
+      puts "But, in an effort to be useful, the last date of the weekly review was: #{$last_weekly_review.strftime($time_formatting_string)}"
+      puts
+    end 
+  else
+    #      puts "NEVER! That's bad. Use the 'wr' command to fix."
+    puts "No weekly review yet. Use 'wr' to fix this!"
+  end
+
+  # TODO this would be a cool stat to track
+  #  puts "Weekly review frequency: #{}"
 end
 
 def stats_full
@@ -619,5 +657,6 @@ def stats_full
   two_years_in_seconds = two_months_in_seconds * 12
   two_years_ago = Time.now.to_i - two_years_in_seconds
 =end  
-
+  
+  print_stats
 end

@@ -26,7 +26,7 @@ HEREDOC
 
 def startup
   $data = ExtbrainData.new
-  stats
+  print_stats
 end
 
 at_exit do
