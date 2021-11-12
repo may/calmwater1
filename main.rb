@@ -16,9 +16,7 @@ require_relative 'lib/controller'
 require_relative 'config.rb'
 require_relative 'tips.rb'
 
-if $use_readline
-  require "readline"
-end
+require 'reline' # standard ruby
 
 # TODO steal from controller.rb around 393 inside review_and_maybe_edit
 $help_text = <<HEREDOC
@@ -64,13 +62,8 @@ def command_loop
   end
 
   while true
-    if $use_readline
-      buf = Readline.readline('extbrain> ', true)
-      input = buf
-    else  
-      print('extbra!n> ')
-      input = gets
-    end
+    buf = Reline.readline('extbrain> ', true)
+    input = buf
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
 
@@ -214,7 +207,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.4 (\"turbochanged somedaymaybe\"), 2021-11-07"
+puts "Welcome to extbrain, version 1.5 (\"now with readline\"), 2021-11-11"
 startup
 # random_tip #annoying, 2020-12-18 
 command_loop

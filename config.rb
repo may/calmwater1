@@ -13,9 +13,6 @@ $custom_inboxes = [ "Work email", "Work chat client"]
 
 ## User options
 
-# Unless you're on Windows, you want this set to true.
-$use_readline = true
-
 # Extbrain uses color to denote when you need to do something or error states.
 # For example, if you have a project with no next action -- it turns red.
 # If you'd rather not have colors, you can turn this off with no (or limited)

@@ -138,8 +138,8 @@ end
 # and clearly define, for example, what the desired outcome is *now*,
 # instead of just adding more text to what's already there.
 # I have totally been guilty of that in the past.
-#
-# If you need to edit what's there, see readline or highline (if cross-platfrom needed).
+
+
 
 def add_note(project_or_task)
   print 'Add note to project or task: '

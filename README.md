@@ -14,8 +14,6 @@ Revised: 2021-11-09
 
 * tput (if you don't have this, then set `$color_only` to `false` in `config.rb`)
   * `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
-* running on a platform that supports readline (MacOS, GNU/Linux, *BSD, etc.)
-  * Otherwise set `$use_readline` to `false` in `config.rb`
 
 ## Install
 
