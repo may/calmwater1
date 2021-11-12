@@ -295,7 +295,6 @@ def search(keyword, content)
     if results.empty?
       puts "No results found for query: #{keyword} #{content}"
     else
-      puts "results: #{results}"
       results.each { |p_or_t| puts p_or_t }
     end 
   else

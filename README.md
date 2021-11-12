@@ -11,10 +11,11 @@ Revised: 2021-11-09
 * [Ruby](https://www.ruby-lang.org/) 2.6.3 or greater.
 
 ## Recommended, but entirely optional:
-* tput (if you don't have this, then set $color_only to false in config.rb)
+
+* tput (if you don't have this, then set `$color_only` to `false` in `config.rb`)
   * `apt install libncurses5` on debian/ubuntu, otherwise see: [tput](https://command-not-found.com/tput)
-* [rlwrap](https://command-not-found.com/rlwrap)
-  * see also: ledit or rlfe
+* running on a platform that supports readline (MacOS, GNU/Linux, *BSD, etc.)
+  * Otherwise set `$use_readline` to `false` in `config.rb`
 
 ## Install
 

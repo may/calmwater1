@@ -16,6 +16,10 @@ require_relative 'lib/controller'
 require_relative 'config.rb'
 require_relative 'tips.rb'
 
+if $use_readline
+  require "readline"
+end
+
 # TODO steal from controller.rb around 393 inside review_and_maybe_edit
 $help_text = <<HEREDOC
 TODO consider scanning source code for each function and documenting but that seems silly
@@ -60,8 +64,13 @@ def command_loop
   end
 
   while true
-    print("extbrain> ")
-    input = gets
+    if $use_readline
+      buf = Readline.readline('extbrain> ', true)
+      input = buf
+    else  
+      print('extbra!n> ')
+      input = gets
+    end
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
 
@@ -73,10 +82,11 @@ def command_loop
     end
 
     dispatch_user_input(input)
+    end
     # TODO make this configurable; agressively save data vs every 10 operations.. vs 100 vs only on save
     $data.save_data # disable this if it gets slow, but then you could lose data if session killed
-  end
 end
+
 
 def dispatch_user_input(input_string)
   input_string.rstrip! # remove trailing whitespace, which is at minimum a newline

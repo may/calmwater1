@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2021-10-31
+# Revised: 2021-11-11
 
 ## Weekly review configuration
 
@@ -13,6 +13,8 @@ $custom_inboxes = [ "Work email", "Work chat client"]
 
 ## User options
 
+# Unless you're on Windows, you want this set to true.
+$use_readline = true
 
 # Extbrain uses color to denote when you need to do something or error states.
 # For example, if you have a project with no next action -- it turns red.
