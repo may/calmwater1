@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-09
+# Revised: 2021-11-11
 
 
 # todo d for delete
@@ -26,6 +26,7 @@ HEREDOC
 
 def startup
   $data = ExtbrainData.new
+  stats
 end
 
 at_exit do
@@ -148,7 +149,7 @@ def dispatch_user_input(input_string)
   when 'ssm' # ONLY search s/m, otherwise normal search gets s/m
     search_someday_maybe(keyword, content)
   when 'stat', 'st', 'stats'
-    stats
+    stats_full
   when 't', 'task'
     task_input(keyword, content)
   when 'undo'

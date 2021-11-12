@@ -292,10 +292,11 @@ def search(keyword, content)
   if keyword
     results = $data.search(keyword, content)
     results = results + $data.search_someday_maybe(keyword, content)
-    if results 
-      results.each { |p_or_t| puts p_or_t }
+    if results.empty?
+      puts "No results found for query: #{keyword} #{content}"
     else
-      puts "No results found for query: #{keyword content}."
+      puts "results: #{results}"
+      results.each { |p_or_t| puts p_or_t }
     end 
   else
     puts 'Empty query. Try again.'
@@ -305,10 +306,10 @@ end
 def search_someday_maybe(keyword, content)
   if keyword
     results = $data.search_someday_maybe(keyword, content)
-    if results 
-      results.each { |sm| puts sm }
-    else
+    if results.empty?
       puts "No results found for query: #{keyword} #{content}"
+    else
+      results.each { |sm| puts sm }
     end
   else
     puts 'Empty query. Try again.'
@@ -460,7 +461,7 @@ end # def
 
 # Review all projects and tasks weekly.
 # Review all areas of focus/responsibility biweekly.
-# Review all goals monthly. # more frequently?
+# Review all goals monthly. # quarterly? per GTD coach
 # Review all someday/maybe at least every 10 weeks.
 # 2020-08-07: switch from 7 days to 5 to ensure review all work stuff.
 # 2021-11-06: now review upto 10% of entire s/m list every week; ensure
@@ -569,6 +570,10 @@ def weekly_review
 end
 
 def stats
+  
+end
+
+def stats_full
 # TODO   puts "Reminder to review stats calculation accuracy after you've been using this for two years. 2021-11-01" 
   
   # This all feels slightly hacky, but it should get the job done.

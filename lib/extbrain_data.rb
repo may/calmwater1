@@ -44,13 +44,13 @@ class ExtbrainData
     three_days_ago = Time.now.to_i - one_day_in_seconds * 3
 
     # If our most recent timestamp further away than 'three days ago' it's time for another snapshot.
-    if @stats.any? # Handle nil, initial case.
+    if @stats.empty? # Handle nil, initial case.
+      puts "Initalizing stats..."
+      @stats.append([Time.now, total, number_of_projects])
+    else
       if @stats.last.first.to_i < three_days_ago
         @stats.append([Time.now, total, number_of_projects])
       end
-    else
-      puts "Initalizing stats..."
-      @stats.append([Time.now, total, number_of_projects])
     end
 
     # Should printing really be in the data layer?

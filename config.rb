@@ -37,16 +37,8 @@ $time_formatting_string = "%Y-%m-%d %H:%M, %A."
 # will kill the first session.
 $take_over_lock = true
 
-# for writing habits, calculate average word count for *evey* day since the habit
-# was created, not just the days you wrote. Can be toggled back and forth if needed.
-# Setting to true provides a more accurate picture of how much you *actually* write,
-# instead of just counting the 'good' days where you write.
-$use_zero_day_average = true 
-
-
-
 ## Developer options
-$log_command_usage = true
+$log_command_usage = false
 
 ## Saving options
 
