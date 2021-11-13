@@ -74,14 +74,10 @@ class ExtbrainData
   ## COUNTS
   
   def number_of_projects
-    # Assumes the code that removes/archives the completed or deleted
-    # projects continues to operate sucessfully on each save.
     projects.count
   end
   
   def number_of_tasks
-    # Assumes the code that removes/archives the completed or deleted tasks
-    # continues to operate sucessfully on each save.
     tasks_all = tasks.dup
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
@@ -147,13 +143,18 @@ class ExtbrainData
     else
       search_string = keyword
     end
-    @somedaymaybe.filter { |sm| sm.title.downcase.include?(search_string.downcase) }
+    somedaymaybe.filter { |sm| sm.title.downcase.include?(search_string.downcase) }
   end
   
   def search_all # including notes, shortcut should be sa
     # should also not filter to life context.. hence 'all'
     # TODO if you implement this, need to account for completed and deleted at least as an option. grabbing those files and reading from disk.
     puts 'todo search_all'
+  end
+
+  ## SOMEDAY MAYBE
+  def somedaymaybe
+    sm_all = @somedaymaybe.filter { |sm| not (sm.completed? or sm.deleted?) }
   end
   
   ## TASKS
