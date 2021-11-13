@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-11
+# Revised: 2021-11-12
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'

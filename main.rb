@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-11
+# Revised: 2021-11-13
 
 
 # todo d for delete
@@ -75,9 +75,10 @@ def command_loop
     end
 
     dispatch_user_input(input)
-    end
-    # TODO make this configurable; agressively save data vs every 10 operations.. vs 100 vs only on save
+
+    # TODO MAYBEEE make this configurable; aggressively save data vs every 10 operations.. vs 100 vs only on save
     $data.save_data # disable this if it gets slow, but then you could lose data if session killed
+    end
 end
 
 
