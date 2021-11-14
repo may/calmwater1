@@ -1,6 +1,6 @@
 <!---
 Created: 2020-05-30
-Revised: 2021-11-09
+Revised: 2021-11-13
 
 ## todo minimilist? or minimal? or some better word
 --->
@@ -25,6 +25,11 @@ Revised: 2021-11-09
 ## Using:
 
 * ```ruby extbrain/main.rb```
+* Arrow keys and Emacs keybindings available for editing command line items; if 
+you're on MacOS and option-f produces a fancy f symbol, fix it by:
+  * If Terminal.app: Preferences -> Profiles -> Keyboard -> check 'Use Option as Meta key'
+  * If [Kitty](https://sw.kovidgoyal.net/kitty/): config file: `macos_option_as_alt yes`
+  * Then restart the terminal.
 
 ## design principles
 

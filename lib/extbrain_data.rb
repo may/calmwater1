@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-12
+# Revised: 2021-11-13
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -81,7 +81,7 @@ class ExtbrainData
     tasks_all = tasks.dup
     tasks_all << projects_with_tasks.collect { |proj| proj.tasks }
     tasks_all.flatten!
-    tasks_all.count
+    tasks_all.count + number_of_someday_maybe
   end
 
   def number_of_someday_maybe

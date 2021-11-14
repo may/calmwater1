@@ -153,7 +153,7 @@ def dispatch_user_input(input_string)
   when 'ssm' # ONLY search s/m, otherwise normal search gets s/m
     search_someday_maybe(keyword, content)
   when 'stat', 'st', 'stats'
-    stats_full
+    print_full_stats
   when 't', 'task'
     task_input(keyword, content)
   when 'undo'

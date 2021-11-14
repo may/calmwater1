@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-11
+# Revised: 2021-11-13
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -610,7 +610,7 @@ def print_stats
   #  puts "Weekly review frequency: #{}"
 end
 
-def stats_full
+def print_full_stats
 # TODO   puts "Reminder to review stats calculation accuracy after you've been using this for two years. 2021-11-01" 
   
   # This all feels slightly hacky, but it should get the job done.
@@ -618,15 +618,17 @@ def stats_full
   total_projects = stats.sum { |snapshot| snapshot.last } # grab projects for each snapshot
   average_projects = total_projects / stats.count
   current_projects = $data.number_of_projects
-  percent_difference = ((average_projects / current_projects.to_f)*100 - 100).abs
+  percent_difference_projects = ((average_projects / current_projects.to_f)*100 - 100).abs.to_i
   puts "Average number of projects: #{average_projects}."
   puts "Current number of projects: #{current_projects}."
   if current_projects > average_projects
-    puts "Currently we have more projects than average, by #{percent_difference.to_i}%."
+    puts "Currently we have more projects than average, by #{percent_difference_projects}%."
   else
-    puts "Currently we have fewer projects than average, by #{percent_difference.to_i}%."
+    puts "Currently we have fewer projects than average, by #{percent_difference_projects}%."
   end
-
+  number_of_tasks = $data.number_of_tasks
+  percent_difference_tasks = (($data.number_of_someday_maybe / number_of_tasks.to_f) * 100).to_i
+  puts "Someday/maybe is #{percent_difference_tasks}% of our #{number_of_tasks} total tasks."
   # TODO some kind of judgement of percent diff - eg 5% is ok, 10% is warning, 15% is serious, and >20% means immediate weekly review! haha
   
   # average vs current
@@ -656,6 +658,5 @@ def stats_full
   two_years_in_seconds = two_months_in_seconds * 12
   two_years_ago = Time.now.to_i - two_years_in_seconds
 =end  
-  
-  print_stats
+
 end
