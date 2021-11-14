@@ -69,7 +69,6 @@ def edit_project_or_task(action_verb, keyword, content, projects_only = nil)
   else
     object_to_operate_on = nil
     results = $data.search(keyword, content, projects_only)
-    results = results + $data.search_someday_maybe(keyword, content) #here
     if results.empty?
       puts "No results found for query."
     else
@@ -291,7 +290,6 @@ end
 def search(keyword, content)
   if keyword
     results = $data.search(keyword, content)
-    results = results + $data.search_someday_maybe(keyword, content)
     if results.empty?
       puts "No results found for query: #{keyword} #{content}"
     else

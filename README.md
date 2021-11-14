@@ -1,6 +1,6 @@
 <!---
 Created: 2020-05-30
-Revised: 2021-11-13
+Revised: 2021-11-14
 
 ## todo minimilist? or minimal? or some better word
 --->
@@ -46,7 +46,7 @@ Minimalist: see below.
   * Fast
   * Reliable
   * Open (your data is yours)
-  * Supports you; helps you do your weekly review right and not skip any items, while also preventing overwhlem as best it can
+  * Supports you; helps you do your weekly review right and not skip any items, while also preventing overwhelm as best it can
   * Supports you; alerts you if you're experiencing project creep (coming someday)
   
 ## non-features; everything you need, nothing you don't.
@@ -58,7 +58,7 @@ extbrain is *minimal* and *opinionated* so we left out several common features o
 * No due dates; use your calendar or your phone's reminder function. Otherwise you'll just clutter yourself up with a lot of 'should dos' and watch them pass by, undone. 
 <!-- * the exception to this is the 'remind me randomly of things that are important to me' function, eg, 'I really can write that book' or 'Call your friends'.???? -->
 * No habits; use a habit tracker app.
-
+* No tracking of average length of time between weekly reviews; the app already yells at you if you're delinquent, knowing that you're *regularly* delinquent isn't a useful feature; it will only inspire guilt and it also will become pretty obvious if you are regularly delinquent.
 
 ## TODO the rest of this README
 

@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-13
+# Revised: 2021-11-14
 
 
 # todo d for delete
@@ -17,6 +17,9 @@ require_relative 'config.rb'
 require_relative 'tips.rb'
 
 require 'reline' # standard ruby
+#require 'pry'    # debugging only; want breakpoint? use: binding.pry
+
+
 
 # TODO steal from controller.rb around 393 inside review_and_maybe_edit
 $help_text = <<HEREDOC

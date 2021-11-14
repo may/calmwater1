@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-13
+# Revised: 2021-11-14
 # Methods to access data. Saving and loading of data.
 
 require 'yaml'
@@ -46,12 +46,16 @@ class ExtbrainData
     # If our most recent timestamp further away than 'three days ago' it's time for another snapshot.
     if @stats.empty? # Handle nil, initial case.
       puts "Initalizing stats..."
-      @stats.append([Time.now, total, number_of_projects])
+      capture_stats
     else
       if @stats.last.first.to_i < three_days_ago
-        @stats.append([Time.now, total, number_of_projects])
+        capture_stats
       end
     end
+  end
+
+  def capture_stats
+    @stats.append([Time.now, total, number_of_projects])
   end
 
   ## MOVING
@@ -100,7 +104,6 @@ class ExtbrainData
   
   ## SEARCHING
 
-  # TODO need to handle new s/m 
   # s string
   # .downcase to ensure case-insensitive search
   def search(keyword, content, projects_only = nil)
@@ -111,9 +114,10 @@ class ExtbrainData
     end
     p = find_projects(string)
     t = find_tasks(string)
-    if p.nil? and t.nil?
+    t = t + search_someday_maybe(keyword, content)
+    if p.nil? and t.empty?
       nil
-    elsif t.nil?
+    elsif t.empty?
       p
     elsif p.nil? && projects_only
       [] # empty array
@@ -139,10 +143,11 @@ class ExtbrainData
     # need to search all subtasks of projects in @somedaymaybe
     # need to search all titles of tasks&projects in @somedaymaybe
     if keyword and content
-      search_string = keyword + content
+      search_string = keyword + ' ' + content
     else
       search_string = keyword
     end
+#    binding.pry
     somedaymaybe.filter { |sm| sm.title.downcase.include?(search_string.downcase) }
   end
   
