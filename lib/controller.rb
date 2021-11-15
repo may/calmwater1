@@ -315,7 +315,7 @@ end
 
 # todo if project, allow adding pt
 # else allow t at any time
-def review_and_maybe_edit(object)
+def review_and_maybe_edit(object, associated_project = nil)
   def project_task_maybe(object, action_context, keyword, content)
     if object.is_a?(Project)
       puts object.add_task(keyword + ' ' + content, action_context)
@@ -335,6 +335,9 @@ def review_and_maybe_edit(object)
   if object.is_a? Project
     print '      Project: '  
   else
+    if associated_project
+      puts "Project: #{associated_project}"
+    end
     print '        Task: '
   end
   puts object
@@ -464,7 +467,7 @@ end # def
 # 2021-11-06: now review upto 10% of entire s/m list every week; ensure
 #  keep it fresh and we don't have a giant list of doom.
 #  see review_need_reviewed
-def not_recently_reviewed(object, somedaymaybe)
+def not_recently_reviewed(object, somedaymaybe = nil)
   one_day_in_seconds = 86400 # 24 * 60 * 60
   five_days_ago = Time.now.to_i - one_day_in_seconds * 5
   two_weeks_ago = Time.now.to_i - one_day_in_seconds * 14 
@@ -496,7 +499,7 @@ def review_projects_and_subtasks(projects)
       end 
     else
       puts "    #{p}"
-      subtasks_to_review.each { |t| review_and_maybe_edit(t) }      
+      subtasks_to_review.each { |t| review_and_maybe_edit(t, p) }      
     end 
     review_and_maybe_edit(p)
   end

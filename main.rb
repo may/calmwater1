@@ -109,7 +109,7 @@ def dispatch_user_input(input_string)
     edit_project_or_task('delete', keyword, content)
   when 'e', 'exit', 'q', 'quit', 'stop', 'bye'
     exit
-  when 'f', 'fr', 'aof', 'aofr', 'afr', 'focus', 'resp'
+  when 'f', 'fr', 'af', 'aof', 'aofr', 'afr', 'focus', 'resp'
     view_or_add_task('focus/resp', keyword, content)
   when 'g', 'go', 'goa', 'goal', 'goals'
     view_or_add_task('goals', keyword, content)
