@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-13
+# Revised: 2021-11-15
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -290,7 +290,7 @@ end
 def search(keyword, content)
   if keyword
     results = $data.search(keyword, content)
-    if results.empty?
+    if results.nil? or results.empty?
       puts "No results found for query: #{keyword} #{content}"
     else
       results.each { |p_or_t| puts p_or_t }
