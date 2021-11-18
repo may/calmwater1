@@ -2,6 +2,7 @@
 # Revised: 2021-11-14
 # Methods to access data. Saving and loading of data.
 
+require 'fileutils'
 require 'yaml'
 require_relative 'project.rb'
 require_relative 'task.rb'
@@ -35,11 +36,7 @@ class ExtbrainData
     # format of stats:
     # each entry is an array: date, total all, total proj
 
-
-
     ## STATS
-    total = number_of_projects + number_of_tasks
-    
     one_day_in_seconds = 86400 # 24 * 60 * 60
     three_days_ago = Time.now.to_i - one_day_in_seconds * 3
 
@@ -55,6 +52,7 @@ class ExtbrainData
   end
 
   def capture_stats
+    total = number_of_projects + number_of_tasks
     @stats.append([Time.now, total, number_of_projects])
   end
 
@@ -358,7 +356,8 @@ class ExtbrainData
       end
       # order is critical
       all_five = [@projects, @tasks, @somedaymaybe, $last_weekly_review, @stats]
-      print "Saving file..." if unlock 
+      print "Saving file..." if unlock
+      FileUtils.mv($save_file, "#{$save_file}-backup")
       File.open($save_file, 'w') { |f| f.write(YAML.dump(all_five)) } 
       
       # if saving on exit
