@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-15
+# Revised: 2021-11-19
 # Assumes $data exists thanks to main.rb
 
 require_relative '../config.rb'
@@ -476,7 +476,7 @@ def not_recently_reviewed(object, somedaymaybe = nil)
   if somedaymaybe
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < ten_weeks_ago)
   elsif object.is_a? Task and object.action_context == 'focus/resp'.to_sym
-    (object.last_reviewed == nil) or (object.last_reviewed.to_i < two_weeks_aog)
+    (object.last_reviewed == nil) or (object.last_reviewed.to_i < two_weeks_ago)
   elsif object.is_a? Task and object.action_context == 'goals'.to_sym 
     (object.last_reviewed == nil) or (object.last_reviewed.to_i < a_month_ago)
   else
