@@ -62,15 +62,19 @@ class ExtbrainData
     # TODO make this go for tasks too; will need to search for task, then prompt
     # the user for which task they want to move.
     project = project_exist?(keyword)
-    
-    @somedaymaybe << project
 
-    @projects.delete(project) # remove from existing project list
-    msg = "Moved project #{project.keyword} to someday/maybe list!"
-    project.add_note(msg)
-    project.reviewed # moving it counts as reviewing; reset the clock
-    puts msg
-    puts "Full project: #{project}"
+    if project
+      @somedaymaybe << project
+
+      @projects.delete(project) # remove from existing project list
+      msg = "Moved project #{project.keyword} to someday/maybe list!"
+      project.add_note(msg)
+      project.reviewed # moving it counts as reviewing; reset the clock
+      puts msg
+      puts "Full project: #{project}"
+    else
+      puts 'Moving tasks to the someday/maybe list is not currently supported; please copy paste.'
+    end
   end
   
   ## COUNTS
@@ -343,7 +347,7 @@ class ExtbrainData
         to_archive << p unless p.empty?
         t = @tasks.filter { |task| (task.completed? or task.deleted?) }
         to_archive << t unless t.empty? 
-        sm = @somedaymaybe.filter { |sm| sm.deleted? }
+        sm = somedaymaybe.filter { |sm| sm.deleted? }
         to_archive << sm unless sm.empty? 
         
         unless to_archive.empty?
