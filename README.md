@@ -4,7 +4,7 @@ Revised: 2021-11-14
 
 ## todo minimilist? or minimal? or some better word
 --->
-## extbrain: a fast, command-line, GTD tool that holds you to account
+## calmwater: a fast, command-line, GTD tool that holds you to account
  
 ## Requirements:
 
