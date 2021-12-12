@@ -1,5 +1,5 @@
 # Created: 2020-06-06
-# Revised: 2021-11-14
+# Revised: 2021-12-12
 
 ## Weekly review configuration
 
@@ -41,10 +41,11 @@ $log_command_usage = false
 
 ## Saving options
 
-$save_directory = "#{Dir.home}/.extbrain"
-$save_file = "#{$save_directory}/extbrain.yaml"
+$save_directory = "#{Dir.home}/.calmwater" # default for release
+#$save_directory = "#{Dir.home}/pCloud Drive/calmwater-data" # for my personal use 
+$save_file = "#{$save_directory}/calmwater.yaml"
 $lockfile = "#{$save_directory}/lockfile.txt" 
-$archive_file = "#{$save_directory}/#{Time.now.year}_extbrain_completed_or_deleted.yaml"
+$archive_file = "#{$save_directory}/#{Time.now.year}_calmwater_completed_or_deleted.yaml"
 
 $data_file_command_usage = "#{$save_directory}/command_usage.yaml"
 

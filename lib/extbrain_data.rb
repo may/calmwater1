@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-11-14
+# Revised: 2021-12-12
 # Methods to access data. Saving and loading of data.
 
 require 'fileutils'
@@ -361,7 +361,9 @@ class ExtbrainData
       # order is critical
       all_five = [@projects, @tasks, @somedaymaybe, $last_weekly_review, @stats]
       print "Saving file..." if unlock
-      FileUtils.mv($save_file, "#{$save_file}-backup")
+      if File.exist?($save_file)
+        FileUtils.mv($save_file, "#{$save_file}-backup")
+      end
       File.open($save_file, 'w') { |f| f.write(YAML.dump(all_five)) } 
       
       # if saving on exit
