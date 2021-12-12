@@ -211,7 +211,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 1.5 (\"now with readline\"), 2021-11-11"
+puts "Welcome to extbrain, version 2 (\"now with readline\"), 2021-12-12"
 startup
 # random_tip #annoying, 2020-12-18 
 command_loop
