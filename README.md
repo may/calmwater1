@@ -17,14 +17,14 @@ Revised: 2021-11-14
 
 ## Install
 
-1. [Download](https://github.com/may/extbrain/archive/refs/tags/1.4.zip).
-2. Open a terminal and unzip extbrain-trunk.zip, presumably in your Downloads folder.
+1. [Download](https://github.com/may/calmwater/archive/refs/tags/2.0.zip).
+2. Open a terminal and unzip calmwater-trunk.zip, presumably in your Downloads folder.
 3. Install tput (see above) or set $color_only to false in config.rb file.
-4. ```ruby Downloads/extbrain-trunk/main.rb```
+4. ```ruby Downloads/calmwater-trunk/main.rb```
    
 ## Using:
 
-* ```ruby extbrain/main.rb```
+* ```ruby calmwater-trunk/main.rb```
 * Arrow keys and Emacs keybindings available for editing command line items; if 
 you're on MacOS and option-f produces a fancy f symbol, fix it by:
   * If Terminal.app: Preferences -> Profiles -> Keyboard -> check 'Use Option as Meta key'
