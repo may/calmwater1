@@ -629,7 +629,7 @@ def print_full_stats
   end
   number_of_tasks = $data.number_of_tasks
   percent_difference_tasks = (($data.number_of_someday_maybe / number_of_tasks.to_f) * 100).to_i
-  puts "Someday/maybe is #{percent_difference_tasks}% of our #{number_of_tasks} total tasks."
+  puts "Someday/maybe is #{percent_difference_tasks}% (#{$data.number_of_someday_maybe}) of our #{number_of_tasks} total tasks."
   # TODO some kind of judgement of percent diff - eg 5% is ok, 10% is warning, 15% is serious, and >20% means immediate weekly review! haha
   
   # average vs current

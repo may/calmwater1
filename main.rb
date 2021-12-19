@@ -48,7 +48,7 @@ at_exit do
       end
     end
     $data.save_data(true) # save and clear lock
-    puts "Thank you for using extbrain. Have a good day!"
+    puts "Thank you for using calmwater. Have a good day!"
   end
 end
 
@@ -65,7 +65,7 @@ def command_loop
   end
 
   while true
-    buf = Reline.readline('extbrain> ', true)
+    buf = Reline.readline('calmwater> ', true)
     input = buf
     # TODO try $data.load_data BEFORE modifying state.
     # TODO scope lockfile to just save load
@@ -211,7 +211,7 @@ def random_tip
 end 
 
 
-puts "Welcome to extbrain, version 2 (\"now with readline\"), 2021-12-12"
+puts "Welcome to calmwater, version 2, 2021-12-19"
 startup
 # random_tip #annoying, 2020-12-18 
 command_loop
