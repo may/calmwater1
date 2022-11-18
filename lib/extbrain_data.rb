@@ -1,5 +1,5 @@
 # Created: 2020-05-30
-# Revised: 2021-12-12
+# Revised: 2022-11-18
 # Methods to access data. Saving and loading of data.
 
 require 'fileutils'
@@ -313,7 +313,7 @@ class ExtbrainData
     print "Loading files..."
     
     if File.exist?($save_file)
-      all_five = YAML.load(File.read($save_file))
+      all_five = YAML.load(File.read($save_file), permitted_classes: [Symbol, Task, Time, Project]) # if using habits add Habit here TODO
       # order is critical 
       @stats = all_five.pop
       # TODO s/m make $last_weekly_review not be a global
