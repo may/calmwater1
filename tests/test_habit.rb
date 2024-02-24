@@ -1,5 +1,5 @@
 # Created: 2020-06-03
-# Revised: 2020-06-03
+# Revised: 2024-02-24
 
 require_relative '../lib/habit.rb'
 
@@ -8,7 +8,7 @@ require 'minitest/pride'
 
 class HabitTest < Minitest::Test
   def setup
-    @h = Habit.new("bike nightly", "bike", "clock hits 20:00")
+    @h = Habit.new("bike nightly", "bike")#, "clock hits 20:00")
   end
 
   def test_completed

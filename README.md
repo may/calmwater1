@@ -1,6 +1,6 @@
 <!---
 Created: 2020-05-30
-Revised: 2021-11-14
+Revised: 2024-02-24
 
 ## todo minimilist? or minimal? or some better word
 --->
@@ -51,7 +51,7 @@ Minimalist: see below.
   
 ## non-features; everything you need, nothing you don't.
 
-extbrain is *minimal* and *opinionated* so we left out several common features out, by design:
+calmwater is *minimal* and *opinionated* so we left out several common features out, by design:
 
 * No priorities; either it's important enough to be on your current projects & action lists, or it isn't. If you aren't sure, err on putting it on your someday/maybe list.
 <!-- ** No tags? -->
@@ -60,13 +60,18 @@ extbrain is *minimal* and *opinionated* so we left out several common features o
 * No habits; use a habit tracker app.
 * No tracking of average length of time between weekly reviews; the app already yells at you if you're delinquent, knowing that you're *regularly* delinquent isn't a useful feature; it will only inspire guilt and it also will become pretty obvious if you are regularly delinquent.
 
+## how to run tests
+
+`cd calmwater`
+`rake test`
+
 ## TODO the rest of this README
 
       
 
 # won't work under windows
 - color coding of output
-- opening a second instance of extbrain on the same machine (eg server) will just exit, instead of gracefully shutting down the first process
+- opening a second instance of calmwater on the same machine (eg server) will just exit, instead of gracefully shutting down the first process
 
 # todo some documentation
 
@@ -107,7 +112,7 @@ extbrain is *minimal* and *opinionated* so we left out several common features o
 # TODO VET THIS STUFF LATER
 
 
-alias extbrain='rlwrap ruby ~/extbrain/main.rb' 
+alias calmwater='rlwrap ruby ~/calmwater/main.rb' 
 
 
 # COMMAND STRUCTURE

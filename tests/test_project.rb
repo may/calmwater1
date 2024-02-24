@@ -1,5 +1,5 @@
 # Created: 2020-05-29
-# Revised: 2021-10-28
+# Revised: 2024-02-24
 
 require_relative '../lib/project.rb'
 
@@ -8,7 +8,7 @@ require 'minitest/pride'
 
 class ProjectTest < Minitest::Test
   def setup
-    @test_project = Project.new("test project","tp","family")
+    @test_project = Project.new("test project","tp")
     @now = @test_project.created
   end
 
